@@ -1,0 +1,415 @@
+/**
+ * OpenCPS is the open source Core Public Services software
+ * Copyright (C) 2016-present OpenCPS community
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>
+ */
+
+package com.viettel.portal.vcms.service;
+
+import com.liferay.portal.service.ServiceWrapper;
+
+/**
+ * Provides a wrapper for {@link CommentLocalService}.
+ *
+ * @author chuchv
+ * @see CommentLocalService
+ * @generated
+ */
+public class CommentLocalServiceWrapper implements CommentLocalService,
+	ServiceWrapper<CommentLocalService> {
+	public CommentLocalServiceWrapper(CommentLocalService commentLocalService) {
+		_commentLocalService = commentLocalService;
+	}
+
+	/**
+	* Adds the comment to the database. Also notifies the appropriate model listeners.
+	*
+	* @param comment the comment
+	* @return the comment that was added
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.viettel.portal.vcms.model.Comment addComment(
+		com.viettel.portal.vcms.model.Comment comment)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.addComment(comment);
+	}
+
+	/**
+	* Creates a new comment with the primary key. Does not add the comment to the database.
+	*
+	* @param commentId the primary key for the new comment
+	* @return the new comment
+	*/
+	@Override
+	public com.viettel.portal.vcms.model.Comment createComment(long commentId) {
+		return _commentLocalService.createComment(commentId);
+	}
+
+	/**
+	* Deletes the comment with the primary key from the database. Also notifies the appropriate model listeners.
+	*
+	* @param commentId the primary key of the comment
+	* @return the comment that was removed
+	* @throws PortalException if a comment with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.viettel.portal.vcms.model.Comment deleteComment(long commentId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.deleteComment(commentId);
+	}
+
+	/**
+	* Deletes the comment from the database. Also notifies the appropriate model listeners.
+	*
+	* @param comment the comment
+	* @return the comment that was removed
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.viettel.portal.vcms.model.Comment deleteComment(
+		com.viettel.portal.vcms.model.Comment comment)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.deleteComment(comment);
+	}
+
+	@Override
+	public com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery() {
+		return _commentLocalService.dynamicQuery();
+	}
+
+	/**
+	* Performs a dynamic query on the database and returns the matching rows.
+	*
+	* @param dynamicQuery the dynamic query
+	* @return the matching rows
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	@SuppressWarnings("rawtypes")
+	public java.util.List dynamicQuery(
+		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.dynamicQuery(dynamicQuery);
+	}
+
+	/**
+	* Performs a dynamic query on the database and returns a range of the matching rows.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.viettel.portal.vcms.model.impl.CommentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param dynamicQuery the dynamic query
+	* @param start the lower bound of the range of model instances
+	* @param end the upper bound of the range of model instances (not inclusive)
+	* @return the range of matching rows
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	@SuppressWarnings("rawtypes")
+	public java.util.List dynamicQuery(
+		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery, int start,
+		int end) throws com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.dynamicQuery(dynamicQuery, start, end);
+	}
+
+	/**
+	* Performs a dynamic query on the database and returns an ordered range of the matching rows.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.viettel.portal.vcms.model.impl.CommentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param dynamicQuery the dynamic query
+	* @param start the lower bound of the range of model instances
+	* @param end the upper bound of the range of model instances (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching rows
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	@SuppressWarnings("rawtypes")
+	public java.util.List dynamicQuery(
+		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery, int start,
+		int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.dynamicQuery(dynamicQuery, start, end,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the number of rows that match the dynamic query.
+	*
+	* @param dynamicQuery the dynamic query
+	* @return the number of rows that match the dynamic query
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public long dynamicQueryCount(
+		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.dynamicQueryCount(dynamicQuery);
+	}
+
+	/**
+	* Returns the number of rows that match the dynamic query.
+	*
+	* @param dynamicQuery the dynamic query
+	* @param projection the projection to apply to the query
+	* @return the number of rows that match the dynamic query
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public long dynamicQueryCount(
+		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery,
+		com.liferay.portal.kernel.dao.orm.Projection projection)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.dynamicQueryCount(dynamicQuery, projection);
+	}
+
+	@Override
+	public com.viettel.portal.vcms.model.Comment fetchComment(long commentId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.fetchComment(commentId);
+	}
+
+	/**
+	* Returns the comment with the primary key.
+	*
+	* @param commentId the primary key of the comment
+	* @return the comment
+	* @throws PortalException if a comment with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.viettel.portal.vcms.model.Comment getComment(long commentId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.getComment(commentId);
+	}
+
+	@Override
+	public com.liferay.portal.model.PersistedModel getPersistedModel(
+		java.io.Serializable primaryKeyObj)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.getPersistedModel(primaryKeyObj);
+	}
+
+	/**
+	* Returns a range of all the comments.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.viettel.portal.vcms.model.impl.CommentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param start the lower bound of the range of comments
+	* @param end the upper bound of the range of comments (not inclusive)
+	* @return the range of comments
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public java.util.List<com.viettel.portal.vcms.model.Comment> getComments(
+		int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.getComments(start, end);
+	}
+
+	/**
+	* Returns the number of comments.
+	*
+	* @return the number of comments
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public int getCommentsCount()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.getCommentsCount();
+	}
+
+	/**
+	* Updates the comment in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.
+	*
+	* @param comment the comment
+	* @return the comment that was updated
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.viettel.portal.vcms.model.Comment updateComment(
+		com.viettel.portal.vcms.model.Comment comment)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.updateComment(comment);
+	}
+
+	/**
+	* Returns the Spring bean ID for this bean.
+	*
+	* @return the Spring bean ID for this bean
+	*/
+	@Override
+	public java.lang.String getBeanIdentifier() {
+		return _commentLocalService.getBeanIdentifier();
+	}
+
+	/**
+	* Sets the Spring bean ID for this bean.
+	*
+	* @param beanIdentifier the Spring bean ID for this bean
+	*/
+	@Override
+	public void setBeanIdentifier(java.lang.String beanIdentifier) {
+		_commentLocalService.setBeanIdentifier(beanIdentifier);
+	}
+
+	@Override
+	public java.lang.Object invokeMethod(java.lang.String name,
+		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
+		throws java.lang.Throwable {
+		return _commentLocalService.invokeMethod(name, parameterTypes, arguments);
+	}
+
+	@Override
+	public java.util.List customSearchByKeyword(long companyId, long groupId,
+		java.lang.String keyword, int type, int start, int end)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.customSearchByKeyword(companyId, groupId,
+			keyword, type, start, end);
+	}
+
+	@Override
+	public int customCountByKeyword(long companyId, long groupId,
+		java.lang.String keywords, int type)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.customCountByKeyword(companyId, groupId,
+			keywords, type);
+	}
+
+	@Override
+	public java.util.List<com.viettel.portal.vcms.model.Comment> getAllComment()
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.getAllComment();
+	}
+
+	@Override
+	public java.util.List<com.viettel.portal.vcms.model.Comment> getVisibleComment(
+		long groupId, long distId, boolean isVisible)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.getVisibleComment(groupId, distId, isVisible);
+	}
+
+	@Override
+	public java.util.List<com.viettel.portal.vcms.model.Comment> findByKeyword(
+		long companyId, long groupId, java.lang.String keyword, int start,
+		int end)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.findByKeyword(companyId, groupId, keyword,
+			start, end);
+	}
+
+	@Override
+	public int countByKeyword(long companyId, long groupId,
+		java.lang.String keywords)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.countByKeyword(companyId, groupId, keywords);
+	}
+
+	@Override
+	public java.util.List<com.viettel.portal.vcms.model.Comment> getByContentId(
+		long groupId, long distributionId, int start, int end)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.getByContentId(groupId, distributionId,
+			start, end);
+	}
+
+	@Override
+	public int countByContentId(long groupId, long distributionId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _commentLocalService.countByContentId(groupId, distributionId);
+	}
+
+	@Override
+	public void addLegalComment(long groupId, long companyId, long userId,
+		java.lang.String userName, java.util.Date createDate,
+		java.util.Date modifyDate, int id, int distributionId,
+		java.lang.String fullName, java.lang.String address,
+		java.lang.String email, java.lang.String body, boolean visible,
+		java.lang.String ipAddress,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_commentLocalService.addLegalComment(groupId, companyId, userId,
+			userName, createDate, modifyDate, id, distributionId, fullName,
+			address, email, body, visible, ipAddress, serviceContext);
+	}
+
+	@Override
+	public void addComment(long groupId, long companyId, long userId,
+		java.lang.String userName, long id, long distributionId,
+		java.lang.String fullName, java.lang.String address,
+		java.lang.String email, java.lang.String body, boolean visible,
+		java.lang.String ipAddress,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_commentLocalService.addComment(groupId, companyId, userId, userName,
+			id, distributionId, fullName, address, email, body, visible,
+			ipAddress, serviceContext);
+	}
+
+	@Override
+	public void deleteAllData()
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_commentLocalService.deleteAllData();
+	}
+
+	/**
+	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
+	 */
+	public CommentLocalService getWrappedCommentLocalService() {
+		return _commentLocalService;
+	}
+
+	/**
+	 * @deprecated As of 6.1.0, replaced by {@link #setWrappedService}
+	 */
+	public void setWrappedCommentLocalService(
+		CommentLocalService commentLocalService) {
+		_commentLocalService = commentLocalService;
+	}
+
+	@Override
+	public CommentLocalService getWrappedService() {
+		return _commentLocalService;
+	}
+
+	@Override
+	public void setWrappedService(CommentLocalService commentLocalService) {
+		_commentLocalService = commentLocalService;
+	}
+
+	private CommentLocalService _commentLocalService;
+}

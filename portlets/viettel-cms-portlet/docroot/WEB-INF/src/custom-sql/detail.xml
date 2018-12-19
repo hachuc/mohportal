@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.ContentDetailFinder.findByVersions">	
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				vcms_Content_Detail  a1
+			WHERE 
+			(a1.groupid = ?)
+			AND (contentId = ?)
+			AND (version = ?)
+		]]>
+	</sql>
+</custom-sql>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.2.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd">
+
+<hook>
+	<language-properties>
+		content/Language.properties
+	</language-properties>
+	<language-properties>
+		content/Language_en.properties
+	</language-properties>
+	<language-properties>
+		content/Language_vi.properties
+	</language-properties>
+	<custom-jsp-dir>/custom_jsps</custom-jsp-dir>
+	<struts-action>
+	    <struts-action-path>/login/login</struts-action-path>
+	    <struts-action-impl>
+	    	com.viettel.portal.hook.action.CustomLoginAction
+	    </struts-action-impl>
+	</struts-action>
+	
+</hook>

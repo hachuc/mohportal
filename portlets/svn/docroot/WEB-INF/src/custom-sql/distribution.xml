@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+<sql id="com.viettel.portal.vcms.service.persistence.DistributionFinder.findByPubishedDate">	
+	<![CDATA[
+    	SELECT 	*
+    	
+    	FROM 	vcms_Distribution
+    	           
+        WHERE               
+                groupId = ?
+                
+                AND (categoryId = ?)
+                
+                AND (date(distributedDate) = ?)
+            	           	
+        ORDER BY distributedDate DESC
+	]]>
+</sql>
+<sql id="com.viettel.portal.vcms.service.persistence.DistributionFinder.countByPubishedDate">	
+	<![CDATA[
+    	SELECT 	COUNT(*) AS COUNT_VALUE
+    	
+    	FROM 	vcms_Distribution
+    	           
+        WHERE               
+                groupId = ?
+                
+                AND (categoryId = ?)
+                
+                AND (date(distributedDate) = ?)
+	]]>
+</sql>
+<sql id="com.viettel.portal.vcms.service.persistence.DistributionFinder.findByGroupAndCategory">	
+	<![CDATA[
+    	SELECT 	*
+    	
+    	FROM 	vcms_Distribution
+    	           
+        WHERE               
+                groupId = ?
+                
+                AND (categoryId = ?)
+            	           	
+        ORDER BY distributedDate DESC
+	]]>
+</sql>
+
+<sql id="com.viettel.portal.vcms.service.persistence.DistributionFinder.findNewsestContent">	
+	<![CDATA[
+    	SELECT 	vd.*
+    	
+    	FROM 	vcms_Distribution vd
+    	           
+        WHERE               
+                groupId = ?
+                
+                AND (vd.distributedDate < (select cd.distributedDate from vcms_Distribution cd where cd.distributionId = ?))
+            	           	
+        ORDER BY distributedDate DESC
+	]]>
+</sql>
+<sql id="com.viettel.portal.vcms.service.persistence.DistributionFinder.countByGroupAndCategory">	
+	<![CDATA[
+    	SELECT 	Count(*) COUNT_VALUE
+    	
+    	FROM 	vcms_Distribution
+    	           
+        WHERE               
+                groupId = ?
+                
+                AND (categoryId = ?)
+	]]>
+</sql>
+
+</custom-sql>

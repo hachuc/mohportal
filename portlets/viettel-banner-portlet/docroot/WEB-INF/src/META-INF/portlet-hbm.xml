@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.viettel.portal.banner.model.Banner" />
+	<class name="com.viettel.portal.banner.model.impl.BannerImpl" table="portal_banner">
+		<cache usage="read-write" />
+		<id name="id" column="ID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="ten" type="com.liferay.portal.dao.orm.hibernate.StringType" column="TEN" />
+		<property name="fileId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="FILEID" />
+		<property name="fileLink" type="com.liferay.portal.dao.orm.hibernate.StringType" column="FILELINK" />
+		<property name="fileName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="FILENAME" />
+		<property name="fileSize" type="com.liferay.portal.dao.orm.hibernate.StringType" column="FILESIZE" />
+		<property name="ngayTao" type="org.hibernate.type.TimestampType" column="NGAYTAO" />
+		<property name="ngaySua" type="org.hibernate.type.TimestampType" column="NGAYSUA" />
+		<property name="ngayKetThuc" type="org.hibernate.type.TimestampType" column="NGAYKETTHUC" />
+		<property name="lienKet" type="com.liferay.portal.dao.orm.hibernate.StringType" column="LIENKET" />
+		<property name="order_" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="ORDER_" />
+		<property name="trangThai" type="com.liferay.portal.dao.orm.hibernate.BooleanType" column="TRANGTHAI" />
+		<property name="nguoiTao" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NGUOITAO" />
+		<property name="nguoiTaoId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="NGUOITAOID" />
+		<property name="nguoiSua" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NGUOISUA" />
+		<property name="nguoiSuaId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="NGUOISUAID" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="COMPANYID" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>

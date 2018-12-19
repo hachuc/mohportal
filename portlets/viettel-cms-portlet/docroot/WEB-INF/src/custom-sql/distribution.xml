@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+<sql id="com.viettel.portal.vcms.service.persistence.DistributionFinder.findByPubishedDate">	
+	<![CDATA[
+    	SELECT 	*
+    	
+    	FROM 	vcms_Distribution
+    	           
+        WHERE               
+                groupId = ?
+                
+                AND (categoryId = ?)
+                
+                AND (date(distributedDate) = ?)
+            	           	
+        ORDER BY distributedDate DESC
+	]]>
+</sql>
+<sql id="com.viettel.portal.vcms.service.persistence.DistributionFinder.countByPubishedDate">	
+	<![CDATA[
+    	SELECT 	COUNT(*) AS COUNT_VALUE
+    	
+    	FROM 	vcms_Distribution
+    	           
+        WHERE               
+                groupId = ?
+                
+                AND (categoryId = ?)
+                
+                AND (date(distributedDate) = ?)
+	]]>
+</sql>
+<sql id="com.viettel.portal.vcms.service.persistence.DistributionFinder.findByGroupAndCategory">	
+	<![CDATA[
+    	SELECT 	*
+    	
+    	FROM 	vcms_Distribution
+    	           
+        WHERE               
+                groupId = ?
+                
+                AND (categoryId = ?)
+            	           	
+        ORDER BY distributedDate DESC
+	]]>
+</sql>
+
+<sql id="com.viettel.portal.vcms.service.persistence.DistributionFinder.findNewsestContent">	
+	<![CDATA[
+    	SELECT 	vd.*
+    	
+    	FROM 	vcms_Distribution vd
+    	           
+        WHERE               
+                groupId = ?
+                
+                AND (vd.distributedDate < (select cd.distributedDate from vcms_Distribution cd where cd.distributionId = ?))
+            	           	
+        ORDER BY distributedDate DESC
+	]]>
+</sql>
+<sql id="com.viettel.portal.vcms.service.persistence.DistributionFinder.countByGroupAndCategory">	
+	<![CDATA[
+    	SELECT 	Count(*) COUNT_VALUE
+    	
+    	FROM 	vcms_Distribution
+    	           
+        WHERE               
+                groupId = ?
+                
+                AND (categoryId = ?)
+	]]>
+</sql>
+<sql id="com.viettel.portal.vcms.service.persistence.DistributionFinder.findByVersionAndStatus">	
+		<![CDATA[
+			SELECT
+				a.autoId,
+				b.distributionId,
+				a.contentId,
+				a.groupId,
+				a.companyId,
+				a.userId,
+				a.userName,
+				a.createDate,
+				DATE_FORMAT(b.distributedDate,'%d/%m/%Y') as distributedDate,
+				a.version,
+				a.title,
+				b.categoryId,
+				a.status,
+				a.createdByUserId,
+				a.editedByUserId,
+				a.reviewedByUserId,
+				a.publishedByUserId,
+				a.createdByUserName,
+				a.editedByUserName,
+				a.reviewedByUserName,
+				a.publishedByUserName,
+				(select count(*) from vcms_Comment where vcms_Comment.distributionId = b.distributionId) as totalComments,
+				(select categoryName from vcms_Category where vcms_Category.categoryId = b.categoryId) as categoryName
+			FROM
+				vcms_Content a inner join vcms_Distribution b on a.contentId = b.contentId and a.version = b.version
+			WHERE 
+			(a.groupId = ?)
+			AND (a.categoryId = ?)
+			AND (a.createdByUserId = ?)
+			AND (lower(a.title) LIKE ? [$AND_OR_NULL_CHECK$])
+			ORDER BY b.distributedDate desc
+		]]>
+	</sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.DistributionFinder.countByVersionAndStatus">
+		<![CDATA[
+	    	SELECT 	Count(*) COUNT_VALUE
+	    	
+	    	FROM
+				vcms_Content a inner join vcms_Distribution b on a.contentId = b.contentId and a.version = b.version
+			WHERE 
+			(a.groupId = ?)
+			AND (a.categoryId = ?)
+			AND (a.createdByUserId = ?)
+			AND (lower(a.title) LIKE ? [$AND_OR_NULL_CHECK$])
+		]]>
+	</sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.DistributionFinder.getMostViewdContent">	
+		<![CDATA[
+			SELECT
+				count(b.distributionId) as viewCount,
+				b.distributionId,
+				a.contentId,
+				DATE_FORMAT(max(b.distributedDate),'%d/%m/%Y') as distributedDate,
+				a.title,
+				a.smallImageUrl
+			FROM
+				vcms_Content a inner join vcms_Distribution b on a.contentId = b.contentId and a.version = b.version
+				inner join vcms_distribution_visisted c on b.distributionId = c.distributionId
+			WHERE 
+			(a.groupId = ?)
+			AND (a.categoryId = ?)
+			AND (c.createDate >= ?)
+			AND (c.createDate < ?)
+			group by b.DistributionID, a.contentId, a.title
+			order by viewCount desc
+		]]>
+	</sql>
+</custom-sql>

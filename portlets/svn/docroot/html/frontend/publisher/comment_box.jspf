@@ -1,0 +1,183 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+
+<%
+	String taglibOnSubmit = "event.preventDefault(); " + renderResponse.getNamespace() + "submitGiveAskForm();";
+	String onReset = "event.preventDefault(); " + renderResponse.getNamespace() + "resetForm();";
+%>
+<div class="page-content boxed faq-form">
+	<liferay-ui:error key="give-ask-unsuccess"
+		message="error-when-send-ask-content" />
+	<liferay-ui:success key="give-ask-success"
+		message="thank-you-for-your-ask-content" />
+
+	<liferay-ui:error key="invalid-captcha" message="invalid-captcha" />
+
+	<liferay-portlet:resourceURL var="captchaURL" />
+
+	<portlet:resourceURL var="serverURL"></portlet:resourceURL>
+	<portlet:resourceURL var="searchURL">
+		<portlet:param name="method" value="sendComment" />
+		<portlet:param name="distId" value='<% String.valueOf(dttrId) %>' />
+	</portlet:resourceURL>
+	
+	<div class="">
+    	<h3 class="header-comment-title"> Ý KIẾN BẠN ĐỌC VỀ BÀI VIẾT NÀY </h3>
+    <hr>
+    <div class="col-sm-12" id="parent">
+    	<div class="col-md-12 mb5" id="pnl-success">
+		</div>
+    	<div class="col-sm-10 col-sm-offset-1">
+    		<div class="form-area">
+				<aui:form name="legal_faq_give_ask_form" method="post" action="#">
+						<div class="form-group">
+							<input type="text" class="form-control"
+								name="<portlet:namespace />fullName" id="<portlet:namespace />fullName" placeholder="Họ và Tên"
+								required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="<portlet:namespace />email" id="<portlet:namespace />email" placeholder="Email" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control"
+								name="<portlet:namespace />address" id="<portlet:namespace />address" placeholder="Địa chỉ">
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" type="textarea"
+								name="<portlet:namespace />message" id="<portlet:namespace />message"
+								placeholder="Nội dung phản hồi" maxlength="255" rows="7"
+								required></textarea>
+						</div>
+						<div class="form-group">
+							<div class="col-md-12 pl0">
+								<liferay-ui:captcha url="<%=serverURL%>" />
+							</div>
+						</div>
+						<div class="form-group" align="center">
+							<button class="btn btn-info" type="button" onclick="<%=taglibOnSubmit%>">
+								<liferay-ui:message key="Gửi đi" />
+							</button>
+							<button class="btn btn-default" type="button" onclick="<%=onReset%>">
+								<liferay-ui:message key="Làm lại" />
+							</button>
+						</div>
+				</aui:form>
+			</div>
+    	</div>
+    </div>
+    <div class="col-md-12 mb5" id="pnl-result">
+	</div>
+  </div>
+</div>
+
+<script type="text/javascript">
+	AUI().ready('aui-base,aui-form-validator,aui-overlay-context-panel,aui-io-request,aui-node,aui-loading-mask-deprecated',function(A){
+		var reloadCaptchaBtn = A.one(".captcha_reload");
+		var selectBanner = A.one('#<portlet:namespace/>selectBanner');
+
+		if(reloadCaptchaBtn){
+
+			reloadCaptchaBtn.on('click', function(){
+
+				var captchaValue = A.one(".captcha");
+
+				captchaValue.setAttribute("src", "<%=serverURL%>&force=" + new Date().getMilliseconds());
+			});
+		}
+		Liferay.provide(
+				window,
+				'<portlet:namespace />resetForm',
+				function() {
+					A.one("#<portlet:namespace />fullName").set('value','');
+					A.one("#<portlet:namespace />email").set('value','');
+					A.one("#<portlet:namespace />address").set('value','');
+					A.one("#<portlet:namespace />message").set('value','');
+				},
+				['aui-base']);
+
+			Liferay.provide(
+				window,
+				'<portlet:namespace />submitGiveAskForm',
+				function() {
+
+					window.validator = new A.FormValidator({
+
+				        boundingBox: "#<portlet:namespace />legal_faq_give_ask_form",
+				        fieldStrings: {
+				        	<portlet:namespace />fullName: {
+				              required: 'Hãy nhập họ tên'
+				            }
+				        },
+				        rules: {
+				        	<portlet:namespace />fullName: {
+				        		required: true
+				            },
+				            <portlet:namespace />email: {
+				            	required: true,
+				           		email: true
+				            },
+				            <portlet:namespace />message: {
+				            	required: true
+				            }
+				        }
+				    });
+
+					window.validator.validate();
+
+					if (!window.validator.hasErrors()) {
+						var fullName = A.one("#<portlet:namespace />fullName");
+						var email = A.one("#<portlet:namespace />email");
+						var address = A.one("#<portlet:namespace />address");
+						var message = A.one("#<portlet:namespace />message");
+						var capcharValue=A.one("#<portlet:namespace/>captchaText").val();
+
+				        var captchaValue = A.one(".captcha");
+						A.io.request('<%=searchURL%>', {
+							 method: 'post',
+							  dataType: 'json',
+							  data: {
+								<portlet:namespace/>fullName: fullName.val(),
+								<portlet:namespace/>email: email.val(),
+								<portlet:namespace/>address: address.val(),
+								<portlet:namespace/>message: address.val(),
+								<portlet:namespace/>captchaText: capcharValue
+							  },
+								on: {
+									success: function(data){
+										data = this.get("responseData");
+										var node =A.one('#pnl-result');
+										var nodeS = A.one("#pnl-success");
+										node.empty();
+										nodeS.empty();
+										captchaValue.setAttribute("src", "<%=serverURL%>&force=" + new Date().getMilliseconds());
+										A.one("#<portlet:namespace/>captchaText").val('');
+										if (data == null || (data != null && data.KetQua==="0")) {
+											node.append('<div class="alert alert-error"><liferay-ui:message key="gplx-search-no-result" /></div>');
+											return;
+										}
+										if(data != null && data.KetQua==="2")
+										{
+											node.append('<div class="alert alert-error"><liferay-ui:message key="invalid-captcha" /></div>');
+											return;
+										}
+										if(data != null && data.KetQua==="1"){
+											fullName.set('value','');
+											email.set('value','');
+											address.set('value','');
+											message.set('value','');
+											nodeS.append('<div class="alert alert-success"><liferay-ui:message key="send-message-successfull" /></div>');
+											return;
+										}
+									},
+									error: function(){
+										captchaValue.setAttribute("src", "<%=serverURL%>&force=" + new Date().getMilliseconds());
+									}
+								}
+							});
+					}
+				},
+				['aui-base']
+			);
+
+	});
+</script>

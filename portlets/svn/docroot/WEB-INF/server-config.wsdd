@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<globalConfiguration>
+		<parameter name="adminPassword" value="admin" />
+		<parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl" />
+		<parameter name="sendXsiTypes" value="true" />
+		<parameter name="sendMultiRefs" value="true" />
+		<parameter name="sendXMLDeclaration" value="true" />
+		<parameter name="axis.sendMinimizedElements" value="true" />
+		<requestFlow>
+			<handler type="java:org.apache.axis.handlers.JWSHandler">
+				<parameter name="scope" value="session" />
+			</handler>
+			<handler type="java:org.apache.axis.handlers.JWSHandler">
+				<parameter name="scope" value="request" />
+				<parameter name="extension" value=".jwr" />
+			</handler>
+		</requestFlow>
+	</globalConfiguration>
+	<handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder" />
+	<handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper" />
+	<handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler" />
+	<transport name="http">
+		<requestFlow>
+			<handler type="URLMapper" />
+			<handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler" />
+		</requestFlow>
+	</transport>
+	<transport name="local">
+		<responseFlow>
+			<handler type="LocalResponder" />
+		</responseFlow>
+	</transport>
+	<service name="Plugin_vcms_CategoryService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.viettel.portal.vcms.service.http.CategoryServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CategoryServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CategoryServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_vcms_CategoryService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.vcms.portal.viettel.com" />
+	</service>
+	<service name="Plugin_vcms_ContentService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.viettel.portal.vcms.service.http.ContentServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ContentServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ContentServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_vcms_ContentService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.vcms.portal.viettel.com" />
+	</service>
+	<service name="Plugin_vcms_NotesService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.viettel.portal.vcms.service.http.NotesServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="NotesServiceSoap" />
+		<parameter name="wsdlServiceElement" value="NotesServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_vcms_NotesService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.vcms.portal.viettel.com" />
+	</service>
+</deployment>

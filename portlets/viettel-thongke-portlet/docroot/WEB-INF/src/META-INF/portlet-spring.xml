@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.viettel.portal.thongke.service.BaiVietNhuanButLocalService" class="com.viettel.portal.thongke.service.impl.BaiVietNhuanButLocalServiceImpl" />
+	<bean id="com.viettel.portal.thongke.service.persistence.BaiVietNhuanButPersistence" class="com.viettel.portal.thongke.service.persistence.BaiVietNhuanButPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.thongke.service.persistence.BaiVietNhuanButFinder" class="com.viettel.portal.thongke.service.persistence.BaiVietNhuanButFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.thongke.service.ContentProfitLocalService" class="com.viettel.portal.thongke.service.impl.ContentProfitLocalServiceImpl" />
+	<bean id="com.viettel.portal.thongke.service.ContentProfitService" class="com.viettel.portal.thongke.service.impl.ContentProfitServiceImpl" />
+	<bean id="com.viettel.portal.thongke.service.persistence.ContentProfitPersistence" class="com.viettel.portal.thongke.service.persistence.ContentProfitPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.thongke.service.persistence.ContentProfitFinder" class="com.viettel.portal.thongke.service.persistence.ContentProfitFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.thongke.service.ContentTypeLocalService" class="com.viettel.portal.thongke.service.impl.ContentTypeLocalServiceImpl" />
+	<bean id="com.viettel.portal.thongke.service.ContentTypeService" class="com.viettel.portal.thongke.service.impl.ContentTypeServiceImpl" />
+	<bean id="com.viettel.portal.thongke.service.persistence.ContentTypePersistence" class="com.viettel.portal.thongke.service.persistence.ContentTypePersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.thongke.service.ContentTypeCostLocalService" class="com.viettel.portal.thongke.service.impl.ContentTypeCostLocalServiceImpl" />
+	<bean id="com.viettel.portal.thongke.service.ContentTypeCostService" class="com.viettel.portal.thongke.service.impl.ContentTypeCostServiceImpl" />
+	<bean id="com.viettel.portal.thongke.service.persistence.ContentTypeCostPersistence" class="com.viettel.portal.thongke.service.persistence.ContentTypeCostPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.thongke.service.PhongBanLocalService" class="com.viettel.portal.thongke.service.impl.PhongBanLocalServiceImpl" />
+	<bean id="com.viettel.portal.thongke.service.persistence.PhongBanPersistence" class="com.viettel.portal.thongke.service.persistence.PhongBanPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.thongke.service.persistence.PhongBanFinder" class="com.viettel.portal.thongke.service.persistence.PhongBanFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.thongke.service.PhongBanNhuanButLocalService" class="com.viettel.portal.thongke.service.impl.PhongBanNhuanButLocalServiceImpl" />
+	<bean id="com.viettel.portal.thongke.service.persistence.PhongBanNhuanButPersistence" class="com.viettel.portal.thongke.service.persistence.PhongBanNhuanButPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.thongke.service.persistence.PhongBanNhuanButFinder" class="com.viettel.portal.thongke.service.persistence.PhongBanNhuanButFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.thongke.service.PhongBanNhuanButChiTietLocalService" class="com.viettel.portal.thongke.service.impl.PhongBanNhuanButChiTietLocalServiceImpl" />
+	<bean id="com.viettel.portal.thongke.service.persistence.PhongBanNhuanButChiTietPersistence" class="com.viettel.portal.thongke.service.persistence.PhongBanNhuanButChiTietPersistenceImpl" parent="basePersistence" />
+</beans>

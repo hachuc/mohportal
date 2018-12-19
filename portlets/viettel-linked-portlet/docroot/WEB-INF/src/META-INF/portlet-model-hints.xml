@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.viettel.portal.links.model.LCategory">
+		<field name="categoryId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="categoryName" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="corder" type="int" />
+		<field name="isActive" type="boolean" />
+	</model>
+	<model name="com.viettel.portal.links.model.VLink">
+		<field name="linkId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="linkName" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="url" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="isActive" type="boolean" />
+		<field name="corder" type="int" />
+		<field name="categoryId" type="long" />
+	</model>
+</model-hints>

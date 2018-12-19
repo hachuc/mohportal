@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.viettel.portal.thongke.model.BaiVietNhuanBut" />
+	<import class="com.viettel.portal.thongke.model.ContentProfit" />
+	<import class="com.viettel.portal.thongke.model.ContentType" />
+	<import class="com.viettel.portal.thongke.model.ContentTypeCost" />
+	<import class="com.viettel.portal.thongke.model.PhongBan" />
+	<import class="com.viettel.portal.thongke.model.PhongBanNhuanBut" />
+	<import class="com.viettel.portal.thongke.model.PhongBanNhuanButChiTiet" />
+	<class name="com.viettel.portal.thongke.model.impl.BaiVietNhuanButImpl" table="portal_baivietnhuanbut">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="baiVietId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="loaiBaiViet" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="tieuDe" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tacGia" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="diaChi" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ngayXuatBan" type="org.hibernate.type.TimestampType" />
+		<property name="rating" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ratingValue" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifyDate" type="org.hibernate.type.TimestampType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="type" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="type_" />
+	</class>
+	<class name="com.viettel.portal.thongke.model.impl.ContentProfitImpl" table="vcms_Content_Profit">
+		<cache usage="read-write" />
+		<id name="contentId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="distributedDate" type="org.hibernate.type.TimestampType" />
+		<property name="contentTypeID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="headline" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cost" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.viettel.portal.thongke.model.impl.ContentTypeImpl" table="vcms_Content_Type">
+		<cache usage="read-write" />
+		<id name="contenTypeId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sortOrder" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.viettel.portal.thongke.model.impl.ContentTypeCostImpl" table="vcms_Content_TypeCost">
+		<cache usage="read-write" />
+		<id name="costId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="contentTypeID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="fromDate" type="org.hibernate.type.TimestampType" />
+		<property name="toDate" type="org.hibernate.type.TimestampType" />
+		<property name="cost" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+	</class>
+	<class name="com.viettel.portal.thongke.model.impl.PhongBanImpl" table="portal_phongban">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="order_" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="descriptions" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifyDate" type="org.hibernate.type.TimestampType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.viettel.portal.thongke.model.impl.PhongBanNhuanButImpl" table="portal_phongbannhuanbut">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="caption" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fromDate" type="org.hibernate.type.TimestampType" />
+		<property name="toDate" type="org.hibernate.type.TimestampType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifyDate" type="org.hibernate.type.TimestampType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.viettel.portal.thongke.model.impl.PhongBanNhuanButChiTietImpl" table="portal_phongbannhuanbutchitiet">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="phongBanNhuanButId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="phongBanId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="phongBanTen" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="rating" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ratingValue" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+	</class>
+</hibernate-mapping>

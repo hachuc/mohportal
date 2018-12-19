@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.liferay.viettel.portal.counter.model.Category">
+		<field name="categoryId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="categoryName" type="String" />
+		<field name="categoryDesc" type="String" />
+		<field name="sortOrder" type="int" />
+		<field name="archived" type="boolean" />
+		<field name="layoutId" type="long" />
+	</model>
+	<model name="com.liferay.viettel.portal.counter.model.CounterReport">
+		<field name="reportId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+	</model>
+</model-hints>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.viettel.portal.staticasset.model.Foo">
+		<field name="id_" type="long" />
+	</model>
+</model-hints>

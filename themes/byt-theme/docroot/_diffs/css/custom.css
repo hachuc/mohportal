@@ -1,0 +1,550 @@
+/* ----------------------------------------------------------------------
+	Default Color HEX Code: #d82731
+
+    Replace #d82731 with your desired color code
+
+    More color codes: http://www.color-hex.com/color-names.html
+-------------------------------------------------------------------------*/
+
+.portlet-column-content.empty
+{
+	padding: 10px;
+}
+
+.aui .portlet-asset-publisher .contentDetail .col-md-12,
+.aui .portlet-asset-publisher .contentDetail .col-md-6{
+	padding-left: 0;
+	padding-right: 0;
+}
+.aui .portlet-asset-publisher .contentDetail h3{
+	padding-top:0;
+	margin-top:0;
+}
+
+.aui .portlet-asset-publisher .content h3.asset-title{
+    margin-bottom: 0.5em;
+    font-size: 18px;
+    font-weight: bold;
+}
+.aui .portlet-asset-publisher .content h3.asset-title{
+margin-bottom: 0.5em;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: unset;
+    margin-top: 0;
+}
+.aui .portlet-asset-publisher .content h3.asset-title a:hover{
+	text-decoration: none;
+}
+.aui .portlet-asset-publisher .page-list-news {
+	margin-bottom: 1em;
+}
+.aui .portlet-asset-publisher .content span.time{
+	    font-style: italic;
+    display: block;
+    margin-bottom: 0.5em;
+    color: #ca0623;
+    font-weight: 500;
+}
+.aui .portlet-asset-publisher .tinlienquan{
+	padding-right:0 !important;
+	padding-left:0 !important;
+}
+.aui .portlet-asset-publisher .taglib-social-bookmarks{
+	padding-left: 5px;
+	box-sizing:border-box;
+}
+.aui .portlet-asset-publisher .col-sm-12{
+	
+}
+.aui .portlet-asset-publisher img{
+	max-width: 100%;
+}
+.aui .portlet-asset-publisher .content{
+	padding-top:0 !important;
+	margin-top:0 !important;
+}
+.portlet-login{
+	width: 30%;
+    margin: 0 auto;
+    max-width: 400px;
+}
+.portlet-login .button-holder{
+	text-align: center;
+	margin :0;
+}
+.portlet-login .portlet-topper-toolbar{
+	display: none;
+}
+
+.aui .dockbar .navbar-inner .container {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+.aui a{
+	color:#333;
+	padding: 0;
+	margin: 0;
+}
+
+/*.aui a:hover{
+	color: #ca0623;
+	text-decoration: none;
+}*/
+
+.aui a:hover, .aui a:focus, .aui a:active{
+	color: #ca0623;
+	text-decoration: none;
+}
+
+/* #0f4f9d ac-item ac-content */
+.aui .ac-item a{
+	color :white;
+}
+
+@media (max-width: 991px) {
+	.ac-item .ac-content{
+		display: block !important;
+	}
+}
+@media (min-width: 991px) {
+	.ac-item{
+		position: relative;
+	}
+	.ac-item .ac-content{
+		position: absolute;
+		width: 210px;
+		top : 0;
+		right : -205px;
+		background: #0f4f9d;
+		z-index: 2;
+		display: none;
+	}
+	.ac-item:hover .ac-content{
+		display: block;
+	}
+}
+	
+.ac-item .ac-title i{
+    font-size: 120%;
+    margin-right: 0 !important;
+    vertical-align: top;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+::selection {
+  background: #d82731; }
+
+::-moz-selection {
+  background: #d82731; }
+
+::-webkit-selection {
+  background: #d82731; }
+  
+.aui #mainMenu a, .aui #mainMenu a:hover, .aui #mainMenu a.acitve:hover{
+	text-decoration: none !important;
+}
+
+a:hover,
+a:focus,
+a:active,
+.aui #mainMenu nav > ul > li.hover-active > a,
+.aui #mainMenu nav > ul > li.hover-active > span,
+.aui #mainMenu nav > ul > li.current > a,
+.aui #mainMenu nav > ul > li.current > span,
+.aui #mainMenu nav > ul > li:hover > a,
+.aui #mainMenu nav > ul > li:hover > span,
+.aui #mainMenu nav > ul > li:focus > a,
+.aui #mainMenu nav > ul > li:focus > span,
+.aui #mainMenu nav > ul > li .dropdown-menu > li > a:focus,
+.aui #mainMenu nav > ul > li .dropdown-menu > li > a:hover,
+.aui #mainMenu nav > ul > li .dropdown-menu > li > a:active,
+.aui #mainMenu nav > ul > li .dropdown-menu > li > span:focus,
+.aui #mainMenu nav > ul > li .dropdown-menu > li > span:hover,
+.aui #mainMenu nav > ul > li .dropdown-menu > li > span:active,
+.aui #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:focus,
+.aui #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:hover,
+.aui #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:active,
+.aui #mainMenu nav > ul > li .dropdown-menu > li.current > a,
+.aui #mainMenu nav > ul > li .dropdown-menu > li.current > span,
+.aui #mainMenu nav > ul > li .dropdown-menu > li:hover > a,
+.aui #mainMenu nav > ul > li .dropdown-menu > li:hover > span,
+.aui #mainMenu nav > ul > li .dropdown-menu > li:focus > a,
+.aui #mainMenu nav > ul > li .dropdown-menu > li:focus > span,
+.aui #mainMenu nav > ul > li .dropdown-menu > li:active > a,
+.aui #mainMenu nav > ul > li .dropdown-menu > li:active > span,
+.aui #mainMenu nav > ul > li .dropdown-menu > li.hover-active > a,
+.aui #mainMenu nav > ul > li .dropdown-menu > li.hover-active > span,
+.aui #mainMenu.menu-outline nav > ul > li.current > a,
+.aui #mainMenu.menu-outline nav > ul > li:hover > a,
+.aui #mainMenu.menu-outline nav > ul > li:focus > a,
+.aui #mainMenu.menu-lines nav > ul > li.current > a,
+.aui #mainMenu.menu-lines nav > ul > li:hover > a,
+.aui #mainMenu.menu-lines nav > ul > li:focus > a,
+.dark .aui #mainMenu:not(.light):not(.menu-rounded) nav > ul > li .dropdown-menu > li > a:hover,
+.dark .aui #mainMenu:not(.light):not(.menu-rounded) nav > ul > li .dropdown-menu > li > span:hover,
+.dark .aui #mainMenu:not(.light):not(.menu-rounded) nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:hover,
+.aui #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li .dropdown-menu > li > a:hover,
+.aui #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li .dropdown-menu > li > span:hover,
+.aui #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:hover,
+.dark .aui #mainMenu:not(.light):not(.menu-rounded) nav > ul > li.current > a,
+.dark .aui #mainMenu:not(.light):not(.menu-rounded) nav > ul > li.current > span,
+.dark .aui #mainMenu:not(.light):not(.menu-rounded) nav > ul > li:hover > a,
+.dark .aui #mainMenu:not(.light):not(.menu-rounded) nav > ul > li:hover > span,
+.dark .aui #mainMenu:not(.light):not(.menu-rounded) nav > ul > li:focus > a,
+.dark .aui #mainMenu:not(.light):not(.menu-rounded) nav > ul > li:focus > span,
+.dark .aui #mainMenu:not(.light):not(.menu-rounded) nav > ul > li.hover-active > a,
+.dark .aui #mainMenu:not(.light):not(.menu-rounded) nav > ul > li.hover-active > span,
+.aui #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li.current > a,
+.aui #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li.current > span,
+.aui #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li:hover > a,
+.aui #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li:hover > span,
+.aui #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li:focus > a,
+.aui #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li:focus > span,
+.aui #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li.hover-active > a,
+.aui #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li.hover-active > span,
+.page-menu.menu-outline nav li:hover a,
+.page-menu.menu-outline nav li.active a,
+.page-menu.menu-lines nav li:hover a,
+.page-menu.menu-lines nav li.active a,
+.page-menu.menu-default nav li:hover a,
+.page-menu.menu-default nav li.active a,
+.page-menu.menu-colored-background nav li:hover a,
+.page-menu.menu-colored-background nav li.active a,
+.page-menu.menu-dark li:hover a,
+.page-menu.menu-dark li.active a,
+.grid-filter.gf-outline li:hover a,
+.grid-filter.gf-outline li.active a,
+.grid-filter.gf-lines li:hover a,
+.grid-filter.gf-lines li.active a,
+.grid-filter.gf-default li:hover a,
+.grid-filter.gf-default li.active a,
+.post-item .post-quote-img .post-meta-category,
+.post-item .post-quote-img .post-meta-category a,
+.post-author a,
+.comments .comment_number span,
+.comments .comment .text .comment-reply-link,
+.respond-comment span,
+.btn.btn-outline,
+.heading-creative strong,
+.simple .tabs-navigation li.active a,
+.simple .tabs-navigation li.active a:focus,
+.simple .tabs-navigation li a:hover,
+.feature-box:hover h2,
+.feature-box:hover h3,
+.feature-box:hover h4,
+.list-icon.list-icon-colored li:before,
+.list-icon.list-icon-colored i,
+.pagination.pagination-simple .active > a,
+.pagination.pagination-simple .active > span,
+.pagination.pagination-simple .active > a:hover,
+.pagination.pagination-simple .active > span:hover,
+.pagination.pagination-simple .active > a:focus,
+.pagination.pagination-simple .active > span:focus,
+.post-navigation a:hover,
+.call-to-action h3 span,
+.item-link,
+.item-link:hover,
+.widget-tweeter li a,
+.widget-twitter li a {
+  color: #ca0623; }
+
+#topbar.topbar-colored,
+#topbar.topbar-colored.dark,
+#header.header-colored #header-wrap,
+#header.header-modern:not(.header-active).header-colored #header-wrap,
+.aui #mainMenu.menu-rounded nav > ul > li.current > a,
+.aui #mainMenu.menu-rounded nav > ul > li:hover > a,
+.aui #mainMenu.menu-rounded nav > ul > li:focus > a,
+.aui #mainMenu.menu-lines nav > ul > li.current > a:after,
+.aui #mainMenu.menu-lines nav > ul > li:hover > a:after,
+.aui #mainMenu.menu-lines nav > ul > li:focus > a:after,
+.aui #mainMenu.menu-hover-background nav > ul > li.current,
+.aui #mainMenu.menu-hover-background nav > ul > li:hover,
+.aui #mainMenu.menu-hover-background nav > ul > li:focus,
+#dotsMenu ul li:hover,
+#dotsMenu ul li.current,
+#dotsMenu ul li a:hover:before,
+#dotsMenu ul li a.active:before,
+.page-menu.menu-lines nav li:hover a:after,
+.page-menu.menu-lines nav li.active a:after,
+.page-menu.menu-classic nav li:hover a,
+.page-menu.menu-classic nav li.active a,
+.page-menu.menu-colored-background,
+.grid-filter li:hover a,
+.grid-filter li.active a,
+.grid-filter.gf-lines li:hover a:after,
+.grid-filter.gf-lines li.active a:after,
+.grid-filter.gf-classic li:hover a,
+.grid-filter.gf-classic li.active a,
+.portfolio-item .portfolio-description a:hover i,
+.portfolio-item .grid-description a:hover i,
+.grid-item .portfolio-description a:hover i,
+.grid-item .grid-description a:hover i,
+.post-item.quote .post-item-wrap,
+.post-item .post-image .post-meta-category,
+.post-item .post-slider .post-meta-category,
+.post-item .post-video .post-meta-category,
+.post-item .post-audio .post-meta-category,
+.post-item .post-quote-img .post-meta-category,
+.forum thead tr > th,
+.btn,
+.btn.btn-outline:hover,
+.btn.btn-outline:focus,
+.btn.btn-outline:active,
+.btn.btn-outline.active,
+.btn.btn-light:hover,
+.btn.btn-light:focus,
+.btn.btn-light:active,
+.btn.btn-light.active,
+.btn.btn-dark:hover,
+.btn.btn-dark:focus,
+.btn.btn-dark:active,
+.btn.btn-dark.active,
+.icon-box.effect.dark .icon i:hover,
+.icon-box.effect.dark:hover .icon i,
+.owl-carousel .owl-nav [class*="owl-"]:hover,
+.owl-carousel.arrows-creative .owl-nav [class*="owl-"]:hover,
+.dropcap.dropcap-colored,
+.highlight.highlight-colored,
+.progress-bar,
+.blockquote-color,
+.call-to-action.call-to-action-colored,
+.modal-strip,
+.pricing-table.colored .plan-header,
+.single9:before,
+.background-colored,
+#goToTop:after, #goToTop:before,
+.tags a.active, .tags a:active, .tags a:focus, .tags a:hover {
+  background-color: #d82731; }
+
+#header .header-extras #shopping-cart > a .shopping-cart-items,
+.text-box.text-box-light:hover,
+.mfp-ajax-holder .mfp-close:hover,
+.spinner .bar:after,
+.ball-grid-pulse > div,
+.loader01:after,
+.square-spin > div,
+.loader04:after,
+.ball-rotate > div,
+.ball-rotate > div:after,
+.ball-rotate > div:before,
+.cube-transition > div,
+.ball-zig-zag > div,
+.ball-triangle-path > div,
+.line-scale > div,
+.ball-scale-multiple > div,
+.ball-pulse-sync > div,
+.ball-beat > div,
+.line-scale-pulse-out-rapid > div,
+.ball-spin-fade-loader > div,
+.line-spin-fade-loader > div,
+.pacman > div:nth-child(3),
+.pacman > div:nth-child(4),
+.pacman > div:nth-child(5),
+.pacman > div:nth-child(6),
+.ball-grid-beat > div,
+.spinner .bar:after,
+.border .tabs-navigation li.active a:after,
+.color .tabs-navigation li.active a {
+  background: #d82731; }
+
+.aui #mainMenu.menu-outline nav > ul > li.current > a,
+.aui #mainMenu.menu-outline nav > ul > li:hover > a,
+.aui #mainMenu.menu-outline nav > ul > li:focus > a,
+.page-menu.menu-outline nav li:hover a,
+.page-menu.menu-outline nav li.active a,
+.grid-filter.gf-outline li:hover a,
+.grid-filter.gf-outline li.active a,
+.btn,
+.btn.btn-outline:not(.btn-dark):not(.btn-light),
+.btn.btn-outline:not(.btn-dark):not(.btn-light):hover,
+.btn.btn-outline:not(.btn-dark):not(.btn-light):focus,
+.btn.btn-outline:not(.btn-dark):not(.btn-light):active,
+.btn.btn-outline:not(.btn-dark):not(.btn-light).active,
+.btn.btn-light:not(.btn-outline):not(.btn-icon-holder):hover,
+.btn.btn-light:not(.btn-outline):not(.btn-icon-holder):focus,
+.btn.btn-light:not(.btn-outline):not(.btn-icon-holder):active,
+.btn.btn-light:not(.btn-outline):not(.btn-icon-holder).active,
+.btn.btn-dark:not(.btn-outline):not(.btn-icon-holder):hover,
+.btn.btn-dark:not(.btn-outline):not(.btn-icon-holder):focus,
+.btn.btn-dark:not(.btn-outline):not(.btn-icon-holder):active,
+.btn.btn-dark:not(.btn-outline):not(.btn-icon-holder).active,
+.simple .tabs-navigation li.active a,
+.simple .tabs-navigation li.active a:focus,
+.simple .tabs-navigation li a:hover,
+.owl-carousel .owl-nav [class*="owl-"]:hover,
+.spinner .bar,
+.ball-scale-ripple-multiple > div,
+.spinner .bar,
+.tags a.active, .tags a:active, .tags a:focus, .tags a:hover {
+  border-color: #d82731; }
+
+.portfolio-item .portfolio-description a:hover i,
+.portfolio-item .grid-description a:hover i,
+.grid-item .portfolio-description a:hover i,
+.grid-item .grid-description a:hover i {
+  border: 1px solid #d82731; }
+
+.btn.btn-icon-holder.btn-outline:before {
+  border-left: 2px solid #d82731; }
+
+.fancy-title.title-border-color:before {
+  border-top: 1px solid #d82731; }
+
+.icon-box.effect.dark .icon i:after {
+  box-shadow: 0 0 0 3px #d82731; }
+
+blockquote {
+  border-left: 3px solid #d82731; }
+
+.loader01,
+.pacman > div:first-of-type,
+.pacman > div:nth-child(2) {
+  border-color: #d82731 transparent #d82731 #d82731; }
+
+.bootstrap-datetimepicker-widget table td.active.today,
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover,
+.bootstrap-datetimepicker-widget .datepicker-decades .decade {
+  background-color: #d82731 !important; }
+
+.btn:hover, .btn:focus, .btn:active, .btn.active {
+  background-color: #d82731;
+  border-color: #d82731; }
+
+/* 
+
+1. Add your custom Css styles below
+2. Place the this code in your template: 
+
+ <link href="css/custom.css" rel="stylesheet">
+
+*/
+body{line-height: 1.4em}
+ul,li{list-style: none;}
+.img-responsive{width: 100%}
+.banner-moh{background: #d10229 url("../images/banner.png") no-repeat center top;height: 108px }
+.logo-moh{margin-top: 17px !important ;display: block;}
+.news-heading-top{background: #d9d9d9}
+.aui .news-heading-top h2.news-heading{
+	     margin-top: 0px !important; 
+     margin-bottom: 0px !important; 
+}
+.aui h2.news-heading{background: #0f4f9d;color: #fff;font-size: 16px;font-weight: bold;font-style: italic;;padding: 7px 15px 7px 10px;display: inline-block;
+	position: relative;text-transform: uppercase;
+	margin-top: 0px;
+	}
+	.aui h2.news-heading a{
+		color: white !important;
+		text-decoration: none !important;
+	}
+.news-heading span{width: 14px;height: 7px;display: block;position: absolute;bottom: -7px;left: 10px;background:url("../images/arrow.png") no-repeat  }
+.list-news-1{list-style: none;margin-bottom: 5px}
+.list-news-1 li{width: 100%;display: block;padding: 10px 0;border-bottom: 1px solid #d7d7d7}
+.list-news-1 i{width: 43px;height: 52px;text-align: center;float: left;background: url("../images/bg-number.png") no-repeat;margin: 0 10px 0 0;
+color: #0f4f9d;font-weight: 700;font-size:24px;padding-top: 8px}
+
+.list-news-top{list-style: none;margin-bottom: 5px}
+.list-news-top li{width: 100%;display: block;padding: 5px 0;}
+.list-news-top li a{background: url(../images/bullet-1.png) no-repeat left 8px;padding-left: 10px;display: block; }
+.list-news-top li a:hover{background: url(../images/bullet-2.png) no-repeat left 8px;}
+.img-news-top{position: relative;}
+.aui .img-news-top h2{position: absolute;bottom: 0;left: 0;width: 100%;background: #ccc;display: block;padding: 10px;font-size: 14px;color: #fff;
+background: url("../images/overley.png") repeat-x left bottom;
+     margin-top: 0px; 
+     margin-bottom: 0px; 
+}
+.img-news-top h2 a{color: #fff}
+
+.list-news-2{list-style: none;margin-bottom: 5px}
+.list-news-2 li{width: 100%;display: block;padding: 10px 0;border-bottom: 1px solid #d7d7d7}
+.list-news-2 span{text-align: center;display: inline-block;color: #fff;;padding: 3px 7px;margin-right: 4px;border-radius: 3px}
+.list-news-2 a{display: inline-block;}
+.list-news-2-cv{background: #ca0623}
+.list-news-2-qd{background: #d19b10}
+
+.list-news-3{list-style: none;margin-bottom: 5px}
+.list-news-3 li{width: 100%;display: block;padding: 10px 0;border-bottom: 1px solid #d7d7d7}
+.list-news-3 li:nth-child(1){padding-top: 0}
+.list-news-3 img{float: left;margin: 0 10px 0 0; width:80px; max-width:80px;}
+.aui h2.heading-news-01{font-size: 18px !important;padding: 7px 0 !important;margin-bottom: 10px !important;
+line-height: 1.36363636em;
+    font-weight: 600; margin-top:0;}
+.more-link{font-style: italic;font-size: 13px}
+.aui .tab-media{}
+.aui .tab-media .nav-tabs{border-bottom: 2px solid #1057ae !important}
+.aui .tabs.tabs-clean .nav-tabs .nav-link{border:0;background: #d7d7d7;border-radius: 0;margin-right: 4px;color: #1057ae;font-style: italic;
+	text-transform: uppercase;font-size: 16px;margin-bottom: 2px;padding: 8px 20px 6px}
+.aui .tabs.tabs-clean .nav-tabs .nav-link.active{background: #1057ae;border-radius: 0;color: #fff}
+.moh-table{border:1px solid #ccc;margin-top: 10px}
+.moh-table thead th{background: #d8d8d8;color: #1057ae}
+.section-cat{background: #eee;padding: 20px 0 0 0}
+.section-cat-2{background: #fff;padding: 20px 0}
+.section-cat-item{background: #fff;padding: 8px;border-top-left-radius: 5px;border-bottom-right-radius: 5px;margin-bottom: 20px}
+.aui .section-cat-item i{background: #1057ae;width: 36px;height: 36px;float: left;margin-right: 10px;border-top-left-radius: 5px;border-bottom-right-radius: 5px;text-align: center;padding-top: 7px}
+.aui .section-cat-item i img {
+	height : 22px; 
+	width : 22px;
+}
+.aui .section-cat-item a{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+.aui h2.section-title{color: #1057ae;text-transform: uppercase;font-weight: 600;font-size: 16px;
+margin-top: 0px;
+}
+.footer-nav{background: #104a90}
+.footer-nav a{color: #fff;display: inline-block;padding: 10px 15px}
+.footer-nav a:hover{color: #eee}
+#footer .footer-content{background: #00306a;padding: 20px 0;color: #fff}
+.footer-content p{color: #fff;margin-bottom: 0}
+.aui #mainMenu nav > ul > li > a{color: #333}
+.aui #mainMenu nav > ul > li > a.active{font-weight: bold;border-bottom: 3px solid #ce0427}
+.btn-search{border-top-left-radius: 0;border-bottom-left-radius: 0;background: #1057ae;border:0;text-transform: none;
+	font-weight: normal;font-size:14px;margin-top: 1px}
+.input-search{border-top-right-radius: 0;border-bottom-right-radius: 0;padding: 8px 10px 7px;border: 0}
+.moh-time{margin-top: 10px;font-style: italic;display: block;}
+.aui .tabs .nav-tabs{margin-bottom: 15px}
+.aui h2.video-big-title{font-size: 18px;margin: 10px 0}
+.block-news-1{}
+.block-news-1 img{margin-bottom: 5px}
+.vote-form{background: #e6e6e6;position: relative;border-top-left-radius: 5px;border-bottom-right-radius: 5px;padding: 60px 15px 10px}
+.vote-form h2{position:absolute;left: -6px;top:16px;height: 39px;width: 179px;background: url("../images/vote-bg.png") no-repeat;
+color: #242359;font-size: 14px;text-transform: uppercase;font-weight: 600;font-style: italic;padding: 7px 0px 5px 10px}
+.vote-form h3{font-size: 14px}
+.vote-form ul{list-style: none;margin-bottom: 0}
+.vote-btn{background: #ffc407;color: #242359;border:0;text-shadow: none !important;text-transform: none;font-weight:600;font-size: 14px}
+.link-heading{border-bottom: 2px solid #0f4f9d;margin-bottom: 10px}
+.link-heading h2{background: #0f4f9d;color: #fff;font-size: 16px;font-weight: bold;font-style: italic;;padding: 7px 10px;display: inline-block;
+	position: relative;text-transform: uppercase;}
+.link-select{width: 100%;padding: 8px 30px 8px 10px}
+.moh-static span{font-weight: 600}
+.moh-static li{padding: 5px 0}
+.ads-left{}
+.ads-left img{margin-bottom: 3px}
+.video-thumb{position: relative;display: inline-block;float: left;}
+.ico-play{width:24px;height: 24px;background: url("../images/play.png") no-repeat;position: absolute;left:40px;top: 30px;margin: -12px 0 0 -12px}
+.box-shadow{-webkit-box-shadow: inset 0px 4px 8px 0px rgba(215,215,215,1);
+-moz-box-shadow: inset 0px 4px 8px 0px rgba(215,215,215,1);
+box-shadow: inset 0px 4px 8px 0px rgba(215,215,215,1);background: #eee}
+.lang span{display: inline-block;}
+.lang-en{width: 30px; height: 25px;display: inline-block;background: url("../images/lang-en.png") no-repeat;margin-left: 5px;vertical-align: middle;}
+.lang-vn{width: 30px; height: 25px;display: inline-block;background: url("../images/lang-vn.png") no-repeat;margin-left: 5px;vertical-align: middle;}
+.accordion.fancy .ac-item{background: #0f4f9d;color: #fff}
+.aui .accordion.fancy h5.ac-title{color: #fff}
+.accordion.fancy .ac-content{padding: 5px 20px}
+.accordion.fancy .ac-content a{display: block;color: #eee;padding: 6px 0;font-size: 13px;border-bottom: 1px dotted #08366e}
+.accordion.fancy .ac-content a:nth-last-child(1){border-bottom: 0}
+.aui #mainMenu nav > ul > li > ul.dropdown-menu{line-height: 20px}
+.aui #mainMenu nav > ul > li > ul.dropdown-menu > li > a{font-weight: 600;line-height: normal;padding: 7px 0;border-bottom: 1px dotted #eee;
+  background: url(../images/bullet-1.png) no-repeat left 14px;padding-left: 10px;display: block;}
+.aui #mainMenu nav > ul > li > ul.dropdown-menu > li > a:hover{background: url(../images/bullet-2.png) no-repeat left 14px;}
+.aui #mainMenu nav > ul > li > ul.dropdown-menu > li > ul >li > a{padding: 0px 0px;display: block;font-size: 13px}
+.aui #mainMenu nav > ul > li > ul.dropdown-menu > li > ul{line-height: 18px;padding:5px 10px 0}
+.aui #mainMenu nav > ul > li > ul.dropdown-menu > li > ul > li a{display: block;padding: 5px 0}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+
+	<sql id="com.viettel.portal.videolibrary.service.persistence.VLVideoFinder.findByKeyword">	
+		<![CDATA[
+	    	SELECT *
+
+	    	FROM 	portal_video
+           
+	        WHERE   
+					portal_video.groupId = ?
+
+					AND (portal_video.categoryId = ?)  
+          
+					AND ((lower(portal_video.videoName) LIKE ?) OR (lower(portal_video.description) LIKE ?))
+            
+			ORDER BY portal_video.videoName ASC
+		]]>
+	</sql>
+	
+	<sql id="com.viettel.portal.videolibrary.service.persistence.VLVideoFinder.countByKeyword">  
+		<![CDATA[
+			SELECT COUNT(*) AS TOTAL
+            
+			FROM 	portal_video
+                       
+			WHERE   
+					portal_video.groupId = ?
+                    
+					AND (portal_video.categoryId = ?)  
+                              
+					AND ((lower(portal_video.videoName) LIKE ?) OR (lower(portal_video.description) LIKE ?))
+		]]>
+	</sql>
+
+</custom-sql>

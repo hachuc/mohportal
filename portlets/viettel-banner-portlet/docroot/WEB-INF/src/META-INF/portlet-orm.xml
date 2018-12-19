@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.viettel.portal.banner.model.impl.BannerModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID" />
+			</id>
+			<basic name="ten">
+				<column name="TEN" />
+			</basic>
+			<basic name="fileId">
+				<column name="FILEID" />
+			</basic>
+			<basic name="fileLink">
+				<column name="FILELINK" />
+			</basic>
+			<basic name="fileName">
+				<column name="FILENAME" />
+			</basic>
+			<basic name="fileSize">
+				<column name="FILESIZE" />
+			</basic>
+			<basic name="ngayTao">
+				<column name="NGAYTAO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ngaySua">
+				<column name="NGAYSUA" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ngayKetThuc">
+				<column name="NGAYKETTHUC" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="lienKet">
+				<column name="LIENKET" />
+			</basic>
+			<basic name="order_">
+				<column name="ORDER_" />
+			</basic>
+			<basic name="trangThai">
+				<column name="TRANGTHAI" />
+			</basic>
+			<basic name="nguoiTao">
+				<column name="NGUOITAO" />
+			</basic>
+			<basic name="nguoiTaoId">
+				<column name="NGUOITAOID" />
+			</basic>
+			<basic name="nguoiSua">
+				<column name="NGUOISUA" />
+			</basic>
+			<basic name="nguoiSuaId">
+				<column name="NGUOISUAID" />
+			</basic>
+			<basic name="companyId">
+				<column name="COMPANYID" />
+			</basic>
+			<basic name="groupId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.viettel.portal.banner.model.impl.BannerImpl" name="Banner">
+		<table name="portal_banner" />
+		<attributes />
+	</entity>
+</entity-mappings>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.viettel.portal.links.service.LCategoryLocalService" class="com.viettel.portal.links.service.impl.LCategoryLocalServiceImpl" />
+	<bean id="com.viettel.portal.links.service.LCategoryService" class="com.viettel.portal.links.service.impl.LCategoryServiceImpl" />
+	<bean id="com.viettel.portal.links.service.persistence.LCategoryPersistence" class="com.viettel.portal.links.service.persistence.LCategoryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.links.service.persistence.LCategoryFinder" class="com.viettel.portal.links.service.persistence.LCategoryFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.links.service.VLinkLocalService" class="com.viettel.portal.links.service.impl.VLinkLocalServiceImpl" />
+	<bean id="com.viettel.portal.links.service.VLinkService" class="com.viettel.portal.links.service.impl.VLinkServiceImpl" />
+	<bean id="com.viettel.portal.links.service.persistence.VLinkPersistence" class="com.viettel.portal.links.service.persistence.VLinkPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.links.service.persistence.VLinkFinder" class="com.viettel.portal.links.service.persistence.VLinkFinderImpl" parent="basePersistence" />
+</beans>

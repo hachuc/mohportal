@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.viettel.portal.vcms" auto-namespace-tables="false">
+	<author>chuchv</author>
+	<namespace>vcms</namespace>
+
+	<entity name="Content" local-service="true" remote-service="true" table="vcms_Content">
+
+		<!-- PK fields -->
+
+		<column name="autoId" type="long" primary="true" />
+		<column name="contentId" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="preVersion" type="int" />
+		<column name="version" type="int" />
+		<column name="subversion" type="float" />
+		<column name="subTitle" type="String" />
+		<column name="title" type="String" />
+		<column name="summary" type="String" />
+		<column name="subContent" type="String" />
+		<column name="content" type="String" />
+		<column name="smallImageId" type="long" />
+		<column name="smallImageUrl" type="String" />
+		<column name="categoryId" type="long" />
+		<column name="copyRight" type="String" />
+		<column name="status" type="int" />
+		<column name="urlTitle" type="String" />
+		<column name="newsType" type="int" />
+		<!-- For legal content -->
+		<column name="imageUrl" type="String" />
+		<column name="isLegalContent" type="boolean" />
+		<column name="imageCaption" type="String" />
+		<column name="imagePosition" type="int" />
+		<!-- Author -->
+		<column name="createdByUserId" type="long" />
+		<column name="editedByUserId" type="long" />
+		<column name="reviewedByUserId" type="long" />
+		<column name="publishedByUserId" type="long" />
+
+		<column name="createdByUserName" type="String" />
+		<column name="editedByUserName" type="String" />
+		<column name="reviewedByUserName" type="String" />
+		<column name="publishedByUserName" type="String" />
+		<!-- External Editor -->
+		<column name="author" type="String" />
+		<column name="jobTitle" type="String" />
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="modifiedDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="G_U" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="urlTitle" />
+		</finder>
+		<finder name="G_C" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="categoryId" />
+		</finder>
+		<finder name="G_CA_V_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="categoryId" />
+			<finder-column name="version" />
+			<finder-column name="status" />
+		</finder>
+		<finder name="G_C_B_U" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="createdByUserId" />
+		</finder>
+		<finder name="G_E_B_U" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="editedByUserId" />
+		</finder>
+		<finder name="G_R_B_U" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="reviewedByUserId" />
+		</finder>
+		<finder name="G_P_B_U" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="publishedByUserId" />
+		</finder>
+		<finder name="G_C_V" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="contentId" />
+			<finder-column name="version" />
+		</finder>
+		<finder name="G_CO" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="contentId" />
+		</finder>
+		<finder name="G_C_V_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="contentId" />
+			<finder-column name="version" />
+			<finder-column name="status" />
+		</finder>
+		<finder name="G_CA_AU_V_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="categoryId" />
+			<finder-column name="createdByUserId" />
+			<finder-column name="version" />
+			<finder-column name="status" />
+		</finder>
+		<finder name="G_V_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="version" />
+			<finder-column name="status" />
+		</finder>
+		<finder name="G_AU_V_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="createdByUserId" />
+			<finder-column name="version" />
+			<finder-column name="status" />
+		</finder>
+		<!-- Reference -->
+		<reference package-path="com.liferay.counter" entity="Counter" />
+		<reference package-path="com.liferay.portal" entity="Resource" />
+		<reference package-path="com.liferay.portal" entity="User" />
+	</entity>
+	
+	<entity name="ContentDetail" local-service="true" remote-service="true" table="vcms_Content_Detail">
+
+		<!-- PK fields -->
+
+		<column name="autoId" type="long" primary="true" />
+		<column name="contentId" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="version" type="int" />
+		<column name="subversion" type="float" />
+		<column name="subTitle" type="String" />
+		<column name="title" type="String" />
+		<column name="summary" type="String" />
+		<column name="subContent" type="String" />
+		<column name="content" type="String" />
+		<column name="smallImageId" type="long" />
+		<column name="smallImageUrl" type="String" />
+		<column name="categoryId" type="long" />
+		<column name="status" type="int" />
+		<column name="newsType" type="int" />
+		<!-- For legal content -->
+		<column name="imageUrl" type="String" />
+		<column name="isLegalContent" type="boolean" />
+		<column name="imageCaption" type="String" />
+		<column name="imagePosition" type="int" />
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="modifiedDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="G_C" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="categoryId" />
+		</finder>
+		<finder name="G_CA_V_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="categoryId" />
+			<finder-column name="version" />
+			<finder-column name="status" />
+		</finder>
+		<finder name="G_CO_V" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="contentId" />
+			<finder-column name="version" />
+		</finder>
+		<finder name="G_CO" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="contentId" />
+		</finder>
+		<finder name="G_CO_V_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="contentId" />
+			<finder-column name="version" />
+			<finder-column name="status" />
+		</finder>
+		<!-- Reference -->
+		<reference package-path="com.liferay.counter" entity="Counter" />
+		<reference package-path="com.liferay.portal" entity="Resource" />
+		<reference package-path="com.liferay.portal" entity="User" />
+	</entity>
+	<entity name="ContentType" local-service="true" remote-service="true" table="vcms_Content_Type">
+		<!-- PK fields -->
+		<column name="contenTypeId" type="long" primary="true" />
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="name" type="String" />
+		<column name="description" type="String" />
+		<column name="sortOrder" type="int" />
+		<column name="cost" type="double" />
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="sortOrder" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+	</entity>
+	
+	<!-- <entity name="ContentTypeCost" local-service="true" remote-service="true" table="vcms_Content_TypeCost">
+		PK fields
+		<column name="costId" type="long" primary="true" />
+		Group instance
+		<column name="groupId" type="long" />
+		Audit fields
+		<column name="contentTypeID" type="long" />
+		<column name="fromDate" type="Date" />
+		<column name="toDate" type="Date" />
+		<column name="cost" type="double" />
+		Order
+		<order by="desc">
+			<order-column name="toDate" />
+		</order>
+		Finder methods
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+		<finder name="GroupType" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="contentTypeID" />
+		</finder>
+		<finder name="CostByDate" return-type="Collection">
+			<finder-column name="fromDate" comparator="&gt;" />
+			<finder-column name="toDate" comparator="&lt;" />
+		</finder>
+	</entity> -->
+	
+	<entity name="ContentProfit" local-service="true" remote-service="true" table="vcms_Content_Profit">
+		<!-- PK fields -->
+		<column name="contentId" type="long" primary="true" />
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="distributedDate" type="Date" />
+		<!-- Other fields -->
+		<column name="contentTypeID" type="long" />
+		<column name="headline" type="String" />
+		<column name="cost" type="double" />
+		<column name="status" type="int" />		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="distributedDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+	</entity>
+	<entity name="Category" local-service="true" remote-service="true" table="vcms_Category">
+
+		<!-- PK fields -->
+		<column name="categoryId" type="long" primary="true" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="categoryName" type="String" />
+		<column name="categoryDesc" type="String" />
+		<column name="sortOrder" type="int" />
+		<column name="archived" type="boolean" />
+		<column name="layoutId" type="long" />
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="sortOrder" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="G_C" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+
+		<!-- Reference -->
+		<reference package-path="com.liferay.counter" entity="Counter" />
+		<reference package-path="com.liferay.portal" entity="Resource" />
+		<reference package-path="com.liferay.portal" entity="User" />
+	</entity>
+	
+	<entity name="Notes" local-service="true" remote-service="true" table="vcms_Notes">
+
+		<!-- PK fields -->
+		<column name="ContentID" type="long" primary="true" />
+		<column name="Version" type="int" primary="true" />
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="Content" type="String" />
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="modifiedDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="G_C_V" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="ContentID" />
+			<finder-column name="Version" />
+		</finder>
+
+		<!-- Reference -->
+		<reference package-path="com.liferay.counter" entity="Counter" />
+		<reference package-path="com.liferay.portal" entity="Resource" />
+		<reference package-path="com.liferay.portal" entity="User" />
+	</entity>
+	<entity name="Distribution" local-service="true" remote-service="true" table="vcms_Distribution">
+
+		<!-- PK fields -->
+		<column name="distributionId" type="long" primary="true" />
+		
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="version" type="int" />
+		<column name="subversion" type="float" />
+		<column name="contentId" type="long" />
+		<column name="categoryId" type="long" />
+		<column name="distributedDate" type="Date" />
+		<column name="allowDiscussion" type="boolean" />
+		<column name="title" type="String" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="distributedDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="G_C_V_C" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="contentId" />
+			<finder-column name="version" />
+			<finder-column name="categoryId" />
+		</finder>
+		
+		<finder name="ByGroupNCategory" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="categoryId" />
+		</finder>
+		<finder name="GroupContentId" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="contentId" />
+		</finder>
+
+		<!-- Reference -->
+		<reference package-path="com.liferay.counter" entity="Counter" />
+		<reference package-path="com.liferay.portal" entity="Resource" />
+		<reference package-path="com.liferay.portal" entity="User" />
+	</entity>
+	<entity name="DistributionVisisted" local-service="true" remote-service="true" table="vcms_Distribution_Visisted">
+
+		<!-- PK fields -->
+		<column name="visistedId" type="long" primary="true" />
+		
+		<!-- Group instance -->
+		<column name="distributionId" type="long" />
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="createDate" type="Date" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="G_D" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="distributionId" />
+		</finder>
+
+		<!-- Reference -->
+		<reference package-path="com.liferay.counter" entity="Counter" />
+		<reference package-path="com.liferay.portal" entity="Resource" />
+		<reference package-path="com.liferay.portal" entity="User" />
+	</entity>
+	<entity name="Comment" local-service="true" remote-service="true" table="vcms_Comment">
+
+		<!-- PK fields -->
+		<column name="commentId" type="long" primary="true" />
+		
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="distributionId" type="long" />
+		<column name="fullName" type="String" />
+		<column name="address" type="String" />
+		<column name="email" type="String" />
+		<column name="body" type="String" />
+		<column name="visible" type="boolean" />
+		<column name="ipAddress" type="String" />
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="modifiedDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="G_D" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="distributionId" />
+		</finder>
+		
+		<finder name="G_D_V" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="distributionId" />
+			<finder-column name="visible" />
+		</finder>
+
+		<!-- Reference -->
+		<reference package-path="com.liferay.counter" entity="Counter" />
+		<reference package-path="com.liferay.portal" entity="Resource" />
+		<reference package-path="com.liferay.portal" entity="User" />
+	</entity>
+	<!-- Tich hop migrate du lieu -->
+	<entity name="Legal_Zone" local-service="true" remote-service="true" table="Zone">
+
+		<!-- PK fields -->
+
+		<column name="ID" type="int" primary="true" />
+
+		<column name="CreationDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="Name" type="String" />
+		<column name="Url" type="String" />
+		<column name="Description" type="String" />
+		<column name="ParentID" type="int" />
+		<column name="RealUrl" type="String" />
+		<column name="Visible" type="boolean" />
+		<column name="Archived" type="boolean" />
+		<column name="SortOrder" type="int" />
+
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="SortOrder" />
+		</order>
+		
+		<finder name="byVisible" return-type="Collection">
+			<finder-column name="Visible" />
+		</finder>
+	</entity>
+
+	<entity name="Legal_Content" local-service="true" remote-service="true" table="Content">
+
+		<!-- PK fields -->
+
+		<column name="ID" type="int" primary="true" />
+		<column name="ContentID" type="int" />
+		<column name="Version" type="int" />
+
+		<column name="CreationDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="Byline" type="String" />
+		<column name="Headline" type="String" />
+		<column name="Tagline" type="String" />
+		<column name="Teaser" type="String" />
+		<column name="Body" type="String" />
+		<column name="Avatar" type="String" />
+		<column name="ImageUrl" type="String" />
+		<column name="ImageDescription" type="String" />
+		<column name="ImageAlign" type="int" />
+		
+		<column name="ZoneID" type="int" />
+		<column name="Source" type="String" />
+		<column name="Status" type="int" />
+		<column name="Author" type="String" />
+		<column name="Editor" type="String" />
+		<column name="Approver" type="String" />
+		<column name="Deployer" type="String" />
+		<column name="Authors" type="String" />
+
+		<order by="desc">
+			<order-column name="ModifiedDate" />
+		</order>
+		<finder name="byStatus" return-type="Collection">
+			<finder-column name="Status" />
+		</finder>
+		
+		<finder name="byZone" return-type="Collection">
+			<finder-column name="ZoneID" />
+		</finder>
+	</entity>
+	<entity name="Legal_Distribution" local-service="true" remote-service="true" table="Distribution">
+
+		<!-- PK fields -->
+		<column name="ID" type="int" primary="true" />
+		
+		<!-- Group instance -->
+
+		<column name="ContentID" type="int" />
+		<column name="Version" type="int" />
+		<column name="ZoneID" type="int" />
+		<column name="DistributedDate" type="Date" />
+		<column name="Ranking" type="int" />
+		<column name="AllowDiscussion" type="boolean" />
+		<column name="ViewedCount" type="int" />
+		<column name="MailedCount" type="int" />
+		<column name="RatedCount" type="int" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="DistributedDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="ByZoneID" return-type="Collection">
+			<finder-column name="ZoneID" />
+		</finder>
+	</entity>
+	
+	<entity name="Legal_ContentProfit" local-service="true" remote-service="true" table="ContentProfit">
+
+		<!-- PK fields -->
+		<column name="ContentID" type="int" primary="true" />
+		
+		<!-- Group instance -->
+
+		<column name="ContentTypeID" type="int" />
+		<column name="Headline" type="String" />
+		<column name="Cost" type="double" />
+		<column name="Author" type="String" />
+		<column name="Status" type="int" />
+		<column name="CreationDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="DistributedDate" type="Date" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="DistributedDate" />
+		</order>
+	</entity>
+	
+	<entity name="Legal_Comment" local-service="true" remote-service="true" table="Comment">
+
+		<!-- PK fields -->
+		<column name="ID" type="int" primary="true" />
+		
+		<!-- Group instance -->
+
+		<column name="DistributionID" type="int" />
+
+		<column name="Fullname" type="String" />
+		<column name="Address" type="String" />
+		<column name="Email" type="String" />
+		<column name="Body" type="String" />
+		<column name="Visible" type="boolean" />
+		<column name="CreationDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+		
+		<column name="IPAddress" type="String" />
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="ModifiedDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="ByDistribution" return-type="Collection">
+			<finder-column name="DistributionID" />
+		</finder>
+
+		<!-- Reference -->
+		<reference package-path="com.liferay.counter" entity="Counter" />
+		<reference package-path="com.liferay.portal" entity="Resource" />
+		<reference package-path="com.liferay.portal" entity="User" />
+	</entity>
+</service-builder>

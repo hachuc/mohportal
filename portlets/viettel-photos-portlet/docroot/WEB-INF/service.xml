@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.viettel.portal.photos" auto-namespace-tables="false">
+	<author>ChucHV</author>
+	<namespace>photos</namespace>
+	<!-- Thong tin banner-->
+	<entity name="Photo" table="portal_photo" local-service="true" remote-service="false">
+    	<column name="photoId"  type="long" primary="true" />
+		<column name="caption"  type="String" />
+		<column name="fileId"  type="long" />
+		<column name="fileLink"  type="String" />
+		<column name="fileName"  type="String"/>
+		<column name="fileSize" type="String"/>
+		<column name="createDate"  type="Date" />
+		<column name="modifyDate"  type="Date" />
+		<column name="order_" db-name="ORDER_" type="int"/>
+		<column name="status"  type="boolean"/>
+		<column name="userName"  type="String" />
+		<column name="userId"  type="long" />
+		<column name="companyId"  type="long" />
+		<column name="categoryId" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="order_" order-by="asc"/>
+			<order-column name="createDate" order-by="desc"/>
+			<order-column name="caption" order-by="asc"/>
+		</order>
+		
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+
+		<finder name="Category" return-type="Collection">
+			<finder-column name="categoryId" />
+			<finder-column name="status" />
+		</finder>	
+		<finder name="CategoryAndGroup" return-type="Collection">
+			<finder-column name="categoryId" />
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>			
+
+		<finder name="Group" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>		
+    </entity>
+    <entity name="PCategory" table="portal_photocategory" local-service="true" remote-service="false">
+    	<column name="id"  type="long" primary="true" />
+		<column name="name"  type="String" />
+		<column name="order_"  type="int"/>
+		<column name="status"  type="boolean" />
+		<column name="companyId"  type="long" />
+		<column name="groupId" type="long" />	
+		<column name="createDate"  type="Date" />
+		<column name="modifyDate"  type="Date" />
+		<column name="userName"  type="String" />
+		<column name="userId"  type="long" />
+		<order by="asc">
+			<order-column name="order_" order-by="asc"/>
+			<order-column name="createDate" order-by="desc"/>
+			<order-column name="name" order-by="name"/>
+		</order>
+		<finder name="status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>		
+		<finder name="GroupAndStatus" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>	
+		<finder name="GroupAndName" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="name" />
+		</finder>	
+		<finder name="Group" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>				
+    </entity>
+</service-builder>

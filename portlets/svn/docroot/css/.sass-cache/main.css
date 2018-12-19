@@ -1,0 +1,62 @@
+.form-search input[type="text"].field, .form-search select.aui-field-select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 30px;
+  margin-bottom: 7px; }
+
+.form-search .btn {
+  margin-top: 0px;
+  height: 30px; }
+
+.main-content {
+  max-width: 753px; }
+
+.aui .table-last-header {
+  text-align: center;
+  max-width: 7%; }
+
+.aui .table-first-header {
+  text-align: center;
+  width: 5%; }
+
+.aui .author-info {
+  padding: 5px 10px;
+  background-color: #EDEDED;
+  margin-bottom: 20px; }
+
+.aui .author-info .notice {
+  font: bold 11px Tahoma,Verdana; }
+
+.story {
+  font: bold 12px arial;
+  color: #006bc6;
+  padding: 3px 0; }
+
+.storytime {
+  font: italic 12px arial;
+  color: #777777;
+  padding: 3px 0; }
+
+.text {
+  text-align: justify;
+  font: normal 12px arial;
+  color: #000711;
+  margin-bottom: 30px; }
+
+.list_header {
+  BACKGROUND-IMAGE: url(../images/background.gif);
+  border-bottom: #B9CAB9 1px solid;
+  font-weight: bold;
+  font-family: Tahoma,Verdana;
+  font-size: 11px;
+  color: #000000;
+  height: 20px; }
+
+.title-tinnoibat .othernews a {
+  display: block;
+  text-align: justify; }
+
+.time-post {
+  color: #999; }
+

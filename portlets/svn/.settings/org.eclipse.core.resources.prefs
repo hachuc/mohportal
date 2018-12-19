@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//docroot/WEB-INF/src/com/viettel/portal/vcms/contentlist/ContentListPortlet.java=UTF-8
+encoding//docroot/WEB-INF/src/com/viettel/portal/vcms/publisher/util/VCMSPubliserUtil.java=UTF-8
+encoding//docroot/WEB-INF/src/com/viettel/portal/vcms/util/CmsUtil.java=UTF-8
+encoding//docroot/WEB-INF/src/content/Language.properties=UTF-8
+encoding//docroot/WEB-INF/src/content/Language_1.properties=UTF-8
+encoding//docroot/WEB-INF/src/content/Language_1_vi.properties=UTF-8
+encoding//docroot/WEB-INF/src/content/Language_2.properties=UTF-8
+encoding//docroot/WEB-INF/src/content/Language_2_vi.properties=UTF-8
+encoding//docroot/WEB-INF/src/content/Language_vi.properties=UTF-8
+encoding//docroot/html/admin/list-content/config.jsp=UTF-8
+encoding//docroot/html/frontend/publisher/comment_box.jspf=UTF-8

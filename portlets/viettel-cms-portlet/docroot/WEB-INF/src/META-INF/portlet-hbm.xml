@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.viettel.portal.vcms.model.Category" />
+	<import class="com.viettel.portal.vcms.model.Comment" />
+	<import class="com.viettel.portal.vcms.model.Content" />
+	<import class="com.viettel.portal.vcms.model.ContentDetail" />
+	<import class="com.viettel.portal.vcms.model.ContentProfit" />
+	<import class="com.viettel.portal.vcms.model.ContentType" />
+	<import class="com.viettel.portal.vcms.model.Distribution" />
+	<import class="com.viettel.portal.vcms.model.DistributionVisisted" />
+	<import class="com.viettel.portal.vcms.model.Legal_Comment" />
+	<import class="com.viettel.portal.vcms.model.Legal_Content" />
+	<import class="com.viettel.portal.vcms.model.Legal_ContentProfit" />
+	<import class="com.viettel.portal.vcms.model.Legal_Distribution" />
+	<import class="com.viettel.portal.vcms.model.Legal_Zone" />
+	<import class="com.viettel.portal.vcms.model.Notes" />
+	<class name="com.viettel.portal.vcms.model.impl.CategoryImpl" table="vcms_Category">
+		<cache usage="read-write" />
+		<id name="categoryId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="categoryName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="categoryDesc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sortOrder" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="archived" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="layoutId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.viettel.portal.vcms.model.impl.CommentImpl" table="vcms_Comment">
+		<cache usage="read-write" />
+		<id name="commentId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="distributionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="fullName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="body" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="visible" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="ipAddress" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.viettel.portal.vcms.model.impl.ContentImpl" table="vcms_Content">
+		<cache usage="read-write" />
+		<id name="autoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="contentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="preVersion" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="version" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="subversion" type="com.liferay.portal.dao.orm.hibernate.FloatType" />
+		<property name="subTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="summary" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="subContent" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="content" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="smallImageId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="smallImageUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="categoryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="copyRight" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="urlTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="newsType" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="imageUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isLegalContent" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="imageCaption" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="imagePosition" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="createdByUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="editedByUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="reviewedByUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="publishedByUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createdByUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="editedByUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="reviewedByUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="publishedByUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="author" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="jobTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.viettel.portal.vcms.model.impl.ContentDetailImpl" table="vcms_Content_Detail">
+		<cache usage="read-write" />
+		<id name="autoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="contentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="version" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="subversion" type="com.liferay.portal.dao.orm.hibernate.FloatType" />
+		<property name="subTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="summary" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="subContent" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="content" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="smallImageId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="smallImageUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="categoryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="newsType" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="imageUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isLegalContent" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="imageCaption" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="imagePosition" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.viettel.portal.vcms.model.impl.ContentProfitImpl" table="vcms_Content_Profit">
+		<cache usage="read-write" />
+		<id name="contentId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="distributedDate" type="org.hibernate.type.TimestampType" />
+		<property name="contentTypeID" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="headline" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cost" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.viettel.portal.vcms.model.impl.ContentTypeImpl" table="vcms_Content_Type">
+		<cache usage="read-write" />
+		<id name="contenTypeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sortOrder" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="cost" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+	</class>
+	<class name="com.viettel.portal.vcms.model.impl.DistributionImpl" table="vcms_Distribution">
+		<cache usage="read-write" />
+		<id name="distributionId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="version" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="subversion" type="com.liferay.portal.dao.orm.hibernate.FloatType" />
+		<property name="contentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="categoryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="distributedDate" type="org.hibernate.type.TimestampType" />
+		<property name="allowDiscussion" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.viettel.portal.vcms.model.impl.DistributionVisistedImpl" table="vcms_Distribution_Visisted">
+		<cache usage="read-write" />
+		<id name="visistedId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="distributionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.viettel.portal.vcms.model.impl.Legal_CommentImpl" table="Comment">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="DistributionID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="Fullname" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Body" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Visible" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="CreationDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="IPAddress" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.viettel.portal.vcms.model.impl.Legal_ContentImpl" table="Content">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="ContentID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="Version" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreationDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="Byline" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Headline" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Tagline" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Teaser" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Body" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Avatar" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ImageUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ImageDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ImageAlign" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ZoneID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="Source" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="Author" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Editor" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Approver" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Deployer" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Authors" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.viettel.portal.vcms.model.impl.Legal_ContentProfitImpl" table="ContentProfit">
+		<cache usage="read-write" />
+		<id name="ContentID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="ContentTypeID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="Headline" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Cost" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="Author" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreationDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="DistributedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.viettel.portal.vcms.model.impl.Legal_DistributionImpl" table="Distribution">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="ContentID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="Version" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ZoneID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="DistributedDate" type="org.hibernate.type.TimestampType" />
+		<property name="Ranking" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="AllowDiscussion" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="ViewedCount" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="MailedCount" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="RatedCount" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.viettel.portal.vcms.model.impl.Legal_ZoneImpl" table="Zone">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="CreationDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="Name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Url" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ParentID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="RealUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Visible" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="Archived" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="SortOrder" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.viettel.portal.vcms.model.impl.NotesImpl" table="vcms_Notes">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.viettel.portal.vcms.service.persistence.NotesPK">
+			<key-property name="ContentID" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="Version" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		</composite-id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="Content" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

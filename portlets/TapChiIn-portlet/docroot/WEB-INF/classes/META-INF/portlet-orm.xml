@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.viettel.portal.magazine.model.impl.MagazineModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="Name" />
+			<basic name="PublishNumber" />
+			<basic name="PublishYear" />
+			<basic name="ImageUrl" />
+			<basic name="ImageID" />
+			<basic name="CreationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="DistributedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.magazine.model.impl.MagazineContentModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="Headline" />
+			<basic name="Teaser" />
+			<basic name="Body" />
+			<basic name="MagazineZoneID" />
+			<basic name="MagazineID" />
+			<basic name="Author" />
+			<basic name="Jobtitle" />
+			<basic name="ViewedCount" />
+			<basic name="SortOrder" />
+			<basic name="MailedCount" />
+			<basic name="CreationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.magazine.model.impl.MagazineZoneModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="Name" />
+			<basic name="MagazineID" />
+			<basic name="SortOrder" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.viettel.portal.magazine.model.impl.MagazineImpl" name="Magazine">
+		<table name="Magazine" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.magazine.model.impl.MagazineContentImpl" name="MagazineContent">
+		<table name="MagazineContent" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.magazine.model.impl.MagazineZoneImpl" name="MagazineZone">
+		<table name="MagazineZone" />
+		<attributes />
+	</entity>
+</entity-mappings>

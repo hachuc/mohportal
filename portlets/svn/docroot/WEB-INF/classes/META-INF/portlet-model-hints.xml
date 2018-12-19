@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.viettel.portal.vcms.model.Category">
+		<field name="categoryId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="categoryName" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="categoryDesc" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="sortOrder" type="int" />
+		<field name="archived" type="boolean" />
+		<field name="layoutId" type="long" />
+	</model>
+	<model name="com.viettel.portal.vcms.model.Comment">
+		<field name="commentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="distributionId" type="long" />
+		<field name="distributedDate" type="Date" />
+		<field name="fullName" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="address" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="email" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="body" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="visible" type="boolean" />
+		<field name="ipAddress" type="String">
+			<hint name="max-length">75</hint>
+		</field>
+	</model>
+	<model name="com.viettel.portal.vcms.model.Content">
+		<field name="autoId" type="long" />
+		<field name="contentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="preVersion" type="int" />
+		<field name="version" type="int" />
+		<field name="subTitle" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="title" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="summary" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="subContent" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="content" type="String">
+			<hint-collection name="CLOB" />
+		</field>
+		<field name="smallImageId" type="long" />
+		<field name="smallImageUrl" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="categoryId" type="long" />
+		<field name="copyRight" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="urlTitle" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="newsType" type="int" />
+		<field name="imageUrl" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="isLegalContent" type="boolean" />
+		<field name="imageCaption" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="imagePosition" type="int" />
+		<field name="createdByUserId" type="long" />
+		<field name="editedByUserId" type="long" />
+		<field name="reviewedByUserId" type="long" />
+		<field name="publishedByUserId" type="long" />
+		<field name="createdByUserName" type="String" />
+		<field name="editedByUserName" type="String" />
+		<field name="reviewedByUserName" type="String" />
+		<field name="publishedByUserName" type="String" />
+		<field name="author" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="jobTitle" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+	</model>
+	<model name="com.viettel.portal.vcms.model.ContentDetail">
+		<field name="autoId" type="long" />
+		<field name="contentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="version" type="int" />
+		<field name="subTitle" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="title" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="summary" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="subContent" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="content" type="String">
+			<hint-collection name="CLOB" />
+		</field>
+		<field name="smallImageId" type="long" />
+		<field name="smallImageUrl" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="categoryId" type="long" />
+		<field name="status" type="int" />
+		<field name="newsType" type="int" />
+		<field name="imageUrl" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="isLegalContent" type="boolean" />
+		<field name="imageCaption" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="imagePosition" type="int" />
+	</model>
+	<model name="com.viettel.portal.vcms.model.ContentProfit">
+		<field name="contentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="distributedDate" type="Date" />
+		<field name="contentTypeID" type="int" />
+		<field name="headline" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="cost" type="double" />
+		<field name="status" type="int" />
+	</model>
+	<model name="com.viettel.portal.vcms.model.ContentType">
+		<field name="contenTypeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="name" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="description" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="sortOrder" type="int" />
+	</model>
+	<model name="com.viettel.portal.vcms.model.ContentTypeCost">
+		<field name="costId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="contentTypeID" type="int" />
+		<field name="fromDate" type="Date" />
+		<field name="toDate" type="Date" />
+		<field name="cost" type="double" />
+	</model>
+	<model name="com.viettel.portal.vcms.model.Distribution">
+		<field name="distributionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="version" type="int" />
+		<field name="contentId" type="long" />
+		<field name="categoryId" type="long" />
+		<field name="distributedDate" type="Date" />
+		<field name="allowDiscussion" type="boolean" />
+		<field name="title" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+	</model>
+	<model name="com.viettel.portal.vcms.model.DistributionVisisted">
+		<field name="visistedId" type="long" />
+		<field name="distributionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createDate" type="Date" />
+	</model>
+	<model name="com.viettel.portal.vcms.model.Legal_Comment">
+		<field name="ID" type="int" />
+		<field name="DistributionID" type="int" />
+		<field name="Fullname" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="Address" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="Email" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="Body" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="Visible" type="boolean" />
+		<field name="CreationDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="IPAddress" type="String" />
+	</model>
+	<model name="com.viettel.portal.vcms.model.Legal_Content">
+		<field name="ID" type="int" />
+		<field name="ContentID" type="int" />
+		<field name="Version" type="int" />
+		<field name="CreationDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="Byline" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="Headline" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="Tagline" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="Teaser" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="Body" type="String">
+			<hint-collection name="CLOB" />
+		</field>
+		<field name="Avatar" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="ImageUrl" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="ImageDescription" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="ImageAlign" type="int" />
+		<field name="ZoneID" type="int" />
+		<field name="Source" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="Status" type="int" />
+		<field name="Author" type="String" />
+		<field name="Editor" type="String" />
+		<field name="Approver" type="String" />
+		<field name="Deployer" type="String" />
+		<field name="Authors" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+	</model>
+	<model name="com.viettel.portal.vcms.model.Legal_ContentProfit">
+		<field name="ContentID" type="int" />
+		<field name="ContentTypeID" type="int" />
+		<field name="Headline" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="Cost" type="double" />
+		<field name="Author" type="String" />
+		<field name="Status" type="int" />
+		<field name="CreationDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="DistributedDate" type="Date" />
+	</model>
+	<model name="com.viettel.portal.vcms.model.Legal_Distribution">
+		<field name="ID" type="int" />
+		<field name="ContentID" type="int" />
+		<field name="Version" type="int" />
+		<field name="ZoneID" type="int" />
+		<field name="DistributedDate" type="Date" />
+		<field name="Ranking" type="int" />
+		<field name="AllowDiscussion" type="boolean" />
+		<field name="ViewedCount" type="int" />
+		<field name="MailedCount" type="int" />
+		<field name="RatedCount" type="int" />
+	</model>
+	<model name="com.viettel.portal.vcms.model.Legal_Zone">
+		<field name="ID" type="int" />
+		<field name="CreationDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="Name" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="Url" type="String" />
+		<field name="Description" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="ParentID" type="int" />
+		<field name="RealUrl" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="Visible" type="boolean" />
+		<field name="Archived" type="boolean" />
+		<field name="SortOrder" type="int" />
+	</model>
+	<model name="com.viettel.portal.vcms.model.Notes">
+		<field name="ContentID" type="long" />
+		<field name="Version" type="int" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="Content" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+	</model>
+</model-hints>

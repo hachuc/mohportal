@@ -1,0 +1,427 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.CategoryModelImpl">
+		<attributes>
+			<id name="categoryId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="categoryName" />
+			<basic name="categoryDesc" />
+			<basic name="sortOrder" />
+			<basic name="archived" />
+			<basic name="layoutId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.CommentModelImpl">
+		<attributes>
+			<id name="commentId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="distributionId" />
+			<basic name="fullName" />
+			<basic name="address" />
+			<basic name="email" />
+			<basic name="body" />
+			<basic name="visible" />
+			<basic name="ipAddress" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.ContentModelImpl">
+		<attributes>
+			<id name="autoId" />
+			<basic name="contentId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="preVersion" />
+			<basic name="version" />
+			<basic name="subversion" />
+			<basic name="subTitle" />
+			<basic name="title" />
+			<basic name="summary" />
+			<basic name="subContent" />
+			<basic name="content" />
+			<basic name="smallImageId" />
+			<basic name="smallImageUrl" />
+			<basic name="categoryId" />
+			<basic name="copyRight" />
+			<basic name="status" />
+			<basic name="urlTitle" />
+			<basic name="newsType" />
+			<basic name="imageUrl" />
+			<basic name="isLegalContent" />
+			<basic name="imageCaption" />
+			<basic name="imagePosition" />
+			<basic name="createdByUserId" />
+			<basic name="editedByUserId" />
+			<basic name="reviewedByUserId" />
+			<basic name="publishedByUserId" />
+			<basic name="createdByUserName" />
+			<basic name="editedByUserName" />
+			<basic name="reviewedByUserName" />
+			<basic name="publishedByUserName" />
+			<basic name="author" />
+			<basic name="jobTitle" />
+			<transient name="createdByUserUuid" />
+			<transient name="editedByUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="publishedByUserUuid" />
+			<transient name="reviewedByUserUuid" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.ContentDetailModelImpl">
+		<attributes>
+			<id name="autoId" />
+			<basic name="contentId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="version" />
+			<basic name="subversion" />
+			<basic name="subTitle" />
+			<basic name="title" />
+			<basic name="summary" />
+			<basic name="subContent" />
+			<basic name="content" />
+			<basic name="smallImageId" />
+			<basic name="smallImageUrl" />
+			<basic name="categoryId" />
+			<basic name="status" />
+			<basic name="newsType" />
+			<basic name="imageUrl" />
+			<basic name="isLegalContent" />
+			<basic name="imageCaption" />
+			<basic name="imagePosition" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.ContentProfitModelImpl">
+		<attributes>
+			<id name="contentId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="distributedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="contentTypeID" />
+			<basic name="headline" />
+			<basic name="cost" />
+			<basic name="status" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.ContentTypeModelImpl">
+		<attributes>
+			<id name="contenTypeId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="name" />
+			<basic name="description" />
+			<basic name="sortOrder" />
+			<basic name="cost" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.DistributionModelImpl">
+		<attributes>
+			<id name="distributionId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="version" />
+			<basic name="subversion" />
+			<basic name="contentId" />
+			<basic name="categoryId" />
+			<basic name="distributedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="allowDiscussion" />
+			<basic name="title" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.DistributionVisistedModelImpl">
+		<attributes>
+			<id name="visistedId" />
+			<basic name="distributionId" />
+			<basic name="groupId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.Legal_CommentModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="DistributionID" />
+			<basic name="Fullname" />
+			<basic name="Address" />
+			<basic name="Email" />
+			<basic name="Body" />
+			<basic name="Visible" />
+			<basic name="CreationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="IPAddress" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.Legal_ContentModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="ContentID" />
+			<basic name="Version" />
+			<basic name="CreationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Byline" />
+			<basic name="Headline" />
+			<basic name="Tagline" />
+			<basic name="Teaser" />
+			<basic name="Body" />
+			<basic name="Avatar" />
+			<basic name="ImageUrl" />
+			<basic name="ImageDescription" />
+			<basic name="ImageAlign" />
+			<basic name="ZoneID" />
+			<basic name="Source" />
+			<basic name="Status" />
+			<basic name="Author" />
+			<basic name="Editor" />
+			<basic name="Approver" />
+			<basic name="Deployer" />
+			<basic name="Authors" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.Legal_ContentProfitModelImpl">
+		<attributes>
+			<id name="ContentID" />
+			<basic name="ContentTypeID" />
+			<basic name="Headline" />
+			<basic name="Cost" />
+			<basic name="Author" />
+			<basic name="Status" />
+			<basic name="CreationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="DistributedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.Legal_DistributionModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="ContentID" />
+			<basic name="Version" />
+			<basic name="ZoneID" />
+			<basic name="DistributedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Ranking" />
+			<basic name="AllowDiscussion" />
+			<basic name="ViewedCount" />
+			<basic name="MailedCount" />
+			<basic name="RatedCount" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.Legal_ZoneModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="CreationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Name" />
+			<basic name="Url" />
+			<basic name="Description" />
+			<basic name="ParentID" />
+			<basic name="RealUrl" />
+			<basic name="Visible" />
+			<basic name="Archived" />
+			<basic name="SortOrder" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.vcms.model.impl.NotesModelImpl">
+		<id-class class="com.viettel.portal.vcms.service.persistence.NotesPK" />
+		<attributes>
+			<id name="ContentID" />
+			<id name="Version" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Content" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.viettel.portal.vcms.model.impl.CategoryImpl" name="Category">
+		<table name="vcms_Category" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.vcms.model.impl.CommentImpl" name="Comment">
+		<table name="vcms_Comment" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.vcms.model.impl.ContentImpl" name="Content">
+		<table name="vcms_Content" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.vcms.model.impl.ContentDetailImpl" name="ContentDetail">
+		<table name="vcms_Content_Detail" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.vcms.model.impl.ContentProfitImpl" name="ContentProfit">
+		<table name="vcms_Content_Profit" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.vcms.model.impl.ContentTypeImpl" name="ContentType">
+		<table name="vcms_Content_Type" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.vcms.model.impl.DistributionImpl" name="Distribution">
+		<table name="vcms_Distribution" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.vcms.model.impl.DistributionVisistedImpl" name="DistributionVisisted">
+		<table name="vcms_Distribution_Visisted" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.vcms.model.impl.Legal_CommentImpl" name="Legal_Comment">
+		<table name="Comment" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.vcms.model.impl.Legal_ContentImpl" name="Legal_Content">
+		<table name="Content" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.vcms.model.impl.Legal_ContentProfitImpl" name="Legal_ContentProfit">
+		<table name="ContentProfit" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.vcms.model.impl.Legal_DistributionImpl" name="Legal_Distribution">
+		<table name="Distribution" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.vcms.model.impl.Legal_ZoneImpl" name="Legal_Zone">
+		<table name="Zone" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.vcms.model.impl.NotesImpl" name="Notes">
+		<table name="vcms_Notes" />
+		<attributes />
+	</entity>
+</entity-mappings>

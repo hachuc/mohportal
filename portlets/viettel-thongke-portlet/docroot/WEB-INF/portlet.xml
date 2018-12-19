@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
+	<portlet>
+		<portlet-name>bao-cao-thong-ke</portlet-name>
+		<display-name>Báo cáo thống kê</display-name>
+		<portlet-class>com.viettel.portal.thongke.action.BaoCaoThongKe</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/admin/thongke/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<portlet-info>
+			<title>Báo cáo thống kê</title>
+			<short-title>Báo cáo thống kê</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>quan-ly-phong-ban</portlet-name>
+		<display-name>Quản lý Phòng ban</display-name>
+		<portlet-class>
+			com.viettel.portal.thongke.action.QuanLyPhongBan
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/admin/phongban/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Quản lý Phòng ban</title>
+			<short-title>Quản lý Phòng ban</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>quan-ly-cham-diem</portlet-name>
+		<display-name>Quản lý Chấm điểm</display-name>
+		<portlet-class>
+			com.viettel.portal.thongke.action.QuanLyChamDiem
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/admin/chamdiem/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Quản lý Chấm điểm</title>
+			<short-title>Quản lý Chấm điểm</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>bao-cao-nhuan-but</portlet-name>
+		<display-name>Nhuận Bút</display-name>
+		<portlet-class>
+			com.viettel.portal.thongke.action.BaoCaoNhuanBut
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/admin/nhuanbut/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Nhuận Bút</title>
+			<short-title>Nhuận Bút</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+</portlet-app>

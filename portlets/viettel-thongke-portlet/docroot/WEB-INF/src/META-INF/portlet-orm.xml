@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.viettel.portal.thongke.model.impl.BaiVietNhuanButModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="baiVietId" />
+			<basic name="loaiBaiViet" />
+			<basic name="tieuDe" />
+			<basic name="tacGia" />
+			<basic name="diaChi" />
+			<basic name="ngayXuatBan">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="rating" />
+			<basic name="ratingValue" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifyDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="userName" />
+			<basic name="userId" />
+			<basic name="type">
+				<column name="TYPE_" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.thongke.model.impl.ContentProfitModelImpl">
+		<attributes>
+			<id name="contentId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="distributedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="contentTypeID" />
+			<basic name="headline" />
+			<basic name="cost" />
+			<basic name="status" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.thongke.model.impl.ContentTypeModelImpl">
+		<attributes>
+			<id name="contenTypeId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="name" />
+			<basic name="description" />
+			<basic name="sortOrder" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.thongke.model.impl.ContentTypeCostModelImpl">
+		<attributes>
+			<id name="costId" />
+			<basic name="groupId" />
+			<basic name="contentTypeID" />
+			<basic name="fromDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="toDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="cost" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.thongke.model.impl.PhongBanModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="name" />
+			<basic name="order_" />
+			<basic name="descriptions" />
+			<basic name="status" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifyDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="userName" />
+			<basic name="userId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.thongke.model.impl.PhongBanNhuanButModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="caption" />
+			<basic name="fromDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="toDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="status" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifyDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="userName" />
+			<basic name="userId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viettel.portal.thongke.model.impl.PhongBanNhuanButChiTietModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="phongBanNhuanButId" />
+			<basic name="phongBanId" />
+			<basic name="phongBanTen" />
+			<basic name="rating" />
+			<basic name="ratingValue" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.viettel.portal.thongke.model.impl.BaiVietNhuanButImpl" name="BaiVietNhuanBut">
+		<table name="portal_baivietnhuanbut" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.thongke.model.impl.ContentProfitImpl" name="ContentProfit">
+		<table name="vcms_Content_Profit" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.thongke.model.impl.ContentTypeImpl" name="ContentType">
+		<table name="vcms_Content_Type" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.thongke.model.impl.ContentTypeCostImpl" name="ContentTypeCost">
+		<table name="vcms_Content_TypeCost" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.thongke.model.impl.PhongBanImpl" name="PhongBan">
+		<table name="portal_phongban" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.thongke.model.impl.PhongBanNhuanButImpl" name="PhongBanNhuanBut">
+		<table name="portal_phongbannhuanbut" />
+		<attributes />
+	</entity>
+	<entity class="com.viettel.portal.thongke.model.impl.PhongBanNhuanButChiTietImpl" name="PhongBanNhuanButChiTiet">
+		<table name="portal_phongbannhuanbutchitiet" />
+		<attributes />
+	</entity>
+</entity-mappings>

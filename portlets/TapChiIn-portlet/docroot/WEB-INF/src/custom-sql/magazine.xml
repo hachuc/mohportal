@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="com.viettel.portal.magazine.service.persistence.MagazineFinder.getLastestRecord">	
+		<![CDATA[
+	    	SELECT top 1 *
+
+	    	FROM 	Magazine mz
+            
+			ORDER BY mz.DistributedDate desc
+		]]>
+	</sql>
+	<sql id="com.viettel.portal.magazine.service.persistence.MagazineContentFinder.getOlderContent">	
+		<![CDATA[
+	    	SELECT *
+
+	    	FROM 	MagazineContent mzc
+	    	
+	    	WHERE mzc.MagazineID = ? AND mzc.MagazineZoneID = ? AND mzc.SortOrder < ?
+            
+			ORDER BY mzc.SortOrder asc
+		]]>
+	</sql>
+	<sql id="com.viettel.portal.magazine.service.persistence.MagazineContentFinder.getNewerContent">	
+		<![CDATA[
+	    	SELECT *
+
+	    	FROM 	MagazineContent mzc
+	    	
+	    	WHERE mzc.MagazineID = ? AND mzc.MagazineZoneID = ? AND mzc.SortOrder > ?
+            
+			ORDER BY mzc.SortOrder asc
+		]]>
+	</sql>
+</custom-sql>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.2.0//EN" "http://www.liferay.com/dtd/liferay-display_6_2_0.dtd">
+
+<display>
+	<category name="Viettel.BackEnd">
+		<portlet id="viettel-cms"></portlet>		
+		<portlet id="category-mngt"></portlet>
+		<portlet id="newcontent"></portlet>
+		<portlet id="content-list"></portlet>
+		<portlet id="content-type"></portlet>
+		<portlet id="Comment"></portlet>
+	</category>
+	<category name="Viettel.FrontEnd">
+		<portlet id="content-list-viewer"></portlet>
+		<portlet id="content-publisher"></portlet>
+		<portlet id="Display Content"></portlet>
+		<portlet id="most-viewed"></portlet>
+	</category>
+	<category name="hidden">
+		<portlet id="migrate-mssql-mysql"></portlet>
+		<portlet id="Migrate"></portlet>
+	</category>
+</display>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.viettel.portal.banner.model.Banner">
+		<field name="id" type="long" />
+		<field name="ten" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="fileId" type="long" />
+		<field name="fileLink" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="fileName" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="fileSize" type="String" />
+		<field name="ngayTao" type="Date" />
+		<field name="ngaySua" type="Date" />
+		<field name="ngayKetThuc" type="Date" />
+		<field name="lienKet" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="order_" type="int" />
+		<field name="trangThai" type="boolean" />
+		<field name="nguoiTao" type="String" />
+		<field name="nguoiTaoId" type="long" />
+		<field name="nguoiSua" type="String" />
+		<field name="nguoiSuaId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+</model-hints>

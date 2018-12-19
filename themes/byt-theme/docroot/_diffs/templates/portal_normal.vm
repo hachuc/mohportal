@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+	
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+	$theme.include($top_head_include)
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body class="$css_class no-page-loader">
+
+<a href="#main-content" id="skip-to-content">#language ("skip-to-content")</a>
+
+$theme.include($body_top_include)
+
+#if ($is_signed_in)
+	#dockbar()
+#end
+
+<div id="wrapper">
+    <!-- Banner -->
+    <section class="p-t-0 p-b-0 banner-moh">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="logo-moh" href="/">
+                    	<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end: Banner -->
+	<header id="header" role="banner">
+        <div id="header-wrap">
+            <div class="container">
+                <!--Navigation Resposnive Trigger-->
+                <div id="mainMenu-trigger">
+                    <button class="lines-button x"> <span class="lines"></span> </button>
+                </div>
+                <!--end: Navigation Resposnive Trigger-->
+
+                <!--Navigation-->
+                <div id="mainMenu" class="light">
+                    <div class="container">
+						#if ($has_navigation || $is_signed_in)
+							#parse ("$full_templates_path/navigation.vm")
+						#end
+                        <div class="header-extras lang">
+                            <span>Ngôn ngữ:</span> <a href="#" class="lang-en" title="English"></a><a href="#" title="Tiếng Việt" class="lang-vn"></a>
+                        </div>
+                    </div>
+                </div>
+                <!--end: Navigation-->
+            </div>
+        </div>
+
+		<!--#if (!$is_signed_in)
+			<a data-redirect="$is_login_redirect_required" href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
+		#end-->
+	</header>
+
+	<div id="">
+		<!--<nav id="breadcrumbs">#breadcrumbs()</nav>-->
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	<footer id="footer" role="contentinfo" class="footer-light">
+		#parse ("$full_templates_path/footer.vm")
+	</footer>
+</div>
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+</body>
+
+</html>

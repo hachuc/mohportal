@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="com.revotech.portal.tthc.service.persistence.LegalDocumentFinder.findByKeyword">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				tthc_LegalDocument
+			WHERE
+				(groupId = ?)
+				AND (idCoquanbanhanh = ?)
+				AND (idLinhvuc =?)
+				AND (ldLevel = ?)
+				AND (isActive = 1)
+				AND (
+					(lower(ldCode) LIKE ? [$AND_OR_NULL_CHECK$]) [$AND_OR_CONNECTOR$]
+					(lower(ldTitle) LIKE ? [$AND_OR_NULL_CHECK$])
+				)
+				
+			ORDER BY
+				modifiedDate DESC
+		]]>
+	</sql>
+	
+	<sql id="com.revotech.portal.tthc.service.persistence.LegalDocumentFinder.getFieldsByKeyword">
+		<![CDATA[
+			SELECT
+				ld.ldCode,
+				ld.ldTitle,
+				ld.ldLink,
+				ld.ldLevel3Link,
+				ld.ldLevel,
+				cat1.categoryName as tenLinhVuc,
+				cat2.categoryName as tenCoQuanBanHanh,
+				ld.ldDonvithuchien
+			FROM
+				tthc_LegalDocument ld INNER JOIN tthc_Category cat1 ON ld.idLinhvuc = cat1.categoryId
+				INNER JOIN tthc_Category cat2 ON ld.idCoquanbanhanh = cat2.categoryId
+			WHERE
+				(ld.groupId = ?)
+				AND (ld.idCoquanbanhanh = ?)
+				AND (ld.idLinhvuc =?)
+				AND (ld.ldLevel = ?)
+				AND (ld.isActive = 1)
+				AND (
+					(lower(ld.ldCode) LIKE ? [$AND_OR_NULL_CHECK$]) [$AND_OR_CONNECTOR$]
+					(lower(ld.ldTitle) LIKE ? [$AND_OR_NULL_CHECK$])
+				)
+				
+			ORDER BY
+				ld.modifiedDate DESC
+		]]>
+	</sql>
+	
+	<sql id="com.revotech.portal.tthc.service.persistence.LegalDocumentFinder.countByKeyword">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				tthc_LegalDocument
+			WHERE
+				(groupId = ?)
+				AND (idCoquanbanhanh = ?)
+				AND (idLinhvuc =?)
+				AND (ldLevel = ?)
+				AND (isActive = 1)
+				AND (
+					(lower(ldCode) LIKE ? [$AND_OR_NULL_CHECK$]) [$AND_OR_CONNECTOR$]
+					(lower(ldTitle) LIKE ? [$AND_OR_NULL_CHECK$])
+				)
+		]]>
+	</sql>
+</custom-sql>

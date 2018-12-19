@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.viettel.portal.videolibrary.model.VideoCategory">
+		<field name="ID" type="int" />
+		<field name="Name" type="String" />
+		<field name="Url" type="String" />
+		<field name="SortOrder" type="int" />
+		<field name="ItemCount" type="int" />
+	</model>
+	<model name="com.viettel.portal.videolibrary.model.VideoClip">
+		<field name="ID" type="int" />
+		<field name="Name" type="String" />
+		<field name="CategoryID" type="int" />
+		<field name="Description" type="String" />
+		<field name="ImageUrl" type="String" />
+		<field name="VideoUrl" type="String" />
+		<field name="Duration" type="int" />
+		<field name="ViewCount" type="int" />
+		<field name="Status" type="int" />
+		<field name="CreationDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+	</model>
+	<model name="com.viettel.portal.videolibrary.model.VLCategory">
+		<field name="categoryId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="categoryName" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="invisible" type="boolean" />
+	</model>
+	<model name="com.viettel.portal.videolibrary.model.VLRelateVideo">
+		<field name="id" type="long" />
+		<field name="videoId" type="long" />
+		<field name="relateId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+	<model name="com.viettel.portal.videolibrary.model.VLVideo">
+		<field name="videoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="videoName" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="videoType" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="videoUrl" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="viewCount" type="int" />
+		<field name="fileId" type="long" />
+		<field name="image" type="boolean" />
+		<field name="imageId" type="long" />
+		<field name="smallImageUrl" type="String" />
+		<field name="relateId" type="long" />
+		<field name="invisible" type="boolean" />
+		<field name="categoryId" type="long" />
+	</model>
+	<model name="com.viettel.portal.videolibrary.model.VLVideoCategory">
+		<field name="id" type="long" />
+		<field name="categoryId" type="long" />
+		<field name="videoId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+	<model name="com.viettel.portal.videolibrary.model.VLVideoTag">
+		<field name="id" type="long" />
+		<field name="videoId" type="long" />
+		<field name="tagId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+</model-hints>

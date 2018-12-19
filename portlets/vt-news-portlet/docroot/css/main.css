@@ -1,0 +1,41 @@
+.hasShowMoreNews {
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.icon-new{
+	background: url(images/new_2.gif) 0 15px no-repeat;
+}
+
+.social {
+    display: inline;
+    font-size: 9px;
+    font-weight: normal;
+    /* color: #f90; */
+    line-height: 9px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+    background-size: 29px;
+    padding: 1px 25px 0px 5px;
+    margin-left: 4px;
+    /* border: 1px solid #FF9900; */
+    position: relative;
+    top: -1px;
+    border-radius: 2px;
+    /* overflow: hidden; */
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    /* background-color: #FFECD0; */
+    background-image: url("images/new_2.gif");
+    background-repeat: no-repeat;
+}
+
+.category-style .list-item{
+	background: url(../images/icon-li.jpg) no-repeat 13px 13px;
+	padding-left: 26px;
+	padding-top: 5px;
+}
+@import url(jquery.fancybox.css);
+@import url(slick.css);

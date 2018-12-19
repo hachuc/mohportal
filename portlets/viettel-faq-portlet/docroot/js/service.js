@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.legalfaq", "com.portal_egov.portlet.legal_faq.service", "legal_fag-portlet");

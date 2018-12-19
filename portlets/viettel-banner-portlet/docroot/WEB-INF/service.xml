@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.viettel.portal.banner" auto-namespace-tables="false">
+	<author>ChucHV</author>
+	<namespace>banner</namespace>
+	<!-- Thong tin banner-->
+	<entity name="Banner" table="portal_banner" local-service="true" remote-service="false">
+    	<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="ten" db-name="TEN" type="String" />
+		<column name="fileId" db-name="FILEID" type="long" />
+		<column name="fileLink" db-name="FILELINK" type="String" />
+		<column name="fileName" db-name="FILENAME" type="String"/>
+		<column name="fileSize" db-name="FILESIZE" type="String"/>
+		<column name="ngayTao" db-name="NGAYTAO" type="Date" />
+		<column name="ngaySua" db-name="NGAYSUA" type="Date" />
+		<column name="ngayKetThuc" db-name="NGAYKETTHUC" type="Date" />
+		<column name="lienKet" db-name="LIENKET" type="String"/>
+		<column name="order_" db-name="ORDER_" type="int"/>
+		<column name="trangThai" db-name="TRANGTHAI" type="boolean" />
+		<column name="nguoiTao" db-name="NGUOITAO" type="String" />
+		<column name="nguoiTaoId" db-name="NGUOITAOID" type="long" />
+		<column name="nguoiSua" db-name="NGUOISUA" type="String" />
+		<column name="nguoiSuaId" db-name="NGUOISUAID" type="long" />
+		<column name="companyId" db-name="COMPANYID" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="order_" order-by="asc"/>
+			<order-column name="ten" order-by="asc"/>
+		</order>
+		
+		<finder name="TrangThai" return-type="Collection">
+			<finder-column name="trangThai" />
+		</finder>
+		
+		<finder name="HienThi" return-type="Collection">
+			<finder-column name="trangThai" />
+			<finder-column name="ngayKetThuc" />
+		</finder>
+    </entity>
+</service-builder>

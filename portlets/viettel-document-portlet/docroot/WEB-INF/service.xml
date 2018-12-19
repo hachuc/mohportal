@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.viettel.portal.vbpq" auto-namespace-tables="false">
+	<author>ChucHV</author>
+	<namespace>VBPQ</namespace>
+
+	<entity name="LoaiVanBan" table="portal_loaivanban" 
+		local-service="true" remote-service="false">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="ten" db-name="TEN" type="String" />
+		<column name="trangThai" db-name="TRANGTHAI" type="boolean" />
+		<column name="ngayTao" db-name="NGAYTAO" type="Date" />
+		<column name="ngaySua" db-name="NGAYSUA" type="Date" />
+		<column name="nguoiTao" db-name="NGUOITAO" type="String" />
+		<column name="nguoiSua" db-name="NGUOISUA" type="String" />
+		<column name="groupId" db-name="GROUPID" type="long" />
+		<column name="order_" db-name="ORDER_" type="int"/>
+		<!-- Order -->
+        <column name="nhomVanBanId" type="long"></column>
+
+		<order by="asc">
+			<order-column name="order_"/>
+			<order-column name="ten" />
+		</order>
+
+		<!-- Finder methods -->
+		
+		<finder name="G_" return-type="Collection">
+			<finder-column name="groupId"/>
+		</finder>
+		
+
+		<finder name="TrangThai" return-type="Collection">
+			<finder-column name="trangThai" />
+			<finder-column name="groupId"/>
+		</finder>
+		
+		<finder name="GroupId_Ten" return-type="LoaiVanBan">
+			<finder-column name="groupId"/>
+			<finder-column name="ten"/>
+		</finder>
+		
+		<finder name="NhomVanBanId" return-type="Collection">
+			<finder-column name="nhomVanBanId"/>
+		</finder>
+	</entity>
+	
+	<entity name="LinhVucVanBan" table="portal_linhvucvanban" 
+		local-service="true" remote-service="false">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="ten" db-name="TEN" type="String" />
+		<column name="trangThai" db-name="TRANGTHAI" type="boolean" />
+		<column name="ngayTao" db-name="NGAYTAO" type="Date" />
+		<column name="ngaySua" db-name="NGAYSUA" type="Date" />
+		<column name="nguoiTao" db-name="NGUOITAO" type="String" />
+		<column name="nguoiSua" db-name="NGUOISUA" type="String" />
+		<column name="groupId" db-name="GROUPID" type="long" />
+		<column name="order_" db-name="ORDER_" type="int"/>
+
+		<!-- Order -->
+        <column name="nhomVanBanId" type="long"></column>
+
+		<order by="asc">
+			<order-column name="order_"/>
+			<order-column name="ten" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="G_" return-type="Collection">
+			<finder-column name="groupId"/>
+		</finder>
+
+		<finder name="TrangThai" return-type="Collection">
+			<finder-column name="trangThai" />
+			<finder-column name="groupId"/>
+		</finder>
+		
+		<finder name="GroupId_Ten" return-type="LinhVucVanBan">
+			<finder-column name="groupId"/>
+			<finder-column name="ten"/>
+		</finder>
+		
+		<finder name="NhomVanBanId" return-type="Collection">
+			<finder-column name="nhomVanBanId"/>
+		</finder>
+	</entity>
+	
+	<entity name="CoQuanBanHanhVanBan" table="portal_coquanbanhanh" 
+		local-service="true" remote-service="false">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="ten" db-name="TEN" type="String" />
+		<column name="trangThai" db-name="TRANGTHAI" type="boolean" />
+		<column name="ngayTao" db-name="NGAYTAO" type="Date" />
+		<column name="ngaySua" db-name="NGAYSUA" type="Date" />
+		<column name="nguoiTao" db-name="NGUOITAO" type="String" />
+		<column name="nguoiSua" db-name="NGUOISUA" type="String" />
+		<column name="groupId" db-name="GROUPID" type="long" />
+		<column name="order_" db-name="ORDER_" type="int"/>
+		
+		<!-- Order -->
+        <column name="nhomVanBanId" type="long"></column>
+		<order by="asc">
+			<order-column name="order_"/>
+			<order-column name="ten" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="G_" return-type="Collection">
+			<finder-column name="groupId"/>
+		</finder>
+
+		<finder name="TrangThai" return-type="Collection">
+			<finder-column name="trangThai" />
+			<finder-column name="groupId"/>
+		</finder>
+		
+		<finder name="GroupId_Ten" return-type="CoQuanBanHanhVanBan">
+			<finder-column name="groupId"/>
+			<finder-column name="ten"/>
+		</finder>
+		
+		<finder name="NhomVanBanId" return-type="Collection">
+			<finder-column name="nhomVanBanId"/>
+		</finder>
+	</entity>
+	
+	<entity name="VanBanPhapQuy" table="portal_vanban" 
+		local-service="true" remote-service="false">
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="maVanBan" db-name="MAVANBAN" type="String" />
+		<column name="ngayTao" db-name="NGAYTAO" type="Date" />
+		<column name="ngaySua" db-name="NGAYSUA" type="Date" />
+		<column name="nguoiTao" db-name="NGUOITAO" type="String" />
+		<column name="nguoiSua" db-name="NGUOISUA" type="String" />
+		<column name="trichYeu" db-name="TRICHYEU" type="String" />
+		<column name="coQuanBanHanh" db-name="COQUANBANHANH" type="long"/>
+		<column name="loaiVanBan" db-name="LOAIVANBAN" type="long"/>
+		<column name="linhVucVanBan" db-name="LINHVUCVANBAN" type="long"/>
+		<column name="ngayBanHanh" db-name="NGAYBANHANH" type="Date"/>
+		<column name="ngayCoHieuLuc" db-name="NGAYCOHIEULUC" type="Date"/>
+		<column name="ngayHetHieuLuc" db-name="NGAYHETHIEULUC" type="Date"/>
+		<column name="nguoiKy" db-name="NGUOIKY" type="String"/>
+		<column name="vanBanThayThe" db-name="VANBANTHAYTHE" type="long"/>
+		<column name="groupId" db-name="GROUPID" type="long" />
+		<column name="status" db-name="STATUS" type="int"/>
+		<column name="statusByDate" db-name="STATUSBYDATE" type="Date"/>
+		<column name="statusByUserId" db-name="STATUSBYUSERID" type="long"/>
+		<column name="statusByUserName" db-name="STATUSBYUSERNAME" type="String"/>
+        <column name="nhomVanBanId" type="long"></column>
+		
+		<order>
+			<order-column name="ngayBanHanh" order-by="desc"/>
+			<order-column name="ngayCoHieuLuc" order-by="asc"/>
+		</order>
+		
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"/>
+			<finder-column name="status"/>
+		</finder>
+		
+		<finder name="GroupId_MaVanBan" return-type="VanBanPhapQuy">
+			<finder-column name="groupId"/>
+			<finder-column name="maVanBan"/>
+		</finder>
+		
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status"/>
+		</finder>
+        <finder name="G_CQBH_S" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="coQuanBanHanh"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>		
+		
+	</entity>
+	
+	<entity name="AttachFile" table="portal_attachfile" 
+		local-service="true" remote-service="false" >
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="vanBanId" db-name="VANBANID" type="long" />
+		<column name="fileId" db-name="FILEID" type="long" />
+		<column name="fileLink" db-name="FILELINK" type="String" />
+		<column name="fileName" db-name="FILENAME" type="String"/>
+		<column name="fileSize" db-name="FILESIZE" type="String"/>
+		
+		
+		<!-- Finder methods -->
+		<finder name="VANBANID" return-type="Collection">
+			<finder-column name="vanBanId" />
+		</finder>
+	</entity>
+	
+	<entity name="NhomVanBan" table="portal_vbpq_nhom_van_ban" 
+		local-service="true" remote-service="false" >
+
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="tenNhom" db-name="tenNhom"  type="String" />
+		<column name="nguoiTao"  type="String" />
+		<column name="nguoiTaoId"  type="long" />
+		<column name="ngayTao"  type="Date" />
+		<column name="ngaySua"  type="Date" />
+		<column name="nguoiSua"  type="String" />
+		<column name="nguoiSuaId"  type="long" />
+		<column name="trangThai"  type="int" />
+		<column name="groupId"  type="long" />
+		
+		
+
+	</entity>
+	
+
+	<exceptions>
+		<exception>RequiredLoaiVanBan</exception>
+		<exception>RequiredLinhVucVanBan</exception>
+		<exception>RequiredCoQuanBanHanh</exception>
+		<exception>VanBanTen</exception>
+		<exception>LoaiVanBanTen</exception>
+		<exception>LinhVucVanBanTen</exception>
+		<exception>CoQuanBanHanhTen</exception>
+		<exception>DuplicateMaVanBan</exception>
+		<exception>DuplicateTen</exception>
+		<exception>VanBanFile</exception>
+	</exceptions>
+</service-builder>

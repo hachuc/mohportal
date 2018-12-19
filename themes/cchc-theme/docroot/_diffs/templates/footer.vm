@@ -1,0 +1,33 @@
+<div class="footer-nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <a href="#">Trang chủ</a>
+                            <a href="#">Liên hệ</a>
+                            <a href="#">RSS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <p>
+                                Cổng thông tin điện tử Bộ Y Tế (MOH)<br/>
+                                Bản quyền thuộc Bộ Y Tế<br/>
+                                Số 138A Giảng Võ - Ba Đình - Hà Nội<br/>
+                                ĐT: 0246.273.2.273 |Fax:0243.8464.051
+                            </p>
+                        </div>
+                        <div class="col-lg-8">
+                            <p>
+                                Trưởng ban biên tập PGS.TS. Nguyễn Thị Kim Tiến - Bộ trưởng Bộ Y Tế<br/>
+                                Email:banbientap@moh.gov.vn<br/>
+                                Ghi rõ nguồn Cổng thông tin điện tử Bộ Y tế hoặc http://moh.gov.vn khi phát hành lại thông tin<br/>
+                                ĐT: 0246.273.2.273 |Fax:0243.8464.051
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+
+<sql id="com.portal_egov.portlet.legal_faq.service.persistence.FeedbackFinder.findByKeyword">	
+	<![CDATA[
+    	SELECT *
+    	
+    	FROM 	vcms_feedback f
+    	           
+        WHERE   (f.groupId = ?)
+              
+                AND ((f.title LIKE ?)
+                
+                OR (f.summary LIKE ?)
+                
+                OR (f.body LIKE ?)
+                
+                OR (f.fullName LIKE ?)
+                
+                OR (f.email LIKE ?)
+                
+                OR (f.phone LIKE ?)
+                
+                OR (f.uerName LIKE ?)
+                
+                OR (f.fileName LIKE ?))
+                 
+        ORDER BY f.createDate DESC
+	]]>
+</sql>
+
+</custom-sql>

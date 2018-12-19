@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="com.viettel.portal.banner.service.persistence.BannerFinder.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				portal_banner pl
+			WHERE 
+			pl.TRANGTHAI = 1
+			AND pl.groupId = ?
+			AND lower(pl.TEN) LIKE ?
+			ORDER BY pl.ORDER_ desc
+		]]>
+	</sql>
+	
+	<sql id="com.viettel.portal.banner.service.persistence.BannerFinder.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS TOTAL
+			FROM
+				portal_banner pl
+			WHERE 
+			pl.TRANGTHAI = 1
+			AND pl.groupId = ?
+			AND lower(pl.TEN) LIKE ?
+		]]>
+	</sql>
+</custom-sql>

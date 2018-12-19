@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.viettel.portal.photos.service.PCategoryLocalService" class="com.viettel.portal.photos.service.impl.PCategoryLocalServiceImpl" />
+	<bean id="com.viettel.portal.photos.service.persistence.PCategoryPersistence" class="com.viettel.portal.photos.service.persistence.PCategoryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.photos.service.persistence.PCategoryFinder" class="com.viettel.portal.photos.service.persistence.PCategoryFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.photos.service.PhotoLocalService" class="com.viettel.portal.photos.service.impl.PhotoLocalServiceImpl" />
+	<bean id="com.viettel.portal.photos.service.persistence.PhotoPersistence" class="com.viettel.portal.photos.service.persistence.PhotoPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.photos.service.persistence.PhotoFinder" class="com.viettel.portal.photos.service.persistence.PhotoFinderImpl" parent="basePersistence" />
+</beans>

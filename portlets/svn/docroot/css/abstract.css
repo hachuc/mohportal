@@ -1,0 +1,144 @@
+.aui .zonebar {
+    font: normal 12px arial;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: #ff0000 1px solid;
+}
+.aui .zonebar a,.aui  .zonebar span {
+    font: bold 12px arial;
+    color: #ff0000;
+    text-transform: uppercase;
+    text-decoration: none;
+    height: 30px;
+    line-height: 30px;
+}
+.aui .horzrule {
+    clear: both;
+    font-size: 1px;
+    height: 10px;
+}
+.aui .zoneteaser {
+    clear: both;
+    font: normal 12px arial;
+    color: #474A4D;
+}
+.aui .headline {
+    font: normal 12px arial;
+    padding: 1px 0;
+}
+.aui .headline a {
+    font: bold 12px arial;
+    color: #00030a;
+    text-decoration: none;
+}
+.aui .zonecontent {
+    clear: both;
+    font: normal 12px arial;
+    padding: 5px;
+}
+.aui .zonecontent .avatar {
+    float: left;
+}
+.aui .zonecontent .avatar img {
+    margin-right: 8px;
+    padding: 1px;
+    border: #D3DCE5 1px solid;
+}
+.aui .NewsList {
+    border-right: 0;
+}
+.aui .page-list-news .NewsList .itemm {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.aui .NewsList .itemm img {
+    width: 100%;
+}
+.aui .NewsList .itemm h3 {
+    margin: 0;
+    line-height: 18px;
+}
+.aui .NewsList .itemm h3 a {
+    color: #222;
+    font-size: 14px;
+    font-weight: bold;
+}
+.aui .sub-title-content{
+	color:#DC0000;
+	font-size:12px;
+	font-weight:bold;
+}
+.aui .other-news-title{
+	font-size: 14px;
+    font-family: Arial;
+    font-weight: bold;
+    padding: 10px 0 4px;
+    margin: 0;
+    border-bottom: solid 1px #FF0000;
+}
+.aui .othernews{
+	margin-bottom: 10px;
+}
+.aui .view-by-date{
+	margin-bottom: 10px;
+}
+.aui .view-by-date select{
+	height: 21px;
+	font-family:arial;
+	font-size: 12px;
+	padding: 3px;
+}
+.aui .view-by-date h6{
+	padding: 1px 5px;
+    margin: 2px 0;
+    font-weight: bold;
+}
+.aui .view-by-date a{
+	color: #ff0000;
+    padding-left: 6px;
+    font-weight: bold;
+}
+.author {
+    clear: both;
+    font: bold 12px arial;
+    color: #000000;
+    padding: 3px 0;
+    text-align: right;
+}
+.aui .story {
+    font: bold 18px arial;
+    color: #006bc6;
+    padding: 3px 0;
+    margin: 3px 0;
+}
+.aui .text {
+    text-align: justify;
+    font: normal 12px arial;
+    color: #000711;
+}
+.aui .header-comment-title{
+	color: #336;
+    border: solid 1px #e5e9e5;
+    text-align: center;
+    margin: 15px 0 0 0;
+    background-color: #e5e9e5;
+    font-size: 16px;
+    padding: 10px 0;
+}
+.taglib-captcha img.captcha{
+	width: 107px;
+	float: left;
+}
+.taglib-captcha span.refresh{
+	margin-top: 11px;
+	margin-left: 3px;
+	margin-right: 3px;
+	float: left;
+}
+.taglib-captcha .control-group.input-text-wrapper{
+	margin-top: -23px;
+    margin-left: 5px;
+	float: left;
+}

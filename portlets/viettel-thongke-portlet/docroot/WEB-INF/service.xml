@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.viettel.portal.thongke">
+	<author>lamvn</author>
+	<namespace>ThongKe</namespace>
+
+	<entity name="PhongBan" table="portal_phongban" local-service="true" remote-service="false">
+    	<column name="id"  type="long" primary="true" />
+		<column name="name"  type="String" />
+		<column name="order_"  type="int"/>
+		<column name="descriptions"  type="String" />
+		<column name="status"  type="boolean" />
+		<column name="companyId"  type="long" />
+		<column name="groupId" type="long" />	
+		<column name="createDate"  type="Date" />
+		<column name="modifyDate"  type="Date" />
+		<column name="userName"  type="String" />
+		<column name="userId"  type="long" />
+		<order by="asc">
+			<order-column name="order_" order-by="asc"/>
+			<order-column name="createDate" order-by="desc"/>
+			<order-column name="name" order-by="asc"/>
+		</order>
+		<finder name="status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>		
+		<finder name="GroupAndStatus" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>	
+		<finder name="GroupAndName" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="name" />
+		</finder>	
+		<finder name="Group" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>				
+    </entity>
+    <entity name="PhongBanNhuanBut" table="portal_phongbannhuanbut" local-service="true" remote-service="false">
+    	<column name="id"  type="long" primary="true" />
+		<column name="caption"  type="String" />
+		<column name="fromDate"  type="Date" />
+		<column name="toDate"  type="Date" />
+		<column name="status"  type="boolean" />
+		<column name="companyId"  type="long" />
+		<column name="groupId" type="long" />	
+		<column name="createDate"  type="Date" />
+		<column name="modifyDate"  type="Date" />
+		<column name="userName"  type="String" />
+		<column name="userId"  type="long" />
+		<order by="asc">
+			<order-column name="createDate" order-by="desc"/>
+			<order-column name="caption" order-by="asc"/>
+		</order>
+		<finder name="status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>		
+		<finder name="GroupAndStatus" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>	
+		<finder name="GroupAndCaption" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="caption" />
+		</finder>	
+		<finder name="Group" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>				
+    </entity>
+    <entity name="PhongBanNhuanButChiTiet" table="portal_phongbannhuanbutchitiet" local-service="true" remote-service="false">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+    	<column name="phongBanNhuanButId"  type="long" />
+    	<column name="phongBanId"  type="long" />
+    	<column name="phongBanTen"  type="String" />
+		<column name="rating"  type="String" />
+		<column name="ratingValue"  type="double" />
+		<order by="asc">
+			<order-column name="phongBanNhuanButId" order-by="desc"/>
+		</order>
+		<finder name="PhongBanNhuanBut" return-type="Collection">
+			<finder-column name="phongBanNhuanButId" />
+		</finder>	
+		<finder name="PhongBanNhuanButAndPhongBan" return-type="Collection">
+			<finder-column name="phongBanNhuanButId" />
+			<finder-column name="phongBanId" />
+		</finder>	
+					
+    </entity>
+    <entity name="BaiVietNhuanBut" table="portal_baivietnhuanbut" local-service="true" remote-service="false">
+        <column name="id" type="long" primary="true" id-type="increment"></column>
+    	<column name="baiVietId"  type="long" />
+    	<column name="loaiBaiViet"  type="int" />
+    	<column name="tieuDe"  type="String" />
+    	<column name="tacGia"  type="String" />
+    	<column name="diaChi"  type="String" />
+    	<column name="ngayXuatBan"  type="Date" />
+		<column name="rating"  type="String" />
+		<column name="ratingValue"  type="double" />
+		<column name="companyId"  type="long" />
+		<column name="groupId" type="long" />	
+		<column name="createDate"  type="Date" />
+		<column name="modifyDate"  type="Date" />
+		<column name="userName"  type="String" />
+		<column name="userId"  type="long" />
+		<column name="type"  type="int" />   <!--  type=1:  bai viet tin tuc ;  type =2 : bai viet nhap tay -->
+		<order by="asc">
+			<order-column name="createDate" order-by="desc"/>
+			<order-column name="tieuDe" order-by="asc"/>
+		</order>
+		<finder name="Group" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>	
+		<finder name="GroupAndType" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="type" />
+		</finder>
+		<finder name="BaiVietID" return-type="Collection">
+			<finder-column name="baiVietId" />
+		</finder>	
+					
+    </entity>
+    <entity name="ContentType" local-service="true" remote-service="true" table="vcms_Content_Type">
+        <!-- PK fields -->
+        <column name="contenTypeId" type="int" primary="true" />
+        <!-- Group instance -->
+        <column name="groupId" type="long" />
+        <!-- Audit fields -->
+        <column name="companyId" type="long" />
+        <column name="userId" type="long" />
+        <column name="name" type="String" />
+        <column name="description" type="String" />
+        <column name="sortOrder" type="int" />
+        <!-- Order -->
+        <order by="asc">
+            <order-column name="sortOrder" />
+        </order>
+        <!-- Finder methods -->
+
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId" />
+        </finder>
+    </entity>
+    
+    <entity name="ContentTypeCost" local-service="true" remote-service="true" table="vcms_Content_TypeCost">
+        <!-- PK fields -->
+        <column name="costId" type="int" primary="true" />
+        <!-- Group instance -->
+        <column name="groupId" type="long" />
+        <!-- Audit fields -->
+        <column name="contentTypeID" type="int" />
+        <column name="fromDate" type="Date" />
+        <column name="toDate" type="Date" />
+        <column name="cost" type="double" />
+        <!-- Order -->
+        <order by="desc">
+            <order-column name="toDate" />
+        </order>
+        <!-- Finder methods -->
+
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId" />
+        </finder>
+    </entity>
+    
+    <entity name="ContentProfit" local-service="true" remote-service="true" table="vcms_Content_Profit">
+        <!-- PK fields -->
+        <column name="contentId" type="long" primary="true" />
+        <!-- Group instance -->
+        <column name="groupId" type="long" />
+        <!-- Audit fields -->
+        <column name="companyId" type="long" />
+        <column name="userId" type="long" />
+        <column name="userName" type="String" />
+        <column name="createDate" type="Date" />
+        <column name="modifiedDate" type="Date" />
+        <column name="distributedDate" type="Date" />
+        <!-- Other fields -->
+        <column name="contentTypeID" type="int" />
+        <column name="headline" type="String" />
+        <column name="cost" type="double" />
+        <column name="status" type="int" />        
+        <!-- Order -->
+        <order by="desc">
+            <order-column name="distributedDate" />
+        </order>
+        <!-- Finder methods -->
+
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId" />
+        </finder>
+    </entity>
+</service-builder>

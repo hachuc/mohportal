@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql file="custom-sql/content.xml" />
+	<sql file="custom-sql/detail.xml" />
+	<sql file="custom-sql/comment.xml" />
+	<sql file="custom-sql/contenttype.xml" />
+	<sql file="custom-sql/distribution.xml" />
+	<sql file="custom-sql/category.xml" />
+</custom-sql>

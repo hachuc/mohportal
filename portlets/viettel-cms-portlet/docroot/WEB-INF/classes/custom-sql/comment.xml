@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.CommentFinder.searchByKeyword">	
+		<![CDATA[
+			SELECT
+				{vcms_Comment.*}
+			FROM
+				vcms_Comment
+			WHERE
+				(companyId = ?) AND
+				(groupId = ?) AND
+				(
+					(LOWER(fullName) LIKE ? [$AND_OR_NULL_CHECK$]) [$AND_OR_CONNECTOR$]
+					(LOWER(email) LIKE ? [$AND_OR_NULL_CHECK$]) [$AND_OR_CONNECTOR$]
+					(LOWER(body) LIKE ? [$AND_OR_NULL_CHECK$])
+				)
+			ORDER BY
+				modifiedDate DESC
+		]]>
+	</sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.CommentFinder.countByKeyword">	
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				vcms_Comment
+			WHERE
+				(companyId = ?) AND
+				(groupId = ?) AND
+				(
+					(LOWER(fullName) LIKE ? [$AND_OR_NULL_CHECK$]) [$AND_OR_CONNECTOR$]
+					(LOWER(email) LIKE ? [$AND_OR_NULL_CHECK$]) [$AND_OR_CONNECTOR$]
+					(LOWER(body) LIKE ? [$AND_OR_NULL_CHECK$])
+				)
+		]]>
+	</sql>
+	
+	<sql id="com.viettel.portal.vcms.service.persistence.CommentFinder.customSearchByKeyword">	
+		<![CDATA[
+			SELECT
+				a.commentId,
+				a.distributionId,		
+				c.title,
+				a.fullName,
+				a.email,
+				a.body,
+				DATE_FORMAT(a.createDate, '%d/%m/%Y') as createDate,
+				c.autoId,
+				a.visible
+			FROM
+				vcms_Comment a inner join vcms_Distribution b on a.distributionId = b.distributionId
+				inner join vcms_Content c on b.contentId = c.contentId and b.version = c.version
+			WHERE
+				(a.companyId = ?) AND
+				(a.groupId = ?) AND
+				(
+					(LOWER(a.fullName) LIKE ? [$AND_OR_NULL_CHECK$]) [$AND_OR_CONNECTOR$]
+					(LOWER(a.email) LIKE ? [$AND_OR_NULL_CHECK$]) [$AND_OR_CONNECTOR$]
+					(LOWER(a.body) LIKE ? [$AND_OR_NULL_CHECK$])
+				)
+			ORDER BY
+				a.modifiedDate DESC
+		]]>
+	</sql>
+	
+	<sql id="com.viettel.portal.vcms.service.persistence.CommentFinder.customOneFieldSearchByKeyword">	
+		<![CDATA[
+			SELECT
+				a.commentId,
+				a.distributionId,		
+				c.title,
+				a.fullName,
+				a.email,
+				a.body,
+				DATE_FORMAT(a.createDate, '%d/%m/%Y') as createDate,
+				c.autoId,
+				a.visible
+			FROM
+				vcms_Comment a inner join vcms_Distribution b on a.distributionId = b.distributionId
+				inner join vcms_Content c on b.contentId = c.contentId and b.version = c.version
+			WHERE
+				(a.companyId = ?) AND
+				(a.groupId = ?) AND
+				(LOWER(a.fullName) LIKE ?)
+			ORDER BY
+				a.modifiedDate DESC
+		]]>
+	</sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.CommentFinder.customOneFieldCountByKeyword">	
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				vcms_Comment a inner join vcms_Distribution b on a.distributionId = b.distributionId
+				inner join vcms_Content c on b.contentId = c.contentId and b.version = c.version
+			WHERE
+				(a.companyId = ?) AND
+				(a.groupId = ?) AND
+				(LOWER(a.fullName) LIKE ? )
+		]]>
+	</sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.CommentFinder.customCountByKeyword">	
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				vcms_Comment a inner join vcms_Distribution b on a.distributionId = b.distributionId
+				inner join vcms_Content c on b.contentId = c.contentId and b.version = c.version
+			WHERE
+				(a.companyId = ?) AND
+				(a.groupId = ?) AND
+				(
+					(LOWER(a.fullName) LIKE ? [$AND_OR_NULL_CHECK$]) [$AND_OR_CONNECTOR$]
+					(LOWER(a.email) LIKE ? [$AND_OR_NULL_CHECK$]) [$AND_OR_CONNECTOR$]
+					(LOWER(a.body) LIKE ? [$AND_OR_NULL_CHECK$])
+				)
+		]]>
+	</sql>
+</custom-sql>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.revotech.portal.tthc" auto-namespace-tables="false">
+	<author>hieptran</author>
+	<namespace>tthc</namespace>
+
+	<entity name="Category" local-service="true" remote-service="true" table="tthc_Category">
+
+		<!-- PK fields -->
+
+		<column name="categoryId" type="long" primary="true" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="categoryName" type="String" />
+		<column name="categoryDesc" type="String" />
+		<column name="isActive" type="boolean" />
+		<column name="categoryType" type="int" />
+		<column name="catOrder" type="int" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="catOrder" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="G_C_A" return-type="Collection">
+			<finder-column name="categoryType" />
+			<finder-column name="isActive" />
+			<finder-column name="groupId" />
+		</finder>
+		
+		<finder name="ByKeyword" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="categoryName" comparator="LIKE" />
+			<finder-column name="categoryType" />
+		</finder>
+		
+		
+		 <finder name="CategoryName" return-type="Collection">
+            <finder-column name="categoryName" comparator="="/>
+            <finder-column name="groupId"/>
+            <finder-column name="categoryType"/>
+        </finder>
+	</entity>
+	<entity name="LegalDocument" local-service="true" remote-service="true" table="tthc_LegalDocument">
+
+		<!-- PK fields -->
+
+		<column name="ldId" type="long" primary="true" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="ldCode" type="String" />
+		<column name="ldTitle" type="String" />
+		<column name="ldLink" type="String" />
+		<column name="ldLevel3Link" type="String" />
+		<column name="ldSubcontent" type="String" />
+		<column name="isActive" type="boolean" />
+		<column name="idLinhvuc" type="long" />
+		<column name="idCoquanbanhanh" type="long" />
+		<column name="ldDonvithuchien" type="String" />
+		<column name="ldLevel" type="int" />
+		
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="ldCode" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="G_L_A" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="ldLevel" />
+			<finder-column name="isActive" />
+		</finder>
+	</entity>
+	<exceptions>
+		<exception>DuplicateCategoryName</exception>
+	</exceptions>
+</service-builder>

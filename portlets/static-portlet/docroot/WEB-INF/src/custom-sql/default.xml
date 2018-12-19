@@ -1,0 +1,22 @@
+<custom-sql>
+    <sql id="com.viettel.portal.staticasset.service.MyServiceFinder.findLatestArticleByTagName">
+        <![CDATA[
+	SELECT ja.*
+	FROM mf3_liferay.journalarticle AS ja
+	JOIN (
+	  SELECT SUBSTRING_INDEX(GROUP_CONCAT(uuid_ ORDER BY version DESC),',',1) AS uuid_LastVersion
+	  FROM mf3_liferay.journalarticle ja
+	  INNER JOIN mf3_liferay.assetentry ae
+	    ON ja.resourcePrimKey = ae.classPK
+	  INNER JOIN mf3_liferay.assetentries_assettags ae_at
+	    ON ae.entryId = ae_at.entryId
+	  INNER JOIN mf3_liferay.assettag tags
+	    ON ae_at.tagId = tags.tagId
+	  WHERE tags.name = ?
+	  GROUP BY articleId
+	  ORDER BY articleId DESC
+	) AS uuids
+	ON ja.uuid_ = uuids.uuid_LastVersion
+        ]]>
+    </sql>
+</custom-sql>

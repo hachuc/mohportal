@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.viettel.portal.videolibrary.service.VideoCategoryLocalService" class="com.viettel.portal.videolibrary.service.impl.VideoCategoryLocalServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.VideoCategoryService" class="com.viettel.portal.videolibrary.service.impl.VideoCategoryServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.persistence.VideoCategoryPersistence" class="com.viettel.portal.videolibrary.service.persistence.VideoCategoryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.videolibrary.service.VideoClipLocalService" class="com.viettel.portal.videolibrary.service.impl.VideoClipLocalServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.VideoClipService" class="com.viettel.portal.videolibrary.service.impl.VideoClipServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.persistence.VideoClipPersistence" class="com.viettel.portal.videolibrary.service.persistence.VideoClipPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.videolibrary.service.VLCategoryLocalService" class="com.viettel.portal.videolibrary.service.impl.VLCategoryLocalServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.VLCategoryService" class="com.viettel.portal.videolibrary.service.impl.VLCategoryServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.persistence.VLCategoryPersistence" class="com.viettel.portal.videolibrary.service.persistence.VLCategoryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.videolibrary.service.VLRelateVideoLocalService" class="com.viettel.portal.videolibrary.service.impl.VLRelateVideoLocalServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.VLRelateVideoService" class="com.viettel.portal.videolibrary.service.impl.VLRelateVideoServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.persistence.VLRelateVideoPersistence" class="com.viettel.portal.videolibrary.service.persistence.VLRelateVideoPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.videolibrary.service.VLVideoLocalService" class="com.viettel.portal.videolibrary.service.impl.VLVideoLocalServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.VLVideoService" class="com.viettel.portal.videolibrary.service.impl.VLVideoServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.persistence.VLVideoPersistence" class="com.viettel.portal.videolibrary.service.persistence.VLVideoPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.videolibrary.service.persistence.VLVideoFinder" class="com.viettel.portal.videolibrary.service.persistence.VLVideoFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.videolibrary.service.VLVideoCategoryLocalService" class="com.viettel.portal.videolibrary.service.impl.VLVideoCategoryLocalServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.VLVideoCategoryService" class="com.viettel.portal.videolibrary.service.impl.VLVideoCategoryServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.persistence.VLVideoCategoryPersistence" class="com.viettel.portal.videolibrary.service.persistence.VLVideoCategoryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.videolibrary.service.VLVideoTagLocalService" class="com.viettel.portal.videolibrary.service.impl.VLVideoTagLocalServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.VLVideoTagService" class="com.viettel.portal.videolibrary.service.impl.VLVideoTagServiceImpl" />
+	<bean id="com.viettel.portal.videolibrary.service.persistence.VLVideoTagPersistence" class="com.viettel.portal.videolibrary.service.persistence.VLVideoTagPersistenceImpl" parent="basePersistence" />
+</beans>

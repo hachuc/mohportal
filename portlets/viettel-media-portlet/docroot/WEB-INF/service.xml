@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.viettel.portal.videolibrary" auto-namespace-tables="false">
+	<author>ChucHV</author>
+	<namespace>VideoLibrary</namespace>
+
+	<entity name="VLVideo" local-service="true" remote-service="true" table="portal_video">
+
+		<!-- PK fields -->
+		<column name="videoId" type="long" primary="true" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="videoName" type="String" />
+		<column name="description" type="String" />
+		<column name="videoType" type="String" />
+		<column name="videoUrl" type="String" />
+		<column name="viewCount" type="int" />
+		<column name="fileId" type="long" />
+		<column name="image" type="boolean" />
+		<column name="imageId" type="long" />
+		<column name="smallImageUrl" type="String" />
+		<!-- Order -->
+        <column name="relateId" type="long"></column>
+        <column name="invisible" type="boolean"></column>
+        <column name="categoryId" type="long"></column>
+		<order by="desc">
+			<order-column name="modifiedDate" order-by="desc"/>
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="Group" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+        <finder name="CategoryId" return-type="Collection">
+            <finder-column name="categoryId"></finder-column>
+            <finder-column name="groupId"></finder-column>
+        </finder>
+	</entity>
+    <entity name="VLCategory" local-service="true" table="portal_videocategory">
+        <column name="categoryId" type="long" primary="true"></column>
+        <column name="groupId" type="long" primary="false"></column>
+        <column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+        <column name="userName" type="String"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="modifiedDate" type="Date"></column>
+        <column name="categoryName" type="String"></column>
+        <column name="invisible" type="boolean"></column>
+        <order by="desc">
+            <order-column name="modifiedDate" order-by="desc"></order-column>
+        </order>
+        <finder name="Group" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="CategoryName" return-type="Collection">
+            <finder-column name="categoryName" comparator="="></finder-column>
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="GroupAndState" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="invisible"></finder-column>
+        </finder>
+    </entity>
+    <entity name="VLVideoCategory" local-service="true" table="portal_videocategorymap">
+        <column name="id" type="long" primary="true"></column>
+        <column name="categoryId" type="long"></column>
+        <column name="videoId" type="long"></column>
+        <column name="groupId" type="long"></column>
+        <finder name="Category" return-type="Collection">
+            <finder-column name="categoryId"></finder-column>
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="Video" return-type="Collection">
+            <finder-column name="videoId"></finder-column>
+            <finder-column name="groupId"></finder-column>
+        </finder>
+    </entity>
+    <entity name="VLVideoTag" local-service="true" table="portal_videotag">
+        <column name="id" type="long" primary="true"></column>
+        <column name="videoId" type="long"></column>
+        <column name="tagId" type="long"></column>
+        <column name="groupId" type="long"></column>
+        <finder name="Tags" return-type="Collection">
+            <finder-column name="videoId"></finder-column>
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="Video" return-type="Collection">
+            <finder-column name="tagId"></finder-column>
+            <finder-column name="groupId"></finder-column>
+        </finder>
+    </entity>
+    <entity name="VLRelateVideo" local-service="true" table="portal_relatevideo">
+        <column name="id" primary="true" type="long"></column>
+        <column name="videoId" type="long"></column>
+        <column name="relateId" type="long"></column>
+        <column name="groupId" type="long"></column>
+        <finder name="RelateVideo" return-type="Collection">
+            <finder-column name="videoId"></finder-column>
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="video" return-type="Collection">
+            <finder-column name="relateId"></finder-column>
+            <finder-column name="groupId"></finder-column>
+        </finder>
+    </entity>
+	
+	<entity name="VideoCategory" local-service="true" remote-service="true" table="VideoCategory">
+        <column name="ID" primary="true" type="int"></column>
+        <column name="Name" type="String"></column>
+        <column name="Url" type="String"></column>
+        <column name="SortOrder" type="int"></column>
+        <column name="ItemCount" type="int"></column>
+    </entity>
+    
+    <entity name="VideoClip" local-service="true" remote-service="true" table="VideoClip">
+        <column name="ID" primary="true" type="int"></column>
+        <column name="Name" type="String"></column>
+        <column name="CategoryID" type="int"></column>
+        <column name="Description" type="String"></column>
+        <column name="ImageUrl" type="String"></column>
+        <column name="VideoUrl" type="String"></column>
+        <column name="Duration" type="int"></column>
+        <column name="ViewCount" type="int"></column>
+        <column name="Status" type="int"></column>
+        <column name="CreationDate" type="Date"></column>
+        <column name="ModifiedDate" type="Date"></column>
+        
+        <finder name="CategoryID" return-type="Collection">
+            <finder-column name="CategoryID"></finder-column>
+        </finder>
+    </entity>
+	<exceptions>
+		<exception>VideoFileType</exception>
+		<exception>VideoFileSize</exception>
+		<exception>ImageFileType</exception>
+		<exception>ImageFileSize</exception>
+	</exceptions>
+
+</service-builder>

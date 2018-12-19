@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.portal_egov.portlet.legal_faq.model.Feedback">
+		<field name="feedbackId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="title" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="summary" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="body" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="fullName" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="workFor" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="address" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="phone" type="String" />
+		<field name="email" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="fileId" type="long" />
+		<field name="fileSize" type="String" />
+		<field name="fileName" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="fileURL" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="ipAddress" type="String" />
+	</model>
+	<model name="com.portal_egov.portlet.legal_faq.model.LegalFAQCategory">
+		<field name="categoryId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="parentId" type="long" />
+		<field name="categoryName" type="String">
+			<hint name="max-length">300</hint>
+		</field>
+		<field name="categoryDesc" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="categoryType" type="int" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.portal_egov.portlet.legal_faq.model.LegalFAQEntry">
+		<field name="entryId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="categoryId" type="long" />
+		<field name="citizenName" type="String" />
+		<field name="citizenPhone" type="String" />
+		<field name="citizenEmail" type="String" />
+		<field name="askDate" type="Date" />
+		<field name="askTitle" type="String">
+			<hint name="max-length">300</hint>
+		</field>
+		<field name="askContent" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="answerDate" type="Date" />
+		<field name="answerContent" type="String">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="publishDate" type="Date" />
+		<field name="viewCount" type="int" />
+		<field name="publishStatus" type="int" />
+		<field name="status" type="int" />
+	</model>
+</model-hints>

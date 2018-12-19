@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.liferay.viettel.portal.visitcounter.service.VisitCounterLocalService" class="com.liferay.viettel.portal.visitcounter.service.impl.VisitCounterLocalServiceImpl" />
+	<bean id="com.liferay.viettel.portal.visitcounter.service.VisitCounterService" class="com.liferay.viettel.portal.visitcounter.service.impl.VisitCounterServiceImpl" />
+	<bean id="com.liferay.viettel.portal.visitcounter.service.persistence.VisitCounterPersistence" class="com.liferay.viettel.portal.visitcounter.service.persistence.VisitCounterPersistenceImpl" parent="basePersistence" />
+	<bean id="com.liferay.viettel.portal.visitcounter.service.VisitCounterLogLocalService" class="com.liferay.viettel.portal.visitcounter.service.impl.VisitCounterLogLocalServiceImpl" />
+	<bean id="com.liferay.viettel.portal.visitcounter.service.VisitCounterLogService" class="com.liferay.viettel.portal.visitcounter.service.impl.VisitCounterLogServiceImpl" />
+	<bean id="com.liferay.viettel.portal.visitcounter.service.persistence.VisitCounterLogPersistence" class="com.liferay.viettel.portal.visitcounter.service.persistence.VisitCounterLogPersistenceImpl" parent="basePersistence" />
+</beans>

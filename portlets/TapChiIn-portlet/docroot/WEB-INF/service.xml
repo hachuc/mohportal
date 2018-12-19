@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.viettel.portal.magazine" auto-namespace-tables="false">
+	<author>namtv</author>
+	<namespace>Magazine</namespace>
+
+	<entity name="Magazine" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="ID" type="int" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="Name" type="String" />
+		<column name="PublishNumber" type="int" />
+		<column name="PublishYear" type="int" />
+		<column name="ImageUrl" type="String" />
+		<column name="ImageID" type="long" />
+		
+		<column name="CreationDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="DistributedDate" type="Date" />
+
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="DistributedDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="PublishNumberAndYear" return-type="Collection">
+			<finder-column name="PublishNumber" />
+			<finder-column name="PublishYear" />
+		</finder>
+		
+		<finder name="PublishYear" return-type="Collection">
+			<finder-column name="PublishYear" />
+		</finder>
+	</entity>
+	
+	<entity name="MagazineContent" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="ID" type="int" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="Headline" type="String" />
+		<column name="Teaser" type="String" />
+		<column name="Body" type="String" />
+		
+		<column name="MagazineZoneID" type="int" />
+		<column name="MagazineID" type="int" />
+		<column name="Author" type="String" />
+		<column name="Jobtitle" type="String" />
+		
+		<column name="ViewedCount" type="int" />
+		<column name="SortOrder" type="int" />
+		<column name="MailedCount" type="int" />
+		
+		<column name="CreationDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="SortOrder" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="MagazineAndZone" return-type="Collection">
+			<finder-column name="MagazineID" />
+			<finder-column name="MagazineZoneID" />
+		</finder>
+		
+		<finder name="MagazineID" return-type="Collection">
+			<finder-column name="MagazineID" />
+		</finder>
+		
+		<finder name="MagazineZoneID" return-type="Collection">
+			<finder-column name="MagazineZoneID" />
+		</finder>
+	</entity>
+	
+	<entity name="MagazineZone" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="ID" type="int" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="Name" type="String" />
+		<column name="MagazineID" type="int" />
+		<column name="SortOrder" type="int" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="SortOrder" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="MagazineID" return-type="Collection">
+			<finder-column name="MagazineID" />
+		</finder>
+	</entity>
+</service-builder>

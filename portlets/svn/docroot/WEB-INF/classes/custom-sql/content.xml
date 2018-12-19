@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.ContentFinder.searchByStatusVersion">	
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				vcms_Content  a1
+			WHERE 
+			(a1.groupid = ?)
+			AND (categoryId = ?)
+			AND (createdByUserId = ?)
+			AND (status = ?)
+			AND (version = ?)
+			AND (lower(a1.title) LIKE ? [$AND_OR_NULL_CHECK$])
+			ORDER BY a1.createDate desc
+		]]>
+	</sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.ContentFinder.findByG_CA_AU_V_S">	
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				vcms_Content  a1
+			WHERE 
+			(a1.groupid = ?)
+			AND (categoryId = ?)
+			AND (createdByUserId = ?)
+			AND (status = ?)
+			AND (version = ?)
+			AND (lower(a1.title) LIKE ? [$AND_OR_NULL_CHECK$])
+			ORDER BY a1.createDate desc
+		]]>
+	</sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.ContentFinder.countByG_CA_AU_V_S">	
+		<![CDATA[
+			SELECT
+				count(*) AS COUNT_VALUE
+			FROM
+				vcms_Content  a1
+			WHERE 
+			(a1.groupid = ?)
+			AND (categoryId = ?)
+			AND (createdByUserId = ?)
+			AND (status = ?)
+			AND (version = ?)
+			AND (lower(a1.title) LIKE ? [$AND_OR_NULL_CHECK$])
+		]]>
+	</sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.ContentFinder.countByStatusVersion">	
+		<![CDATA[
+			SELECT
+				count(*) AS COUNT_VALUE
+			FROM
+				vcms_Content  a1
+			WHERE 
+			(a1.groupid = ?)
+			AND (categoryId = ?)
+			AND (createdByUserId = ?)
+			AND (status = ?)
+			AND (version = ?)
+			AND (lower(a1.title) LIKE ? [$AND_OR_NULL_CHECK$])
+		]]>
+	</sql>
+	
+	<sql id="com.viettel.portal.vcms.service.persistence.ContentFinder.findByKeyword">	
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				vcms_Content  a1
+			WHERE 
+			(a1.groupid = ?)
+			AND (categoryId = ?)
+			AND (lower(a1.title) LIKE ? [$AND_OR_NULL_CHECK$])
+			ORDER BY a1.createDate desc
+		]]>
+	</sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.ContentFinder.countByKeyword">	
+		<![CDATA[
+			SELECT
+				count(*) AS COUNT_VALUE
+			FROM
+				vcms_Content  a1
+			WHERE 
+			(a1.groupid = ?)
+			AND (categoryId = ?)
+			AND (lower(a1.title) LIKE ? [$AND_OR_NULL_CHECK$])
+		]]>
+	</sql>
+	
+	<sql id="com.viettel.portal.vcms.service.persistence.ContentFinder.findByCategory">	
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				vcms_Content  a1
+			WHERE 
+			(a1.groupid = ?)
+			AND (categoryId = ?)
+			ORDER BY a1.createDate desc
+		]]>
+	</sql>
+	
+	<sql id="com.viettel.portal.vcms.service.persistence.ContentFinder.countByCategory">	
+		<![CDATA[
+			SELECT
+				count(*) AS COUNT_VALUE
+			FROM
+				vcms_Content  a1
+			WHERE 
+			(a1.groupid = ?)
+			AND (categoryId = ?)
+		]]>
+	</sql>
+	
+	<sql id="com.viettel.portal.vcms.service.persistence.ContentFinder.findByAutoId">	
+		<![CDATA[
+			SELECT
+				 a1.autoId,
+				 a1.contentId,
+				 a1.groupId,
+				 a1.companyId,
+				 a1.userId,
+				 a1.userName,
+				 a1.createDate,
+				 a1.modifiedDate,
+				 a1.preVersion,
+				 a1.version,
+				 a1.subTitle,
+				 a1.title,
+				 a1.summary,
+				 a2.subContent,
+				 a2.content,
+				 a1.smallImageId,
+				 a1.smallImageUrl,
+				 a1.categoryId,
+				 a1.copyRight,
+				 a1.status,
+				 a1.urlTitle,
+				 a1.newsType,
+				 a1.imageUrl,
+				 a1.isLegalContent,
+				 a1.imageCaption,
+				 a1.imagePosition,
+				 a1.createdByUserId,
+				 a1.editedByUserId,
+				 a1.reviewedByUserId,
+				 a1.publishedByUserId,
+				 a1.createdByUserName,
+				 a1.editedByUserName,
+				 a1.reviewedByUserName,
+				 a1.publishedByUserName,
+				 a1.author,
+				 a1.jobTitle
+			FROM
+				vcms_Content  a1 inner join vcms_Content_Detail a2 on a1.autoId = a2.autoId and a1.contentId = a2.contentId 
+			WHERE
+			(a1.autoId = ?) 
+			AND (a1.groupId = ?)
+		]]>
+	</sql>
+	
+	<sql id="com.viettel.portal.vcms.service.persistence.ContentFinder.findByContentId">	
+		<![CDATA[
+			SELECT
+				 a1.autoId,
+				 a1.contentId,
+				 a1.groupId,
+				 a1.companyId,
+				 a1.userId,
+				 a1.userName,
+				 a1.createDate,
+				 a1.modifiedDate,
+				 a1.preVersion,
+				 a1.version,
+				 a1.subTitle,
+				 a1.title,
+				 a1.summary,
+				 a2.subContent,
+				 a2.content,
+				 a1.smallImageId,
+				 a1.smallImageUrl,
+				 a1.categoryId,
+				 a1.copyRight,
+				 a1.status,
+				 a1.urlTitle,
+				 a1.newsType,
+				 a1.imageUrl,
+				 a1.isLegalContent,
+				 a1.imageCaption,
+				 a1.imagePosition,
+				 a1.createdByUserId,
+				 a1.editedByUserId,
+				 a1.reviewedByUserId,
+				 a1.publishedByUserId,
+				 a1.createdByUserName,
+				 a1.editedByUserName,
+				 a1.reviewedByUserName,
+				 a1.publishedByUserName,
+				 a1.author,
+				 a1.jobTitle
+			FROM
+				vcms_Content  a1 inner join vcms_Content_Detail a2 
+				on a1.autoId = a2.autoId and a1.contentId = a2.contentId
+			WHERE
+			(a1.groupId = ?)
+			AND (a1.contentId = ?)
+			AND (a1.version = ?)
+			AND (a1.status = ?)
+		]]>
+	</sql>
+</custom-sql>

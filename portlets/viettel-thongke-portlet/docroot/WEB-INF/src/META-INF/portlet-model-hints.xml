@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.viettel.portal.thongke.model.BaiVietNhuanBut">
+		<field name="id" type="long" />
+		<field name="baiVietId" type="long" />
+		<field name="loaiBaiViet" type="int" />
+		<field name="tieuDe" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="tacGia" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="diaChi" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="ngayXuatBan" type="Date" />
+		<field name="rating" type="String" />
+		<field name="ratingValue" type="double" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifyDate" type="Date" />
+		<field name="userName" type="String" />
+		<field name="userId" type="long" />
+		<field name="type" type="int" />
+	</model>
+	<model name="com.viettel.portal.thongke.model.ContentProfit">
+		<field name="contentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="distributedDate" type="Date" />
+		<field name="contentTypeID" type="int" />
+		<field name="headline" type="String" />
+		<field name="cost" type="double" />
+		<field name="status" type="int" />
+	</model>
+	<model name="com.viettel.portal.thongke.model.ContentType">
+		<field name="contenTypeId" type="int" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="sortOrder" type="int" />
+	</model>
+	<model name="com.viettel.portal.thongke.model.ContentTypeCost">
+		<field name="costId" type="int" />
+		<field name="groupId" type="long" />
+		<field name="contentTypeID" type="int" />
+		<field name="fromDate" type="Date" />
+		<field name="toDate" type="Date" />
+		<field name="cost" type="double" />
+	</model>
+	<model name="com.viettel.portal.thongke.model.PhongBan">
+		<field name="id" type="long" />
+		<field name="name" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="order_" type="int" />
+		<field name="descriptions" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="status" type="boolean" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifyDate" type="Date" />
+		<field name="userName" type="String" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="com.viettel.portal.thongke.model.PhongBanNhuanBut">
+		<field name="id" type="long" />
+		<field name="caption" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="fromDate" type="Date" />
+		<field name="toDate" type="Date" />
+		<field name="status" type="boolean" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifyDate" type="Date" />
+		<field name="userName" type="String" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="com.viettel.portal.thongke.model.PhongBanNhuanButChiTiet">
+		<field name="id" type="long" />
+		<field name="phongBanNhuanButId" type="long" />
+		<field name="phongBanId" type="long" />
+		<field name="phongBanTen" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="rating" type="String" />
+		<field name="ratingValue" type="double" />
+	</model>
+</model-hints>

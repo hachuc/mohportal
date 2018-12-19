@@ -1,0 +1,45 @@
+.magazinecontent {
+	padding: 5px 2px;
+	background-color: #FFF1DA;
+}
+
+.magazinecontent .info {
+	padding: 18px 5px;
+	float: right;
+}
+
+.magazinecontent .infonew {
+	clear: both;
+	font: bold 12px arial;
+	padding: 0px;
+	color: #FFFFFF;
+	background: url(/TapChiIn-portlet/images/magazine_new.gif) no-repeat
+		left top;
+	width: 136px;
+	height: 52px;
+}
+
+.magazinecontent .infonew span {
+	float: left;
+	display: block;
+	padding-top: 20px;
+	width: 136px;
+	text-align: center;
+}
+
+.magazinecontent .infochapter {
+	clear: both;
+	font: normal 12px arial;
+	padding: 0px;
+	color: #000711;
+	width: 136px;
+	text-align: center;
+	padding-top: 40px;
+}
+
+.magazinecontent .infochapter a {
+	font: bold 12px arial;
+	padding: 0px;
+	color: #EB191C;
+	text-decoration: underline;
+}

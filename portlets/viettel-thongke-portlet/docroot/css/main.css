@@ -1,0 +1,37 @@
+.selected {
+	   border: 1px solid #cdcdcd;
+       background-color: #efefef;
+       border-radius: 3px;
+   }
+#headerReport{
+	font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}   
+.clsRating{
+	width:100px !important;
+}
+.custom-toolbar input, button {
+	width: 100%;
+}
+.custom-toolbar select{
+	width: 100%;
+}
+.custom-1{
+	width: 5%;
+}
+.custom-2{
+	width: 39%;
+}
+.custom-3{
+	width: 14%;
+}
+.custom-4{
+	width: 14%;
+}
+.custom-5{
+	width: 14%;
+}
+.custom-6{
+	width: 14%;
+}

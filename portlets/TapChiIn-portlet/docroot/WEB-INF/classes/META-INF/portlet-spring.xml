@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.viettel.portal.magazine.service.MagazineLocalService" class="com.viettel.portal.magazine.service.impl.MagazineLocalServiceImpl" />
+	<bean id="com.viettel.portal.magazine.service.MagazineService" class="com.viettel.portal.magazine.service.impl.MagazineServiceImpl" />
+	<bean id="com.viettel.portal.magazine.service.persistence.MagazinePersistence" class="com.viettel.portal.magazine.service.persistence.MagazinePersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.magazine.service.persistence.MagazineFinder" class="com.viettel.portal.magazine.service.persistence.MagazineFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.magazine.service.MagazineContentLocalService" class="com.viettel.portal.magazine.service.impl.MagazineContentLocalServiceImpl" />
+	<bean id="com.viettel.portal.magazine.service.MagazineContentService" class="com.viettel.portal.magazine.service.impl.MagazineContentServiceImpl" />
+	<bean id="com.viettel.portal.magazine.service.persistence.MagazineContentPersistence" class="com.viettel.portal.magazine.service.persistence.MagazineContentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.magazine.service.persistence.MagazineContentFinder" class="com.viettel.portal.magazine.service.persistence.MagazineContentFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.magazine.service.MagazineZoneLocalService" class="com.viettel.portal.magazine.service.impl.MagazineZoneLocalServiceImpl" />
+	<bean id="com.viettel.portal.magazine.service.MagazineZoneService" class="com.viettel.portal.magazine.service.impl.MagazineZoneServiceImpl" />
+	<bean id="com.viettel.portal.magazine.service.persistence.MagazineZonePersistence" class="com.viettel.portal.magazine.service.persistence.MagazineZonePersistenceImpl" parent="basePersistence" />
+</beans>

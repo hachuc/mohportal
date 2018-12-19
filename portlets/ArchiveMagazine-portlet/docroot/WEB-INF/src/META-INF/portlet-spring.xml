@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.viettel.portal.magazine.archive.service.ContentLocalService" class="com.viettel.portal.magazine.archive.service.impl.ContentLocalServiceImpl" />
+	<bean id="com.viettel.portal.magazine.archive.service.ContentService" class="com.viettel.portal.magazine.archive.service.impl.ContentServiceImpl" />
+	<bean id="com.viettel.portal.magazine.archive.service.persistence.ContentPersistence" class="com.viettel.portal.magazine.archive.service.persistence.ContentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.magazine.archive.service.MagazineLocalService" class="com.viettel.portal.magazine.archive.service.impl.MagazineLocalServiceImpl" />
+	<bean id="com.viettel.portal.magazine.archive.service.MagazineService" class="com.viettel.portal.magazine.archive.service.impl.MagazineServiceImpl" />
+	<bean id="com.viettel.portal.magazine.archive.service.persistence.MagazinePersistence" class="com.viettel.portal.magazine.archive.service.persistence.MagazinePersistenceImpl" parent="basePersistence" />
+</beans>

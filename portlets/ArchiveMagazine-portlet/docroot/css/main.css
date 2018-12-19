@@ -1,0 +1,20 @@
+.magazineheadline {
+    font: normal 12px arial;
+    line-height: 20px;
+}
+.magazineheadline a {
+    font: bold 12px arial;
+    color: #000711;
+    text-decoration: none;
+}
+.magazineauthor {
+    font: normal 12px arial;
+    color: #454545;
+    text-decoration: none;
+}
+.aui .table>tbody>tr>td{
+	border-top: none !important;
+}
+.aui .table{
+	margin-bottom: 0;
+}

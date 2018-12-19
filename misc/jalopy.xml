@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+
+<jalopy>
+<internal>
+<version>6</version>
+</internal>
+<printer>
+<blanklines>
+<after>
+<header>1</header>
+<lastImport>1</lastImport>
+</after>
+</blanklines>
+<comments>
+<javadoc>
+<generate>
+<class>1</class>
+</generate>
+<templates>
+<class>/**
+ * @author $author$
+*/</class>
+<interface>/**
+ * @author $author$
+*/</interface>
+</templates>
+</javadoc>
+<remove>
+<singleline>true</singleline>
+</remove>
+</comments>
+<header>
+<text>/**
+ * OpenCPS is the open source Core Public Services software
+ * Copyright (C) 2016-present OpenCPS community
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;
+ */</text>
+<use>true</use>
+</header>
+<indentation>
+<sizes>
+<braceRightAfter>0</braceRightAfter>
+<tabs>4</tabs>
+</sizes>
+<tabs>
+<enable>true</enable>
+</tabs>
+</indentation>
+<misc>
+<insertTrailingNewline>false</insertTrailingNewline>
+</misc>
+<sorting>
+<declaration>
+<enable>false</enable>
+</declaration>
+</sorting>
+<whitespace>
+<after>
+<typeCast>false</typeCast>
+</after>
+</whitespace>
+<wrapping>
+<always>
+<after>
+<braceRight>true</braceRight>
+</after>
+</always>
+</wrapping>
+</printer>
+</jalopy>

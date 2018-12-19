@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.ContentTypeFinder.searchByName">	
+		<![CDATA[
+			SELECT
+				a1.*
+			FROM
+				vcms_Content_Type  a1
+			WHERE 
+			(a1.groupid = ?)
+			AND (lower(a1.name) LIKE ? )
+			ORDER BY a1.sortOrder asc
+		]]>
+	</sql>
+	<sql id="com.viettel.portal.vcms.service.persistence.ContentTypeFinder.countByName">	
+		<![CDATA[
+			SELECT
+				count(*) AS COUNT_VALUE
+			FROM
+				vcms_Content_Type  a1
+			WHERE 
+			(a1.groupid = ?)
+			AND (lower(a1.name) LIKE ?)
+		]]>
+	</sql>
+</custom-sql>

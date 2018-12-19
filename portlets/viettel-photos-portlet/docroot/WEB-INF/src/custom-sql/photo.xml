@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="com.viettel.portal.photos.service.persistence.PhotoFinder.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				portal_photo pp
+			WHERE 
+			pp.status = 1
+			AND pp.groupId = ?
+			AND lower(pp.caption) LIKE ?
+			AND pp.categoryId = ?
+			ORDER BY pp.order_ desc
+		]]>
+	</sql>
+	
+	<sql id="com.viettel.portal.photos.service.persistence.PhotoFinder.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS TOTAL
+			FROM
+				portal_photo pp
+			WHERE 
+			pp.status = 1
+			AND pp.groupId = ?
+			AND lower(pp.caption) LIKE ?
+			AND pp.categoryId = ?
+		]]>
+	</sql>
+</custom-sql>

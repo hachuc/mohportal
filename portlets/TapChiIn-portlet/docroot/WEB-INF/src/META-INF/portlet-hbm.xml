@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.viettel.portal.magazine.model.Magazine" />
+	<import class="com.viettel.portal.magazine.model.MagazineContent" />
+	<import class="com.viettel.portal.magazine.model.MagazineZone" />
+	<class name="com.viettel.portal.magazine.model.impl.MagazineImpl" table="Magazine">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="Name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PublishNumber" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PublishYear" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ImageUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ImageID" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="CreationDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="DistributedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.viettel.portal.magazine.model.impl.MagazineContentImpl" table="MagazineContent">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="Headline" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Teaser" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Body" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MagazineZoneID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="MagazineID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="Author" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Jobtitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ViewedCount" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="SortOrder" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="MailedCount" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreationDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.viettel.portal.magazine.model.impl.MagazineZoneImpl" table="MagazineZone">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="Name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MagazineID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="SortOrder" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.viettel.portal.magazine.model.Magazine">
+		<field name="ID" type="int" />
+		<field name="Name" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="PublishNumber" type="int" />
+		<field name="PublishYear" type="int" />
+		<field name="ImageUrl" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="ImageID" type="long" />
+		<field name="CreationDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="DistributedDate" type="Date" />
+	</model>
+	<model name="com.viettel.portal.magazine.model.MagazineContent">
+		<field name="ID" type="int" />
+		<field name="Headline" type="String" />
+		<field name="Teaser" type="String" />
+		<field name="Body" type="String">
+			<hint-collection name="CLOB" />
+		</field>
+		<field name="MagazineZoneID" type="int" />
+		<field name="MagazineID" type="int" />
+		<field name="Author" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="Jobtitle" type="String" />
+		<field name="ViewedCount" type="int" />
+		<field name="SortOrder" type="int" />
+		<field name="MailedCount" type="int" />
+		<field name="CreationDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+	</model>
+	<model name="com.viettel.portal.magazine.model.MagazineZone">
+		<field name="ID" type="int" />
+		<field name="Name" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="MagazineID" type="int" />
+		<field name="SortOrder" type="int" />
+	</model>
+</model-hints>

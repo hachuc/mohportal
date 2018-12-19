@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.viettel.portal.vbpq.model.AttachFile">
+		<field name="id" type="long" />
+		<field name="vanBanId" type="long" />
+		<field name="fileId" type="long" />
+		<field name="fileLink" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="fileName" type="String">
+			<hint name="max-length">255</hint>
+		</field>
+		<field name="fileSize" type="String" />
+	</model>
+	<model name="com.viettel.portal.vbpq.model.CoQuanBanHanhVanBan">
+		<field name="id" type="long" />
+		<field name="ten" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="trangThai" type="boolean" />
+		<field name="ngayTao" type="Date" />
+		<field name="ngaySua" type="Date" />
+		<field name="nguoiTao" type="String" />
+		<field name="nguoiSua" type="String" />
+		<field name="groupId" type="long" />
+		<field name="order_" type="int" />
+		<field name="nhomVanBanId" type="long" />
+	</model>
+	<model name="com.viettel.portal.vbpq.model.LinhVucVanBan">
+		<field name="id" type="long" />
+		<field name="ten" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="trangThai" type="boolean" />
+		<field name="ngayTao" type="Date" />
+		<field name="ngaySua" type="Date" />
+		<field name="nguoiTao" type="String" />
+		<field name="nguoiSua" type="String" />
+		<field name="groupId" type="long" />
+		<field name="order_" type="int" />
+		<field name="nhomVanBanId" type="long" />
+	</model>
+	<model name="com.viettel.portal.vbpq.model.LoaiVanBan">
+		<field name="id" type="long" />
+		<field name="ten" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="trangThai" type="boolean" />
+		<field name="ngayTao" type="Date" />
+		<field name="ngaySua" type="Date" />
+		<field name="nguoiTao" type="String" />
+		<field name="nguoiSua" type="String" />
+		<field name="groupId" type="long" />
+		<field name="order_" type="int" />
+		<field name="nhomVanBanId" type="long" />
+	</model>
+	<model name="com.viettel.portal.vbpq.model.NhomVanBan">
+		<field name="id" type="long" />
+		<field name="tenNhom" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="nguoiTao" type="String" />
+		<field name="nguoiTaoId" type="long" />
+		<field name="ngayTao" type="Date" />
+		<field name="ngaySua" type="Date" />
+		<field name="nguoiSua" type="String" />
+		<field name="nguoiSuaId" type="long" />
+		<field name="trangThai" type="int" />
+		<field name="groupId" type="long" />
+	</model>
+	<model name="com.viettel.portal.vbpq.model.VanBanPhapQuy">
+		<field name="id" type="long" />
+		<field name="maVanBan" type="String">
+			<hint name="max-length">150</hint>
+		</field>
+		<field name="ngayTao" type="Date" />
+		<field name="ngaySua" type="Date" />
+		<field name="nguoiTao" type="String" />
+		<field name="nguoiSua" type="String" />
+		<field name="trichYeu" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="coQuanBanHanh" type="long" />
+		<field name="loaiVanBan" type="long" />
+		<field name="linhVucVanBan" type="long" />
+		<field name="ngayBanHanh" type="Date" />
+		<field name="ngayCoHieuLuc" type="Date" />
+		<field name="ngayHetHieuLuc" type="Date" />
+		<field name="nguoiKy" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="vanBanThayThe" type="long" />
+		<field name="groupId" type="long" />
+		<field name="status" type="int" />
+		<field name="statusByDate" type="Date" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="nhomVanBanId" type="long" />
+	</model>
+</model-hints>

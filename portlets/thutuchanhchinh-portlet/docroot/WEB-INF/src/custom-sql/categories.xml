@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="com.revotech.portal.tthc.service.persistence.CategoryFinder.findByKeyword">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				tthc_Category  a1
+			WHERE
+				(a1.groupid = ?)
+				AND (a1.isActive = 1)
+				AND (a1.categoryType = ?)
+				AND (lower(a1.categoryName) LIKE ? [$AND_OR_NULL_CHECK$])
+			ORDER BY
+				a1.catOrder ASC
+		]]>
+	</sql>
+	
+	<sql id="com.revotech.portal.tthc.service.persistence.CategoryFinder.countByKeyword">
+		<![CDATA[
+			SELECT
+				count(*) AS COUNT_VALUE
+			FROM
+				tthc_Category  a1
+			WHERE
+				(a1.groupid = ?)
+				AND (a1.isActive = 1)
+				AND (a1.categoryType = ?)
+				AND (lower(a1.categoryName) LIKE ? [$AND_OR_NULL_CHECK$])
+		]]>
+	</sql>
+</custom-sql>

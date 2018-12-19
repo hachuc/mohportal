@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.viettel.portal.magazine.archive.model.Content" />
+	<import class="com.viettel.portal.magazine.archive.model.Magazine" />
+	<class name="com.viettel.portal.magazine.archive.model.impl.ContentImpl" table="ArchiveContent">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="Subject" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="NormalZoneID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="SpecialZoneID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="FileUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Author" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="AuthorTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MagazineID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="SortOrder" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreationDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.viettel.portal.magazine.archive.model.impl.MagazineImpl" table="ArchiveMagazine">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="Name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PublishNumber" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PublishMonth" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PublishYear" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ImageUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MagazineType" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+</hibernate-mapping>

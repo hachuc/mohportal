@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.viettel.portal.magazine.archive.model.Content">
+		<field name="ID" type="int" />
+		<field name="Subject" type="String" />
+		<field name="NormalZoneID" type="int" />
+		<field name="SpecialZoneID" type="int" />
+		<field name="FileUrl" type="String" />
+		<field name="Author" type="String" />
+		<field name="AuthorTitle" type="String" />
+		<field name="MagazineID" type="int" />
+		<field name="SortOrder" type="int" />
+		<field name="CreationDate" type="Date" />
+	</model>
+	<model name="com.viettel.portal.magazine.archive.model.Magazine">
+		<field name="ID" type="int" />
+		<field name="Name" type="String" />
+		<field name="PublishNumber" type="int" />
+		<field name="PublishMonth" type="int" />
+		<field name="PublishYear" type="int" />
+		<field name="ImageUrl" type="String" />
+		<field name="MagazineType" type="int" />
+	</model>
+</model-hints>

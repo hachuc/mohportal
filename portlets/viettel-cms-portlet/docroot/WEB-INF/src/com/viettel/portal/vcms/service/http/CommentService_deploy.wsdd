@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_vcms_CommentService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.viettel.portal.vcms.service.http.CommentServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CommentServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CommentServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_vcms_CommentService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.vcms.portal.viettel.com" />
+	</service>
+</deployment>

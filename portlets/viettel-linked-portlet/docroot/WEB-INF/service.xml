@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.viettel.portal.links">
+	<author>ChucHV</author>
+	<namespace>Links</namespace>
+
+	<entity name="VLink" local-service="true" remote-service="true" table="portal_link">
+
+		<!-- PK fields -->
+		<column name="linkId" type="long" primary="true" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="linkName" type="String" />
+        <column name="url" type="String"></column>
+        <column name="isActive" type="boolean"></column>
+        <column name="corder" type="int"></column>
+		<!-- Order -->
+        <column name="categoryId" type="long"></column>
+		<order by="desc">
+			<order-column name="corder" order-by="desc"/>
+			<order-column name="createDate" order-by="asc"/>
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="Group" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+		<finder name="GroupAndCateActive" return-type="Collection">
+			<finder-column name="groupId" />
+            <finder-column name="categoryId"/>
+            <finder-column name="isActive"/>
+		</finder>
+		
+        <finder name="CategoryId" return-type="Collection">
+            <finder-column name="categoryId"/>
+            <finder-column name="groupId"/>
+        </finder>
+	</entity>
+    <entity name="LCategory" local-service="true" table="portal_linkcategory">
+        <column name="categoryId" type="long" primary="true"></column>
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+        <column name="userName" type="String"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="modifiedDate" type="Date"></column>
+        <column name="categoryName" type="String"></column>
+        <column name="corder" type="int"></column>
+        <column name="isActive" type="boolean"></column>
+        <order by="desc">
+            <order-column name="corder" order-by="desc"></order-column>
+        </order>
+        <finder name="Group" return-type="Collection">
+            <finder-column name="groupId"/>
+        </finder>
+        <finder name="CategoryName" return-type="Collection">
+            <finder-column name="categoryName" comparator="="/>
+            <finder-column name="groupId"/>
+        </finder>
+        <finder name="GroupAndState" return-type="Collection">
+            <finder-column name="groupId"/>
+            <finder-column name="isActive"/>
+        </finder>
+    </entity>
+
+</service-builder>

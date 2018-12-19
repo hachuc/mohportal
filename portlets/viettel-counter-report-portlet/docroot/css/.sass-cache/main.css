@@ -1,0 +1,26 @@
+.aui .report-row {
+  width: 100%;
+  float: left;
+  clear: both; }
+
+.aui .pt10 {
+  padding-top: 10px; }
+
+.aui .list-news {
+  padding: 10px; }
+
+.aui .list-news li {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+  margin-bottom: 15px; }
+
+.aui .list-news .meta-date {
+  display: inline-block;
+  color: #888;
+  margin-right: 5px;
+  vertical-align: top; }
+
+.aui .list-news a {
+  display: inline-block;
+  width: 80%; }
+

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.liferay.viettel.portal.counter.service.CategoryLocalService" class="com.liferay.viettel.portal.counter.service.impl.CategoryLocalServiceImpl" />
+	<bean id="com.liferay.viettel.portal.counter.service.CategoryService" class="com.liferay.viettel.portal.counter.service.impl.CategoryServiceImpl" />
+	<bean id="com.liferay.viettel.portal.counter.service.persistence.CategoryPersistence" class="com.liferay.viettel.portal.counter.service.persistence.CategoryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.liferay.viettel.portal.counter.service.CounterReportLocalService" class="com.liferay.viettel.portal.counter.service.impl.CounterReportLocalServiceImpl" />
+	<bean id="com.liferay.viettel.portal.counter.service.CounterReportService" class="com.liferay.viettel.portal.counter.service.impl.CounterReportServiceImpl" />
+	<bean id="com.liferay.viettel.portal.counter.service.persistence.CounterReportPersistence" class="com.liferay.viettel.portal.counter.service.persistence.CounterReportPersistenceImpl" parent="basePersistence" />
+	<bean id="com.liferay.viettel.portal.counter.service.persistence.CounterReportFinder" class="com.liferay.viettel.portal.counter.service.persistence.CounterReportFinderImpl" parent="basePersistence" />
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE layout-templates PUBLIC "-//Liferay//DTD Layout Templates 6.2.0//EN" "http://www.liferay.com/dtd/liferay-layout-templates_6_2_0.dtd">
+
+<layout-templates>
+	<custom>
+		<layout-template id="byt" name="Bo Y te - Trang chu">
+			<template-path>/byt.tpl</template-path>
+			<wap-template-path>/byt.wap.tpl</wap-template-path>
+			<thumbnail-path>/byt.png</thumbnail-path>
+		</layout-template>
+		<layout-template id="byt-news" name="Bo Y te - Tin">
+			<template-path>/byt-news.tpl</template-path>
+			<wap-template-path>/byt-news.wap.tpl</wap-template-path>
+			<thumbnail-path>/byt-news.png</thumbnail-path>
+		</layout-template>
+		<layout-template id="fullwidth" name="fullwidth">
+			<template-path>/fullwidth.tpl</template-path>
+			<wap-template-path>/fullwidth.wap.tpl</wap-template-path>
+			<thumbnail-path>/fullwidth.png</thumbnail-path>
+		</layout-template>
+	</custom>
+</layout-templates>

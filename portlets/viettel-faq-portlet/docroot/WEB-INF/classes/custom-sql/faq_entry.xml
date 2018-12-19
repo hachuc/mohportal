@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+
+
+<sql id="com.portal_egov.portlet.legal_faq.service.persistence.LegalFAQEntryFinder.findByKeyword">	
+	<![CDATA[
+    	SELECT * FROM LegalFAQEntry
+    	           
+        WHERE               
+                (LegalFAQEntry.askTitle LIKE ? OR LegalFAQEntry.askContent LIKE ?)
+                
+                 AND (LegalFAQEntry.groupId = ?)
+                
+                 AND (LegalFAQEntry.categoryId = ?)
+                
+        ORDER BY LegalFAQEntry.askTitle ASC
+	]]>
+</sql>
+
+<sql id="com.portal_egov.portlet.legal_faq.service.persistence.LegalFAQEntryFinder.findByKeywordAndStatus">	
+	<![CDATA[
+    	SELECT * FROM LegalFAQEntry
+    	           
+        WHERE               
+                ((LegalFAQEntry.citizenName LIKE ?) OR (LegalFAQEntry.askTitle LIKE ?) OR (LegalFAQEntry.askContent LIKE ?))
+                
+                 AND (LegalFAQEntry.groupId = ?)
+                
+                 AND (LegalFAQEntry.categoryId = ?)
+                
+                 AND (LegalFAQEntry.status = 1)
+                
+                 AND (LegalFAQEntry.publishStatus = 1)
+            	           	
+        ORDER BY LegalFAQEntry.askTitle ASC
+	]]>
+</sql>
+
+<sql id="com.portal_egov.portlet.legal_faq.service.persistence.LegalFAQEntryFinder.findByViewCount">	
+	<![CDATA[
+    	SELECT * FROM LegalFAQEntry
+    	           
+        WHERE    
+        		(LegalFAQEntry.groupId = ?)
+        		
+        		AND (LegalFAQEntry.categoryId = ?) 
+                
+                AND (LegalFAQEntry.status = 1)
+                
+                AND (LegalFAQEntry.publishStatus = 1)
+            	           	
+        ORDER BY LegalFAQEntry.viewCount DESC
+	]]>
+</sql>
+</custom-sql>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.revotech.portal.tthc.service.CategoryLocalService" class="com.revotech.portal.tthc.service.impl.CategoryLocalServiceImpl" />
+	<bean id="com.revotech.portal.tthc.service.CategoryService" class="com.revotech.portal.tthc.service.impl.CategoryServiceImpl" />
+	<bean id="com.revotech.portal.tthc.service.persistence.CategoryPersistence" class="com.revotech.portal.tthc.service.persistence.CategoryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.tthc.service.persistence.CategoryFinder" class="com.revotech.portal.tthc.service.persistence.CategoryFinderImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.tthc.service.LegalDocumentLocalService" class="com.revotech.portal.tthc.service.impl.LegalDocumentLocalServiceImpl" />
+	<bean id="com.revotech.portal.tthc.service.LegalDocumentService" class="com.revotech.portal.tthc.service.impl.LegalDocumentServiceImpl" />
+	<bean id="com.revotech.portal.tthc.service.persistence.LegalDocumentPersistence" class="com.revotech.portal.tthc.service.persistence.LegalDocumentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.tthc.service.persistence.LegalDocumentFinder" class="com.revotech.portal.tthc.service.persistence.LegalDocumentFinderImpl" parent="basePersistence" />
+</beans>

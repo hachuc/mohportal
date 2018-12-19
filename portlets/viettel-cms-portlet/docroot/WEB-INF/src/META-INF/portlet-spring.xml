@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.viettel.portal.vcms.service.CategoryLocalService" class="com.viettel.portal.vcms.service.impl.CategoryLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.CategoryService" class="com.viettel.portal.vcms.service.impl.CategoryServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.CategoryPersistence" class="com.viettel.portal.vcms.service.persistence.CategoryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.CommentLocalService" class="com.viettel.portal.vcms.service.impl.CommentLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.CommentService" class="com.viettel.portal.vcms.service.impl.CommentServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.CommentPersistence" class="com.viettel.portal.vcms.service.persistence.CommentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.persistence.CommentFinder" class="com.viettel.portal.vcms.service.persistence.CommentFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.ContentLocalService" class="com.viettel.portal.vcms.service.impl.ContentLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.ContentService" class="com.viettel.portal.vcms.service.impl.ContentServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.ContentPersistence" class="com.viettel.portal.vcms.service.persistence.ContentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.persistence.ContentFinder" class="com.viettel.portal.vcms.service.persistence.ContentFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.ContentDetailLocalService" class="com.viettel.portal.vcms.service.impl.ContentDetailLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.ContentDetailService" class="com.viettel.portal.vcms.service.impl.ContentDetailServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.ContentDetailPersistence" class="com.viettel.portal.vcms.service.persistence.ContentDetailPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.persistence.ContentDetailFinder" class="com.viettel.portal.vcms.service.persistence.ContentDetailFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.ContentProfitLocalService" class="com.viettel.portal.vcms.service.impl.ContentProfitLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.ContentProfitService" class="com.viettel.portal.vcms.service.impl.ContentProfitServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.ContentProfitPersistence" class="com.viettel.portal.vcms.service.persistence.ContentProfitPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.ContentTypeLocalService" class="com.viettel.portal.vcms.service.impl.ContentTypeLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.ContentTypeService" class="com.viettel.portal.vcms.service.impl.ContentTypeServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.ContentTypePersistence" class="com.viettel.portal.vcms.service.persistence.ContentTypePersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.persistence.ContentTypeFinder" class="com.viettel.portal.vcms.service.persistence.ContentTypeFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.DistributionLocalService" class="com.viettel.portal.vcms.service.impl.DistributionLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.DistributionService" class="com.viettel.portal.vcms.service.impl.DistributionServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.DistributionPersistence" class="com.viettel.portal.vcms.service.persistence.DistributionPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.persistence.DistributionFinder" class="com.viettel.portal.vcms.service.persistence.DistributionFinderImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.DistributionVisistedLocalService" class="com.viettel.portal.vcms.service.impl.DistributionVisistedLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.DistributionVisistedService" class="com.viettel.portal.vcms.service.impl.DistributionVisistedServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.DistributionVisistedPersistence" class="com.viettel.portal.vcms.service.persistence.DistributionVisistedPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.Legal_CommentLocalService" class="com.viettel.portal.vcms.service.impl.Legal_CommentLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.Legal_CommentService" class="com.viettel.portal.vcms.service.impl.Legal_CommentServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.Legal_CommentPersistence" class="com.viettel.portal.vcms.service.persistence.Legal_CommentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.Legal_ContentLocalService" class="com.viettel.portal.vcms.service.impl.Legal_ContentLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.Legal_ContentService" class="com.viettel.portal.vcms.service.impl.Legal_ContentServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.Legal_ContentPersistence" class="com.viettel.portal.vcms.service.persistence.Legal_ContentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.Legal_ContentProfitLocalService" class="com.viettel.portal.vcms.service.impl.Legal_ContentProfitLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.Legal_ContentProfitService" class="com.viettel.portal.vcms.service.impl.Legal_ContentProfitServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.Legal_ContentProfitPersistence" class="com.viettel.portal.vcms.service.persistence.Legal_ContentProfitPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.Legal_DistributionLocalService" class="com.viettel.portal.vcms.service.impl.Legal_DistributionLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.Legal_DistributionService" class="com.viettel.portal.vcms.service.impl.Legal_DistributionServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.Legal_DistributionPersistence" class="com.viettel.portal.vcms.service.persistence.Legal_DistributionPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.Legal_ZoneLocalService" class="com.viettel.portal.vcms.service.impl.Legal_ZoneLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.Legal_ZoneService" class="com.viettel.portal.vcms.service.impl.Legal_ZoneServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.Legal_ZonePersistence" class="com.viettel.portal.vcms.service.persistence.Legal_ZonePersistenceImpl" parent="basePersistence" />
+	<bean id="com.viettel.portal.vcms.service.NotesLocalService" class="com.viettel.portal.vcms.service.impl.NotesLocalServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.NotesService" class="com.viettel.portal.vcms.service.impl.NotesServiceImpl" />
+	<bean id="com.viettel.portal.vcms.service.persistence.NotesPersistence" class="com.viettel.portal.vcms.service.persistence.NotesPersistenceImpl" parent="basePersistence" />
+</beans>
