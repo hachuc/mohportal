@@ -19,4 +19,9 @@
     int start = (curLinkPage - 1) * linkDelta;
     int totalPage = 1;
 	SimpleDateFormat dateTimeFormat = new SimpleDateFormat("dd/MM/yyyy kk:mm:ss");
+	
+	String portletTitle = portletPreferences.getValue("portletTitle", StringPool.BLANK);
+	String displayStyle = portletPreferences.getValue("displayStyle", "show-search");
+	long layoutId = GetterUtil.getLong(portletPreferences.getValue("lienKetTrang", "0"));
+	
 %>

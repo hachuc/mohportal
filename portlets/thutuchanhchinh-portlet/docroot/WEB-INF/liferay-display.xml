@@ -9,6 +9,7 @@
 		<category name="Revotech.FrontEnd">
 			<portlet id="Level2Document"></portlet>
 			<portlet id="Level3Document"></portlet>
+			<portlet id="SearchLegalDocument"></portlet>
 		</category>
 	</category>
 </display>
