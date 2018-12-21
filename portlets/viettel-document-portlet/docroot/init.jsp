@@ -150,6 +150,14 @@
 	String homeDisplay = preferences.getValue("homeDisplay", defaultHomeDisplay);
 	
 	int numberVbpqDisplay = GetterUtil.getInteger(preferences.getValue("numberVbpqDisplay", "5"));
+	String titleDisplay = preferences.getValue("titleDisplay", StringPool.BLANK);
+	String layoutUuid = preferences.getValue("layoutUuid", StringPool.BLANK);
+	String linkedLayoutURL = StringPool.BLANK;
+	Layout linkedLayout = null;
+	if(linkedLayout != null){
+		
+		linkedLayoutURL = "/web" +themeDisplay.getScopeGroup().getFriendlyURL() + linkedLayout.getFriendlyURL();
+	}
 	
 	long scopeId = GetterUtil.getLong(portletPreferences.getValue("scopeId", null), scopeGroupId);
 	

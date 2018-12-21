@@ -33,11 +33,25 @@
 
 <liferay-portlet:renderURL var="viewMoreURL">
 </liferay-portlet:renderURL>
-
-<div class="vbpq-list2-wrapper">
-	<div class="vbpq-list2-ct-other">
-		<ul>
-			<%
+<div class="box-container" id="a09">
+	<div class="box-content-08">
+		<div class="title">
+			<div>
+			<c:choose>
+				<c:when test="<%=Validator.isNotNull(linkedLayoutURL)%>">
+					<a href="<%=linkedLayoutURL%>"
+						title="<%=HtmlUtil.escape(titleDisplay)%>"><%=HtmlUtil.escape(titleDisplay)%></a>
+				</c:when>
+				<c:otherwise>
+					<a href="javascript:void(0);"><%=HtmlUtil.escape(titleDisplay)%></a>
+				</c:otherwise>
+			</c:choose>
+			</div>
+		</div>
+		<div class="content">
+			<div class="list">
+				<ul>
+				    <%
 					int count =0;
 
 					for(VanBanPhapQuy vanban : lsLastestVanBan)
@@ -48,21 +62,12 @@
 						<portlet:param name="id" value="<%= String.valueOf(vanban.getId()) %>"/>
 						<portlet:param name="redirect" value="<%= redirect %>"/>
 					</liferay-portlet:renderURL>
+				<li><a href="<%=viewDetailURL%>"><%=HtmlUtil.escape(vanban.getTrichYeu())%></a></li>
 				<%
-					if(count ==0){
-					count++;
-				%>
-						<li class="lst2-normal-firstChild"><a href="<%=viewDetailURL%>"><span
-						class="text"><%=HtmlUtil.escape(vanban.getTrichYeu())%></span></a></li>
-				<%
-					}else{
-				%>
-				<li class="lst2-normal"><a href="<%=viewDetailURL%>"><span
-						class="text"><%=HtmlUtil.escape(vanban.getTrichYeu())%></span></a></li>
-				<%
-					}
 				}
 				%>
-</ul>
-</div>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>

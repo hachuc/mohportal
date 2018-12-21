@@ -435,7 +435,7 @@ window.sortDESC = function(selectId, selectOptionId, ascOrDesc) {
 	<aui:col width="30">
 		<aui:select name="preferences--lienKetTrang--" label="Chọn liên kết trang:">
 		<%
-			long layoutId = Long.parseLong(portletPreferences.getValue("lienKetTrang", "0"));
+			layoutId = Long.parseLong(portletPreferences.getValue("lienKetTrang", "0"));
 			List<Layout> lls = LayoutLocalServiceUtil.getLayouts(themeDisplay.getScopeGroupId(), false);
 			for (Layout lt : lls) {
 				boolean select = (layoutId == lt.getPlid() ? true:false);

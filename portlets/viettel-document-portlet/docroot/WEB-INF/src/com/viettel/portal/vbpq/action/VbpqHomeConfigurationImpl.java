@@ -34,11 +34,13 @@ public class VbpqHomeConfigurationImpl extends DefaultConfigurationAction{
 				
 				//Kieu hien thi
 				String homeDisplay = ParamUtil.getString(actionRequest, "homeDisplay", StringPool.BLANK);
+				String titleDisplay = ParamUtil.getString(actionRequest, "titleDisplay", StringPool.BLANK);
 				int numberVbpqDisplay = ParamUtil.getInteger(actionRequest, "numberVbpqDisplay", 5);
 				String[] cqbhs = ParamUtil.getParameterValues(actionRequest, "coquanbanhanhhome");
 				
 				preferences.setValue("scopeId", String.valueOf(scopeId));
 				preferences.setValue("homeDisplay", homeDisplay);
+				preferences.setValue("titleDisplay", titleDisplay);
 				preferences.setValue("numberVbpqDisplay", String.valueOf(numberVbpqDisplay));
 				preferences.setValues("coquanbanhanhhome", cqbhs);
 				

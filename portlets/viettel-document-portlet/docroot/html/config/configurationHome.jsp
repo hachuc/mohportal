@@ -9,12 +9,14 @@
 	List<CoQuanBanHanhVanBan> lsCoQuanBanHanh = CoQuanBanHanhBusiness.getByTrangThai(scopeId, true, -1, -1);
 %>
 
+
+
 <liferay-portlet:actionURL portletConfiguration="true" var="homeVbpqPortletConfigURL">	
 	<liferay-portlet:param  name="portletResource" value="<%= portletResource %>"/>
 </liferay-portlet:actionURL>
 
 <aui:form name="menu-vbpq-config-form" method="post" action="<%= homeVbpqPortletConfigURL %>">
-
+	<aui:input name="titleDisplay" type="text" value="<%= titleDisplay %>" label="title-display"/>
 	<aui:row>
 		<aui:select name="scopeId" label="scope">
 			<% for(Group site : groups) { %>
