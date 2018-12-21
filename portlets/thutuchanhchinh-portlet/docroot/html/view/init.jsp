@@ -22,6 +22,7 @@
 	
 	String portletTitle = portletPreferences.getValue("portletTitle", StringPool.BLANK);
 	String displayStyle = portletPreferences.getValue("displayStyle", "show-search");
-	long layoutId = GetterUtil.getLong(portletPreferences.getValue("lienKetTrang", "0"));
-	
+	int displayItem = GetterUtil.getInteger(portletPreferences.getValue("displayItem", "5"));
+	long layoutId = GetterUtil.getLong(portletPreferences.getValue("lienKetTrang", String.valueOf(themeDisplay.getPlid())));
+	int[] displayItems = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 50, 100 };
 %>

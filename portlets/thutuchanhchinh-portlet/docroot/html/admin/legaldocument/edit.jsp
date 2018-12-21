@@ -58,8 +58,12 @@
 						for (Category cat : lstCoquanthuchien){
 						
 					%>
-					<option value='<%= cat.getCategoryId() %>' label='<%= cat.getCategoryName()%>'>
-					
+					<c:if test='<%= document!=null && document.getIdCoquanbanhanh() == cat.getCategoryId() %>'>
+						<aui:option value='<%= cat.getCategoryId() %>' label='<%= cat.getCategoryName()%>' />
+					</c:if>
+					<c:if test='<%= document==null|| document.getIdCoquanbanhanh() != cat.getCategoryId() %>'>
+					<aui:option value='<%= cat.getCategoryId() %>' label='<%= cat.getCategoryName()%>' />
+					</c:if>
 					<% } %>
 				</aui:select>
 			</aui:col>
@@ -69,8 +73,12 @@
 						for (Category cat : lstLinhVuc){
 						
 					%>
-					<option value='<%= cat.getCategoryId() %>' label='<%= cat.getCategoryName()%>'>
-					
+					<c:if test='<%= document!=null && document.getIdLinhvuc() == cat.getCategoryId() %>'>
+						<aui:option selected="selected" value='<%= cat.getCategoryId() %>' label='<%= cat.getCategoryName()%>' />
+					</c:if>
+					<c:if test='<%= document==null|| document.getIdLinhvuc() != cat.getCategoryId() %>'>
+						<aui:option value='<%= cat.getCategoryId() %>' label='<%= cat.getCategoryName()%>' />
+					</c:if>
 					<% } %>
 				</aui:select>
 			</aui:col>
@@ -80,7 +88,12 @@
 				</aui:input>
 			</aui:col>
 		</aui:row>
-		
+		<aui:row>
+			<aui:col width="<%= 100 %>">
+				<aui:input name="isActive" type="checkbox" label="isActive" checked="<%= document!=null?document.getIsActive() : true %>">
+				</aui:input>
+			</aui:col>
+		</aui:row>
 		<aui:input type="hidden" name="ldlevel" value="<%= ldlevel%>" />
 		
 		<aui:button-row>

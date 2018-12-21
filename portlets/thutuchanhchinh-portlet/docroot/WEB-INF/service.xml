@@ -37,7 +37,6 @@
 		</order>
 
 		<!-- Finder methods -->
-
 		<finder name="G_C_A" return-type="Collection">
 			<finder-column name="categoryType" />
 			<finder-column name="isActive" />

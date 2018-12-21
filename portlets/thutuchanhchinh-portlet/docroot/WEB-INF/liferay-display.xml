@@ -10,6 +10,9 @@
 			<portlet id="Level2Document"></portlet>
 			<portlet id="Level3Document"></portlet>
 			<portlet id="SearchLegalDocument"></portlet>
+			<portlet id="CategoryView"></portlet>
+			<portlet id="Level3News"></portlet>
+			<portlet id="Level2New"></portlet>
 		</category>
 	</category>
 </display>

@@ -22,11 +22,13 @@ import java.util.List;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.service.ServiceContext;
 import com.revotech.portal.tthc.model.Category;
 import com.revotech.portal.tthc.model.LegalDocument;
 import com.revotech.portal.tthc.service.base.LegalDocumentLocalServiceBaseImpl;
 import com.revotech.portal.tthc.service.persistence.LegalDocumentFinderUtil;
+import com.revotech.portal.tthc.service.persistence.LegalDocumentUtil;
 
 /**
  * The implementation of the legal document local service.
@@ -61,7 +63,9 @@ public class LegalDocumentLocalServiceImpl
 	SystemException {
 		return LegalDocumentFinderUtil.countByStatusVersion(keywords, groupId, category1Id, category2Id, level);
 	}
-	
+	public List<LegalDocument> getLatestLegalDocument(long groupId, int level, boolean isActive, int start, int end, OrderByComparator obc) throws PortalException, SystemException{
+		return LegalDocumentUtil.findByG_L_A(groupId, level, isActive, start, end , obc);
+	}
 	public void addLegalDocument(long groupId, long companyId, long userId, String userName,  
 			String ldCode, String ldTitle, String ldLink, String ldLevel3Link, String ldSubcontent, boolean isActive, 
 			long idLinhvuc, long idCoquanbanhanh, String ldDonvithuchien, int level, ServiceContext serviceContext) throws SystemException, PortalException{

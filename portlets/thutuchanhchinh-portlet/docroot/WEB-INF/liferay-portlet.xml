@@ -34,12 +34,44 @@
 		<portlet-name>SearchLegalDocument</portlet-name>
 		<icon>/icon.png</icon>
 		<configuration-action-class>com.revotech.portal.tthc.portlet.search.ConfigurationImpl</configuration-action-class>
-		<instanceable>true</instanceable>
+		<instanceable>false</instanceable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>
 			/js/main.js
 		</footer-portlet-javascript>
 		<css-class-wrapper>searchlg-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>CategoryView</portlet-name>
+		<icon>/icon.png</icon>
+		<configuration-action-class>com.revotech.portal.tthc.portlet.category.ConfigurationImpl</configuration-action-class>
+		<instanceable>true</instanceable>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>categoryview-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>Level3News</portlet-name>
+		<icon>/icon.png</icon>
+		<configuration-action-class>com.revotech.portal.tthc.portlet.level3display.ConfigurationImpl</configuration-action-class>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>level3news-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>Level2New</portlet-name>
+		<icon>/icon.png</icon>
+		<configuration-action-class>com.revotech.portal.tthc.portlet.level2display.ConfigurationImpl</configuration-action-class>
+		<instanceable>true</instanceable>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>level2new-portlet</css-class-wrapper>
 	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>
