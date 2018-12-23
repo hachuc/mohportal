@@ -72,7 +72,6 @@
 			loaiVanBanId = entryId;
 		}
 	}
-	
 	List<CoQuanBanHanhVanBan> lsCoQuanBanHanh = null;
 	if(coQuanBanHanhIdPrefs != null && coQuanBanHanhIdPrefs.length > 0) {
 		lsCoQuanBanHanh = CoQuanBanHanhBusiness.getByListSelected(coQuanBanHanhIdPrefs);
@@ -194,24 +193,20 @@
 			<c:if test="<%= showNhomvanBan %>">
 				<div class="col-md-6">
 					<div class="form-group">
-						<label class="control-label pr5"><liferay-ui:message
-								key="nhom-van-ban" /></label> <select name="nhomVanBanId"
-							class="form-control">
-							<option value="0"></option>
-							<%
-							List<Long> idList = new ArrayList();
-							for(String st : nhomVanBanIds) {
-								idList.add(Long.parseLong(st));
-							}
-							List<NhomVanBan> ls = NhomVanBanLocalServiceUtil.getNhomVanBanById(idList);
-							for (NhomVanBan nv : ls) {
-								boolean selected = nv.getId() == nhomVanBanId;
-						%>
-							<option label="<%= HtmlUtil.escape(nv.getTenNhom()) %>"
-								selected="<%= selected %>"
-								value="<%= String.valueOf(nv.getId()) %>"></option>
-							<% } %>
-						</select>
+							<aui:select name="nhomVanBanId" label="nhom-van-ban" cssClass="form-control" showEmptyOption="<%= false %>">
+								<%
+									List<Long> idList = new ArrayList();
+									for(String st : nhomVanBanIds) {
+										idList.add(Long.parseLong(st));
+									}
+									List<NhomVanBan> ls = NhomVanBanLocalServiceUtil.getNhomVanBanById(idList);
+									for (NhomVanBan nv : ls) {
+										boolean selected = nv.getId() == nhomVanBanId;
+								%>
+									<aui:option label="<%= HtmlUtil.escape(nv.getTenNhom())  %>" selected="<%= selected %>" value="<%= String.valueOf(nv.getId()) %>"></aui:option>
+								<% } %>
+							</aui:select>	
+							
 					</div>
 				</div>
 			</c:if>
@@ -219,10 +214,16 @@
 			<c:if test="<%= showSearchCoQuanBanHanh %>">
 				<div class="col-md-6">
 					<div class="form-group">
-						<label class="control-label pr5"><liferay-ui:message
-								key="co-quan-ban-hanh" /></label> <select name="coQuanBanHanhId"
-							class="form-control">
-						</select>
+						<aui:select name="coQuanBanHanhId"
+							class="form-control" label="co-quan-ban-hanh">
+							<%
+							if(lsCoQuanBanHanh.size()> 0){
+								for (CoQuanBanHanhVanBan cq : lsCoQuanBanHanh) {
+									boolean selected = cq.getId() == coQuanBanHanhId;
+							%>
+								<aui:option label="<%= HtmlUtil.escape(cq.getTen())  %>" selected="<%= selected %>" value="<%= String.valueOf(cq.getId()) %>"></aui:option>
+							<% }} %>
+						</aui:select>
 					</div>
 				</div>
 			</c:if>
@@ -230,10 +231,16 @@
 			<c:if test="<%= showSearchLoaiVanBan %>">
 				<div class="col-md-6">
 					<div class="form-group">
-						<label class="control-label pr5"><liferay-ui:message
-								key="loai-van-ban" /></label> <select name="loaiVanBanId"
-							class="form-control">
-						</select>
+						<aui:select name="loaiVanBanId"
+							class="form-control" label="loai-van-ban">
+							<%
+							if(lsLoaiVanBan.size()> 0){
+								for (LoaiVanBan lvb : lsLoaiVanBan) {
+									boolean selected = lvb.getId() == loaiVanBanId;
+							%>
+								<aui:option label="<%= HtmlUtil.escape(lvb.getTen())  %>" selected="<%= selected %>" value="<%= String.valueOf(lvb.getId()) %>"></aui:option>
+							<% }} %>
+						</aui:select>
 					</div>
 				</div>
 			</c:if>
@@ -241,10 +248,16 @@
 			<c:if test="<%= showSearchLinhVuc %>">
 				<div class="col-md-6">
 					<div class="form-group">
-						<label class="control-label pr5"><liferay-ui:message
-								key="linh-vuc-van-ban" /></label> <select name="linhVucVanBanId"
-							class="form-control">
-						</select>
+						<aui:select name="linhVucVanBanId"
+							class="form-control" label="linh-vuc-van-ban">
+							<%
+							if(lsLinhVuc.size()> 0){
+								for (LinhVucVanBan lv : lsLinhVuc) {
+									boolean selected = lv.getId() == linhVucVanBanId;
+							%>
+								<aui:option label="<%= HtmlUtil.escape(lv.getTen())  %>" selected="<%= selected %>" value="<%= String.valueOf(lv.getId()) %>"></aui:option>
+							<% }} %>
+						</aui:select>
 					</div>
 				</div>
 			</c:if>
@@ -253,7 +266,7 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label class="control-label pr5"><liferay-ui:message
-								key="year" /></label> <select name="year" class="form-control">
+								key="year" /></label> <aui:select name="year" class="form-control">
 							<%
 							for (int i = 1992; i< 2020; i++)
 							{
@@ -263,7 +276,7 @@
 							<%
 							}
 						%>
-						</select>
+						</aui:select>
 					</div>
 				</div>
 			</c:if>
@@ -396,7 +409,7 @@
 			</div>
 		</aui:form>
 	</div>
-	<aui:script use="aui-base,node,aui-io-request">
+<aui:script use="aui-base,node,aui-io-request">
 function escapeHtml(html)
 {
     var text = document.createTextNode(html);
@@ -404,102 +417,108 @@ function escapeHtml(html)
     div.appendChild(text);
     return div.innerHTML;
 }
+
 getData(
 		"<%= serverURL %>",
 		"<%= scopeId %>",
 		"<%= coQuanBanHanhId %>",
 		"layCoQuanBanHanh",
-		"#<portlet:namespace />nhomVanBanId",
-		"#<portlet:namespace />coQuanBanHanhId"
+		"#<portlet:namespace/>nhomVanBanId",
+		"#<portlet:namespace/>coQuanBanHanhId"
 	);
 	getData(
 			"<%= serverURL %>",
 			"<%= scopeId %>",
 			"<%= linhVucVanBanId %>",
 			"layLinhVucVanBan",
-			"#<portlet:namespace />nhomVanBanId",
-			"#<portlet:namespace />linhVucVanBanId"
+			"#<portlet:namespace/>nhomVanBanId",
+			"#<portlet:namespace/>linhVucVanBanId"
 		);
 	getData(
 			"<%= serverURL %>",
 			"<%= scopeId %>",
 			"<%= loaiVanBanId %>",
 			"layTheLoaiVanBan",
-			"#<portlet:namespace />nhomVanBanId",
-			"#<portlet:namespace />loaiVanBanId"
+			"#<portlet:namespace/>nhomVanBanId",
+			"#<portlet:namespace/>loaiVanBanId"
 		);
-	var findNhomVanBan = document.getElementById("<portlet:namespace />nhomVanBanId");
+	var findNhomVanBan = document.getElementById("<portlet:namespace/>nhomVanBanId");
 	if (findNhomVanBan == null) return;
-	A.one("#<portlet:namespace />nhomVanBanId").on("change", function(){
-		//console.log("thay doi nhom van ban");
+	
+	A.one("#<portlet:namespace/>nhomVanBanId").on("change", function(){
+		
 		getData(
 			"<%= serverURL %>",
 			"<%= scopeId %>",
 			"<%= coQuanBanHanhId %>",
 			"layCoQuanBanHanh",
-			"#<portlet:namespace />nhomVanBanId",
-			"#<portlet:namespace />coQuanBanHanhId"
+			"#<portlet:namespace/>nhomVanBanId",
+			"#<portlet:namespace/>coQuanBanHanhId"
 		);
 		getData(
 				"<%= serverURL %>",
 				"<%= scopeId %>",
 				"<%= linhVucVanBanId %>",
 				"layLinhVucVanBan",
-				"#<portlet:namespace />nhomVanBanId",
-				"#<portlet:namespace />linhVucVanBanId"
+				"#<portlet:namespace/>nhomVanBanId",
+				"#<portlet:namespace/>linhVucVanBanId"
 			);
 		getData(
 				"<%= serverURL %>",
 				"<%= scopeId %>",
 				"<%= loaiVanBanId %>",
 				"layTheLoaiVanBan",
-				"#<portlet:namespace />nhomVanBanId",
-				"#<portlet:namespace />loaiVanBanId"
+				"#<portlet:namespace/>nhomVanBanId",
+				"#<portlet:namespace/>loaiVanBanId"
 			);
 	})	;	
-
-	function getData(url, groupId, currentData, useMethod, selectFromId, selectToIdChange) {
-		var id01 = selectFromId.split("#");
-		var id02 = selectToIdChange.split("#");
-		if (id01 == null || id02 == null) return;
-		var se1 = document.getElementById(id01[1]);
-		var se2 = document.getElementById(id02[1]);
-		
-		if (se1 == null || se2 == null) return;
-		var value = A.one(selectFromId).val();
-		var nhom = A.one(selectToIdChange);
-		if (value != "") {
-			A.io.request(url, {
-				 method: 'post',
-				  dataType: 'json',
-				  data: {
-					<portlet:namespace />id: value,
-					<portlet:namespace />method: useMethod,
-					<portlet:namespace />groupId: groupId
-				  },
-					on: {
-						success: function(data){
-							nhom.empty();
-							data = this.get("responseData");
-							if (data == null || (data != null && data.length == 0)) return;
-							var nhomVanBanId = currentData;
-							nhom.append("<option value='0'></option>");
-							 for(var i = 0; i < data.length; i++) {
-								 var selected = "";
-								 if (nhomVanBanId == data[i].id) selected = " selected ";
-								var op = "<option value='"+ data[i].id +"'+"+ selected +">"
-			+ escapeHtml(data[i].name) + "</option>";
-								nhom.append(op);
-							 }
-						},
-						error: function(){
-							alert("error");
-						}
-					}
-				});
-		}
-		
-	}
+										
+										function getData(url, groupId, currentData, useMethod, selectFromId, selectToIdChange) {
+											var id01 = selectFromId.split("#");
+											var id02 = selectToIdChange.split("#");
+											if (id01 == null || id02 == null) return;
+											var se1 = document.getElementById(id01[1]);
+											var se2 = document.getElementById(id02[1]);
+											
+											if (se1 == null || se2 == null) return;
+											var value = A.one(selectFromId).val();
+// 											console.log("value = " + value);
+											var nhom = A.one(selectToIdChange);
+											console.log("nhom");
+											if (value != "") {
+												A.io.request(url, {
+													 method: 'post',
+										              dataType: 'json',
+										              data: {
+										            	<portlet:namespace/>id: value,
+										            	<portlet:namespace/>method: useMethod,
+										            	<portlet:namespace/>groupId: groupId
+										              },
+														on: {
+															success: function(data){
+																nhom.empty();
+// 																console.log(data);
+																
+																data = this.get("responseData");
+																if (data == null || (data != null && data.length == 0)) return;
+																var nhomVanBanId = currentData;
+																nhom.append("<option value='0'></option>");
+																 for(var i = 0; i < data.length; i++) {
+																	 var selected = "";
+																	 if (nhomVanBanId == data[i].id) selected = " selected ";
+																	var op = "<option value='"+ data[i].id +"' +"+ selected +">" + escapeHtml(data[i].name) + "</option>";
+																	nhom.append(op);
+// 																	console.log(op);
+																 }
+															},
+															error: function(){
+																alert("error");
+															}
+														}
+													});
+											}
+											
+										}
 </aui:script>
 
 </c:if>
