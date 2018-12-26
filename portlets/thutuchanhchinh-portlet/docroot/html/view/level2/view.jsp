@@ -84,7 +84,7 @@
 				<aui:fieldset>
 					<aui:row>
 						<aui:col width="<%= 50 %>">
-							<aui:select name="idCoquanbanhanh" cssClass="span12" label="co-quan-ban-hanh" showEmptyOption="<%= true %>">
+							<aui:select name="idCoquanbanhanh" cssClass="form-control" label="co-quan-ban-hanh" showEmptyOption="<%= true %>">
 								<%
 									if (lstCoQuanBanHanh != null) {
 														for (Category cat : lstCoQuanBanHanh) {
@@ -103,7 +103,7 @@
 							</aui:select>
 						</aui:col>
 						<aui:col width="<%= 50 %>">
-							<aui:select name="idLinhvuc" cssClass="span12" label="linh-vuc" showEmptyOption="<%= true %>">
+							<aui:select name="idLinhvuc" cssClass="form-control" label="linh-vuc" showEmptyOption="<%= true %>">
 								<%
 									if (lstLinhVuc != null) {
 														for (Category item : lstLinhVuc) {
@@ -123,12 +123,12 @@
 						</aui:col>
 					</aui:row>
 					<aui:row>
-						<aui:col width="<%= 60 %>">
-							<aui:input type="text" cssClass="span12" label=""
+						<aui:col width="<%= 50 %>">
+							<aui:input type="text" style="margin-top: 15px;height: 34px;" cssClass="form-control" label=""
 								name="keywords" placeholder="keywords-to-search" />
 						</aui:col>
-						<aui:col width="<%= 40 %>">
-							<aui:button name="search" type="submit" value="tthc-search"
+						<aui:col width="<%= 50 %>">
+							<aui:button name="search" style="margin-top: 15px;" type="submit" value="tthc-search"
 								cssClass="btn btn-grey text-bold" />
 						</aui:col>
 					</aui:row>
@@ -172,12 +172,12 @@
 					</liferay-ui:search-container-column-text>
 
 					<liferay-ui:search-container-column-text name="linh-vuc"
-						align="center" cssClass="tthc-tenthutuc"
+						align="center" cssClass="tthc-linhvuc"
 						value="<%=HtmlUtil.escape(ttDataJsonArray.getString(5))%>">
 					</liferay-ui:search-container-column-text>
 
 					<liferay-ui:search-container-column-text name="co-quan-ban-hanh"
-						align="center" cssClass="tthc-tenthutuc"
+						align="center" cssClass="tthc-cqbh"
 						value="<%=HtmlUtil.escape(ttDataJsonArray.getString(6))%>">
 					</liferay-ui:search-container-column-text>
 				</liferay-ui:search-container-row>

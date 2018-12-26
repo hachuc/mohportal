@@ -86,8 +86,8 @@
 							id="basic-info" persistState="<%=true%>"
 							title='tra-cuc-dich-vu-cong'>
 							<aui:field-wrapper label="">
-								<div class="form-group row">
-									<div class="col-md-6 pl0 mt5">
+								<aui:row>
+									<aui:col width="<%= 50 %>">
 										<select name="<portlet:namespace />idCoquanbanhanh"
 											id="<portlet:namespace />idCoquanbanhanh"
 											class="form-control">
@@ -109,8 +109,8 @@
 																}
 											%>
 										</select>
-									</div>
-									<div class="col-md-6 mt5">
+									</aui:col>
+									<aui:col width="<%= 50 %>">
 										<select name="<portlet:namespace />idLinhvuc"
 											id="<portlet:namespace />idLinhvuc" class="form-control">
 											<option value="0"><liferay-ui:message key='linh-vuc' /></option>
@@ -130,20 +130,20 @@
 																}
 											%>
 										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-md-6 mt5">
-										<input type="text" class="form-control"
+									</aui:col>
+								</aui:row>
+								<aui:row>
+								<aui:col width="<%= 50 %>">
+										<input style="margin-top: 15px;height: 34px;" type="text" class="form-control"
 											name="<portlet:namespace />keywords"
 											id="<portlet:namespace />keywords"
 											placeholder="<liferay-ui:message key='keywords-to-search' />" />
-									</div>
-									<div class="col-md-6 mt5">
-										<aui:button name="search" type="submit" value="tthc-search"
+									</aui:col>
+									<aui:col width="<%= 50 %>">
+										<aui:button name="search" style="margin-top: 15px;" type="submit" value="tthc-search"
 											cssClass="btn btn-grey text-bold" />
-									</div>
-								</div>
+									</aui:col>
+								</aui:row>
 							</aui:field-wrapper>
 						</liferay-ui:panel>
 						<liferay-ui:panel collapsible="<%=true%>" extended="<%=true%>"
@@ -187,23 +187,23 @@
 												value="<%=HtmlUtil.escape(ttDataJsonArray.getString(1))%>">
 											</liferay-ui:search-container-column-text>
 											<liferay-ui:search-container-column-text name="muc-do"
-												align="center" cssClass="tthc-tenthutuc">
+												align="center" cssClass="tthc-cqbh">
 												<button type="button"
 													class="btnmucdo btn btn-success btn-xs btn-kc">3</button>
 											</liferay-ui:search-container-column-text>
 											<liferay-ui:search-container-column-text name="linh-vuc"
-												align="center" cssClass="tthc-tenthutuc"
+												align="center" cssClass="tthc-linhvuc"
 												value="<%=HtmlUtil.escape(ttDataJsonArray.getString(5))%>">
 											</liferay-ui:search-container-column-text>
 
 											<liferay-ui:search-container-column-text
 												name="don-vi-thuc-hien" align="center"
-												cssClass="tthc-tenthutuc"
+												cssClass="tthc-cqth"
 												value="<%=HtmlUtil.escape(ttDataJsonArray.getString(7))%>">
 											</liferay-ui:search-container-column-text>
 											<liferay-ui:search-container-column-text
 												name="nop-ho-so-truc-tuyen" align="center"
-												cssClass="tthc-tenthutuc">
+												cssClass="tthc-cqth">
 												<a class="btn btn-info  btn-xs btn-kc" href="<%=HtmlUtil.escape(ttDataJsonArray.getString(3))%>"><liferay-ui:message
 														key="nop-ho-so" /></a>
 											</liferay-ui:search-container-column-text>

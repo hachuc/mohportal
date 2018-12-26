@@ -22,50 +22,7 @@
 	 */
 %>
 <style type="text/css">
-.aui .tthc-search .breadcrumb:first-child:before {
-	display: none;
-}
 
-.aui .tthc-search nav a.breadcrumb:before {
-	color: #757575;
-	font-size: 16px;
-}
-
-.aui .tthc-search .breadcrumb:before {
-	content: '/';
-	color: rgba(255, 255, 255, 0.7);
-	vertical-align: top;
-	display: inline-block;
-	font-weight: normal;
-	font-style: normal;
-	font-size: 25px;
-	margin: 0 10px 0 8px;
-	-webkit-font-smoothing: antialiased;
-}
-
-.aui .tthc-search nav a.breadcrumb:last-child {
-	color: #757575;
-}
-
-.aui .tthc-search nav a.breadcrumb {
-	color: #757575;
-	font-size: 14px;
-}
-.aui .tthc-stt{
-	width: 10%;
-}
-.aui .tthc-tenthutuc{
-	width: 40%;
-}
-.aui .tthc-cqbh{
-	width: 15%;
-}
-.aui .tthc-cqth{
-	width: 20%;
-}
-.aui .tthc-linhvuc{
-	width: 15%;
-}
 #<portlet:namespace />objectsSearchContainer_col-co-quan-ban-hanh{
 	text-align: center;
 	white-space: nowrap;

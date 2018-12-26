@@ -45,6 +45,7 @@ public class VLVideoCategoryLocalServiceImpl
 	 * Never reference this interface directly. Always use {@link com.viettel.portal.videolibrary.service.VLVideoCategoryLocalServiceUtil} to access the v l video category local service.
 	 */
 
+	
 	public List<VLVideoCategory> findByCategory(long categoryId, long groupId)
 			throws SystemException {
 		return vlVideoCategoryPersistence.findByCategory(categoryId, groupId);

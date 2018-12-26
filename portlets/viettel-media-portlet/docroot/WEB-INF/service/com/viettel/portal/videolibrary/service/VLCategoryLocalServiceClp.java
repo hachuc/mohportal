@@ -118,60 +118,64 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 
 		_methodParameterTypes17 = new String[] { "java.lang.String" };
 
-		_methodName19 = "removeAll";
+		_methodName19 = "findByCategoryId";
 
-		_methodParameterTypes19 = new String[] { "long" };
+		_methodParameterTypes19 = new String[] { "long", "long" };
 
-		_methodName20 = "addLegalCategory";
+		_methodName20 = "removeAll";
 
-		_methodParameterTypes20 = new String[] {
+		_methodParameterTypes20 = new String[] { "long" };
+
+		_methodName21 = "addLegalCategory";
+
+		_methodParameterTypes21 = new String[] {
 				"long", "long", "long", "java.lang.String", "long",
 				"java.lang.String", "boolean",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName21 = "addVLCategory";
+		_methodName22 = "addVLCategory";
 
-		_methodParameterTypes21 = new String[] {
+		_methodParameterTypes22 = new String[] {
 				"long", "long", "long", "java.lang.String", "java.lang.String",
 				"boolean", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName22 = "countAll";
+		_methodName23 = "countAll";
 
-		_methodParameterTypes22 = new String[] {  };
+		_methodParameterTypes23 = new String[] {  };
 
-		_methodName23 = "countByGroup";
+		_methodName24 = "countByGroup";
 
-		_methodParameterTypes23 = new String[] { "long" };
+		_methodParameterTypes24 = new String[] { "long" };
 
-		_methodName24 = "findByCategoryName";
+		_methodName25 = "findByCategoryName";
 
-		_methodParameterTypes24 = new String[] { "java.lang.String", "long" };
-
-		_methodName25 = "findByGroup";
-
-		_methodParameterTypes25 = new String[] { "long" };
+		_methodParameterTypes25 = new String[] { "java.lang.String", "long" };
 
 		_methodName26 = "findByGroup";
 
-		_methodParameterTypes26 = new String[] { "long", "int", "int" };
+		_methodParameterTypes26 = new String[] { "long" };
 
-		_methodName27 = "findByGroupAndState";
+		_methodName27 = "findByGroup";
 
-		_methodParameterTypes27 = new String[] { "long", "boolean" };
+		_methodParameterTypes27 = new String[] { "long", "int", "int" };
 
-		_methodName28 = "findAll";
+		_methodName28 = "findByGroupAndState";
 
-		_methodParameterTypes28 = new String[] {  };
+		_methodParameterTypes28 = new String[] { "long", "boolean" };
 
 		_methodName29 = "findAll";
 
-		_methodParameterTypes29 = new String[] { "int", "int" };
+		_methodParameterTypes29 = new String[] {  };
 
-		_methodName30 = "updateVLCategory";
+		_methodName30 = "findAll";
 
-		_methodParameterTypes30 = new String[] {
+		_methodParameterTypes30 = new String[] { "int", "int" };
+
+		_methodName31 = "updateVLCategory";
+
+		_methodParameterTypes31 = new String[] {
 				"long", "long", "long", "long", "java.lang.String",
 				"java.lang.String", "boolean",
 				"com.liferay.portal.service.ServiceContext"
@@ -729,12 +733,47 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 	}
 
 	@Override
+	public java.util.List<com.viettel.portal.videolibrary.model.VLCategory> findByCategoryId(
+		long groupId, long categoryId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName19,
+					_methodParameterTypes19,
+					new Object[] { groupId, categoryId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.viettel.portal.videolibrary.model.VLCategory>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
 	public void removeAll(long groupId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		try {
-			_invokableLocalService.invokeMethod(_methodName19,
-				_methodParameterTypes19, new Object[] { groupId });
+			_invokableLocalService.invokeMethod(_methodName20,
+				_methodParameterTypes20, new Object[] { groupId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -767,8 +806,8 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName20,
-					_methodParameterTypes20,
+			returnObj = _invokableLocalService.invokeMethod(_methodName21,
+					_methodParameterTypes21,
 					new Object[] {
 						groupId,
 						
@@ -820,8 +859,8 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName21,
-					_methodParameterTypes21,
+			returnObj = _invokableLocalService.invokeMethod(_methodName22,
+					_methodParameterTypes22,
 					new Object[] {
 						companyId,
 						
@@ -867,8 +906,8 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName22,
-					_methodParameterTypes22, new Object[] {  });
+			returnObj = _invokableLocalService.invokeMethod(_methodName23,
+					_methodParameterTypes23, new Object[] {  });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -895,8 +934,8 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName23,
-					_methodParameterTypes23, new Object[] { groupId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName24,
+					_methodParameterTypes24, new Object[] { groupId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -924,8 +963,8 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName24,
-					_methodParameterTypes24,
+			returnObj = _invokableLocalService.invokeMethod(_methodName25,
+					_methodParameterTypes25,
 					new Object[] {
 						ClpSerializer.translateInput(categoryName),
 						
@@ -958,8 +997,8 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName25,
-					_methodParameterTypes25, new Object[] { groupId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName26,
+					_methodParameterTypes26, new Object[] { groupId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -987,8 +1026,8 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName26,
-					_methodParameterTypes26,
+			returnObj = _invokableLocalService.invokeMethod(_methodName27,
+					_methodParameterTypes27,
 					new Object[] { groupId, start, end });
 		}
 		catch (Throwable t) {
@@ -1017,8 +1056,8 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName27,
-					_methodParameterTypes27, new Object[] { groupId, invisible });
+			returnObj = _invokableLocalService.invokeMethod(_methodName28,
+					_methodParameterTypes28, new Object[] { groupId, invisible });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1045,8 +1084,8 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName28,
-					_methodParameterTypes28, new Object[] {  });
+			returnObj = _invokableLocalService.invokeMethod(_methodName29,
+					_methodParameterTypes29, new Object[] {  });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1074,8 +1113,8 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName29,
-					_methodParameterTypes29, new Object[] { start, end });
+			returnObj = _invokableLocalService.invokeMethod(_methodName30,
+					_methodParameterTypes30, new Object[] { start, end });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1107,8 +1146,8 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName30,
-					_methodParameterTypes30,
+			returnObj = _invokableLocalService.invokeMethod(_methodName31,
+					_methodParameterTypes31,
 					new Object[] {
 						categoryId,
 						
@@ -1211,4 +1250,6 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 	private String[] _methodParameterTypes29;
 	private String _methodName30;
 	private String[] _methodParameterTypes30;
+	private String _methodName31;
+	private String[] _methodParameterTypes31;
 }

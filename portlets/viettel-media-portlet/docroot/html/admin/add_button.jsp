@@ -14,7 +14,6 @@
 <%@page import="com.liferay.portal.kernel.repository.model.Folder"%>
 
 <%@ include file="/html/admin/init.jsp" %>
-
 <aui:nav-item dropdown="<%= true %>" id="addButtonContainer" label="add">
 	<c:if test="<%= CategoryPermission.contains(permissionChecker, scopeGroupId, ActionKeys.UPDATE) %>">
 		<portlet:renderURL var="editCategoryURL" windowState="<%=LiferayWindowState.POP_UP.toString() %>">

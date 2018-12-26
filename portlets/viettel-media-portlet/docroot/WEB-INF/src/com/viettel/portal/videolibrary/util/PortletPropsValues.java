@@ -17,6 +17,6 @@ package com.viettel.portal.videolibrary.util;
 import com.liferay.portal.kernel.util.GetterUtil;
 
 public class PortletPropsValues {
-	public static final String[] VIDEO_FILE_EXTENSIONS = GetterUtil.getStringValues(PortletPropsKeys.VIDEO_FILE_EXTENSIONS, VideoConstants.DEFAULT_VIDEO_EXTENSIONS);
+	public static final String[] VIDEO_FILE_EXTENSIONS = GetterUtil.getStringValues(PortletPropsKeys.VIDEO_FILE_EXTENSIONS, VideoConstants.DEFAULT_FILE_EXTENSIONS);
 	public static final long VIDEO_FILE_MAX_SIZE = GetterUtil.getLong(PortletPropsKeys.VIDEO_FILE_MAX_SIZE, VideoConstants.DEFAULT_VIDEO_MAX_SIZE);
 }

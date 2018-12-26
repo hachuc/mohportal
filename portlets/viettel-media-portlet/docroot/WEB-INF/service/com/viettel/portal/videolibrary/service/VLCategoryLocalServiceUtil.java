@@ -278,6 +278,13 @@ public class VLCategoryLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.util.List<com.viettel.portal.videolibrary.model.VLCategory> findByCategoryId(
+		long groupId, long categoryId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByCategoryId(groupId, categoryId);
+	}
+
 	public static void removeAll(long groupId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {

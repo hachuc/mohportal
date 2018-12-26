@@ -44,6 +44,9 @@ public class VLCategoryLocalServiceImpl extends VLCategoryLocalServiceBaseImpl {
 	 *
 	 * Never reference this interface directly. Always use {@link com.viettel.portal.videolibrary.service.VLCategoryLocalServiceUtil} to access the v l category local service.
 	 */
+	public List<VLCategory> findByCategoryId(long groupId, long categoryId) throws SystemException, PortalException{
+		return VLCategoryUtil.findByCategoryId_GroupId(categoryId, groupId);
+	}
 	public void removeAll(long groupId) throws SystemException, PortalException{
 		VLCategoryUtil.removeByGroup(groupId);
 	}

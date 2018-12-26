@@ -55,7 +55,6 @@
 			</aui:input> --%>
 			<aui:input name="categoryName" label="vl-category-name"
                 value="<%=categoryName%>" size="100">
-                <aui:validator name="required" />
             </aui:input>
 		</aui:fieldset>
 		<aui:fieldset>

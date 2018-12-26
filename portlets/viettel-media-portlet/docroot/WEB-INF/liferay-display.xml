@@ -2,9 +2,11 @@
 <!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.2.0//EN" "http://www.liferay.com/dtd/liferay-display_6_2_0.dtd">
 
 <display>
-	<category name="Viettel">
-		<category name="Viettel.FrontEnd">
+	<category name="Mohportal">
+		<category name="Mohportal.FrontEnd">
 			<portlet id="2"/>
+			<portlet id="3"/>
+			<portlet id="public-service-result"></portlet>
 		</category>
 	</category>
 	

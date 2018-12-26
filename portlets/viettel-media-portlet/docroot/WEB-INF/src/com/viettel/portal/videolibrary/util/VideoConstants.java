@@ -18,7 +18,11 @@ public class VideoConstants {
 	
 	public static final String EXTERNAL_VIDEO_TYPE="external";
 	
-	protected static final String[] DEFAULT_VIDEO_EXTENSIONS = {".mp4",".webm", ".mp3", ".ogg"};
+	public static final String INTERNAL_NAME="Cấp trung ương";
+	
+	public static final String EXTERNAL_NAME="Cấp địa phương";
+	
+	protected static final String[] DEFAULT_FILE_EXTENSIONS = {".pdf",".xlsx",".xls",".rar",".zip"};
 	
 	protected static final String[] DEFAULT_IMAGE_THUMBNAIL_EXTENSIONS = {".gif",".jpeg",".jpg",".png"};
 	

@@ -32,7 +32,6 @@
 	}
 	List<VanBanPhapQuy> lsLastestVanBan = VanBanPhapQuyBusiness.findByGroupId(scopeGroupId, 0, 11);
 %>
-
 <c:choose>
 	<c:when test="<%= Validator.isNotNull(vanban) %>">
 		<div class="vbpq-display-portlet ">

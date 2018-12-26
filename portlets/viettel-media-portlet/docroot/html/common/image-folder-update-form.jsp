@@ -23,34 +23,7 @@
 	<liferay-portlet:param  name="redirect" value="<%=redirect%>"/>
 </liferay-portlet:actionURL>
 
-<aui:form name="fm" method="post" action="<%=addImageFolderActionURL%>">
-				
-	<aui:select name="parentFolderId" label="select-parent-folder">				
-		<aui:option value="<%=DLFolderConstants.DEFAULT_PARENT_FOLDER_ID %>" label="select" cssClass="root-folder"
-					selected="<%=(parentFolderId == DLFolderConstants.DEFAULT_PARENT_FOLDER_ID) %>"
-		/>					
-		<%
-		for(DLFolder dlFolder : dlFolderList){
-		%>
-			<aui:option value="<%=dlFolder.getFolderId()%>" label="<%=HtmlUtil.escape(dlFolder.getName() )%>" cssClass="root-folder"
-						selected="<%=dlFolder.getFolderId() == parentFolderId%>"
-						
-			/>
-		<%
-			buildDLFolderTree(groupId, dlFolder.getFolderId(),1, out, parentFolderId);
-		}
-		%>					
-	</aui:select>
-	
-	<aui:input name="folderName" >
-		<aui:validator name="required"/>
-	</aui:input>
-						
-	<aui:button-row>
-		<aui:button type="submit" value="save"/>
-		<aui:button name="cancelBtn" value="cancel"/>
-	</aui:button-row>
-</aui:form>
+
 
 <aui:script>
 	AUI().ready(function(A){

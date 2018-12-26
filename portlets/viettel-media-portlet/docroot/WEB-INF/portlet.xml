@@ -98,4 +98,46 @@
 			<role-name>user</role-name>
 		</security-role-ref>
 	</portlet>
+	<portlet>
+		<portlet-name>3</portlet-name>
+		<display-name>Public Service Result</display-name>
+		<portlet-class>
+			com.viettel.portal.publicserviceresult.frontend.PublicServiceResult
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/frontend/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>config-template</name>
+			<value>/html/frontend/config.jsp</value>
+		</init-param>
+		<init-param>
+			<name>template-path</name>
+			<value>/html/frontend/</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>config</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Public Service Result</title>
+			<short-title>Public Service Result</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
 </portlet-app>

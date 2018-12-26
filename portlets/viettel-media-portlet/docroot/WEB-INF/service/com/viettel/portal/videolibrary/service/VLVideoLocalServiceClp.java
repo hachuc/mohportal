@@ -127,7 +127,7 @@ public class VLVideoLocalServiceClp implements VLVideoLocalService {
 				"long", "long", "long", "long", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "boolean", "long",
-				"com.liferay.portal.service.ServiceContext"
+				"com.liferay.portal.service.ServiceContext", "java.lang.String"
 			};
 
 		_methodName21 = "addLegalVideo";
@@ -173,13 +173,28 @@ public class VLVideoLocalServiceClp implements VLVideoLocalService {
 				"com.liferay.portal.kernel.util.OrderByComparator"
 			};
 
-		_methodName29 = "updateVideo";
+		_methodName29 = "findByKeywordFrontend";
 
 		_methodParameterTypes29 = new String[] {
+				"long", "java.lang.String", "java.lang.String", "long",
+				"java.lang.String", "int", "int",
+				"com.liferay.portal.kernel.util.OrderByComparator"
+			};
+
+		_methodName30 = "countByKeywordFrontend";
+
+		_methodParameterTypes30 = new String[] {
+				"long", "java.lang.String", "java.lang.String", "long",
+				"java.lang.String"
+			};
+
+		_methodName31 = "updateVideo";
+
+		_methodParameterTypes31 = new String[] {
 				"long", "long", "long", "long", "long", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "boolean", "long",
-				"com.liferay.portal.service.ServiceContext"
+				"com.liferay.portal.service.ServiceContext", "java.lang.String"
 			};
 	}
 
@@ -764,7 +779,8 @@ public class VLVideoLocalServiceClp implements VLVideoLocalService {
 		java.lang.String description, java.lang.String videoType,
 		java.lang.String videoUrl, long videoFileId, boolean thumbnailImage,
 		long thumbnailImageId,
-		com.liferay.portal.service.ServiceContext serviceContext)
+		com.liferay.portal.service.ServiceContext serviceContext,
+		java.lang.String smallImageUrl)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
@@ -797,7 +813,9 @@ public class VLVideoLocalServiceClp implements VLVideoLocalService {
 						
 					thumbnailImageId,
 						
-					ClpSerializer.translateInput(serviceContext)
+					ClpSerializer.translateInput(serviceContext),
+						
+					ClpSerializer.translateInput(smallImageUrl)
 					});
 		}
 		catch (Throwable t) {
@@ -1113,20 +1131,100 @@ public class VLVideoLocalServiceClp implements VLVideoLocalService {
 	}
 
 	@Override
+	public java.util.List<com.viettel.portal.videolibrary.model.VLVideo> findByKeywordFrontend(
+		long groupId, java.lang.String rank, java.lang.String docCode,
+		long vlCategoryId, java.lang.String companyName, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator obc) {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName29,
+					_methodParameterTypes29,
+					new Object[] {
+						groupId,
+						
+					ClpSerializer.translateInput(rank),
+						
+					ClpSerializer.translateInput(docCode),
+						
+					vlCategoryId,
+						
+					ClpSerializer.translateInput(companyName),
+						
+					start,
+						
+					end,
+						
+					ClpSerializer.translateInput(obc)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.viettel.portal.videolibrary.model.VLVideo>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public long countByKeywordFrontend(long groupId, java.lang.String rank,
+		java.lang.String docCode, long vlCategoryId,
+		java.lang.String companyName) {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName30,
+					_methodParameterTypes30,
+					new Object[] {
+						groupId,
+						
+					ClpSerializer.translateInput(rank),
+						
+					ClpSerializer.translateInput(docCode),
+						
+					vlCategoryId,
+						
+					ClpSerializer.translateInput(companyName)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return ((Long)returnObj).longValue();
+	}
+
+	@Override
 	public com.viettel.portal.videolibrary.model.VLVideo updateVideo(
 		long entryId, long categoryId, long companyId, long groupId,
 		long userId, java.lang.String userName, java.lang.String name,
 		java.lang.String description, java.lang.String videoType,
 		java.lang.String videoUrl, long videoFileId, boolean thumbnailImage,
 		long thumbnailImageId,
-		com.liferay.portal.service.ServiceContext serviceContext)
+		com.liferay.portal.service.ServiceContext serviceContext,
+		java.lang.String smallImageUrl)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName29,
-					_methodParameterTypes29,
+			returnObj = _invokableLocalService.invokeMethod(_methodName31,
+					_methodParameterTypes31,
 					new Object[] {
 						entryId,
 						
@@ -1154,7 +1252,9 @@ public class VLVideoLocalServiceClp implements VLVideoLocalService {
 						
 					thumbnailImageId,
 						
-					ClpSerializer.translateInput(serviceContext)
+					ClpSerializer.translateInput(serviceContext),
+						
+					ClpSerializer.translateInput(smallImageUrl)
 					});
 		}
 		catch (Throwable t) {
@@ -1239,4 +1339,8 @@ public class VLVideoLocalServiceClp implements VLVideoLocalService {
 	private String[] _methodParameterTypes28;
 	private String _methodName29;
 	private String[] _methodParameterTypes29;
+	private String _methodName30;
+	private String[] _methodParameterTypes30;
+	private String _methodName31;
+	private String[] _methodParameterTypes31;
 }

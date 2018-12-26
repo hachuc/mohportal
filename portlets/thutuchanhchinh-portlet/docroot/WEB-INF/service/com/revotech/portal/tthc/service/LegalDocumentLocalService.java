@@ -273,6 +273,13 @@ public interface LegalDocumentLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.revotech.portal.tthc.model.LegalDocument> getLatestLegalDocument(
+		long groupId, int level, boolean isActive, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator obc)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
 	public void addLegalDocument(long groupId, long companyId, long userId,
 		java.lang.String userName, java.lang.String ldCode,
 		java.lang.String ldTitle, java.lang.String ldLink,

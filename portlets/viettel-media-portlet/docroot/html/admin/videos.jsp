@@ -19,6 +19,7 @@
 <%@page import="com.liferay.portal.kernel.util.ListUtil"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
+<%@page import="com.viettel.portal.videolibrary.util.VideoConstants"%>
  
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 
@@ -29,7 +30,6 @@
 	<liferay-portlet:param name="videoSearchKeyword" value="<%=videoSearchKeyword %>"/>
 	<liferay-portlet:param name="categoryId" value="<%=String.valueOf(categoryId) %>"/>
 </liferay-portlet:renderURL>
-
 <div class="list-vl-video">
 	<liferay-ui:search-container searchContainer="<%= new VideoSearch(renderRequest, videoAdminHomePageImplURL)%>" emptyResultsMessage="no-found-video">
 		<%
@@ -40,58 +40,62 @@
 		<liferay-ui:search-container-results results="<%=videos %>" total="<%=total %>"/>
 		
 		<liferay-ui:search-container-row className="VLVideo" keyProperty="videoId" modelVar="video" escapedModel="<%=true %>">
-			<liferay-ui:search-container-column-text name="#" cssClass="tbl_cell_video_image">
-				<%
-					String videoThumbnailURL = request.getContextPath() + "/images/default-video-thumbnail.jpg";
-					if(video.getImage() && video.getImageId() > 0){
-						FileEntry thumbnailImage = null;
-						try{
-							thumbnailImage = DLAppServiceUtil.getFileEntry(video.getImageId());
-						}catch(Exception e){}
-						
-						if(thumbnailImage != null){
-							videoThumbnailURL = VideoFileUtil.getVideoThumbnailURL(themeDisplay, thumbnailImage);
-						}
-					}
-				%>
-				
-				<div style="position: relative;">
-					<img src = "<%=videoThumbnailURL %>" width = "130px" height = "130px"/>
-					<span class="play-icon"></span>
-				</div>
-			</liferay-ui:search-container-column-text>
-			
 			<portlet:renderURL var="viewVideoURL" windowState="<%=LiferayWindowState.POP_UP.toString() %>">
-				<portlet:param name="jspPage" value="/html/admin/preview_video.jsp" />
+				<portlet:param name="jspPage" value="/html/admin/preview_detail.jsp" />
 				<portlet:param name="videoId" value="<%=String.valueOf(video.getVideoId()) %>" />
 			</portlet:renderURL>
 			
 			<%
 			StringBundler previewVideo = new StringBundler();
-
+			
 			previewVideo.append("javascript:");
 			previewVideo.append("viewVLVideoForm");
 			previewVideo.append("('");
 			previewVideo.append(viewVideoURL.toString());
 			previewVideo.append("')");
-
-			%>
+			VLCategory category = VLCategoryLocalServiceUtil.fetchVLCategory(categoryId);
+			FileEntry videoFileEntry = DLAppServiceUtil.getFileEntry(video.getFileId());
+			String fileName ="";
+			String rankName ="";
 			
-			<liferay-ui:search-container-column-text name="video-name" orderable="<%=true %>" value="<%=video.getVideoName()%>"
+			if(Validator.equals(video.getVideoType(), VideoConstants.INTERNAL_VIDEO_TYPE)){
+				rankName = VideoConstants.INTERNAL_NAME;
+			}else if(Validator.equals(video.getVideoType(), VideoConstants.EXTERNAL_VIDEO_TYPE)){
+				rankName = VideoConstants.EXTERNAL_NAME;
+			}
+			
+			if(videoFileEntry != null){
+				fileName = videoFileEntry.getTitle();
+			}
+			%>
+
+			<liferay-ui:search-container-column-text name="doc-code" orderable="<%=true %>" value="<%=video.getVideoName()%>"
 				href="<%=previewVideo.toString() %>"
-				title="<%=HtmlUtil.escape(video.getVideoName()) %>" valign="middle"
+				title="<%=video.getVideoName() %>" valign="middle"
+			/>
+			<liferay-ui:search-container-column-text name="video-category" orderable="<%=true %>" value="<%=category.getCategoryName()%>"
+				title="<%=category.getCategoryName() %>" valign="middle"
 			/>
 			
+			<liferay-ui:search-container-column-text name="video-type" orderable="<%=true %>" value="<%=rankName%>"
+				title="<%=rankName %>" valign="middle"
+			/>
+			<liferay-ui:search-container-column-text name="company-name" orderable="<%=true %>" value="<%=video.getDescription()%>"
+				title="<%=video.getDescription() %>" valign="middle"
+			/>
+			<liferay-ui:search-container-column-text name="file-name" orderable="<%=true %>" value="<%=fileName%>"
+				title="<%=fileName %>" valign="middle"
+			/>
 			<liferay-ui:search-container-column-text name="modified-date" value="<%=dateTimeFormat.format(video.getModifiedDate())%>"
 				orderable="<%=true %>"
 				orderableProperty="modified-date"
-				href="<%=previewVideo.toString() %>"
+				title="<%=previewVideo.toString() %>"
 			/>
 			
 			<liferay-ui:search-container-column-text name="created-by-user" value="<%=video.getUserName()%>" 
 				orderable="<%=true %>"
 				orderableProperty="user-name"
-				href="<%=previewVideo.toString() %>"
+				title="<%=previewVideo.toString() %>"
 			/>
 			
 			<liferay-ui:search-container-column-text name="edit" align="center" cssClass="tbl_cell_action">

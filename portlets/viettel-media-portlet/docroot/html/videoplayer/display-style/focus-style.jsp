@@ -74,7 +74,7 @@
 <c:if test="<%=Validator.isNotNull(styleTitle)%>">
 	<div class="mt15">
 		<div class="headerBox">
-			<%=HtmlUtil.escape(styleTitle)%>
+			<%=styleTitle%>
 		</div>
 	</div>
 </c:if>
@@ -129,16 +129,16 @@
 				<div id="videoPlayer">
 					<c:if test='<%=isYoutube %>'>
 					<div class="external-video-frame" width="100%" id="videoPlayer1">
-						<%= HtmlUtil.escape(playVideoURL) %>
+						<%= playVideoURL %>
 					</div>
 					</c:if>
 					<c:if test='<%=!isYoutube %>'>
 					<video controls src="<%= playVideoURL %>" id="videoPlayer2" poster="<%=playVideoThumbnailURL %>" width="100%">
-						<p>Trình duyệt không hỗ trợ</p>
+						<p>Trinh duyet khong ho tro</p>
 					</video>
 					</c:if>
 				</div>
-				<div id="titleVideo" class="st_title text-bold"> <a href="#" target="_blank"><%= HtmlUtil.escape(playVideoTitle) %></a> </div>				
+				<div id="titleVideo" class="st_title text-bold"> <a href="#" target="_blank"><%= playVideoTitle %></a> </div>				
 				<ul id="playlist" class="chuyendelink">
 					<%
 						for(Entry<Long, VLVideo> entry : map.entrySet()) {

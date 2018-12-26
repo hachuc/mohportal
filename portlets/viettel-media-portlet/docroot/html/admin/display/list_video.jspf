@@ -40,10 +40,7 @@
 	                                    <span class = "video-type"><b><liferay-ui:message  key = "video-type"/></b>: 
 	                                        <liferay-ui:message key="<%= HtmlUtil.escape(video.getVideoType())%>"/>
 	                                    </span>
-	                                    <span class = "video-date"><b><liferay-ui:message  key = "video-user"/>
-		                                    </b>: <%=HtmlUtil.escape(video.getUserName()) %> / <b><liferay-ui:message  key = "video-date"/>
-		                                    </b>: <%=dateTimeFormat.format(video.getModifiedDate()) %>
-	                                    </span>
+	                                    <span class = "video-date"><b><liferay-ui:message  key = "video-user"/></b>: <%=video.getUserName() %> / <b><liferay-ui:message  key = "video-date"/></b>: <%=dateTimeFormat.format(video.getModifiedDate()) %></span>
                                     </div>
                                 </td>
                                 <td width = "20px;">

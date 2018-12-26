@@ -73,33 +73,28 @@
 
 <div class="video-update-form">
 	<liferay-ui:error key="<%= VideoFileTypeException.class.getName() %>" message="not-support-this-video-file-type"/>	
-	<liferay-ui:error key="<%= VideoFileSizeException.class.getName() %>" message="video-size-too-larger"/>
-	<liferay-ui:error key="<%= ImageFileTypeException.class.getName() %>" message="not-support-this-image-file-type"/>	
-	<liferay-ui:error key="<%= ImageFileSizeException.class.getName() %>" message="image-size-too-larger"/>			
+	<liferay-ui:error key="<%= VideoFileSizeException.class.getName() %>" message="video-size-too-larger"/>	
 			
 	<portlet:actionURL name="updateVideo" var="updateVideoActionURL">
 		<portlet:param name="videoId" value="<%=String.valueOf(videoId) %>"/>
 		<portlet:param name="redirectURL" value="<%=PortalUtil.getCurrentURL(request) %>"/>
 	</portlet:actionURL>
-	
 	<aui:form name="fm" enctype="multipart/form-data" method="post" action="<%=updateVideoActionURL%>" >
 			
 		<aui:model-context bean="<%= video %>" model="<%= VLVideo.class %>"/>
 			
-		<aui:input name="videoName" label="video-title" type="text" size="100">
+		<aui:input name="videoName" label="doc-code" type="text" size="100">
 			<aui:validator name="required" />
 			<aui:validator name="maxLength">500</aui:validator>
 		</aui:input>
 				
-		<aui:input name="description" type="textarea">
+		<aui:input name="description" type="text" label="company-name">
 			<aui:validator name="maxLength">2000</aui:validator>
 		</aui:input>
 				
 		<aui:select name="videoCategory">
 			<c:choose>
 				<c:when test="<%=(categories.size()>0) %>">
-					<aui:option label = "video-category" value = ""	
-						selected = "<%=(Validator.equals(categoryId, 0L)) %>"/>
 					<%
 						for (int i = 0; i < categories.size();i++){
 						%>
@@ -115,41 +110,21 @@
 				</c:otherwise>
 			</c:choose>
 		</aui:select>
-		
-		
-		
-		<aui:select name="videoFolderId" label="video-folder">
-			<aui:option value="<%=DLFolderConstants.DEFAULT_PARENT_FOLDER_ID %>"><liferay-ui:message key="root-folder"/></aui:option>
-			<c:if test="<%=folders != null%>">
-				<%
-					for (DLFolder folder : folders) {
-						if (folder.isHidden()) {
-							continue;
-						}
-				%>
-				<aui:option value="<%=folder.getFolderId()%>"><%=HtmlUtil.escape(folder.getName())%></aui:option>
-				<%
-					}
-				%>
-			</c:if>
-		</aui:select>
-				
 		<aui:select name="videoType" label="video-type">
-			<aui:option label="internal" value="<%=VideoConstants.INTERNAL_VIDEO_TYPE %>" 
+			<aui:option label="central" value="<%=VideoConstants.INTERNAL_VIDEO_TYPE %>" 
 								selected='<%=Validator.equals(videoType, VideoConstants.INTERNAL_VIDEO_TYPE) %>'/>
-			<aui:option label="external" value="<%=VideoConstants.EXTERNAL_VIDEO_TYPE %>" 
+			<aui:option label="local" value="<%=VideoConstants.EXTERNAL_VIDEO_TYPE %>" 
 								selected='<%=Validator.equals(videoType, VideoConstants.EXTERNAL_VIDEO_TYPE) %>'/>
 		</aui:select>
-					
-		<div id="<portlet:namespace />video-url-container"  class='<%=Validator.equals(videoType, VideoConstants.INTERNAL_VIDEO_TYPE) ? "hide" : ""%>'>
-			<aui:input name="videoUrl" label="video-url"/>
-		</div>
-				
-		<div id="<portlet:namespace />video-upload-container" class='<%=Validator.equals(videoType, VideoConstants.EXTERNAL_VIDEO_TYPE) ? "hide" : ""%>'>
+		
+		<aui:input name="smallImageUrl" type="text" label="link-result">
+			<aui:validator name="maxLength">2000</aui:validator>
+		</aui:input>		
+		<div id="<portlet:namespace />video-upload-container">
 			<% if(video != null){ %>
-				<aui:input type="file" name="videoFile" accept=".mp3,.mp4,.ogg"/>	
+				<aui:input type="file" name="videoFile" accept=".pdf,.xlsx,.xls,.rar,.zip"/>	
 			<% } else { %>
-				<aui:input type="file" name="videoFile" accept=".mp3,.mp4,.ogg" />
+				<aui:input type="file" name="videoFile" accept=".pdf,.xlsx,.xls,.rar,.zip" />
 			<% } %>				
 
 			<% if (video != null && video.getImageId() > 0) {
@@ -158,50 +133,10 @@
 						videoFile = DLAppServiceUtil.getFileEntry(video.getFileId());
 					}catch(Exception e){}					
 				%>
-				<liferay-ui:message key="Tệp-video"/> <%= HtmlUtil.escape(videoFile.getTitle()) %>
+				<liferay-ui:message key="file-attach"/> <%= videoFile.getTitle() %>
 			<%} %>			
 			<aui:input type="hidden" name="fileId" value="<%=videoFileId %>"/>
 		</div>	
-		<aui:input type="checkbox" name="videoThumbnailImage" value="<%=useVideoThumbnail %>" label="use-video-thumbnail-image"/>
-		<c:choose>
-			<c:when test="<%=video != null && video.getImageId() > 0%>">
-				<%
-					String videoThumbnailURL = request.getContextPath() + "/images/default-video-thumbnail.jpg";
-					FileEntry thumbnailImage = null;
-					try{
-						thumbnailImage = DLAppServiceUtil.getFileEntry(video.getImageId());
-					}catch(Exception e){}
-					
-					if(thumbnailImage != null){
-						videoThumbnailURL = VideoFileUtil.getVideoThumbnailURL(themeDisplay, thumbnailImage);
-					}				
-				%>
-				<div id="<portlet:namespace/>previewImageThumbnai">
-					<img alt="" src="<%=videoThumbnailURL %>" width="150" height="120">
-				</div>
-				
-				<div id="<portlet:namespace />video-thumbnail-img-container" class="hide">
-					<aui:input type="file" name="videoThumbnailImageFile" label="video-thumbnail-image" accept=".png,.jpeg,.jpg"/>
-				</div>
-				
-				<div class="change-image">
-					<a href="javascript:;" id="<portlet:namespace />changeImage"><liferay-ui:message key="change"/></a>
-				</div>
-				
-				<div class="cancel-change-image">
-					<a href="javascript:;" id="<portlet:namespace />cancelChangeImage"><liferay-ui:message key="cancel"/></a>
-				</div>
-				
-			</c:when>
-			<c:otherwise>
-				<div id="<portlet:namespace />video-thumbnail-img-container">
-					<aui:input type="file" name="videoThumbnailImageFile" label="video-thumbnail-image" accept=".png,.jpeg,.jpg"/>
-				</div>
-			</c:otherwise>
-		</c:choose>
-		
-		<aui:input type="hidden" name="thumbnailImageId" value="<%=abstractImageId %>"/>
-	
 		<aui:button-row>
 			<aui:button type="submit" value="save"/>
 			<aui:button name="closeVideoUpdateFormBtn" value="cancel"/>
@@ -216,85 +151,6 @@
 <aui:script>
 	AUI().ready(function(A){
 		
-		var videoTypeSelector = A.one('#<portlet:namespace/>videoType');
-		
-		var videoUrlContainer = A.one('#<portlet:namespace />video-url-container');
-		
-		var videoUploadContainer = A.one('#<portlet:namespace />video-upload-container');
-		
-		var videoPlayerContainer = A.one('#<portlet:namespace />video-player-container');
-		
-		
-		var changeImage = A.one('#<portlet:namespace />changeImage');
-		var cancelChangeImage = A.one('#<portlet:namespace />cancelChangeImage');
-		
-		if(changeImage){
-			Liferay.Util.toggleBoxes('<portlet:namespace />changeImage','<portlet:namespace />video-thumbnail-img-container');
-			Liferay.Util.toggleBoxes('<portlet:namespace />changeImage','<portlet:namespace/>cancelChangeImage');
-			changeImage.on('click', function(){
-				A.one('#<portlet:namespace/>previewImageThumbnai').hide();
-				A.one('#<portlet:namespace/>video-thumbnail-img-container').show();
-				changeImage.hide();
-			});
-		}
-		
-		if(cancelChangeImage){
-			cancelChangeImage.on('click', function(){
-				A.one('#<portlet:namespace/>video-thumbnail-img-container').hide();
-				A.one('#<portlet:namespace/>previewImageThumbnai').show();
-				A.one('#<portlet:namespace/>videoThumbnailImageFile').val(null);
-				changeImage.show();
-				cancelChangeImage.hide();
-				
-			});
-		}
-		
-		if(videoTypeSelector && videoTypeSelector.val() == '<%=VideoConstants.INTERNAL_VIDEO_TYPE %>'){
-			
-			videoUrlContainer.hide();
-			
-			videoUploadContainer.show();
-			
-		}else if(videoTypeSelector && videoTypeSelector.val() == '<%=VideoConstants.EXTERNAL_VIDEO_TYPE %>'){
-			
-			videoUrlContainer.show();
-			
-			videoUploadContainer.hide();
-			
-			if(videoPlayerContainer){
-				
-				videoPlayerContainer.hide();
-				
-			}
-		}
-		
-		if(videoTypeSelector){
-			
-			videoTypeSelector.on('change',function(){
-				
-				var selectedValue = videoTypeSelector.val();
-				
-				if(selectedValue == '<%=VideoConstants.INTERNAL_VIDEO_TYPE %>'){
-					
-					videoUrlContainer.hide();
-					
-					videoUploadContainer.show();
-					
-				}else{
-					
-					videoUrlContainer.show();
-					
-					videoUploadContainer.hide();
-					
-					if(videoPlayerContainer){
-						
-						videoPlayerContainer.hide();
-						
-					}
-				}
-			});
-		}
-		
 		var closeVideoUpdateFormBtn = A.one('#<portlet:namespace/>closeVideoUpdateFormBtn');
         
 		if(closeVideoUpdateFormBtn){
@@ -302,7 +158,6 @@
 			closeVideoUpdateFormBtn.on('click',function(){
                 
 				Liferay.Util.getWindow().destroy();
-                
 			});
 		}
 	});

@@ -24,6 +24,23 @@ import com.liferay.portal.kernel.util.ReferenceRegistry;
  * @author ChucHV
  */
 public class VLVideoFinderUtil {
+	public static java.util.List<com.viettel.portal.videolibrary.model.VLVideo> findByKeywordFrontend(
+		long groupId, java.lang.String rank, java.lang.String docCode,
+		long vlCategoryId, java.lang.String companyName, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator obc) {
+		return getFinder()
+				   .findByKeywordFrontend(groupId, rank, docCode, vlCategoryId,
+			companyName, start, end, obc);
+	}
+
+	public static long countByKeywordFrontend(long groupId,
+		java.lang.String rank, java.lang.String docCode, long vlCategoryId,
+		java.lang.String companyName) {
+		return getFinder()
+				   .countByKeywordFrontend(groupId, rank, docCode,
+			vlCategoryId, companyName);
+	}
+
 	public static long countByKeyword(long groupId, long categoryId,
 		java.lang.String keyword) {
 		return getFinder().countByKeyword(groupId, categoryId, keyword);

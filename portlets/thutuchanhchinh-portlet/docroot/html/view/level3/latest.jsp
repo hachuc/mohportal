@@ -15,7 +15,33 @@ OrderByComparator comparator = orderByComparatorFactory.create("LegalDocument","
 
 List<LegalDocument> thuTucHanhChinhs = LegalDocumentLocalServiceUtil.getLatestLegalDocument(groupId, 3, true, 0, displayItem, comparator);
  %>
- <div id="display_7">
+<div class="box-container" id="a10">
+	<div class="box-content-08">
+		<div class="title">
+			<div>
+					<a href=""
+						title="<%=HtmlUtil.escape(portletTitle)%>"><%=HtmlUtil.escape(portletTitle)%></a>
+			</div>
+		</div>
+		<div class="content">
+			<div class="list">
+				<ul>
+				    <%
+					int count =0;
+
+				    for(LegalDocument doc : thuTucHanhChinhs)
+					{
+				%>
+				<li><a href="<%= doc.getLdLevel3Link()%>"><%= HtmlUtil.escape(doc.getLdTitle()) %></a></li>
+				<%
+				}
+				%>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div> 
+ <%-- <div id="display_7">
 <liferay-ui:panel collapsible="<%=false%>" extended="<%=true%>"
 			id="basic-info" persistState="<%=true%>" title='<%= portletTitle %>'>
 			<div class="box_content">
@@ -30,4 +56,4 @@ List<LegalDocument> thuTucHanhChinhs = LegalDocumentLocalServiceUtil.getLatestLe
 			</ul>
 			</div>
 </liferay-ui:panel>
-</div>
+</div> --%>

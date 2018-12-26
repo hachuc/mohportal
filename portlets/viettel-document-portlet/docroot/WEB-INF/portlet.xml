@@ -152,7 +152,46 @@
         <supported-public-render-parameter>entryId</supported-public-render-parameter>
 		<supported-public-render-parameter>typeContent</supported-public-render-parameter>
 	</portlet>
-    <public-render-parameter>
+	<portlet>
+		<portlet-name>vanban</portlet-name>
+		<display-name>Vanban</display-name>
+		<portlet-class>com.viettel.portal.vb.Vanban</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/vanban/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>template-path</name>
+			<value>/html/portlet/vanban/</value>
+		</init-param>
+		<init-param>
+			<name>config-template</name>
+			<value>/html/config/configurationList.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Vanban</title>
+			<short-title>Vanban</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<public-render-parameter>
        <identifier>entryId</identifier>
        <qname xmlns:x="http://viettel.com.vn/public-render-parameters">x:entryId</qname>
     </public-render-parameter>
@@ -160,4 +199,5 @@
        <identifier>typeContent</identifier>
        <qname xmlns:x="http://viettel.com.vn/public-render-parameters">x:typeContent</qname>
     </public-render-parameter>
+
 </portlet-app>

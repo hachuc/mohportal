@@ -1939,6 +1939,583 @@ public class VLCategoryPersistenceImpl extends BasePersistenceImpl<VLCategory>
 	private static final String _FINDER_COLUMN_CATEGORYNAME_CATEGORYNAME_2 = "vlCategory.categoryName = ? AND ";
 	private static final String _FINDER_COLUMN_CATEGORYNAME_CATEGORYNAME_3 = "(vlCategory.categoryName IS NULL OR vlCategory.categoryName = '') AND ";
 	private static final String _FINDER_COLUMN_CATEGORYNAME_GROUPID_2 = "vlCategory.groupId = ?";
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_CATEGORYID_GROUPID =
+		new FinderPath(VLCategoryModelImpl.ENTITY_CACHE_ENABLED,
+			VLCategoryModelImpl.FINDER_CACHE_ENABLED, VLCategoryImpl.class,
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByCategoryId_GroupId",
+			new String[] {
+				Long.class.getName(), Long.class.getName(),
+				
+			Integer.class.getName(), Integer.class.getName(),
+				OrderByComparator.class.getName()
+			});
+	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_CATEGORYID_GROUPID =
+		new FinderPath(VLCategoryModelImpl.ENTITY_CACHE_ENABLED,
+			VLCategoryModelImpl.FINDER_CACHE_ENABLED, VLCategoryImpl.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION,
+			"findByCategoryId_GroupId",
+			new String[] { Long.class.getName(), Long.class.getName() },
+			VLCategoryModelImpl.CATEGORYID_COLUMN_BITMASK |
+			VLCategoryModelImpl.GROUPID_COLUMN_BITMASK |
+			VLCategoryModelImpl.MODIFIEDDATE_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_CATEGORYID_GROUPID = new FinderPath(VLCategoryModelImpl.ENTITY_CACHE_ENABLED,
+			VLCategoryModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION,
+			"countByCategoryId_GroupId",
+			new String[] { Long.class.getName(), Long.class.getName() });
+
+	/**
+	 * Returns all the v l categories where categoryId = &#63; and groupId = &#63;.
+	 *
+	 * @param categoryId the category ID
+	 * @param groupId the group ID
+	 * @return the matching v l categories
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<VLCategory> findByCategoryId_GroupId(long categoryId,
+		long groupId) throws SystemException {
+		return findByCategoryId_GroupId(categoryId, groupId, QueryUtil.ALL_POS,
+			QueryUtil.ALL_POS, null);
+	}
+
+	/**
+	 * Returns a range of all the v l categories where categoryId = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.viettel.portal.videolibrary.model.impl.VLCategoryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param categoryId the category ID
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of v l categories
+	 * @param end the upper bound of the range of v l categories (not inclusive)
+	 * @return the range of matching v l categories
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<VLCategory> findByCategoryId_GroupId(long categoryId,
+		long groupId, int start, int end) throws SystemException {
+		return findByCategoryId_GroupId(categoryId, groupId, start, end, null);
+	}
+
+	/**
+	 * Returns an ordered range of all the v l categories where categoryId = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.viettel.portal.videolibrary.model.impl.VLCategoryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param categoryId the category ID
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of v l categories
+	 * @param end the upper bound of the range of v l categories (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching v l categories
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<VLCategory> findByCategoryId_GroupId(long categoryId,
+		long groupId, int start, int end, OrderByComparator orderByComparator)
+		throws SystemException {
+		boolean pagination = true;
+		FinderPath finderPath = null;
+		Object[] finderArgs = null;
+
+		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
+				(orderByComparator == null)) {
+			pagination = false;
+			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_CATEGORYID_GROUPID;
+			finderArgs = new Object[] { categoryId, groupId };
+		}
+		else {
+			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_CATEGORYID_GROUPID;
+			finderArgs = new Object[] {
+					categoryId, groupId,
+					
+					start, end, orderByComparator
+				};
+		}
+
+		List<VLCategory> list = (List<VLCategory>)FinderCacheUtil.getResult(finderPath,
+				finderArgs, this);
+
+		if ((list != null) && !list.isEmpty()) {
+			for (VLCategory vlCategory : list) {
+				if ((categoryId != vlCategory.getCategoryId()) ||
+						(groupId != vlCategory.getGroupId())) {
+					list = null;
+
+					break;
+				}
+			}
+		}
+
+		if (list == null) {
+			StringBundler query = null;
+
+			if (orderByComparator != null) {
+				query = new StringBundler(4 +
+						(orderByComparator.getOrderByFields().length * 3));
+			}
+			else {
+				query = new StringBundler(4);
+			}
+
+			query.append(_SQL_SELECT_VLCATEGORY_WHERE);
+
+			query.append(_FINDER_COLUMN_CATEGORYID_GROUPID_CATEGORYID_2);
+
+			query.append(_FINDER_COLUMN_CATEGORYID_GROUPID_GROUPID_2);
+
+			if (orderByComparator != null) {
+				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
+					orderByComparator);
+			}
+			else
+			 if (pagination) {
+				query.append(VLCategoryModelImpl.ORDER_BY_JPQL);
+			}
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				qPos.add(categoryId);
+
+				qPos.add(groupId);
+
+				if (!pagination) {
+					list = (List<VLCategory>)QueryUtil.list(q, getDialect(),
+							start, end, false);
+
+					Collections.sort(list);
+
+					list = new UnmodifiableList<VLCategory>(list);
+				}
+				else {
+					list = (List<VLCategory>)QueryUtil.list(q, getDialect(),
+							start, end);
+				}
+
+				cacheResult(list);
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, list);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return list;
+	}
+
+	/**
+	 * Returns the first v l category in the ordered set where categoryId = &#63; and groupId = &#63;.
+	 *
+	 * @param categoryId the category ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching v l category
+	 * @throws com.viettel.portal.videolibrary.NoSuchVLCategoryException if a matching v l category could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public VLCategory findByCategoryId_GroupId_First(long categoryId,
+		long groupId, OrderByComparator orderByComparator)
+		throws NoSuchVLCategoryException, SystemException {
+		VLCategory vlCategory = fetchByCategoryId_GroupId_First(categoryId,
+				groupId, orderByComparator);
+
+		if (vlCategory != null) {
+			return vlCategory;
+		}
+
+		StringBundler msg = new StringBundler(6);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("categoryId=");
+		msg.append(categoryId);
+
+		msg.append(", groupId=");
+		msg.append(groupId);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchVLCategoryException(msg.toString());
+	}
+
+	/**
+	 * Returns the first v l category in the ordered set where categoryId = &#63; and groupId = &#63;.
+	 *
+	 * @param categoryId the category ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching v l category, or <code>null</code> if a matching v l category could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public VLCategory fetchByCategoryId_GroupId_First(long categoryId,
+		long groupId, OrderByComparator orderByComparator)
+		throws SystemException {
+		List<VLCategory> list = findByCategoryId_GroupId(categoryId, groupId,
+				0, 1, orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the last v l category in the ordered set where categoryId = &#63; and groupId = &#63;.
+	 *
+	 * @param categoryId the category ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching v l category
+	 * @throws com.viettel.portal.videolibrary.NoSuchVLCategoryException if a matching v l category could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public VLCategory findByCategoryId_GroupId_Last(long categoryId,
+		long groupId, OrderByComparator orderByComparator)
+		throws NoSuchVLCategoryException, SystemException {
+		VLCategory vlCategory = fetchByCategoryId_GroupId_Last(categoryId,
+				groupId, orderByComparator);
+
+		if (vlCategory != null) {
+			return vlCategory;
+		}
+
+		StringBundler msg = new StringBundler(6);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("categoryId=");
+		msg.append(categoryId);
+
+		msg.append(", groupId=");
+		msg.append(groupId);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchVLCategoryException(msg.toString());
+	}
+
+	/**
+	 * Returns the last v l category in the ordered set where categoryId = &#63; and groupId = &#63;.
+	 *
+	 * @param categoryId the category ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching v l category, or <code>null</code> if a matching v l category could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public VLCategory fetchByCategoryId_GroupId_Last(long categoryId,
+		long groupId, OrderByComparator orderByComparator)
+		throws SystemException {
+		int count = countByCategoryId_GroupId(categoryId, groupId);
+
+		if (count == 0) {
+			return null;
+		}
+
+		List<VLCategory> list = findByCategoryId_GroupId(categoryId, groupId,
+				count - 1, count, orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns all the v l categories that the user has permission to view where categoryId = &#63; and groupId = &#63;.
+	 *
+	 * @param categoryId the category ID
+	 * @param groupId the group ID
+	 * @return the matching v l categories that the user has permission to view
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<VLCategory> filterFindByCategoryId_GroupId(long categoryId,
+		long groupId) throws SystemException {
+		return filterFindByCategoryId_GroupId(categoryId, groupId,
+			QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
+	}
+
+	/**
+	 * Returns a range of all the v l categories that the user has permission to view where categoryId = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.viettel.portal.videolibrary.model.impl.VLCategoryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param categoryId the category ID
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of v l categories
+	 * @param end the upper bound of the range of v l categories (not inclusive)
+	 * @return the range of matching v l categories that the user has permission to view
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<VLCategory> filterFindByCategoryId_GroupId(long categoryId,
+		long groupId, int start, int end) throws SystemException {
+		return filterFindByCategoryId_GroupId(categoryId, groupId, start, end,
+			null);
+	}
+
+	/**
+	 * Returns an ordered range of all the v l categories that the user has permissions to view where categoryId = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.viettel.portal.videolibrary.model.impl.VLCategoryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param categoryId the category ID
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of v l categories
+	 * @param end the upper bound of the range of v l categories (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching v l categories that the user has permission to view
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<VLCategory> filterFindByCategoryId_GroupId(long categoryId,
+		long groupId, int start, int end, OrderByComparator orderByComparator)
+		throws SystemException {
+		if (!InlineSQLHelperUtil.isEnabled(groupId)) {
+			return findByCategoryId_GroupId(categoryId, groupId, start, end,
+				orderByComparator);
+		}
+
+		StringBundler query = null;
+
+		if (orderByComparator != null) {
+			query = new StringBundler(4 +
+					(orderByComparator.getOrderByFields().length * 3));
+		}
+		else {
+			query = new StringBundler(4);
+		}
+
+		if (getDB().isSupportsInlineDistinct()) {
+			query.append(_FILTER_SQL_SELECT_VLCATEGORY_WHERE);
+		}
+		else {
+			query.append(_FILTER_SQL_SELECT_VLCATEGORY_NO_INLINE_DISTINCT_WHERE_1);
+		}
+
+		query.append(_FINDER_COLUMN_CATEGORYID_GROUPID_CATEGORYID_2);
+
+		query.append(_FINDER_COLUMN_CATEGORYID_GROUPID_GROUPID_2);
+
+		if (!getDB().isSupportsInlineDistinct()) {
+			query.append(_FILTER_SQL_SELECT_VLCATEGORY_NO_INLINE_DISTINCT_WHERE_2);
+		}
+
+		if (orderByComparator != null) {
+			if (getDB().isSupportsInlineDistinct()) {
+				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
+					orderByComparator, true);
+			}
+			else {
+				appendOrderByComparator(query, _ORDER_BY_ENTITY_TABLE,
+					orderByComparator, true);
+			}
+		}
+		else {
+			if (getDB().isSupportsInlineDistinct()) {
+				query.append(VLCategoryModelImpl.ORDER_BY_JPQL);
+			}
+			else {
+				query.append(VLCategoryModelImpl.ORDER_BY_SQL);
+			}
+		}
+
+		String sql = InlineSQLHelperUtil.replacePermissionCheck(query.toString(),
+				VLCategory.class.getName(),
+				_FILTER_ENTITY_TABLE_FILTER_PK_COLUMN, groupId);
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			SQLQuery q = session.createSQLQuery(sql);
+
+			if (getDB().isSupportsInlineDistinct()) {
+				q.addEntity(_FILTER_ENTITY_ALIAS, VLCategoryImpl.class);
+			}
+			else {
+				q.addEntity(_FILTER_ENTITY_TABLE, VLCategoryImpl.class);
+			}
+
+			QueryPos qPos = QueryPos.getInstance(q);
+
+			qPos.add(categoryId);
+
+			qPos.add(groupId);
+
+			return (List<VLCategory>)QueryUtil.list(q, getDialect(), start, end);
+		}
+		catch (Exception e) {
+			throw processException(e);
+		}
+		finally {
+			closeSession(session);
+		}
+	}
+
+	/**
+	 * Removes all the v l categories where categoryId = &#63; and groupId = &#63; from the database.
+	 *
+	 * @param categoryId the category ID
+	 * @param groupId the group ID
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public void removeByCategoryId_GroupId(long categoryId, long groupId)
+		throws SystemException {
+		for (VLCategory vlCategory : findByCategoryId_GroupId(categoryId,
+				groupId, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
+			remove(vlCategory);
+		}
+	}
+
+	/**
+	 * Returns the number of v l categories where categoryId = &#63; and groupId = &#63;.
+	 *
+	 * @param categoryId the category ID
+	 * @param groupId the group ID
+	 * @return the number of matching v l categories
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public int countByCategoryId_GroupId(long categoryId, long groupId)
+		throws SystemException {
+		FinderPath finderPath = FINDER_PATH_COUNT_BY_CATEGORYID_GROUPID;
+
+		Object[] finderArgs = new Object[] { categoryId, groupId };
+
+		Long count = (Long)FinderCacheUtil.getResult(finderPath, finderArgs,
+				this);
+
+		if (count == null) {
+			StringBundler query = new StringBundler(3);
+
+			query.append(_SQL_COUNT_VLCATEGORY_WHERE);
+
+			query.append(_FINDER_COLUMN_CATEGORYID_GROUPID_CATEGORYID_2);
+
+			query.append(_FINDER_COLUMN_CATEGORYID_GROUPID_GROUPID_2);
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				qPos.add(categoryId);
+
+				qPos.add(groupId);
+
+				count = (Long)q.uniqueResult();
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, count);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return count.intValue();
+	}
+
+	/**
+	 * Returns the number of v l categories that the user has permission to view where categoryId = &#63; and groupId = &#63;.
+	 *
+	 * @param categoryId the category ID
+	 * @param groupId the group ID
+	 * @return the number of matching v l categories that the user has permission to view
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public int filterCountByCategoryId_GroupId(long categoryId, long groupId)
+		throws SystemException {
+		if (!InlineSQLHelperUtil.isEnabled(groupId)) {
+			return countByCategoryId_GroupId(categoryId, groupId);
+		}
+
+		StringBundler query = new StringBundler(3);
+
+		query.append(_FILTER_SQL_COUNT_VLCATEGORY_WHERE);
+
+		query.append(_FINDER_COLUMN_CATEGORYID_GROUPID_CATEGORYID_2);
+
+		query.append(_FINDER_COLUMN_CATEGORYID_GROUPID_GROUPID_2);
+
+		String sql = InlineSQLHelperUtil.replacePermissionCheck(query.toString(),
+				VLCategory.class.getName(),
+				_FILTER_ENTITY_TABLE_FILTER_PK_COLUMN, groupId);
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			SQLQuery q = session.createSQLQuery(sql);
+
+			q.addScalar(COUNT_COLUMN_NAME,
+				com.liferay.portal.kernel.dao.orm.Type.LONG);
+
+			QueryPos qPos = QueryPos.getInstance(q);
+
+			qPos.add(categoryId);
+
+			qPos.add(groupId);
+
+			Long count = (Long)q.uniqueResult();
+
+			return count.intValue();
+		}
+		catch (Exception e) {
+			throw processException(e);
+		}
+		finally {
+			closeSession(session);
+		}
+	}
+
+	private static final String _FINDER_COLUMN_CATEGORYID_GROUPID_CATEGORYID_2 = "vlCategory.categoryId = ? AND ";
+	private static final String _FINDER_COLUMN_CATEGORYID_GROUPID_GROUPID_2 = "vlCategory.groupId = ?";
 	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_GROUPANDSTATE =
 		new FinderPath(VLCategoryModelImpl.ENTITY_CACHE_ENABLED,
 			VLCategoryModelImpl.FINDER_CACHE_ENABLED, VLCategoryImpl.class,
@@ -3118,6 +3695,29 @@ public class VLCategoryPersistenceImpl extends BasePersistenceImpl<VLCategory>
 				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_CATEGORYNAME,
 					args);
 				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_CATEGORYNAME,
+					args);
+			}
+
+			if ((vlCategoryModelImpl.getColumnBitmask() &
+					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_CATEGORYID_GROUPID.getColumnBitmask()) != 0) {
+				Object[] args = new Object[] {
+						vlCategoryModelImpl.getOriginalCategoryId(),
+						vlCategoryModelImpl.getOriginalGroupId()
+					};
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_CATEGORYID_GROUPID,
+					args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_CATEGORYID_GROUPID,
+					args);
+
+				args = new Object[] {
+						vlCategoryModelImpl.getCategoryId(),
+						vlCategoryModelImpl.getGroupId()
+					};
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_CATEGORYID_GROUPID,
+					args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_CATEGORYID_GROUPID,
 					args);
 			}
 

@@ -266,7 +266,8 @@ public interface VLVideoLocalService extends BaseLocalService,
 		java.lang.String description, java.lang.String videoType,
 		java.lang.String videoUrl, long videoFileId, boolean thumbnailImage,
 		long thumbnailImageId,
-		com.liferay.portal.service.ServiceContext serviceContext)
+		com.liferay.portal.service.ServiceContext serviceContext,
+		java.lang.String smallImageUrl)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 
@@ -307,13 +308,23 @@ public interface VLVideoLocalService extends BaseLocalService,
 		long groupId, long categoryId, java.lang.String keyword, int start,
 		int end, com.liferay.portal.kernel.util.OrderByComparator obc);
 
+	public java.util.List<com.viettel.portal.videolibrary.model.VLVideo> findByKeywordFrontend(
+		long groupId, java.lang.String rank, java.lang.String docCode,
+		long vlCategoryId, java.lang.String companyName, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator obc);
+
+	public long countByKeywordFrontend(long groupId, java.lang.String rank,
+		java.lang.String docCode, long vlCategoryId,
+		java.lang.String companyName);
+
 	public com.viettel.portal.videolibrary.model.VLVideo updateVideo(
 		long entryId, long categoryId, long companyId, long groupId,
 		long userId, java.lang.String userName, java.lang.String name,
 		java.lang.String description, java.lang.String videoType,
 		java.lang.String videoUrl, long videoFileId, boolean thumbnailImage,
 		long thumbnailImageId,
-		com.liferay.portal.service.ServiceContext serviceContext)
+		com.liferay.portal.service.ServiceContext serviceContext,
+		java.lang.String smallImageUrl)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 }

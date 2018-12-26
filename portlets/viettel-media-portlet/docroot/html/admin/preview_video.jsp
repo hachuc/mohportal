@@ -1,4 +1,3 @@
-
 <%@page import="com.liferay.portal.kernel.util.Validator"%>
 <%@page import="com.viettel.portal.videolibrary.util.VideoFileUtil"%>
 <%@page import="com.liferay.portlet.documentlibrary.service.DLAppServiceUtil"%>
@@ -32,7 +31,7 @@
 			
 			<c:choose>
 				<c:when test='<%=Validator.equals(video.getVideoType(), VideoConstants.EXTERNAL_VIDEO_TYPE) %>'>
-					<div class="video-embed-preview"><%=HtmlUtil.escape(video.getVideoUrl()) %></div>
+					<div class="video-embed-preview"><%=video.getVideoUrl() %></div>
 				</c:when>
 				<c:otherwise>
 				<%
@@ -77,4 +76,3 @@
 			</c:otherwise>
 		</c:choose>
 	</c:if>
-

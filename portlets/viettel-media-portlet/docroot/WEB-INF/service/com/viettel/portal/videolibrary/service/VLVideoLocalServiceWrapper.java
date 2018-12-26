@@ -300,12 +300,14 @@ public class VLVideoLocalServiceWrapper implements VLVideoLocalService,
 		java.lang.String description, java.lang.String videoType,
 		java.lang.String videoUrl, long videoFileId, boolean thumbnailImage,
 		long thumbnailImageId,
-		com.liferay.portal.service.ServiceContext serviceContext)
+		com.liferay.portal.service.ServiceContext serviceContext,
+		java.lang.String smallImageUrl)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return _vlVideoLocalService.addVideo(categoryId, companyId, groupId,
 			userId, userName, name, description, videoType, videoUrl,
-			videoFileId, thumbnailImage, thumbnailImageId, serviceContext);
+			videoFileId, thumbnailImage, thumbnailImageId, serviceContext,
+			smallImageUrl);
 	}
 
 	@Override
@@ -376,18 +378,37 @@ public class VLVideoLocalServiceWrapper implements VLVideoLocalService,
 	}
 
 	@Override
+	public java.util.List<com.viettel.portal.videolibrary.model.VLVideo> findByKeywordFrontend(
+		long groupId, java.lang.String rank, java.lang.String docCode,
+		long vlCategoryId, java.lang.String companyName, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator obc) {
+		return _vlVideoLocalService.findByKeywordFrontend(groupId, rank,
+			docCode, vlCategoryId, companyName, start, end, obc);
+	}
+
+	@Override
+	public long countByKeywordFrontend(long groupId, java.lang.String rank,
+		java.lang.String docCode, long vlCategoryId,
+		java.lang.String companyName) {
+		return _vlVideoLocalService.countByKeywordFrontend(groupId, rank,
+			docCode, vlCategoryId, companyName);
+	}
+
+	@Override
 	public com.viettel.portal.videolibrary.model.VLVideo updateVideo(
 		long entryId, long categoryId, long companyId, long groupId,
 		long userId, java.lang.String userName, java.lang.String name,
 		java.lang.String description, java.lang.String videoType,
 		java.lang.String videoUrl, long videoFileId, boolean thumbnailImage,
 		long thumbnailImageId,
-		com.liferay.portal.service.ServiceContext serviceContext)
+		com.liferay.portal.service.ServiceContext serviceContext,
+		java.lang.String smallImageUrl)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return _vlVideoLocalService.updateVideo(entryId, categoryId, companyId,
 			groupId, userId, userName, name, description, videoType, videoUrl,
-			videoFileId, thumbnailImage, thumbnailImageId, serviceContext);
+			videoFileId, thumbnailImage, thumbnailImageId, serviceContext,
+			smallImageUrl);
 	}
 
 	/**

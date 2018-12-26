@@ -66,6 +66,10 @@
             <finder-column name="categoryName" comparator="="></finder-column>
             <finder-column name="groupId"></finder-column>
         </finder>
+        <finder name="CategoryId_GroupId" return-type="Collection">
+            <finder-column name="categoryId"></finder-column>
+            <finder-column name="groupId"></finder-column>
+        </finder>
         <finder name="GroupAndState" return-type="Collection">
             <finder-column name="groupId"></finder-column>
             <finder-column name="invisible"></finder-column>

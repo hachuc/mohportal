@@ -25,7 +25,6 @@ public class VbpqConfigurationImpl extends DefaultConfigurationAction{
 			
 		// TODO Auto-generated method stub
 			try {
-				
 				String portletResource = ParamUtil.getString(actionRequest, "portletResource");
 				
 				PortletPreferences preferences = PortletPreferencesFactoryUtil.getPortletSetup(actionRequest, portletResource);
@@ -36,11 +35,14 @@ public class VbpqConfigurationImpl extends DefaultConfigurationAction{
 				String typeContent = ParamUtil.getString(actionRequest, "typeContent",StringPool.BLANK);
 				String dmPortletTitle = ParamUtil.getString(actionRequest, "dmPortletTitle",StringPool.BLANK);
 				long lienKetTrang = ParamUtil.getLong(actionRequest, "lienKetTrang");
+				String displayStyle = ParamUtil.getString(actionRequest, "displayStyle");
 				
 				preferences.setValue("scopeId", String.valueOf(scopeId));
 				preferences.setValue("lienKetTrang", String.valueOf(lienKetTrang));
 				preferences.setValue("typeContent", typeContent);
 				preferences.setValue("dmPortletTitle", dmPortletTitle);
+				preferences.setValue("displayStyle", String.valueOf(displayStyle));
+				
 				
 				if(SessionErrors.isEmpty(actionRequest)){
 					

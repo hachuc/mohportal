@@ -13,7 +13,6 @@
 	List<VLCategory> categories = VLCategoryLocalServiceUtil.findByGroup(scopeGroupId);
 	int total = VLCategoryLocalServiceUtil.countByGroup(scopeGroupId);
 %>
-
 <div class="list-vlcategory">
 	<div class="vlcategory-header">
 		<liferay-ui:message key="vlcategories"/>

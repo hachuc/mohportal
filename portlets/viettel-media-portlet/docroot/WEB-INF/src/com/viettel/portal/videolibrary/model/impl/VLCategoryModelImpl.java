@@ -96,10 +96,11 @@ public class VLCategoryModelImpl extends BaseModelImpl<VLCategory>
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.com.viettel.portal.videolibrary.model.VLCategory"),
 			true);
-	public static long CATEGORYNAME_COLUMN_BITMASK = 1L;
-	public static long GROUPID_COLUMN_BITMASK = 2L;
-	public static long INVISIBLE_COLUMN_BITMASK = 4L;
-	public static long MODIFIEDDATE_COLUMN_BITMASK = 8L;
+	public static long CATEGORYID_COLUMN_BITMASK = 1L;
+	public static long CATEGORYNAME_COLUMN_BITMASK = 2L;
+	public static long GROUPID_COLUMN_BITMASK = 4L;
+	public static long INVISIBLE_COLUMN_BITMASK = 8L;
+	public static long MODIFIEDDATE_COLUMN_BITMASK = 16L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -265,7 +266,19 @@ public class VLCategoryModelImpl extends BaseModelImpl<VLCategory>
 
 	@Override
 	public void setCategoryId(long categoryId) {
+		_columnBitmask |= CATEGORYID_COLUMN_BITMASK;
+
+		if (!_setOriginalCategoryId) {
+			_setOriginalCategoryId = true;
+
+			_originalCategoryId = _categoryId;
+		}
+
 		_categoryId = categoryId;
+	}
+
+	public long getOriginalCategoryId() {
+		return _originalCategoryId;
 	}
 
 	@JSON
@@ -510,6 +523,10 @@ public class VLCategoryModelImpl extends BaseModelImpl<VLCategory>
 	public void resetOriginalValues() {
 		VLCategoryModelImpl vlCategoryModelImpl = this;
 
+		vlCategoryModelImpl._originalCategoryId = vlCategoryModelImpl._categoryId;
+
+		vlCategoryModelImpl._setOriginalCategoryId = false;
+
 		vlCategoryModelImpl._originalGroupId = vlCategoryModelImpl._groupId;
 
 		vlCategoryModelImpl._setOriginalGroupId = false;
@@ -656,6 +673,8 @@ public class VLCategoryModelImpl extends BaseModelImpl<VLCategory>
 			VLCategory.class
 		};
 	private long _categoryId;
+	private long _originalCategoryId;
+	private boolean _setOriginalCategoryId;
 	private long _groupId;
 	private long _originalGroupId;
 	private boolean _setOriginalGroupId;

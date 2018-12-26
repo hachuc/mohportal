@@ -117,12 +117,12 @@
 		<div class="left-content">			
 		<div class="video-player-frame" >
 			<div class="top-video-title">
-				<a href="javascript:;" title="<%=topVideoTitle %>"><%=HtmlUtil.escape(topVideoTitle) %></a>
+				<a href="javascript:;" title="<%=topVideoTitle %>"><%=topVideoTitle %></a>
 			</div>
 			<c:choose>
 				<c:when test='<%=isYoutube %>'>
 					<div class="external-video-frame">
-						<%=HtmlUtil.escape(topVideoURL) %>
+						<%=topVideoURL %>
 					</div>
 				</c:when>
 				

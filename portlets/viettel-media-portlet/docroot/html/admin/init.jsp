@@ -52,6 +52,8 @@
 	}
 
 	selectedCategoryId = categoryId;
+		
+	String redirect = ParamUtil.getString(request, "redirect", currentURL);
 %>
 
 <portlet:renderURL var="adminHomePageURL" windowState="<%=LiferayWindowState.NORMAL.toString() %>">

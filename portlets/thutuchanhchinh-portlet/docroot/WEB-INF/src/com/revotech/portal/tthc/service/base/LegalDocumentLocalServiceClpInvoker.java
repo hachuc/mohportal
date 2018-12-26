@@ -135,9 +135,16 @@ public class LegalDocumentLocalServiceClpInvoker {
 				"java.lang.String", "long", "long", "long", "int"
 			};
 
-		_methodName53 = "addLegalDocument";
+		_methodName53 = "getLatestLegalDocument";
 
 		_methodParameterTypes53 = new String[] {
+				"long", "int", "boolean", "int", "int",
+				"com.liferay.portal.kernel.util.OrderByComparator"
+			};
+
+		_methodName54 = "addLegalDocument";
+
+		_methodParameterTypes54 = new String[] {
 				"long", "long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "boolean", "long", "long",
@@ -145,9 +152,9 @@ public class LegalDocumentLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName54 = "updateLegalDocument";
+		_methodName55 = "updateLegalDocument";
 
-		_methodParameterTypes54 = new String[] {
+		_methodParameterTypes55 = new String[] {
 				"long", "long", "long", "long", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "boolean", "long",
@@ -290,6 +297,16 @@ public class LegalDocumentLocalServiceClpInvoker {
 
 		if (_methodName53.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes53, parameterTypes)) {
+			return LegalDocumentLocalServiceUtil.getLatestLegalDocument(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue(),
+				((Boolean)arguments[2]).booleanValue(),
+				((Integer)arguments[3]).intValue(),
+				((Integer)arguments[4]).intValue(),
+				(com.liferay.portal.kernel.util.OrderByComparator)arguments[5]);
+		}
+
+		if (_methodName54.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes54, parameterTypes)) {
 			LegalDocumentLocalServiceUtil.addLegalDocument(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -306,8 +323,8 @@ public class LegalDocumentLocalServiceClpInvoker {
 			return null;
 		}
 
-		if (_methodName54.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes54, parameterTypes)) {
+		if (_methodName55.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes55, parameterTypes)) {
 			LegalDocumentLocalServiceUtil.updateLegalDocument(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -374,4 +391,6 @@ public class LegalDocumentLocalServiceClpInvoker {
 	private String[] _methodParameterTypes53;
 	private String _methodName54;
 	private String[] _methodParameterTypes54;
+	private String _methodName55;
+	private String[] _methodParameterTypes55;
 }

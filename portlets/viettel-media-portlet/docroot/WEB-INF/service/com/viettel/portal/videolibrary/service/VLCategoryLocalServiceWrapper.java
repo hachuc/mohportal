@@ -291,6 +291,14 @@ public class VLCategoryLocalServiceWrapper implements VLCategoryLocalService,
 	}
 
 	@Override
+	public java.util.List<com.viettel.portal.videolibrary.model.VLCategory> findByCategoryId(
+		long groupId, long categoryId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _vlCategoryLocalService.findByCategoryId(groupId, categoryId);
+	}
+
+	@Override
 	public void removeAll(long groupId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {

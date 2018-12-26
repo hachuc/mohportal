@@ -24,16 +24,20 @@
 	System.err.println("===LIST===");
 %>
 <%
+
 	List<Group> groups = new ArrayList<Group>();//GroupLocalServiceUtil.getUserGroups(themeDisplay.getUserId());
 	
 	List<CoQuanBanHanhVanBan> lsCoQuanBanHanh = new ArrayList<CoQuanBanHanhVanBan>();
 	List<LinhVucVanBan> lsLinhVuc  = new ArrayList<LinhVucVanBan>();
 	List<LoaiVanBan> lsLoaiVanBan  = new ArrayList<LoaiVanBan>();
 	String nhom = portletPreferences.getValue("nhomVanBanId", "");
+	
 	String[] nhomVanBanIds = new String[0];
 	if (nhom.length() > 0) {
 		nhomVanBanIds = nhom.split(",");
 	}
+	
+	
 	
 	List<Long> nhomVBIDs = new ArrayList();
 	for (String st : nhomVanBanIds) {
@@ -70,6 +74,7 @@
 	System.err.println("LoaiVanBan");
 
 	boolean showNhomvanBan = Boolean.parseBoolean(portletPreferences.getValue("showNhomVanBan", "true"));
+	String titleDisplayTemp = portletPreferences.getValue("titleDisplay", "");
 %>
 
 <liferay-portlet:actionURL portletConfiguration="true" var="menuVbpqPortletConfigURL">	
@@ -79,7 +84,6 @@
 <aui:form name="fm" method="post" action="<%=menuVbpqPortletConfigURL %>">
 	<aui:fieldset>
 		<aui:input name="<%= Constants.CMD %>" type="hidden" value="<%= Constants.UPDATE %>" />
-		
 		<aui:row>
 			<aui:col width="50">
 				<aui:select name="preferences--scopeId--" label="scope">
@@ -230,12 +234,13 @@
 			int itemPerPage = Integer.parseInt(portletPreferences.getValue("itemPerPage", "10"));
 			boolean showTrichYeu = Boolean.parseBoolean(portletPreferences.getValue("showTrichYeu", "false"));
 			boolean showIconBaiVietMoiNhat = Boolean.parseBoolean(portletPreferences.getValue("showIconBaiVietMoiNhat", "true"));
+			boolean showSearch = Boolean.parseBoolean(portletPreferences.getValue("showSearch", "true"));
 
 		%>
 		
 		<aui:input type="checkbox" name="preferences--showTrichYeu--" checked="<%= showTrichYeu %>" cssClass="tthc_input_select" label="Chỉ hiển thị cột trích yếu" />
 		<aui:input type="checkbox" name="preferences--showIconBaiVietMoiNhat--" checked="<%= showIconBaiVietMoiNhat %>" cssClass="tthc_input_select" label="Hiển thị icon bài viêt mới nhất" />
-		
+		<aui:input type="checkbox" name="preferences--showSearch--" value="<%= showSearch %>" cssClass="tthc_input_select" label="Hiển thị tìm kiếm" />
 	<aui:row>
 		<aui:col width="30">
 			<aui:select name="preferences--itemPerPage--" label="Phân trang">
@@ -253,6 +258,7 @@
 		</aui:select>
 		</aui:col>
 	</aui:row>
+
 	
 	<%
 		String[] cols = new String[]{

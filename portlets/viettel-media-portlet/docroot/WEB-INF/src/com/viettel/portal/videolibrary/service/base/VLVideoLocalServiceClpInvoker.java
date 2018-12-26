@@ -127,7 +127,7 @@ public class VLVideoLocalServiceClpInvoker {
 				"long", "long", "long", "long", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "boolean", "long",
-				"com.liferay.portal.service.ServiceContext"
+				"com.liferay.portal.service.ServiceContext", "java.lang.String"
 			};
 
 		_methodName80 = "addLegalVideo";
@@ -173,13 +173,28 @@ public class VLVideoLocalServiceClpInvoker {
 				"com.liferay.portal.kernel.util.OrderByComparator"
 			};
 
-		_methodName88 = "updateVideo";
+		_methodName88 = "findByKeywordFrontend";
 
 		_methodParameterTypes88 = new String[] {
+				"long", "java.lang.String", "java.lang.String", "long",
+				"java.lang.String", "int", "int",
+				"com.liferay.portal.kernel.util.OrderByComparator"
+			};
+
+		_methodName89 = "countByKeywordFrontend";
+
+		_methodParameterTypes89 = new String[] {
+				"long", "java.lang.String", "java.lang.String", "long",
+				"java.lang.String"
+			};
+
+		_methodName90 = "updateVideo";
+
+		_methodParameterTypes90 = new String[] {
 				"long", "long", "long", "long", "long", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "boolean", "long",
-				"com.liferay.portal.service.ServiceContext"
+				"com.liferay.portal.service.ServiceContext", "java.lang.String"
 			};
 	}
 
@@ -303,7 +318,8 @@ public class VLVideoLocalServiceClpInvoker {
 				((Long)arguments[9]).longValue(),
 				((Boolean)arguments[10]).booleanValue(),
 				((Long)arguments[11]).longValue(),
-				(com.liferay.portal.service.ServiceContext)arguments[12]);
+				(com.liferay.portal.service.ServiceContext)arguments[12],
+				(java.lang.String)arguments[13]);
 		}
 
 		if (_methodName80.equals(name) &&
@@ -372,6 +388,24 @@ public class VLVideoLocalServiceClpInvoker {
 
 		if (_methodName88.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes88, parameterTypes)) {
+			return VLVideoLocalServiceUtil.findByKeywordFrontend(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				((Long)arguments[3]).longValue(),
+				(java.lang.String)arguments[4],
+				((Integer)arguments[5]).intValue(),
+				((Integer)arguments[6]).intValue(),
+				(com.liferay.portal.kernel.util.OrderByComparator)arguments[7]);
+		}
+
+		if (_methodName89.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes89, parameterTypes)) {
+			return VLVideoLocalServiceUtil.countByKeywordFrontend(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				((Long)arguments[3]).longValue(), (java.lang.String)arguments[4]);
+		}
+
+		if (_methodName90.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes90, parameterTypes)) {
 			return VLVideoLocalServiceUtil.updateVideo(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -383,7 +417,8 @@ public class VLVideoLocalServiceClpInvoker {
 				((Long)arguments[10]).longValue(),
 				((Boolean)arguments[11]).booleanValue(),
 				((Long)arguments[12]).longValue(),
-				(com.liferay.portal.service.ServiceContext)arguments[13]);
+				(com.liferay.portal.service.ServiceContext)arguments[13],
+				(java.lang.String)arguments[14]);
 		}
 
 		throw new UnsupportedOperationException();
@@ -447,4 +482,8 @@ public class VLVideoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes87;
 	private String _methodName88;
 	private String[] _methodParameterTypes88;
+	private String _methodName89;
+	private String[] _methodParameterTypes89;
+	private String _methodName90;
+	private String[] _methodParameterTypes90;
 }

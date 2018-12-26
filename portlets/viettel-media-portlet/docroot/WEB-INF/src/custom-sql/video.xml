@@ -32,5 +32,42 @@
 					AND ((lower(portal_video.videoName) LIKE ?) OR (lower(portal_video.description) LIKE ?))
 		]]>
 	</sql>
+	<sql id="com.viettel.portal.videolibrary.service.persistence.VLVideoFinder.findByKeywordFrontend">	
+		<![CDATA[
+	    	SELECT *
 
+	    	FROM 	portal_video
+           
+	        WHERE   
+					portal_video.groupId = ?
+
+					AND (portal_video.videoType = ?)
+					
+					AND (lower(portal_video.videoName) LIKE ?)
+					 
+					AND (portal_video.categoryId = ?)  
+          
+					AND (lower(portal_video.description) LIKE ?)
+            
+			ORDER BY portal_video.videoName ASC
+		]]>
+	</sql>
+	<sql id="com.viettel.portal.videolibrary.service.persistence.VLVideoFinder.countByKeywordFrontend">	
+		<![CDATA[
+	    	SELECT count(portal_video.videoId) AS TOTAL
+
+	    	FROM 	portal_video
+           
+	        WHERE   
+					portal_video.groupId = ?
+
+					AND (portal_video.videoType = ?)
+					
+					AND (lower(portal_video.videoName) LIKE ?)
+					 
+					AND (portal_video.categoryId = ?)  
+          
+					AND (lower(portal_video.description) LIKE ?)
+		]]>
+	</sql>
 </custom-sql>

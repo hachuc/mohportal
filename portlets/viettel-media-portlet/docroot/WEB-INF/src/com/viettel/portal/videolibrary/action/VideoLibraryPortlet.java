@@ -12,24 +12,6 @@ import javax.portlet.PortletPreferences;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
-
-//import com.viettel.portal.videolibrary.DuplicateVLCategoryNameException;
-import com.viettel.portal.videolibrary.ImageFileSizeException;
-import com.viettel.portal.videolibrary.ImageFileTypeException;
-import com.viettel.portal.videolibrary.VideoFileSizeException;
-import com.viettel.portal.videolibrary.VideoFileTypeException;
-import com.viettel.portal.videolibrary.model.VLCategory;
-import com.viettel.portal.videolibrary.model.VLVideo;
-import com.viettel.portal.videolibrary.model.VLVideoCategory;
-import com.viettel.portal.videolibrary.model.VideoCategory;
-import com.viettel.portal.videolibrary.model.VideoClip;
-import com.viettel.portal.videolibrary.service.VLCategoryLocalServiceUtil;
-import com.viettel.portal.videolibrary.service.VLVideoCategoryLocalServiceUtil;
-import com.viettel.portal.videolibrary.service.VLVideoLocalServiceUtil;
-import com.viettel.portal.videolibrary.service.VideoCategoryLocalServiceUtil;
-import com.viettel.portal.videolibrary.service.VideoClipLocalServiceUtil;
-import com.viettel.portal.videolibrary.util.VideoConstants;
-import com.viettel.portal.videolibrary.util.VideoFileUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
@@ -53,6 +35,21 @@ import com.liferay.portlet.PortletPreferencesFactoryUtil;
 import com.liferay.portlet.documentlibrary.model.DLFolderConstants;
 import com.liferay.portlet.documentlibrary.service.DLAppServiceUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
+//import com.viettel.portal.videolibrary.DuplicateVLCategoryNameException;
+import com.viettel.portal.videolibrary.ImageFileSizeException;
+import com.viettel.portal.videolibrary.ImageFileTypeException;
+import com.viettel.portal.videolibrary.VideoFileSizeException;
+import com.viettel.portal.videolibrary.VideoFileTypeException;
+import com.viettel.portal.videolibrary.model.VLCategory;
+import com.viettel.portal.videolibrary.model.VLVideo;
+import com.viettel.portal.videolibrary.model.VLVideoCategory;
+import com.viettel.portal.videolibrary.model.VideoClip;
+import com.viettel.portal.videolibrary.service.VLCategoryLocalServiceUtil;
+import com.viettel.portal.videolibrary.service.VLVideoCategoryLocalServiceUtil;
+import com.viettel.portal.videolibrary.service.VLVideoLocalServiceUtil;
+import com.viettel.portal.videolibrary.service.VideoClipLocalServiceUtil;
+import com.viettel.portal.videolibrary.util.VideoConstants;
+import com.viettel.portal.videolibrary.util.VideoFileUtil;
 
 /**
  * Portlet implementation class VideoLibraryPortlet
@@ -163,6 +160,7 @@ public class VideoLibraryPortlet extends MVCPortlet {
 					String videoUrl = StringUtil.replace(cat.getVideoUrl(),".flv",".mp4");
 
 					String imageUrl = cat.getImageUrl();
+					String smallImageUrl = cat.getImageUrl();
 
 					ServiceContext serviceContext = ServiceContextFactory
 							.getInstance(VLVideo.class.getName(), actionRequest);
@@ -174,7 +172,7 @@ public class VideoLibraryPortlet extends MVCPortlet {
 
 					VLVideo video = VLVideoLocalServiceUtil.addVideo(0L, companyId, groupId,
 							userId, userName, videoName, videoDescription,
-							videoType, videoUrl, 0L, true, 0L, serviceContext);
+							videoType, videoUrl, 0L, true, 0L, serviceContext,smallImageUrl);
 					i++;
 					if(cat.getCreationDate()!=null && video !=null){						
 						video.setModifiedDate(cat.getCreationDate());
@@ -280,12 +278,13 @@ public class VideoLibraryPortlet extends MVCPortlet {
 
 			String videoType = ParamUtil.getString(uploadPortletRequest,
 					"videoType");
+			String linkResult = ParamUtil.getString(uploadPortletRequest,
+					"smallImageUrl");
 
 			String videoUrl = "";
 
 			long videoFileId = ParamUtil
 					.getLong(uploadPortletRequest, "fileId");
-
 			boolean videoThumbnailImage = ParamUtil.getBoolean(
 					uploadPortletRequest, "videoThumbnailImage");
 
@@ -293,17 +292,17 @@ public class VideoLibraryPortlet extends MVCPortlet {
 					"thumbnailImageId");
 
 			// External video
-			if (Validator.equals(videoType, VideoConstants.EXTERNAL_VIDEO_TYPE)) {
+			//if (Validator.equals(videoType, VideoConstants.EXTERNAL_VIDEO_TYPE)) {
 
-				if (videoFileId > 0L) {
+			//	if (videoFileId > 0L) {
 					// delete internal video file
-					DLAppServiceUtil.deleteFileEntry(videoFileId);
-					videoFileId = 0L;
-				}
+			//		DLAppServiceUtil.deleteFileEntry(videoFileId);
+			//		videoFileId = 0L;
+			//	}
 
-				videoUrl = ParamUtil
-						.getString(uploadPortletRequest, "videoUrl");
-			} else {// Internal video
+			//	videoUrl = ParamUtil
+			//			.getString(uploadPortletRequest, "videoUrl");
+			//} else {// Internal video
 
 				videoFileStream = uploadPortletRequest
 						.getFileAsStream("videoFile");
@@ -319,15 +318,14 @@ public class VideoLibraryPortlet extends MVCPortlet {
 
 					if (VideoFileUtil.validateVideoFile(videoFileName,
 							videoFileBytes)) {
-
+						
 						String friendlyFileName = VideoFileUtil
 								.getFriendlyFileName(videoName);
-
-						String timeStampFileName = friendlyFileName
-								+ StringPool.MINUS
-								+ String.valueOf(System.nanoTime())
-								+ StringPool.PERIOD
-								+ FileUtil.getExtension(videoFileName);
+//						String timeStampFileName = friendlyFileName
+//								+ StringPool.MINUS
+//								+ String.valueOf(System.nanoTime())
+//								+ StringPool.PERIOD
+//								+ FileUtil.getExtension(videoFileName);
 
 						String mimeType = MimeTypesUtil
 								.getContentType(videoFileName);
@@ -343,19 +341,30 @@ public class VideoLibraryPortlet extends MVCPortlet {
 
 						if (videoFileId > 0) {
 
+//							DLAppServiceUtil.updateFileEntry(videoFileId,
+//									timeStampFileName, mimeType,
+//									timeStampFileName, StringPool.BLANK,
+//									StringPool.BLANK, true, videoFileBytes,
+//									serviceContext);
 							DLAppServiceUtil.updateFileEntry(videoFileId,
-									timeStampFileName, mimeType,
-									timeStampFileName, StringPool.BLANK,
+									videoFileName, mimeType,
+									videoFileName, StringPool.BLANK,
 									StringPool.BLANK, true, videoFileBytes,
 									serviceContext);
 						} else {
 
 							FileEntry videoFile = DLAppServiceUtil
 									.addFileEntry(groupId, videoFolderId,
-											timeStampFileName, mimeType,
-											timeStampFileName,
+											videoFileName, mimeType,
+											videoFileName,
 											StringPool.BLANK, StringPool.BLANK,
 											videoFileBytes, serviceContext);
+//							FileEntry videoFile = DLAppServiceUtil
+//									.addFileEntry(groupId, videoFolderId,
+//											timeStampFileName, mimeType,
+//											timeStampFileName,
+//											StringPool.BLANK, StringPool.BLANK,
+//											videoFileBytes, serviceContext);
 
 							if (videoFile != null) {
 
@@ -366,7 +375,7 @@ public class VideoLibraryPortlet extends MVCPortlet {
 
 					}
 				}
-			}
+		//	}
 
 			if (videoThumbnailImage) {
 
@@ -443,7 +452,7 @@ public class VideoLibraryPortlet extends MVCPortlet {
 				VLVideoLocalServiceUtil.updateVideo(videoId, categoryId,
 						companyId, groupId, userId, userName, videoName,
 						videoDescription, videoType, videoUrl, videoFileId,
-						videoThumbnailImage, thumbnailImageId, serviceContext);
+						videoThumbnailImage, thumbnailImageId, serviceContext,linkResult);
 
 				if ((Validator.isNotNull(categoryId)) && (categoryId > 0L)) {
 					long id = 0L;
@@ -469,7 +478,7 @@ public class VideoLibraryPortlet extends MVCPortlet {
 				VLVideoLocalServiceUtil.addVideo(categoryId, companyId,
 						groupId, userId, userName, videoName, videoDescription,
 						videoType, videoUrl, videoFileId, videoThumbnailImage,
-						thumbnailImageId, serviceContext);
+						thumbnailImageId, serviceContext,linkResult);
 
 			}
 			actionRequest.setAttribute("categoryId", categoryId);

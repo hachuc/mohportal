@@ -25,7 +25,6 @@ public class VbpqHomeConfigurationImpl extends DefaultConfigurationAction{
 			
 		// TODO Auto-generated method stub
 			try {
-				
 				String portletResource = ParamUtil.getString(actionRequest, "portletResource");
 				
 				PortletPreferences preferences = PortletPreferencesFactoryUtil.getPortletSetup(actionRequest, portletResource);

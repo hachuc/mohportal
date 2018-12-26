@@ -172,7 +172,7 @@
 				<c:choose>
 					<c:when test='<%=isYoutube %>'>
 						<div class="external-video-frame">
-							<%=HtmlUtil.escape(playVideoURL) %>
+							<%=playVideoURL %>
 						</div>
 					</c:when>
 					

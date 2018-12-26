@@ -165,6 +165,9 @@
 	iteratorURL.setParameter("linhVucVanBanId", String.valueOf(linhVucVanBanId));
 	iteratorURL.setParameter("loaiVanBanId", String.valueOf(loaiVanBanId));
 	iteratorURL.setParameter("nhomVanBanId", String.valueOf(nhomVanBanId));
+	
+	boolean showSearch = Boolean.parseBoolean(portletPreferences.getValue("showSearch", "true"));
+	String portletTitleTemp = portletPreferences.getValue("portletTitle", "");
 %>
 
 	<portlet:resourceURL var="serverURL"></portlet:resourceURL>
@@ -176,13 +179,13 @@
 		<h1 class="portlet-title">
 			<span> <img
 				src="/viettel-document-portlet/images/vbpq_category_portlet_icon.png" />
-			</span> <span class="portlet-title-text"> <liferay-ui:message
-					key="van-ban-phap-quy"></liferay-ui:message>
+			</span> <span class="portlet-title-text"><%= portletTitleTemp %>
 			</span>
 		</h1>
 		<aui:form action="<%= searchURL %>" method="get" name="fm"
 			cssClass="vbpq-search-form mt20">
 			<liferay-portlet:renderURLParams varImpl="searchURL" />
+			
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="control-label pr5"><liferay-ui:message
@@ -518,7 +521,7 @@ getData(
 													});
 											}
 											
-										}
+										} 
 </aui:script>
 
 </c:if>

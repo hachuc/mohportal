@@ -136,9 +136,16 @@ public class LegalDocumentLocalServiceClp implements LegalDocumentLocalService {
 				"java.lang.String", "long", "long", "long", "int"
 			};
 
-		_methodName22 = "addLegalDocument";
+		_methodName22 = "getLatestLegalDocument";
 
 		_methodParameterTypes22 = new String[] {
+				"long", "int", "boolean", "int", "int",
+				"com.liferay.portal.kernel.util.OrderByComparator"
+			};
+
+		_methodName23 = "addLegalDocument";
+
+		_methodParameterTypes23 = new String[] {
 				"long", "long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "boolean", "long", "long",
@@ -146,9 +153,9 @@ public class LegalDocumentLocalServiceClp implements LegalDocumentLocalService {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName23 = "updateLegalDocument";
+		_methodName24 = "updateLegalDocument";
 
-		_methodParameterTypes23 = new String[] {
+		_methodParameterTypes24 = new String[] {
 				"long", "long", "long", "long", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "boolean", "long",
@@ -852,6 +859,54 @@ public class LegalDocumentLocalServiceClp implements LegalDocumentLocalService {
 	}
 
 	@Override
+	public java.util.List<com.revotech.portal.tthc.model.LegalDocument> getLatestLegalDocument(
+		long groupId, int level, boolean isActive, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator obc)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName22,
+					_methodParameterTypes22,
+					new Object[] {
+						groupId,
+						
+					level,
+						
+					isActive,
+						
+					start,
+						
+					end,
+						
+					ClpSerializer.translateInput(obc)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.revotech.portal.tthc.model.LegalDocument>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
 	public void addLegalDocument(long groupId, long companyId, long userId,
 		java.lang.String userName, java.lang.String ldCode,
 		java.lang.String ldTitle, java.lang.String ldLink,
@@ -862,8 +917,8 @@ public class LegalDocumentLocalServiceClp implements LegalDocumentLocalService {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		try {
-			_invokableLocalService.invokeMethod(_methodName22,
-				_methodParameterTypes22,
+			_invokableLocalService.invokeMethod(_methodName23,
+				_methodParameterTypes23,
 				new Object[] {
 					groupId,
 					
@@ -928,8 +983,8 @@ public class LegalDocumentLocalServiceClp implements LegalDocumentLocalService {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		try {
-			_invokableLocalService.invokeMethod(_methodName23,
-				_methodParameterTypes23,
+			_invokableLocalService.invokeMethod(_methodName24,
+				_methodParameterTypes24,
 				new Object[] {
 					ldId,
 					
@@ -1032,4 +1087,6 @@ public class LegalDocumentLocalServiceClp implements LegalDocumentLocalService {
 	private String[] _methodParameterTypes22;
 	private String _methodName23;
 	private String[] _methodParameterTypes23;
+	private String _methodName24;
+	private String[] _methodParameterTypes24;
 }

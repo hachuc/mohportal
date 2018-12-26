@@ -21,6 +21,15 @@ package com.viettel.portal.videolibrary.service.persistence;
  * @author ChucHV
  */
 public interface VLVideoFinder {
+	public java.util.List<com.viettel.portal.videolibrary.model.VLVideo> findByKeywordFrontend(
+		long groupId, java.lang.String rank, java.lang.String docCode,
+		long vlCategoryId, java.lang.String companyName, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator obc);
+
+	public long countByKeywordFrontend(long groupId, java.lang.String rank,
+		java.lang.String docCode, long vlCategoryId,
+		java.lang.String companyName);
+
 	public long countByKeyword(long groupId, long categoryId,
 		java.lang.String keyword);
 

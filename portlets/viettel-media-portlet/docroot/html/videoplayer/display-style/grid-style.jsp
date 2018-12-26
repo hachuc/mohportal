@@ -120,7 +120,7 @@
 							videoURL = VideoFileUtil.getEmbedYoutubeVideoURL(videoWidth, videoHeight, externalVideoId);
 					%>
 					<div class="external-video-frame">
-						<%=HtmlUtil.escape(videoURL)%>
+						<%=videoURL%>
 					</div>
 					<%
 						} else {

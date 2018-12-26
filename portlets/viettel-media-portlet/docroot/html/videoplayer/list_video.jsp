@@ -80,7 +80,7 @@
 			
 			<liferay-ui:search-container-column-text name="video-name" orderable="<%=true %>" value="<%=video.getVideoName()%>"
 				href="<%=previewVideo.toString() %>"
-				title="<%=HtmlUtil.escape(video.getVideoName()) %>" valign="middle"
+				title="<%=video.getVideoName() %>" valign="middle"
 			/>
 			
 			<liferay-ui:search-container-column-text name="modified-date" value="<%=dateTimeFormat.format(video.getModifiedDate())%>"

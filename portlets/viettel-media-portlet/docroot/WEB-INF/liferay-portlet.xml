@@ -36,6 +36,17 @@
 		</footer-portlet-javascript>
 		<css-class-wrapper>migrate video-portlet</css-class-wrapper>
 	</portlet>
+	<portlet>
+		<portlet-name>public-service-result</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>
+			public-service-result-portlet
+		</css-class-wrapper>
+	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>
 		<role-link>Administrator</role-link>

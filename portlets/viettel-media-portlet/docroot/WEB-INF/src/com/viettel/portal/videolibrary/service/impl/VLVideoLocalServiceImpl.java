@@ -55,7 +55,7 @@ public class VLVideoLocalServiceImpl extends VLVideoLocalServiceBaseImpl {
 			long userId, String userName, String name, String description,
 			String videoType, String videoUrl, long videoFileId,
 			boolean thumbnailImage, long thumbnailImageId,
-			ServiceContext serviceContext) throws SystemException,
+			ServiceContext serviceContext,String smallImageUrl) throws SystemException,
 			PortalException {
 
 		Date now = new Date();
@@ -78,6 +78,7 @@ public class VLVideoLocalServiceImpl extends VLVideoLocalServiceBaseImpl {
 		video.setImage(thumbnailImage);
 		video.setImageId(thumbnailImageId);
 		video.setCategoryId(categoryId);
+		video.setSmallImageUrl(smallImageUrl);
 		resourceLocalService.addModelResources(video, serviceContext);
 
 		return vlVideoPersistence.update(video);
@@ -149,6 +150,15 @@ public class VLVideoLocalServiceImpl extends VLVideoLocalServiceBaseImpl {
 		return VLVideoFinderUtil.findByKeyword(groupId, categoryId, keyword,
 				start, end, obc);
 	}
+	
+	public List<VLVideo> findByKeywordFrontend(long groupId, String rank,
+			String docCode,long vlCategoryId,String companyName, int start, int end, OrderByComparator obc) {
+		return VLVideoFinderUtil.findByKeywordFrontend(groupId, rank, docCode, vlCategoryId, companyName, start, end, obc);
+	}
+	public long countByKeywordFrontend(long groupId, String rank,
+			String docCode,long vlCategoryId,String companyName) {
+		return VLVideoFinderUtil.countByKeywordFrontend(groupId, rank, docCode, vlCategoryId, companyName);
+	}
 
 	/*
 	 * public List<VLVideo> findByKeyword(long groupId, String keyword, int
@@ -170,7 +180,7 @@ public class VLVideoLocalServiceImpl extends VLVideoLocalServiceBaseImpl {
 			long groupId, long userId, String userName, String name,
 			String description, String videoType, String videoUrl,
 			long videoFileId, boolean thumbnailImage, long thumbnailImageId,
-			ServiceContext serviceContext) throws SystemException,
+			ServiceContext serviceContext,String smallImageUrl) throws SystemException,
 			PortalException {
 
 		Date now = new Date();
@@ -190,7 +200,7 @@ public class VLVideoLocalServiceImpl extends VLVideoLocalServiceBaseImpl {
 		video.setImage(thumbnailImage);
 		video.setImageId(thumbnailImageId);
 		video.setCategoryId(categoryId);
-
+		video.setSmallImageUrl(smallImageUrl);
 		if ((serviceContext.getGroupPermissions() != null)
 				|| (serviceContext.getGuestPermissions() != null)) {
 
