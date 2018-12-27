@@ -174,4 +174,29 @@ public class AdminPortlet extends MVCPortlet {
 			}
 		}
 	}
+	
+	public void deleteDocument(ActionRequest actionRequest, ActionResponse actionResponse)
+			throws IOException, PortletException {
+		try {
+			long ldId = ParamUtil.getLong(actionRequest, "ldId", 0L);
+			String redirectURL = ParamUtil.getString(actionRequest,"redirectURL");
+			LegalDocument ld = LegalDocumentLocalServiceUtil.fetchLegalDocument(ldId);
+			if(ld!=null)
+				LegalDocumentLocalServiceUtil.deleteLegalDocument(ldId);
+				SessionMessages.add(actionRequest, "category-delete-successfully");
+			if (Validator.isNotNull(redirectURL)) {
+				actionResponse.sendRedirect(redirectURL);
+			}
+
+		} catch (Exception e) {
+			
+			String redirectURL = ParamUtil.getString(actionRequest,
+					"redirectURL");
+
+			if (Validator.isNotNull(redirectURL)) {
+
+				actionResponse.sendRedirect(redirectURL);
+			}
+		}
+	}
 }

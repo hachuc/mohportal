@@ -27,14 +27,14 @@
 		<aui:model-context bean="<%= document %>" model="<%= LegalDocument.class %>" />
 		<aui:row>
 			<aui:col width="<%= 100 %>">
-				<aui:input name="ldCode" autoFocus="<%= true %>" type="text" cssClass="span12" label="ld-code">
+				<aui:input name="ldCode" autoFocus="<%= true %>" type="text" cssClass="span12" label="ma-thu-tuc">
 					<aui:validator name="required" />
 				</aui:input>
 			</aui:col>
 		</aui:row>
 		<aui:row>
 			<aui:col width="<%= 100 %>">
-				<aui:input name="ldTitle" type="textarea" cssClass="trich-yeu span12" label="ld-title" style='<%= "height: " + ModelHintsConstants.TEXTAREA_DISPLAY_HEIGHT + "px;" %>'/>
+				<aui:input name="ldTitle" type="textarea" cssClass="trich-yeu span12" label="ten-thu-tuc-hanh-chinh" style='<%= "height: " + ModelHintsConstants.TEXTAREA_DISPLAY_HEIGHT + "px;" %>'/>
 			</aui:col>
 		</aui:row>
 		<aui:row>
@@ -53,7 +53,7 @@
 		</c:if>
 		<aui:row>
 			<aui:col width="<%= 33 %>">
-				<aui:select name="idCoquanbanhanh" label="ld-coquanbanhanh" showEmptyOption="<%= true %>" required="<%= true %>">
+				<aui:select name="idCoquanbanhanh" label="co-quan-ban-hanh" showEmptyOption="<%= true %>" required="<%= true %>">
 					<%
 						for (Category cat : lstCoquanthuchien){
 						
@@ -94,6 +94,7 @@
 				</aui:input>
 			</aui:col>
 		</aui:row>
+		
 		<aui:input type="hidden" name="ldlevel" value="<%= ldlevel%>" />
 		
 		<aui:button-row>

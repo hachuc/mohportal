@@ -70,7 +70,7 @@
 				<portlet:renderURL var="editDocumentURL" windowState="<%=LiferayWindowState.POP_UP.toString() %>">
 					<portlet:param name="jspPage" value="/html/admin/legaldocument/edit.jsp" />
 					<portlet:param name="ldId" value="<%= String.valueOf(ld.getLdId()) %>" />
-					<portlet:param name="ldLevel" value="<%=String.valueOf(ld.getLdLevel())%>"/>   
+					<portlet:param name="ldlevel" value="<%=String.valueOf(ld.getLdLevel())%>"/>   
 				</portlet:renderURL>
 				
 				<a href="javascript:;" onclick='updateDocumentForm("<%=editDocumentURL.toString() %>");'>
@@ -84,9 +84,7 @@
 				<portlet:actionURL  name="deleteDocument" var="deleteDocumentActionURL">
 					<portlet:param name="ldId" value="<%=String.valueOf(ld.getLdId())%>"/>
 					<portlet:param name="groupId" value="<%=String.valueOf(scopeGroupId)%>"/>  
-					<portlet:param name="idCoquanbanhanh" value="<%=String.valueOf(ld.getIdCoquanbanhanh())%>"/>   
-					<portlet:param name="idLinhvuc" value="<%=String.valueOf(ld.getIdLinhvuc())%>"/>   
-				</portlet:actionURL>            
+				</portlet:actionURL>         
 				<liferay-ui:icon-delete url="<%= deleteDocumentActionURL %>" confirmation="confirm-delete-category" />
 			</c:if>
 		</liferay-ui:search-container-column-text>
