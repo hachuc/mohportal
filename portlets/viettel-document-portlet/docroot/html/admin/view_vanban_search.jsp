@@ -272,7 +272,7 @@ getData(
 													 method: 'post',
 										              dataType: 'json',
 										              data: {
-										            	<portlet:namespace/>id: value,
+										            	<portlet:namespace/>idNhom: value,
 										            	<portlet:namespace/>method: useMethod,
 										            	<portlet:namespace/>groupId: groupId
 										              },

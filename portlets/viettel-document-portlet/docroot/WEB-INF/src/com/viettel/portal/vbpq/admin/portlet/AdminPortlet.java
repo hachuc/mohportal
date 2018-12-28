@@ -268,13 +268,13 @@ public class AdminPortlet extends MVCPortlet {
 		try {
 			resourceResponse.setContentType("text/html");
 	        PrintWriter writer = resourceResponse.getWriter();
-			long id = ParamUtil.getLong(resourceRequest, "id", 0);
+			long idNhom = ParamUtil.getLong(resourceRequest, "idNhom", 0);
 			long groupId = ParamUtil.getLong(resourceRequest, "groupId");
-			if (id == 0 || groupId == 0) return;
+			if (idNhom == 0 || groupId == 0) return;
 			
 			DynamicQuery dynamicQuery = DynamicQueryFactoryUtil.forClass(CoQuanBanHanhVanBan.class);
 			dynamicQuery.add(RestrictionsFactoryUtil.eq("groupId", groupId));
-			dynamicQuery.add(RestrictionsFactoryUtil.eq("nhomVanBanId", id));
+			dynamicQuery.add(RestrictionsFactoryUtil.eq("nhomVanBanId", idNhom));
 			dynamicQuery.add(RestrictionsFactoryUtil.eq("trangThai", true));
 			dynamicQuery.addOrder(OrderFactoryUtil.asc("ten"));
 			List<CoQuanBanHanhVanBan> ls = CoQuanBanHanhVanBanLocalServiceUtil.dynamicQuery(dynamicQuery);
@@ -303,13 +303,13 @@ public class AdminPortlet extends MVCPortlet {
 		try {
 			resourceResponse.setContentType("text/html");
 	        PrintWriter writer = resourceResponse.getWriter();
-			long id = ParamUtil.getLong(resourceRequest, "id", 0);
+			long idNhom = ParamUtil.getLong(resourceRequest, "idNhom", 0);
 			long groupId = ParamUtil.getLong(resourceRequest, "groupId");
-			if (id == 0 || groupId == 0) return;
+			if (idNhom == 0 || groupId == 0) return;
 			
 			DynamicQuery dynamicQuery = DynamicQueryFactoryUtil.forClass(LinhVucVanBan.class);
 			dynamicQuery.add(RestrictionsFactoryUtil.eq("groupId", groupId));
-			dynamicQuery.add(RestrictionsFactoryUtil.eq("nhomVanBanId", id));
+			dynamicQuery.add(RestrictionsFactoryUtil.eq("nhomVanBanId", idNhom));
 			dynamicQuery.add(RestrictionsFactoryUtil.eq("trangThai", true));
 			dynamicQuery.addOrder(OrderFactoryUtil.asc("ten"));
 			List<LinhVucVanBan> ls = LinhVucVanBanLocalServiceUtil.dynamicQuery(dynamicQuery);
@@ -336,14 +336,14 @@ public class AdminPortlet extends MVCPortlet {
 		try {
 			resourceResponse.setContentType("text/html");
 	        PrintWriter writer = resourceResponse.getWriter();
-			long id = ParamUtil.getLong(resourceRequest, "id", 0);
+			long idNhom = ParamUtil.getLong(resourceRequest, "idNhom", 0);
 			long groupId = ParamUtil.getLong(resourceRequest, "groupId");
 			
-			if (id == 0 || groupId == 0) return;
+			if (idNhom == 0 || groupId == 0) return;
 			
 			DynamicQuery dynamicQuery = DynamicQueryFactoryUtil.forClass(LoaiVanBan.class);
 			dynamicQuery.add(RestrictionsFactoryUtil.eq("groupId", groupId));
-			dynamicQuery.add(RestrictionsFactoryUtil.eq("nhomVanBanId", id));
+			dynamicQuery.add(RestrictionsFactoryUtil.eq("nhomVanBanId", idNhom));
 			dynamicQuery.add(RestrictionsFactoryUtil.eq("trangThai", true));
 			dynamicQuery.addOrder(OrderFactoryUtil.asc("ten"));
 			List<LoaiVanBan> ls = LoaiVanBanLocalServiceUtil.dynamicQuery(dynamicQuery);

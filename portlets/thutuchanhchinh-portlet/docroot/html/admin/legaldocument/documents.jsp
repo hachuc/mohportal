@@ -56,13 +56,19 @@
 		<liferay-ui:search-container-column-text name="muc-do" value="<%=String.valueOf(ld.getLdLevel())%>"
 			orderable="<%=false %>"
 		/>
-		<liferay-ui:search-container-column-text name="co-quan-ban-hanh" value="<%= String.valueOf(ld.getIdCoquanbanhanh())%>" 
+		<%
+		Category cateCqbh = CategoryLocalServiceUtil.getCategory(ld.getIdCoquanbanhanh());
+		Category cateLv = CategoryLocalServiceUtil.getCategory(ld.getIdLinhvuc());
+		String cqbh = cateCqbh !=null ? cateCqbh.getCategoryName(): "";
+		String lv = cateLv !=null ? cateLv.getCategoryName() : "" ;
+		%>
+		<liferay-ui:search-container-column-text name="co-quan-ban-hanh" value="<%= cqbh %>" 
 			orderable="<%=false %>"
 		/>
 		<liferay-ui:search-container-column-text name="don-vi-thuc-hien" value="<%= HtmlUtil.escape(ld.getLdDonvithuchien())%>" 
 			orderable="<%=false %>"
 		/>
-		<liferay-ui:search-container-column-text name="linh-vuc" value="<%= String.valueOf(ld.getIdLinhvuc())%>" 
+		<liferay-ui:search-container-column-text name="linh-vuc" value="<%= lv %>" 
 			orderable="<%=false %>"
 		/>
 		<liferay-ui:search-container-column-text name="edit" align="center" cssClass="tbl_cell_action">

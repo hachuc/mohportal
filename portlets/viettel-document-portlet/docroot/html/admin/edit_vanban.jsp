@@ -218,7 +218,7 @@
 						<ul class="vanBanAttachFiles" >
 							<% for(AttachFile attachFile : vanBanAttachFiles) { %>
 							<li>
-								<input type="checkbox" name="<portlet:namespace />deleteAttachFileIds" value="<%= attachFile.getId() %>"/>
+								<input type="checkbox" name="deleteAttachFileIds" value="<%= attachFile.getId() %>"/>
 								
 								<a href="<%= attachFile.getFileLink() %>">
 									<c:if test="<%= attachFile.getId() > 0 %>">
@@ -336,7 +336,7 @@ function htmlEncode( html ) {
 				 method: 'post',
 	              dataType: 'json',
 	              data: {
-	            	<portlet:namespace/>id: value,
+	            	<portlet:namespace/>idNhom: value,
 	            	<portlet:namespace/>method: useMethod,
 	            	<portlet:namespace/>groupId: groupId
 	              },
