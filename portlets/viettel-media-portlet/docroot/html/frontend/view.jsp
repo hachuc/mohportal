@@ -19,7 +19,7 @@
 	String rank = ParamUtil.getString(request, "rank",VideoConstants.INTERNAL_VIDEO_TYPE);
 	long fieldId = ParamUtil.getLong(request, "fieldId", 0L);
 	String companyName = ParamUtil.getString(request, "companyName");
-	List<VLCategory> categories = VLCategoryLocalServiceUtil.findByGroup(groupId);
+	List<VLCategory> categories = VLCategoryLocalServiceUtil.getByGroupUserSite(groupId);
 %>
 <style>
 	#<portlet:namespace />contentsSearchContainer_col-deploy-title, #<portlet:namespace />contentsSearchContainer_col-create-date{
@@ -35,7 +35,7 @@
 	<portlet:param name="companyName" value='<%= companyName %>' />
  --%>    <portlet:param name="resetCur" value='true' />
 </liferay-portlet:renderURL>
-<h4 class="headerBoxh4">Kết quả dịch vụ hành chính công</h4>
+<h4 class="headerBoxh4">Kết quả dịch vụ hành chính công111 <%= categories.size() %></h4>
 <div class="form-search ">
 	<aui:form action="<%=searchURL%>" method="get" name="fm"
 		class="form-horizontal listcontent-form" role="form">

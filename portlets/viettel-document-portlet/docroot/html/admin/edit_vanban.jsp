@@ -151,10 +151,20 @@
 				<aui:select name="coQuanBanHanh" showEmptyOption="<%= true %>" required="<%= true %>">
 					<%
 						if (Validator.isNotNull(vanban)){
-							CoQuanBanHanhVanBan coQuanBanHanhVanBan = CoQuanBanHanhVanBanLocalServiceUtil.getCoQuanBanHanh(vanban.getCoQuanBanHanh());
-							%>
-								<aui:option value="<%=vanban.getCoQuanBanHanh() %>" label="<%= HtmlUtil.escape(coQuanBanHanhVanBan.getTen()) %>" selected="<%=true %>"/>
-							<%
+							List<CoQuanBanHanhVanBan> coQuanBanHanhVanBans = CoQuanBanHanhVanBanLocalServiceUtil.findByNhomVanBanId(vanban.getNhomVanBanId());
+							for(int i =0 ; i < coQuanBanHanhVanBans.size() ; i++){
+								CoQuanBanHanhVanBan coQuanBanHanhVanBan = coQuanBanHanhVanBans.get(i);
+								if(coQuanBanHanhVanBan.getId() == vanban.getCoQuanBanHanh()){
+									%>
+									<aui:option value="<%=coQuanBanHanhVanBan.getId() %>" label="<%= HtmlUtil.escape(coQuanBanHanhVanBan.getTen()) %>" selected="<%=true %>"/>
+									<%
+								}
+								else{
+									%>
+									<aui:option value="<%=coQuanBanHanhVanBan.getId() %>" label="<%= HtmlUtil.escape(coQuanBanHanhVanBan.getTen()) %>" />
+									<%
+								}
+							}
 						}
 					%>
 				</aui:select>
@@ -163,12 +173,23 @@
 			<aui:col width="<%= 33 %>">
 				<aui:select name="linhVucVanBan" showEmptyOption="<%= true %>" required="<%= true %>">
 					<%
-						if (Validator.isNotNull(vanban)){
-							LinhVucVanBan linhVucVanBan = LinhVucVanBanLocalServiceUtil.getLinhVuc(vanban.getLinhVucVanBan());
-							%>
-								<aui:option value="<%=vanban.getLinhVucVanBan() %>" label="<%=HtmlUtil.escape(linhVucVanBan.getTen() )%>" selected="<%=true %>"/>
-							<%
+					if (Validator.isNotNull(vanban)){
+						List<LinhVucVanBan> linhVucVanBans = LinhVucVanBanLocalServiceUtil.findByNhomVanBanId(vanban.getNhomVanBanId());
+						for(int i =0 ; i < linhVucVanBans.size() ; i++){
+							LinhVucVanBan linhVucVanBan = linhVucVanBans.get(i);
+							if(linhVucVanBan.getId() == vanban.getLinhVucVanBan()){
+								%>
+								<aui:option value="<%=linhVucVanBan.getId() %>" label="<%= HtmlUtil.escape(linhVucVanBan.getTen()) %>" selected="<%=true %>"/>
+								<%
+							}
+							else{
+								%>
+								<aui:option value="<%=linhVucVanBan.getId() %>" label="<%= HtmlUtil.escape(linhVucVanBan.getTen()) %>" />
+								<%
+							}
 						}
+					}
+					
 					%>
 				</aui:select>
 			</aui:col>
@@ -176,12 +197,22 @@
 			<aui:col width="<%= 33 %>">
 				<aui:select name="loaiVanBan" showEmptyOption="<%= true %>" required="<%= true %>">
 					<%
-						if (Validator.isNotNull(vanban)){
-							LoaiVanBan loaiVanBan = LoaiVanBanLocalServiceUtil.getLoaiVanBan(vanban.getLoaiVanBan());
-							%>
-								<aui:option value="<%=vanban.getLoaiVanBan() %>" label="<%=HtmlUtil.escape(loaiVanBan.getTen()) %>" selected="<%=true %>"/>
-							<%
+					if (Validator.isNotNull(vanban)){
+						List<LoaiVanBan> loaiVanBans = LoaiVanBanLocalServiceUtil.findByNhomVanBanId(vanban.getNhomVanBanId());
+						for(int i = 0 ; i < loaiVanBans.size() ; i++){
+							LoaiVanBan loaiVanBan = loaiVanBans.get(i);
+							if(loaiVanBan.getId() == vanban.getLoaiVanBan()){
+								%>
+								<aui:option value="<%=loaiVanBan.getId() %>" label="<%= HtmlUtil.escape(loaiVanBan.getTen()) %>" selected="<%=true %>"/>
+								<%
+							}
+							else{
+								%>
+								<aui:option value="<%=loaiVanBan.getId() %>" label="<%= HtmlUtil.escape(loaiVanBan.getTen()) %>" />
+								<%
+							}
 						}
+					}
 					%>
 				</aui:select>
 			</aui:col>

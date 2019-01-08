@@ -51,11 +51,19 @@ public class CategoryLocalServiceImpl extends CategoryLocalServiceBaseImpl {
 	 * Never reference this interface directly. Always use {@link com.revotech.portal.tthc.service.CategoryLocalServiceUtil} to access the category local service.
 	 */
 	public List<Category> findByKeyword(long groupId, String keyword, int categoryType, int start, int end)  throws PortalException, SystemException{
-		return CategoryFinderUtil.findByKeyword(keyword, groupId, categoryType, start, end);
+		return CategoryFinderUtil.findByKeyword(keyword, groupId, categoryType, start, end,false);
 	}
 	public int countByKeyword(long groupId, String keyword, int categoryType) throws PortalException, SystemException{
-		return CategoryFinderUtil.countByKeyword(keyword, groupId, categoryType);
+		return CategoryFinderUtil.countByKeyword(keyword, groupId, categoryType,false);
 	}
+	
+	public List<Category> findByKeywordAdmin(long groupId, String keyword, int categoryType, int start, int end)  throws PortalException, SystemException{
+		return CategoryFinderUtil.findByKeyword(keyword, groupId, categoryType, start, end,true);
+	}
+	public int countByKeywordAdmin(long groupId, String keyword, int categoryType) throws PortalException, SystemException{
+		return CategoryFinderUtil.countByKeyword(keyword, groupId, categoryType,true);
+	}
+	
 	public List<Category> getByCategoryType(long groupId, int categoryType) throws PortalException, SystemException{
 		return CategoryUtil.filterFindByG_C_A(categoryType, true, groupId);
 	}

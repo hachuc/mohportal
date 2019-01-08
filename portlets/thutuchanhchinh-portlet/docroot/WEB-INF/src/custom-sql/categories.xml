@@ -29,4 +29,32 @@
 				AND (lower(a1.categoryName) LIKE ? [$AND_OR_NULL_CHECK$])
 		]]>
 	</sql>
+	
+	<sql id="com.revotech.portal.tthc.service.persistence.CategoryFinder.findByKeywordAdmin">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				tthc_Category  a1
+			WHERE
+				(a1.groupid = ?)
+				AND (a1.categoryType = ?)
+				AND (lower(a1.categoryName) LIKE ? [$AND_OR_NULL_CHECK$])
+			ORDER BY
+				a1.catOrder ASC
+		]]>
+	</sql>
+	
+	<sql id="com.revotech.portal.tthc.service.persistence.CategoryFinder.countByKeywordAdmin">
+		<![CDATA[
+			SELECT
+				count(*) AS COUNT_VALUE
+			FROM
+				tthc_Category  a1
+			WHERE
+				(a1.groupid = ?)
+				AND (a1.categoryType = ?)
+				AND (lower(a1.categoryName) LIKE ? [$AND_OR_NULL_CHECK$])
+		]]>
+	</sql>
 </custom-sql>

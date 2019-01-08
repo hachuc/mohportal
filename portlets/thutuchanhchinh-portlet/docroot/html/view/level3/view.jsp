@@ -59,7 +59,7 @@
 
 	System.out.println("idlinhvuc:" + idLinhvuc + " -- idcoquan:" + idCoquanbanhanh);
 	PortletURL portletURL = renderResponse.createActionURL();
-	portletURL.setParameter("jspPage", "/html/view/level2/view.jsp");
+	portletURL.setParameter("jspPage", "/html/view/level3/view.jsp");
 	portletURL.setParameter("keywords", keywords);
 	portletURL.setParameter("idLinhvuc", String.valueOf(idLinhvuc));
 	portletURL.setParameter("idCoquanbanhanh", String.valueOf(idCoquanbanhanh));
@@ -70,9 +70,8 @@
 %>
 
 <liferay-portlet:renderURL varImpl="searchTTHC">
-	<portlet:param name="mvcPath" value="/html/view/level2/view.jsp" />
+	<portlet:param name="mvcPath" value="/html/view/level3/view.jsp" />
 </liferay-portlet:renderURL>
-
 <div class="page-content boxed tthc-search">
 	<div class="row">
 		<div class="col-md-12 mt30">

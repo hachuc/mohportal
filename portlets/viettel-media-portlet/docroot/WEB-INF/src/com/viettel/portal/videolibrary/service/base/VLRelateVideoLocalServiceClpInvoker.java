@@ -109,13 +109,13 @@ public class VLRelateVideoLocalServiceClpInvoker {
 				"com.viettel.portal.videolibrary.model.VLRelateVideo"
 			};
 
-		_methodName72 = "getBeanIdentifier";
+		_methodName74 = "getBeanIdentifier";
 
-		_methodParameterTypes72 = new String[] {  };
+		_methodParameterTypes74 = new String[] {  };
 
-		_methodName73 = "setBeanIdentifier";
+		_methodName75 = "setBeanIdentifier";
 
-		_methodParameterTypes73 = new String[] { "java.lang.String" };
+		_methodParameterTypes75 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -207,13 +207,13 @@ public class VLRelateVideoLocalServiceClpInvoker {
 			return VLRelateVideoLocalServiceUtil.updateVLRelateVideo((com.viettel.portal.videolibrary.model.VLRelateVideo)arguments[0]);
 		}
 
-		if (_methodName72.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes72, parameterTypes)) {
+		if (_methodName74.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes74, parameterTypes)) {
 			return VLRelateVideoLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName73.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes73, parameterTypes)) {
+		if (_methodName75.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes75, parameterTypes)) {
 			VLRelateVideoLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -254,8 +254,8 @@ public class VLRelateVideoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName72;
-	private String[] _methodParameterTypes72;
-	private String _methodName73;
-	private String[] _methodParameterTypes73;
+	private String _methodName74;
+	private String[] _methodParameterTypes74;
+	private String _methodName75;
+	private String[] _methodParameterTypes75;
 }

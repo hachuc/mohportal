@@ -24,8 +24,12 @@ public class CategoryFinderImpl extends BasePersistenceImpl<Category> implements
 	public static final String FINDER_SQL = CategoryFinder.class.getName() + ".findByKeyword";
 
 	public static final String COUNT_SQL = CategoryFinder.class.getName() + ".countByKeyword";
+	
+	public static final String FINDER_SQL_ADMIN = CategoryFinder.class.getName() + ".findByKeywordAdmin";
+	
+	public static final String COUNT_SQL_ADMIN = CategoryFinder.class.getName() + ".countByKeywordAdmin";
 
-	public int countByKeyword(String keyword, long groupId, int categoryType) throws PortalException, SystemException {
+	public int countByKeyword(String keyword, long groupId, int categoryType,boolean isSiteAdmin) throws PortalException, SystemException {
 
 		String[] names = null;
 		boolean andOperator = false;
@@ -36,7 +40,7 @@ public class CategoryFinderImpl extends BasePersistenceImpl<Category> implements
 			andOperator = true;
 		}
 
-		return countBy_K(names, andOperator, groupId, categoryType);
+		return countBy_K(names, andOperator, groupId, categoryType,isSiteAdmin);
 	}
 
 	/**
@@ -49,7 +53,7 @@ public class CategoryFinderImpl extends BasePersistenceImpl<Category> implements
 	 * @throws PortalException
 	 * @throws SystemException
 	 */
-	public List<Category> findByKeyword(String keyword, long groupId, int categoryType, int start, int end)
+	public List<Category> findByKeyword(String keyword, long groupId, int categoryType, int start, int end,boolean isSiteAdmin)
 			throws PortalException, SystemException {
 
 		String[] names = null;
@@ -61,7 +65,7 @@ public class CategoryFinderImpl extends BasePersistenceImpl<Category> implements
 			andOperator = true;
 		}
 
-		return findBy_K(names, andOperator, groupId, categoryType, start, end);
+		return findBy_K(names, andOperator, groupId, categoryType, start, end,isSiteAdmin);
 
 	}
 
@@ -73,7 +77,7 @@ public class CategoryFinderImpl extends BasePersistenceImpl<Category> implements
 	 * @throws PortalException
 	 * @throws SystemException
 	 */
-	private int countBy_K(String[] keywords, boolean andOperator, long groupId, int categoryType)
+	private int countBy_K(String[] keywords, boolean andOperator, long groupId, int categoryType,boolean isSiteAdmin)
 			throws PortalException, SystemException {
 		Session session = null;
 
@@ -82,7 +86,7 @@ public class CategoryFinderImpl extends BasePersistenceImpl<Category> implements
 		try {
 			session = openSession();
 
-			String sql = CustomSQLUtil.get(COUNT_SQL);
+			String sql = isSiteAdmin ? CustomSQLUtil.get(COUNT_SQL_ADMIN) : CustomSQLUtil.get(COUNT_SQL);
 
 			sql = CustomSQLUtil.replaceKeywords(sql, "lower(a1.categoryName)", StringPool.LIKE, true, keywords);
 
@@ -130,7 +134,7 @@ public class CategoryFinderImpl extends BasePersistenceImpl<Category> implements
 	 * @throws SystemException
 	 */
 	private List<Category> findBy_K(String[] keywords, boolean andOperator, long groupId, int categoryType,
-			int start, int end) throws PortalException, SystemException {
+			int start, int end ,boolean isSiteAdmin) throws PortalException, SystemException {
 
 		Session session = null;
 
@@ -139,7 +143,7 @@ public class CategoryFinderImpl extends BasePersistenceImpl<Category> implements
 		try {
 			session = openSession();
 
-			String sql = CustomSQLUtil.get(FINDER_SQL);
+			String sql = isSiteAdmin ? CustomSQLUtil.get(FINDER_SQL_ADMIN) : CustomSQLUtil.get(FINDER_SQL);
 
 			sql = CustomSQLUtil.replaceKeywords(sql, "lower(a1.categoryName)", StringPool.LIKE, true, keywords);
 

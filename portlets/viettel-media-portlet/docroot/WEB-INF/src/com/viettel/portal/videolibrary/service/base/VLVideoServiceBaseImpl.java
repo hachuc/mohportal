@@ -27,6 +27,7 @@ import com.liferay.portal.service.persistence.UserPersistence;
 
 import com.viettel.portal.videolibrary.model.VLVideo;
 import com.viettel.portal.videolibrary.service.VLVideoService;
+import com.viettel.portal.videolibrary.service.persistence.VLCategoryFinder;
 import com.viettel.portal.videolibrary.service.persistence.VLCategoryPersistence;
 import com.viettel.portal.videolibrary.service.persistence.VLRelateVideoPersistence;
 import com.viettel.portal.videolibrary.service.persistence.VLVideoCategoryPersistence;
@@ -227,6 +228,24 @@ public abstract class VLVideoServiceBaseImpl extends BaseServiceImpl
 	public void setVLCategoryPersistence(
 		VLCategoryPersistence vlCategoryPersistence) {
 		this.vlCategoryPersistence = vlCategoryPersistence;
+	}
+
+	/**
+	 * Returns the v l category finder.
+	 *
+	 * @return the v l category finder
+	 */
+	public VLCategoryFinder getVLCategoryFinder() {
+		return vlCategoryFinder;
+	}
+
+	/**
+	 * Sets the v l category finder.
+	 *
+	 * @param vlCategoryFinder the v l category finder
+	 */
+	public void setVLCategoryFinder(VLCategoryFinder vlCategoryFinder) {
+		this.vlCategoryFinder = vlCategoryFinder;
 	}
 
 	/**
@@ -663,6 +682,8 @@ public abstract class VLVideoServiceBaseImpl extends BaseServiceImpl
 	protected com.viettel.portal.videolibrary.service.VLCategoryService vlCategoryService;
 	@BeanReference(type = VLCategoryPersistence.class)
 	protected VLCategoryPersistence vlCategoryPersistence;
+	@BeanReference(type = VLCategoryFinder.class)
+	protected VLCategoryFinder vlCategoryFinder;
 	@BeanReference(type = com.viettel.portal.videolibrary.service.VLRelateVideoLocalService.class)
 	protected com.viettel.portal.videolibrary.service.VLRelateVideoLocalService vlRelateVideoLocalService;
 	@BeanReference(type = com.viettel.portal.videolibrary.service.VLRelateVideoService.class)

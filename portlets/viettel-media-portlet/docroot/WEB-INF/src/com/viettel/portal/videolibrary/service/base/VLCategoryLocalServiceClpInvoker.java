@@ -109,72 +109,76 @@ public class VLCategoryLocalServiceClpInvoker {
 				"com.viettel.portal.videolibrary.model.VLCategory"
 			};
 
-		_methodName72 = "getBeanIdentifier";
+		_methodName74 = "getBeanIdentifier";
 
-		_methodParameterTypes72 = new String[] {  };
+		_methodParameterTypes74 = new String[] {  };
 
-		_methodName73 = "setBeanIdentifier";
+		_methodName75 = "setBeanIdentifier";
 
-		_methodParameterTypes73 = new String[] { "java.lang.String" };
+		_methodParameterTypes75 = new String[] { "java.lang.String" };
 
-		_methodName78 = "findByCategoryId";
+		_methodName80 = "findByCategoryId";
 
-		_methodParameterTypes78 = new String[] { "long", "long" };
+		_methodParameterTypes80 = new String[] { "long", "long" };
 
-		_methodName79 = "removeAll";
+		_methodName81 = "removeAll";
 
-		_methodParameterTypes79 = new String[] { "long" };
+		_methodParameterTypes81 = new String[] { "long" };
 
-		_methodName80 = "addLegalCategory";
+		_methodName82 = "addLegalCategory";
 
-		_methodParameterTypes80 = new String[] {
+		_methodParameterTypes82 = new String[] {
 				"long", "long", "long", "java.lang.String", "long",
 				"java.lang.String", "boolean",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName81 = "addVLCategory";
+		_methodName83 = "addVLCategory";
 
-		_methodParameterTypes81 = new String[] {
+		_methodParameterTypes83 = new String[] {
 				"long", "long", "long", "java.lang.String", "java.lang.String",
 				"boolean", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName82 = "countAll";
+		_methodName84 = "countAll";
 
-		_methodParameterTypes82 = new String[] {  };
+		_methodParameterTypes84 = new String[] {  };
 
-		_methodName83 = "countByGroup";
-
-		_methodParameterTypes83 = new String[] { "long" };
-
-		_methodName84 = "findByCategoryName";
-
-		_methodParameterTypes84 = new String[] { "java.lang.String", "long" };
-
-		_methodName85 = "findByGroup";
+		_methodName85 = "countByGroup";
 
 		_methodParameterTypes85 = new String[] { "long" };
 
-		_methodName86 = "findByGroup";
+		_methodName86 = "findByCategoryName";
 
-		_methodParameterTypes86 = new String[] { "long", "int", "int" };
+		_methodParameterTypes86 = new String[] { "java.lang.String", "long" };
 
-		_methodName87 = "findByGroupAndState";
+		_methodName87 = "findByGroup";
 
-		_methodParameterTypes87 = new String[] { "long", "boolean" };
+		_methodParameterTypes87 = new String[] { "long" };
 
-		_methodName88 = "findAll";
+		_methodName88 = "findByGroup";
 
-		_methodParameterTypes88 = new String[] {  };
+		_methodParameterTypes88 = new String[] { "long", "int", "int" };
 
-		_methodName89 = "findAll";
+		_methodName89 = "findByGroupAndState";
 
-		_methodParameterTypes89 = new String[] { "int", "int" };
+		_methodParameterTypes89 = new String[] { "long", "boolean" };
 
-		_methodName90 = "updateVLCategory";
+		_methodName90 = "findAll";
 
-		_methodParameterTypes90 = new String[] {
+		_methodParameterTypes90 = new String[] {  };
+
+		_methodName91 = "findAll";
+
+		_methodParameterTypes91 = new String[] { "int", "int" };
+
+		_methodName92 = "getByGroupUserSite";
+
+		_methodParameterTypes92 = new String[] { "long" };
+
+		_methodName93 = "updateVLCategory";
+
+		_methodParameterTypes93 = new String[] {
 				"long", "long", "long", "long", "java.lang.String",
 				"java.lang.String", "boolean",
 				"com.liferay.portal.service.ServiceContext"
@@ -270,33 +274,33 @@ public class VLCategoryLocalServiceClpInvoker {
 			return VLCategoryLocalServiceUtil.updateVLCategory((com.viettel.portal.videolibrary.model.VLCategory)arguments[0]);
 		}
 
-		if (_methodName72.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes72, parameterTypes)) {
+		if (_methodName74.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes74, parameterTypes)) {
 			return VLCategoryLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName73.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes73, parameterTypes)) {
+		if (_methodName75.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes75, parameterTypes)) {
 			VLCategoryLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
-
-			return null;
-		}
-
-		if (_methodName78.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes78, parameterTypes)) {
-			return VLCategoryLocalServiceUtil.findByCategoryId(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue());
-		}
-
-		if (_methodName79.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes79, parameterTypes)) {
-			VLCategoryLocalServiceUtil.removeAll(((Long)arguments[0]).longValue());
 
 			return null;
 		}
 
 		if (_methodName80.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes80, parameterTypes)) {
+			return VLCategoryLocalServiceUtil.findByCategoryId(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue());
+		}
+
+		if (_methodName81.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes81, parameterTypes)) {
+			VLCategoryLocalServiceUtil.removeAll(((Long)arguments[0]).longValue());
+
+			return null;
+		}
+
+		if (_methodName82.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes82, parameterTypes)) {
 			return VLCategoryLocalServiceUtil.addLegalCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -307,8 +311,8 @@ public class VLCategoryLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[7]);
 		}
 
-		if (_methodName81.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes81, parameterTypes)) {
+		if (_methodName83.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes83, parameterTypes)) {
 			return VLCategoryLocalServiceUtil.addVLCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -317,53 +321,58 @@ public class VLCategoryLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[6]);
 		}
 
-		if (_methodName82.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes82, parameterTypes)) {
-			return VLCategoryLocalServiceUtil.countAll();
-		}
-
-		if (_methodName83.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes83, parameterTypes)) {
-			return VLCategoryLocalServiceUtil.countByGroup(((Long)arguments[0]).longValue());
-		}
-
 		if (_methodName84.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes84, parameterTypes)) {
-			return VLCategoryLocalServiceUtil.findByCategoryName((java.lang.String)arguments[0],
-				((Long)arguments[1]).longValue());
+			return VLCategoryLocalServiceUtil.countAll();
 		}
 
 		if (_methodName85.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes85, parameterTypes)) {
-			return VLCategoryLocalServiceUtil.findByGroup(((Long)arguments[0]).longValue());
+			return VLCategoryLocalServiceUtil.countByGroup(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName86.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes86, parameterTypes)) {
+			return VLCategoryLocalServiceUtil.findByCategoryName((java.lang.String)arguments[0],
+				((Long)arguments[1]).longValue());
+		}
+
+		if (_methodName87.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes87, parameterTypes)) {
+			return VLCategoryLocalServiceUtil.findByGroup(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName88.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes88, parameterTypes)) {
 			return VLCategoryLocalServiceUtil.findByGroup(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName87.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes87, parameterTypes)) {
+		if (_methodName89.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes89, parameterTypes)) {
 			return VLCategoryLocalServiceUtil.findByGroupAndState(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue());
 		}
 
-		if (_methodName88.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes88, parameterTypes)) {
+		if (_methodName90.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes90, parameterTypes)) {
 			return VLCategoryLocalServiceUtil.findAll();
 		}
 
-		if (_methodName89.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes89, parameterTypes)) {
+		if (_methodName91.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes91, parameterTypes)) {
 			return VLCategoryLocalServiceUtil.findAll(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName90.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes90, parameterTypes)) {
+		if (_methodName92.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes92, parameterTypes)) {
+			return VLCategoryLocalServiceUtil.getByGroupUserSite(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName93.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes93, parameterTypes)) {
 			return VLCategoryLocalServiceUtil.updateVLCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -408,14 +417,10 @@ public class VLCategoryLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName72;
-	private String[] _methodParameterTypes72;
-	private String _methodName73;
-	private String[] _methodParameterTypes73;
-	private String _methodName78;
-	private String[] _methodParameterTypes78;
-	private String _methodName79;
-	private String[] _methodParameterTypes79;
+	private String _methodName74;
+	private String[] _methodParameterTypes74;
+	private String _methodName75;
+	private String[] _methodParameterTypes75;
 	private String _methodName80;
 	private String[] _methodParameterTypes80;
 	private String _methodName81;
@@ -438,4 +443,10 @@ public class VLCategoryLocalServiceClpInvoker {
 	private String[] _methodParameterTypes89;
 	private String _methodName90;
 	private String[] _methodParameterTypes90;
+	private String _methodName91;
+	private String[] _methodParameterTypes91;
+	private String _methodName92;
+	private String[] _methodParameterTypes92;
+	private String _methodName93;
+	private String[] _methodParameterTypes93;
 }

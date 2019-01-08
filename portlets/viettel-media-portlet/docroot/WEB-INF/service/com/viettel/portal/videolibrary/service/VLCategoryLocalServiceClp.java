@@ -173,9 +173,13 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 
 		_methodParameterTypes30 = new String[] { "int", "int" };
 
-		_methodName31 = "updateVLCategory";
+		_methodName31 = "getByGroupUserSite";
 
-		_methodParameterTypes31 = new String[] {
+		_methodParameterTypes31 = new String[] { "long" };
+
+		_methodName32 = "updateVLCategory";
+
+		_methodParameterTypes32 = new String[] {
 				"long", "long", "long", "long", "java.lang.String",
 				"java.lang.String", "boolean",
 				"com.liferay.portal.service.ServiceContext"
@@ -1136,6 +1140,35 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 	}
 
 	@Override
+	public java.util.List<com.viettel.portal.videolibrary.model.VLCategory> getByGroupUserSite(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName31,
+					_methodParameterTypes31, new Object[] { groupId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.viettel.portal.videolibrary.model.VLCategory>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
 	public com.viettel.portal.videolibrary.model.VLCategory updateVLCategory(
 		long categoryId, long companyId, long groupId, long userId,
 		java.lang.String userName, java.lang.String categoryName,
@@ -1146,8 +1179,8 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName31,
-					_methodParameterTypes31,
+			returnObj = _invokableLocalService.invokeMethod(_methodName32,
+					_methodParameterTypes32,
 					new Object[] {
 						categoryId,
 						
@@ -1252,4 +1285,6 @@ public class VLCategoryLocalServiceClp implements VLCategoryLocalService {
 	private String[] _methodParameterTypes30;
 	private String _methodName31;
 	private String[] _methodParameterTypes31;
+	private String _methodName32;
+	private String[] _methodParameterTypes32;
 }

@@ -309,6 +309,11 @@ public interface VLCategoryLocalService extends BaseLocalService,
 		int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.viettel.portal.videolibrary.model.VLCategory> getByGroupUserSite(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
 	public com.viettel.portal.videolibrary.model.VLCategory updateVLCategory(
 		long categoryId, long companyId, long groupId, long userId,
 		java.lang.String userName, java.lang.String categoryName,

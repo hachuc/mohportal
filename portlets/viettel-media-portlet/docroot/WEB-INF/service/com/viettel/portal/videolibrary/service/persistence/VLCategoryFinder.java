@@ -15,20 +15,17 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.revotech.portal.tthc.service.persistence;
+package com.viettel.portal.videolibrary.service.persistence;
 
 /**
- * @author hieptran
+ * @author ChucHV
  */
-public interface CategoryFinder {
-	public int countByKeyword(java.lang.String keyword, long groupId,
-		int categoryType, boolean isSiteAdmin)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException;
+public interface VLCategoryFinder {
+	public java.util.List<com.viettel.portal.videolibrary.model.VLCategory> getByGroupUserSite(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException;
 
-	public java.util.List<com.revotech.portal.tthc.model.Category> findByKeyword(
-		java.lang.String keyword, long groupId, int categoryType, int start,
-		int end, boolean isSiteAdmin)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException;
+	public java.util.List<com.viettel.portal.videolibrary.model.VLCategory> findByGroup(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

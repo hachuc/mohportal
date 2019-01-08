@@ -382,6 +382,13 @@ public class VLCategoryLocalServiceWrapper implements VLCategoryLocalService,
 	}
 
 	@Override
+	public java.util.List<com.viettel.portal.videolibrary.model.VLCategory> getByGroupUserSite(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _vlCategoryLocalService.getByGroupUserSite(groupId);
+	}
+
+	@Override
 	public com.viettel.portal.videolibrary.model.VLCategory updateVLCategory(
 		long categoryId, long companyId, long groupId, long userId,
 		java.lang.String userName, java.lang.String categoryName,

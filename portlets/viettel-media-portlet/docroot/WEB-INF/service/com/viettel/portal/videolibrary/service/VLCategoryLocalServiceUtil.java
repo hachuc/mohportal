@@ -358,6 +358,12 @@ public class VLCategoryLocalServiceUtil {
 		return getService().findAll(start, end);
 	}
 
+	public static java.util.List<com.viettel.portal.videolibrary.model.VLCategory> getByGroupUserSite(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getByGroupUserSite(groupId);
+	}
+
 	public static com.viettel.portal.videolibrary.model.VLCategory updateVLCategory(
 		long categoryId, long companyId, long groupId, long userId,
 		java.lang.String userName, java.lang.String categoryName,

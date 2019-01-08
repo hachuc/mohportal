@@ -294,6 +294,23 @@ public class CategoryLocalServiceUtil {
 		return getService().countByKeyword(groupId, keyword, categoryType);
 	}
 
+	public static java.util.List<com.revotech.portal.tthc.model.Category> findByKeywordAdmin(
+		long groupId, java.lang.String keyword, int categoryType, int start,
+		int end)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .findByKeywordAdmin(groupId, keyword, categoryType, start,
+			end);
+	}
+
+	public static int countByKeywordAdmin(long groupId,
+		java.lang.String keyword, int categoryType)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().countByKeywordAdmin(groupId, keyword, categoryType);
+	}
+
 	public static java.util.List<com.revotech.portal.tthc.model.Category> getByCategoryType(
 		long groupId, int categoryType)
 		throws com.liferay.portal.kernel.exception.PortalException,

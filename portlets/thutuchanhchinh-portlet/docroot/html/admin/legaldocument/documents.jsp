@@ -29,6 +29,7 @@
 	<aui:nav-bar-search cssClass="pull-right">
 			<liferay-portlet:renderURL varImpl="searchURL">
 				<portlet:param name="mvcPath" value='/html/admin/legaldocument/documents.jsp' />
+				<portlet:param name="ldlevel" value='<%= String.valueOf(ldlevel) %>' />
 			</liferay-portlet:renderURL>
 			
 			<div class="form-search">
@@ -90,6 +91,7 @@
 				<portlet:actionURL  name="deleteDocument" var="deleteDocumentActionURL">
 					<portlet:param name="ldId" value="<%=String.valueOf(ld.getLdId())%>"/>
 					<portlet:param name="groupId" value="<%=String.valueOf(scopeGroupId)%>"/>  
+					 <portlet:param name="redirectURL" value="<%= currentURL %>"/>
 				</portlet:actionURL>         
 				<liferay-ui:icon-delete url="<%= deleteDocumentActionURL %>" confirmation="confirm-delete-category" />
 			</c:if>

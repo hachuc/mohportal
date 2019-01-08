@@ -109,39 +109,39 @@ public class VLVideoCategoryLocalServiceClpInvoker {
 				"com.viettel.portal.videolibrary.model.VLVideoCategory"
 			};
 
-		_methodName72 = "getBeanIdentifier";
+		_methodName74 = "getBeanIdentifier";
 
-		_methodParameterTypes72 = new String[] {  };
+		_methodParameterTypes74 = new String[] {  };
 
-		_methodName73 = "setBeanIdentifier";
+		_methodName75 = "setBeanIdentifier";
 
-		_methodParameterTypes73 = new String[] { "java.lang.String" };
+		_methodParameterTypes75 = new String[] { "java.lang.String" };
 
-		_methodName78 = "findByCategory";
+		_methodName80 = "findByCategory";
 
-		_methodParameterTypes78 = new String[] { "long", "long" };
+		_methodParameterTypes80 = new String[] { "long", "long" };
 
-		_methodName79 = "findByVideo";
+		_methodName81 = "findByVideo";
 
-		_methodParameterTypes79 = new String[] { "long", "long" };
+		_methodParameterTypes81 = new String[] { "long", "long" };
 
-		_methodName80 = "addVLVideoCategory";
+		_methodName82 = "addVLVideoCategory";
 
-		_methodParameterTypes80 = new String[] {
+		_methodParameterTypes82 = new String[] {
 				"long", "long", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName81 = "updateVLVideoCategory";
+		_methodName83 = "updateVLVideoCategory";
 
-		_methodParameterTypes81 = new String[] {
+		_methodParameterTypes83 = new String[] {
 				"long", "long", "long", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName82 = "deleteVideoCategoryMapByCategory";
+		_methodName84 = "deleteVideoCategoryMapByCategory";
 
-		_methodParameterTypes82 = new String[] { "long", "long" };
+		_methodParameterTypes84 = new String[] { "long", "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -233,40 +233,40 @@ public class VLVideoCategoryLocalServiceClpInvoker {
 			return VLVideoCategoryLocalServiceUtil.updateVLVideoCategory((com.viettel.portal.videolibrary.model.VLVideoCategory)arguments[0]);
 		}
 
-		if (_methodName72.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes72, parameterTypes)) {
+		if (_methodName74.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes74, parameterTypes)) {
 			return VLVideoCategoryLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName73.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes73, parameterTypes)) {
+		if (_methodName75.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes75, parameterTypes)) {
 			VLVideoCategoryLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName78.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes78, parameterTypes)) {
+		if (_methodName80.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes80, parameterTypes)) {
 			return VLVideoCategoryLocalServiceUtil.findByCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName79.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes79, parameterTypes)) {
+		if (_methodName81.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes81, parameterTypes)) {
 			return VLVideoCategoryLocalServiceUtil.findByVideo(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName80.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes80, parameterTypes)) {
+		if (_methodName82.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes82, parameterTypes)) {
 			return VLVideoCategoryLocalServiceUtil.addVLVideoCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[3]);
 		}
 
-		if (_methodName81.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes81, parameterTypes)) {
+		if (_methodName83.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes83, parameterTypes)) {
 			return VLVideoCategoryLocalServiceUtil.updateVLVideoCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -274,8 +274,8 @@ public class VLVideoCategoryLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[4]);
 		}
 
-		if (_methodName82.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes82, parameterTypes)) {
+		if (_methodName84.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes84, parameterTypes)) {
 			VLVideoCategoryLocalServiceUtil.deleteVideoCategoryMapByCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 
@@ -317,18 +317,18 @@ public class VLVideoCategoryLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName72;
-	private String[] _methodParameterTypes72;
-	private String _methodName73;
-	private String[] _methodParameterTypes73;
-	private String _methodName78;
-	private String[] _methodParameterTypes78;
-	private String _methodName79;
-	private String[] _methodParameterTypes79;
+	private String _methodName74;
+	private String[] _methodParameterTypes74;
+	private String _methodName75;
+	private String[] _methodParameterTypes75;
 	private String _methodName80;
 	private String[] _methodParameterTypes80;
 	private String _methodName81;
 	private String[] _methodParameterTypes81;
 	private String _methodName82;
 	private String[] _methodParameterTypes82;
+	private String _methodName83;
+	private String[] _methodParameterTypes83;
+	private String _methodName84;
+	private String[] _methodParameterTypes84;
 }

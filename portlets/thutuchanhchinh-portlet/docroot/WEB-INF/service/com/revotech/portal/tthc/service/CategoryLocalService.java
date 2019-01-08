@@ -267,6 +267,17 @@ public interface CategoryLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 
+	public java.util.List<com.revotech.portal.tthc.model.Category> findByKeywordAdmin(
+		long groupId, java.lang.String keyword, int categoryType, int start,
+		int end)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public int countByKeywordAdmin(long groupId, java.lang.String keyword,
+		int categoryType)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.revotech.portal.tthc.model.Category> getByCategoryType(
 		long groupId, int categoryType)

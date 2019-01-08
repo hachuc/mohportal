@@ -27,44 +27,44 @@ import java.util.Arrays;
  */
 public class VLCategoryServiceClpInvoker {
 	public VLCategoryServiceClpInvoker() {
-		_methodName56 = "getBeanIdentifier";
+		_methodName58 = "getBeanIdentifier";
 
-		_methodParameterTypes56 = new String[] {  };
+		_methodParameterTypes58 = new String[] {  };
 
-		_methodName57 = "setBeanIdentifier";
+		_methodName59 = "setBeanIdentifier";
 
-		_methodParameterTypes57 = new String[] { "java.lang.String" };
+		_methodParameterTypes59 = new String[] { "java.lang.String" };
 
-		_methodName62 = "addVLCategory";
+		_methodName64 = "addVLCategory";
 
-		_methodParameterTypes62 = new String[] {
+		_methodParameterTypes64 = new String[] {
 				"long", "long", "long", "java.lang.String", "java.lang.String",
 				"boolean", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName63 = "countAll";
+		_methodName65 = "countAll";
 
-		_methodParameterTypes63 = new String[] {  };
+		_methodParameterTypes65 = new String[] {  };
 
-		_methodName64 = "findByCategoryName";
+		_methodName66 = "findByCategoryName";
 
-		_methodParameterTypes64 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes66 = new String[] { "java.lang.String", "long" };
 
-		_methodName65 = "findByGroup";
+		_methodName67 = "findByGroup";
 
-		_methodParameterTypes65 = new String[] { "long" };
+		_methodParameterTypes67 = new String[] { "long" };
 
-		_methodName66 = "findAll";
+		_methodName68 = "findAll";
 
-		_methodParameterTypes66 = new String[] {  };
+		_methodParameterTypes68 = new String[] {  };
 
-		_methodName67 = "findAll";
+		_methodName69 = "findAll";
 
-		_methodParameterTypes67 = new String[] { "int", "int" };
+		_methodParameterTypes69 = new String[] { "int", "int" };
 
-		_methodName68 = "updateVLCategory";
+		_methodName70 = "updateVLCategory";
 
-		_methodParameterTypes68 = new String[] {
+		_methodParameterTypes70 = new String[] {
 				"long", "long", "long", "long", "java.lang.String",
 				"java.lang.String", "boolean",
 				"com.liferay.portal.service.ServiceContext"
@@ -73,20 +73,20 @@ public class VLCategoryServiceClpInvoker {
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-		if (_methodName56.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes56, parameterTypes)) {
+		if (_methodName58.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
 			return VLCategoryServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName57.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes57, parameterTypes)) {
+		if (_methodName59.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes59, parameterTypes)) {
 			VLCategoryServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName62.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes62, parameterTypes)) {
+		if (_methodName64.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes64, parameterTypes)) {
 			return VLCategoryServiceUtil.addVLCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -95,35 +95,35 @@ public class VLCategoryServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[6]);
 		}
 
-		if (_methodName63.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes63, parameterTypes)) {
-			return VLCategoryServiceUtil.countAll();
-		}
-
-		if (_methodName64.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes64, parameterTypes)) {
-			return VLCategoryServiceUtil.findByCategoryName((java.lang.String)arguments[0],
-				((Long)arguments[1]).longValue());
-		}
-
 		if (_methodName65.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes65, parameterTypes)) {
-			return VLCategoryServiceUtil.findByGroup(((Long)arguments[0]).longValue());
+			return VLCategoryServiceUtil.countAll();
 		}
 
 		if (_methodName66.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes66, parameterTypes)) {
-			return VLCategoryServiceUtil.findAll();
+			return VLCategoryServiceUtil.findByCategoryName((java.lang.String)arguments[0],
+				((Long)arguments[1]).longValue());
 		}
 
 		if (_methodName67.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes67, parameterTypes)) {
-			return VLCategoryServiceUtil.findAll(((Integer)arguments[0]).intValue(),
-				((Integer)arguments[1]).intValue());
+			return VLCategoryServiceUtil.findByGroup(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName68.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes68, parameterTypes)) {
+			return VLCategoryServiceUtil.findAll();
+		}
+
+		if (_methodName69.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes69, parameterTypes)) {
+			return VLCategoryServiceUtil.findAll(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue());
+		}
+
+		if (_methodName70.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes70, parameterTypes)) {
 			return VLCategoryServiceUtil.updateVLCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -136,14 +136,10 @@ public class VLCategoryServiceClpInvoker {
 		throw new UnsupportedOperationException();
 	}
 
-	private String _methodName56;
-	private String[] _methodParameterTypes56;
-	private String _methodName57;
-	private String[] _methodParameterTypes57;
-	private String _methodName62;
-	private String[] _methodParameterTypes62;
-	private String _methodName63;
-	private String[] _methodParameterTypes63;
+	private String _methodName58;
+	private String[] _methodParameterTypes58;
+	private String _methodName59;
+	private String[] _methodParameterTypes59;
 	private String _methodName64;
 	private String[] _methodParameterTypes64;
 	private String _methodName65;
@@ -154,4 +150,8 @@ public class VLCategoryServiceClpInvoker {
 	private String[] _methodParameterTypes67;
 	private String _methodName68;
 	private String[] _methodParameterTypes68;
+	private String _methodName69;
+	private String[] _methodParameterTypes69;
+	private String _methodName70;
+	private String[] _methodParameterTypes70;
 }

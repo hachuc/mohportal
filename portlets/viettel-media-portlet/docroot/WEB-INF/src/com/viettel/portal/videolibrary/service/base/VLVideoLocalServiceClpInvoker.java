@@ -109,30 +109,30 @@ public class VLVideoLocalServiceClpInvoker {
 				"com.viettel.portal.videolibrary.model.VLVideo"
 			};
 
-		_methodName72 = "getBeanIdentifier";
+		_methodName74 = "getBeanIdentifier";
 
-		_methodParameterTypes72 = new String[] {  };
+		_methodParameterTypes74 = new String[] {  };
 
-		_methodName73 = "setBeanIdentifier";
+		_methodName75 = "setBeanIdentifier";
 
-		_methodParameterTypes73 = new String[] { "java.lang.String" };
+		_methodParameterTypes75 = new String[] { "java.lang.String" };
 
-		_methodName78 = "removeAll";
+		_methodName80 = "removeAll";
 
-		_methodParameterTypes78 = new String[] { "long" };
+		_methodParameterTypes80 = new String[] { "long" };
 
-		_methodName79 = "addVideo";
+		_methodName81 = "addVideo";
 
-		_methodParameterTypes79 = new String[] {
+		_methodParameterTypes81 = new String[] {
 				"long", "long", "long", "long", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "boolean", "long",
 				"com.liferay.portal.service.ServiceContext", "java.lang.String"
 			};
 
-		_methodName80 = "addLegalVideo";
+		_methodName82 = "addLegalVideo";
 
-		_methodParameterTypes80 = new String[] {
+		_methodParameterTypes82 = new String[] {
 				"long", "long", "long", "long", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "boolean", "long",
@@ -140,57 +140,57 @@ public class VLVideoLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName81 = "countAllByGroup";
-
-		_methodParameterTypes81 = new String[] { "long" };
-
-		_methodName82 = "countByByKeyword";
-
-		_methodParameterTypes82 = new String[] {
-				"long", "long", "java.lang.String"
-			};
-
-		_methodName83 = "findByGroup";
+		_methodName83 = "countAllByGroup";
 
 		_methodParameterTypes83 = new String[] { "long" };
 
-		_methodName84 = "findByGroup";
+		_methodName84 = "countByByKeyword";
 
-		_methodParameterTypes84 = new String[] { "long", "int", "int" };
+		_methodParameterTypes84 = new String[] {
+				"long", "long", "java.lang.String"
+			};
 
-		_methodName85 = "findByCategoryId";
+		_methodName85 = "findByGroup";
 
-		_methodParameterTypes85 = new String[] { "long", "long" };
+		_methodParameterTypes85 = new String[] { "long" };
 
-		_methodName86 = "findByCategoryId";
+		_methodName86 = "findByGroup";
 
-		_methodParameterTypes86 = new String[] { "long", "long", "int", "int" };
+		_methodParameterTypes86 = new String[] { "long", "int", "int" };
 
-		_methodName87 = "findByKeyword";
+		_methodName87 = "findByCategoryId";
 
-		_methodParameterTypes87 = new String[] {
+		_methodParameterTypes87 = new String[] { "long", "long" };
+
+		_methodName88 = "findByCategoryId";
+
+		_methodParameterTypes88 = new String[] { "long", "long", "int", "int" };
+
+		_methodName89 = "findByKeyword";
+
+		_methodParameterTypes89 = new String[] {
 				"long", "long", "java.lang.String", "int", "int",
 				"com.liferay.portal.kernel.util.OrderByComparator"
 			};
 
-		_methodName88 = "findByKeywordFrontend";
+		_methodName90 = "findByKeywordFrontend";
 
-		_methodParameterTypes88 = new String[] {
+		_methodParameterTypes90 = new String[] {
 				"long", "java.lang.String", "java.lang.String", "long",
 				"java.lang.String", "int", "int",
 				"com.liferay.portal.kernel.util.OrderByComparator"
 			};
 
-		_methodName89 = "countByKeywordFrontend";
+		_methodName91 = "countByKeywordFrontend";
 
-		_methodParameterTypes89 = new String[] {
+		_methodParameterTypes91 = new String[] {
 				"long", "java.lang.String", "java.lang.String", "long",
 				"java.lang.String"
 			};
 
-		_methodName90 = "updateVideo";
+		_methodName92 = "updateVideo";
 
-		_methodParameterTypes90 = new String[] {
+		_methodParameterTypes92 = new String[] {
 				"long", "long", "long", "long", "long", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "boolean", "long",
@@ -287,27 +287,27 @@ public class VLVideoLocalServiceClpInvoker {
 			return VLVideoLocalServiceUtil.updateVLVideo((com.viettel.portal.videolibrary.model.VLVideo)arguments[0]);
 		}
 
-		if (_methodName72.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes72, parameterTypes)) {
+		if (_methodName74.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes74, parameterTypes)) {
 			return VLVideoLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName73.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes73, parameterTypes)) {
+		if (_methodName75.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes75, parameterTypes)) {
 			VLVideoLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName78.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes78, parameterTypes)) {
+		if (_methodName80.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes80, parameterTypes)) {
 			VLVideoLocalServiceUtil.removeAll(((Long)arguments[0]).longValue());
 
 			return null;
 		}
 
-		if (_methodName79.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes79, parameterTypes)) {
+		if (_methodName81.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes81, parameterTypes)) {
 			return VLVideoLocalServiceUtil.addVideo(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -322,8 +322,8 @@ public class VLVideoLocalServiceClpInvoker {
 				(java.lang.String)arguments[13]);
 		}
 
-		if (_methodName80.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes80, parameterTypes)) {
+		if (_methodName82.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes82, parameterTypes)) {
 			return VLVideoLocalServiceUtil.addLegalVideo(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -339,45 +339,45 @@ public class VLVideoLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[15]);
 		}
 
-		if (_methodName81.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes81, parameterTypes)) {
-			return VLVideoLocalServiceUtil.countAllByGroup(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName82.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes82, parameterTypes)) {
-			return VLVideoLocalServiceUtil.countByByKeyword(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(), (java.lang.String)arguments[2]);
-		}
-
 		if (_methodName83.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes83, parameterTypes)) {
-			return VLVideoLocalServiceUtil.findByGroup(((Long)arguments[0]).longValue());
+			return VLVideoLocalServiceUtil.countAllByGroup(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName84.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes84, parameterTypes)) {
+			return VLVideoLocalServiceUtil.countByByKeyword(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(), (java.lang.String)arguments[2]);
+		}
+
+		if (_methodName85.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes85, parameterTypes)) {
+			return VLVideoLocalServiceUtil.findByGroup(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName86.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes86, parameterTypes)) {
 			return VLVideoLocalServiceUtil.findByGroup(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName85.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes85, parameterTypes)) {
+		if (_methodName87.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes87, parameterTypes)) {
 			return VLVideoLocalServiceUtil.findByCategoryId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName86.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes86, parameterTypes)) {
+		if (_methodName88.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes88, parameterTypes)) {
 			return VLVideoLocalServiceUtil.findByCategoryId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName87.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes87, parameterTypes)) {
+		if (_methodName89.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes89, parameterTypes)) {
 			return VLVideoLocalServiceUtil.findByKeyword(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2],
@@ -386,8 +386,8 @@ public class VLVideoLocalServiceClpInvoker {
 				(com.liferay.portal.kernel.util.OrderByComparator)arguments[5]);
 		}
 
-		if (_methodName88.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes88, parameterTypes)) {
+		if (_methodName90.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes90, parameterTypes)) {
 			return VLVideoLocalServiceUtil.findByKeywordFrontend(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue(),
@@ -397,15 +397,15 @@ public class VLVideoLocalServiceClpInvoker {
 				(com.liferay.portal.kernel.util.OrderByComparator)arguments[7]);
 		}
 
-		if (_methodName89.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes89, parameterTypes)) {
+		if (_methodName91.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes91, parameterTypes)) {
 			return VLVideoLocalServiceUtil.countByKeywordFrontend(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue(), (java.lang.String)arguments[4]);
 		}
 
-		if (_methodName90.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes90, parameterTypes)) {
+		if (_methodName92.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes92, parameterTypes)) {
 			return VLVideoLocalServiceUtil.updateVideo(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -456,14 +456,10 @@ public class VLVideoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName72;
-	private String[] _methodParameterTypes72;
-	private String _methodName73;
-	private String[] _methodParameterTypes73;
-	private String _methodName78;
-	private String[] _methodParameterTypes78;
-	private String _methodName79;
-	private String[] _methodParameterTypes79;
+	private String _methodName74;
+	private String[] _methodParameterTypes74;
+	private String _methodName75;
+	private String[] _methodParameterTypes75;
 	private String _methodName80;
 	private String[] _methodParameterTypes80;
 	private String _methodName81;
@@ -486,4 +482,8 @@ public class VLVideoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes89;
 	private String _methodName90;
 	private String[] _methodParameterTypes90;
+	private String _methodName91;
+	private String[] _methodParameterTypes91;
+	private String _methodName92;
+	private String[] _methodParameterTypes92;
 }

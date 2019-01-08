@@ -27,24 +27,24 @@ import java.util.Arrays;
  */
 public class VLVideoTagServiceClpInvoker {
 	public VLVideoTagServiceClpInvoker() {
-		_methodName56 = "getBeanIdentifier";
+		_methodName58 = "getBeanIdentifier";
 
-		_methodParameterTypes56 = new String[] {  };
+		_methodParameterTypes58 = new String[] {  };
 
-		_methodName57 = "setBeanIdentifier";
+		_methodName59 = "setBeanIdentifier";
 
-		_methodParameterTypes57 = new String[] { "java.lang.String" };
+		_methodParameterTypes59 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-		if (_methodName56.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes56, parameterTypes)) {
+		if (_methodName58.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
 			return VLVideoTagServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName57.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes57, parameterTypes)) {
+		if (_methodName59.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes59, parameterTypes)) {
 			VLVideoTagServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -53,8 +53,8 @@ public class VLVideoTagServiceClpInvoker {
 		throw new UnsupportedOperationException();
 	}
 
-	private String _methodName56;
-	private String[] _methodParameterTypes56;
-	private String _methodName57;
-	private String[] _methodParameterTypes57;
+	private String _methodName58;
+	private String[] _methodParameterTypes58;
+	private String _methodName59;
+	private String[] _methodParameterTypes59;
 }

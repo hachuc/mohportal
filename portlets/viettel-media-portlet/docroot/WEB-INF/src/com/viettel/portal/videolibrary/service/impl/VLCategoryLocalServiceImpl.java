@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.viettel.portal.videolibrary.model.VLCategory;
 import com.viettel.portal.videolibrary.service.base.VLCategoryLocalServiceBaseImpl;
+import com.viettel.portal.videolibrary.service.persistence.VLCategoryFinder;
 import com.viettel.portal.videolibrary.service.persistence.VLCategoryUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -129,6 +130,10 @@ public class VLCategoryLocalServiceImpl extends VLCategoryLocalServiceBaseImpl {
 		return vlCategoryPersistence.findAll(start, end);
 	}
 
+	public List<VLCategory> getByGroupUserSite(long groupId) throws SystemException{
+		return vlCategoryFinder.getByGroupUserSite(groupId);
+	}
+	
 	public VLCategory updateVLCategory(long categoryId, long companyId,
 			long groupId, long userId, String userName, String categoryName,
 			boolean invisible, ServiceContext serviceContext)

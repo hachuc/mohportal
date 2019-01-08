@@ -152,7 +152,7 @@
 			<div class="row-fields">
 				<aui:input type="checkbox" name="useCustomVideoFrameSize" value="<%=useCustomVideoFrameSize %>"/>
 				
-				<div id="<portlet:namespace />frameSizeSettingContainer" class="aui-helper-hidden">
+				<div id="<portlet:namespace />frameSizeSettingContainer" class="hide">
 					<div>
 						<span style="float:left;">
 							<aui:input name="videoFrameHeight" value="<%=videoFrameHeight %>">
@@ -189,7 +189,7 @@
 		<div class="lfr-form-row">
 			<div class="row-fields">
 				<aui:input type="checkbox" name="showViewMoreVideoLink" value="<%=showViewMoreVideoLink %>"/>
-				<div id="<portlet:namespace />videoPageSelectorContainer" class="aui-helper-hidden">
+				<div id="<portlet:namespace />videoPageSelectorContainer" class="hide">
 					<aui:select name="videoPageLayoutId" label="display-video-on-page">
 						<%
 						for(Layout layoutTemp : groupLayoutList){

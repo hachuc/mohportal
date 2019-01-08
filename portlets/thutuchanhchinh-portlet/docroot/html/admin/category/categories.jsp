@@ -10,7 +10,6 @@
 %>
 
 <liferay-util:include page='/html/admin/tabs.jsp' servletContext="<%= application %>" />
-
 <liferay-util:include page='/html/admin/category/tabs_category.jsp' servletContext="<%= application %>" />
 <portlet:renderURL var="categoryAdminURL">
 	<portlet:param name="mvcPath" value='/html/admin/category/categories.jsp' />
@@ -46,8 +45,8 @@
 </c:if>
 <liferay-ui:search-container emptyResultsMessage="no-found-category">
 	<%
-		List<Category> lst = CategoryLocalServiceUtil.findByKeyword(groupId, keyword, ctype, searchContainer.getStart(), searchContainer.getEnd());
-		total = CategoryLocalServiceUtil.countByKeyword(groupId, keyword, ctype);
+		List<Category> lst = CategoryLocalServiceUtil.findByKeywordAdmin(groupId, keyword, ctype, searchContainer.getStart(), searchContainer.getEnd());
+		total = CategoryLocalServiceUtil.countByKeywordAdmin(groupId, keyword, ctype);
 	%>
 	
 	<liferay-ui:search-container-results results="<%=lst %>" total="<%=total %>"/>
@@ -70,6 +69,14 @@
 		<liferay-ui:search-container-column-text name="nguoi-tao" value="<%= ct.getUserName()%>" 
 			orderable="<%=false %>"
 		/>
+		<liferay-ui:search-container-column-text name="status-active" align="center" cssClass="tbl_cell_action" orderable="<%=false %>">
+			<c:if test="<%= ct.getIsActive() %>">
+				<liferay-ui:message key="is-active" />
+			</c:if>
+			<c:if test="<%= !ct.getIsActive() %>">
+				<liferay-ui:message key="not-active" />
+			</c:if>
+		</liferay-ui:search-container-column-text>
 		<liferay-ui:search-container-column-text name="edit" align="center" cssClass="tbl_cell_action">
 			<c:if test="<%=AdminPermission.contains(permissionChecker, scopeGroupId, ActionKeys.ADD_CATEGORY) %>">
 				<portlet:renderURL var="editCategoryURL" windowState="<%=LiferayWindowState.POP_UP.toString() %>">
@@ -89,7 +96,8 @@
 				<portlet:actionURL  name="deleteCategory" var="deleteCategoryActionURL">
 					<portlet:param name="id" value="<%=String.valueOf(ct.getCategoryId())%>"/>
 					<portlet:param name="groupId" value="<%=String.valueOf(scopeGroupId)%>"/>  
-					<portlet:param name="categoryId" value="<%=String.valueOf(ct.getCategoryId())%>"/>   
+					<portlet:param name="categoryId" value="<%=String.valueOf(ct.getCategoryId())%>"/>  
+					 <portlet:param name="redirectURL" value="<%= currentURL %>"/>
 				</portlet:actionURL>            
 				<liferay-ui:icon-delete url="<%= deleteCategoryActionURL %>" confirmation="confirm-delete-category" />
 			</c:if>

@@ -11,7 +11,6 @@
 				AND (idCoquanbanhanh = ?)
 				AND (idLinhvuc =?)
 				AND (ldLevel = ?)
-				AND (isActive = 1)
 				AND (
 					(lower(ldCode) LIKE ? [$AND_OR_NULL_CHECK$]) [$AND_OR_CONNECTOR$]
 					(lower(ldTitle) LIKE ? [$AND_OR_NULL_CHECK$])
@@ -63,7 +62,6 @@
 				AND (idCoquanbanhanh = ?)
 				AND (idLinhvuc =?)
 				AND (ldLevel = ?)
-				AND (isActive = 1)
 				AND (
 					(lower(ldCode) LIKE ? [$AND_OR_NULL_CHECK$]) [$AND_OR_CONNECTOR$]
 					(lower(ldTitle) LIKE ? [$AND_OR_NULL_CHECK$])

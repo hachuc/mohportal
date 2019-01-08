@@ -54,7 +54,10 @@
 			previewVideo.append(viewVideoURL.toString());
 			previewVideo.append("')");
 			VLCategory category = VLCategoryLocalServiceUtil.fetchVLCategory(categoryId);
-			FileEntry videoFileEntry = DLAppServiceUtil.getFileEntry(video.getFileId());
+			FileEntry videoFileEntry = null;
+			if(video !=null && video.getFileId() > 0){
+				videoFileEntry = DLAppServiceUtil.getFileEntry(video.getFileId());
+			}
 			String fileName ="";
 			String rankName ="";
 			

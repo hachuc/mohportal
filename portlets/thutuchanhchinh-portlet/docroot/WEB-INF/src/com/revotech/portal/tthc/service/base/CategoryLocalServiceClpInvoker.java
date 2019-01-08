@@ -127,31 +127,41 @@ public class CategoryLocalServiceClpInvoker {
 
 		_methodParameterTypes51 = new String[] { "long", "java.lang.String", "int" };
 
-		_methodName52 = "getByCategoryType";
+		_methodName52 = "findByKeywordAdmin";
 
-		_methodParameterTypes52 = new String[] { "long", "int" };
+		_methodParameterTypes52 = new String[] {
+				"long", "java.lang.String", "int", "int", "int"
+			};
 
-		_methodName53 = "getCategories";
+		_methodName53 = "countByKeywordAdmin";
 
-		_methodParameterTypes53 = new String[] {
+		_methodParameterTypes53 = new String[] { "long", "java.lang.String", "int" };
+
+		_methodName54 = "getByCategoryType";
+
+		_methodParameterTypes54 = new String[] { "long", "int" };
+
+		_methodName55 = "getCategories";
+
+		_methodParameterTypes55 = new String[] {
 				"long", "boolean", "int", "int", "int"
 			};
 
-		_methodName54 = "findByCategoryName";
+		_methodName56 = "findByCategoryName";
 
-		_methodParameterTypes54 = new String[] { "long", "int", "java.lang.String" };
+		_methodParameterTypes56 = new String[] { "long", "int", "java.lang.String" };
 
-		_methodName55 = "addCategory";
+		_methodName57 = "addCategory";
 
-		_methodParameterTypes55 = new String[] {
+		_methodParameterTypes57 = new String[] {
 				"long", "long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "int", "boolean",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName56 = "updateCategory";
+		_methodName58 = "updateCategory";
 
-		_methodParameterTypes56 = new String[] {
+		_methodParameterTypes58 = new String[] {
 				"long", "long", "long", "java.lang.String", "long",
 				"java.lang.String", "java.lang.String", "boolean", "int", "int",
 				"com.liferay.portal.service.ServiceContext"
@@ -277,12 +287,28 @@ public class CategoryLocalServiceClpInvoker {
 
 		if (_methodName52.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes52, parameterTypes)) {
-			return CategoryLocalServiceUtil.getByCategoryType(((Long)arguments[0]).longValue(),
-				((Integer)arguments[1]).intValue());
+			return CategoryLocalServiceUtil.findByKeywordAdmin(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1],
+				((Integer)arguments[2]).intValue(),
+				((Integer)arguments[3]).intValue(),
+				((Integer)arguments[4]).intValue());
 		}
 
 		if (_methodName53.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes53, parameterTypes)) {
+			return CategoryLocalServiceUtil.countByKeywordAdmin(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1],
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName54.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes54, parameterTypes)) {
+			return CategoryLocalServiceUtil.getByCategoryType(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue());
+		}
+
+		if (_methodName55.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes55, parameterTypes)) {
 			return CategoryLocalServiceUtil.getCategories(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue(),
@@ -290,15 +316,15 @@ public class CategoryLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName54.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes54, parameterTypes)) {
+		if (_methodName56.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes56, parameterTypes)) {
 			return CategoryLocalServiceUtil.findByCategoryName(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				(java.lang.String)arguments[2]);
 		}
 
-		if (_methodName55.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes55, parameterTypes)) {
+		if (_methodName57.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes57, parameterTypes)) {
 			CategoryLocalServiceUtil.addCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -312,8 +338,8 @@ public class CategoryLocalServiceClpInvoker {
 			return null;
 		}
 
-		if (_methodName56.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes56, parameterTypes)) {
+		if (_methodName58.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
 			CategoryLocalServiceUtil.updateCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -381,4 +407,8 @@ public class CategoryLocalServiceClpInvoker {
 	private String[] _methodParameterTypes55;
 	private String _methodName56;
 	private String[] _methodParameterTypes56;
+	private String _methodName57;
+	private String[] _methodParameterTypes57;
+	private String _methodName58;
+	private String[] _methodParameterTypes58;
 }

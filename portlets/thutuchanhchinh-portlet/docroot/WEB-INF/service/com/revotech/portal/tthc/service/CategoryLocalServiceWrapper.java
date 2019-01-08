@@ -308,6 +308,25 @@ public class CategoryLocalServiceWrapper implements CategoryLocalService,
 	}
 
 	@Override
+	public java.util.List<com.revotech.portal.tthc.model.Category> findByKeywordAdmin(
+		long groupId, java.lang.String keyword, int categoryType, int start,
+		int end)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _categoryLocalService.findByKeywordAdmin(groupId, keyword,
+			categoryType, start, end);
+	}
+
+	@Override
+	public int countByKeywordAdmin(long groupId, java.lang.String keyword,
+		int categoryType)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _categoryLocalService.countByKeywordAdmin(groupId, keyword,
+			categoryType);
+	}
+
+	@Override
 	public java.util.List<com.revotech.portal.tthc.model.Category> getByCategoryType(
 		long groupId, int categoryType)
 		throws com.liferay.portal.kernel.exception.PortalException,
