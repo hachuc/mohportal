@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql file="custom-sql/coquanbanhanh.xml" />
+	<sql file="custom-sql/linhvuc.xml" />
+	<sql file="custom-sql/loaivb.xml" />
+	<sql file="custom-sql/vanbanphapquy.xml"/>
+</custom-sql>

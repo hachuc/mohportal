@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.revotech.portal.videolibrary.service.VideoCategoryLocalService" class="com.revotech.portal.videolibrary.service.impl.VideoCategoryLocalServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.VideoCategoryService" class="com.revotech.portal.videolibrary.service.impl.VideoCategoryServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.persistence.VideoCategoryPersistence" class="com.revotech.portal.videolibrary.service.persistence.VideoCategoryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.videolibrary.service.VideoClipLocalService" class="com.revotech.portal.videolibrary.service.impl.VideoClipLocalServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.VideoClipService" class="com.revotech.portal.videolibrary.service.impl.VideoClipServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.persistence.VideoClipPersistence" class="com.revotech.portal.videolibrary.service.persistence.VideoClipPersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.videolibrary.service.VLCategoryLocalService" class="com.revotech.portal.videolibrary.service.impl.VLCategoryLocalServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.VLCategoryService" class="com.revotech.portal.videolibrary.service.impl.VLCategoryServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.persistence.VLCategoryPersistence" class="com.revotech.portal.videolibrary.service.persistence.VLCategoryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.videolibrary.service.persistence.VLCategoryFinder" class="com.revotech.portal.videolibrary.service.persistence.VLCategoryFinderImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.videolibrary.service.VLRelateVideoLocalService" class="com.revotech.portal.videolibrary.service.impl.VLRelateVideoLocalServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.VLRelateVideoService" class="com.revotech.portal.videolibrary.service.impl.VLRelateVideoServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.persistence.VLRelateVideoPersistence" class="com.revotech.portal.videolibrary.service.persistence.VLRelateVideoPersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.videolibrary.service.VLVideoLocalService" class="com.revotech.portal.videolibrary.service.impl.VLVideoLocalServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.VLVideoService" class="com.revotech.portal.videolibrary.service.impl.VLVideoServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.persistence.VLVideoPersistence" class="com.revotech.portal.videolibrary.service.persistence.VLVideoPersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.videolibrary.service.persistence.VLVideoFinder" class="com.revotech.portal.videolibrary.service.persistence.VLVideoFinderImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.videolibrary.service.VLVideoCategoryLocalService" class="com.revotech.portal.videolibrary.service.impl.VLVideoCategoryLocalServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.VLVideoCategoryService" class="com.revotech.portal.videolibrary.service.impl.VLVideoCategoryServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.persistence.VLVideoCategoryPersistence" class="com.revotech.portal.videolibrary.service.persistence.VLVideoCategoryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.videolibrary.service.VLVideoTagLocalService" class="com.revotech.portal.videolibrary.service.impl.VLVideoTagLocalServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.VLVideoTagService" class="com.revotech.portal.videolibrary.service.impl.VLVideoTagServiceImpl" />
+	<bean id="com.revotech.portal.videolibrary.service.persistence.VLVideoTagPersistence" class="com.revotech.portal.videolibrary.service.persistence.VLVideoTagPersistenceImpl" parent="basePersistence" />
+</beans>

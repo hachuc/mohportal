@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.revotech.portal.vbpq.model.AttachFile" />
+	<import class="com.revotech.portal.vbpq.model.CoQuanBanHanhVanBan" />
+	<import class="com.revotech.portal.vbpq.model.LinhVucVanBan" />
+	<import class="com.revotech.portal.vbpq.model.LoaiVanBan" />
+	<import class="com.revotech.portal.vbpq.model.NhomVanBan" />
+	<import class="com.revotech.portal.vbpq.model.VanBanPhapQuy" />
+	<class name="com.revotech.portal.vbpq.model.impl.AttachFileImpl" table="portal_attachfile">
+		<cache usage="read-write" />
+		<id name="id" column="ID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vanBanId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="VANBANID" />
+		<property name="fileId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="FILEID" />
+		<property name="fileLink" type="com.liferay.portal.dao.orm.hibernate.StringType" column="FILELINK" />
+		<property name="fileName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="FILENAME" />
+		<property name="fileSize" type="com.liferay.portal.dao.orm.hibernate.StringType" column="FILESIZE" />
+	</class>
+	<class name="com.revotech.portal.vbpq.model.impl.CoQuanBanHanhVanBanImpl" table="portal_coquanbanhanh">
+		<cache usage="read-write" />
+		<id name="id" column="ID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="ten" type="com.liferay.portal.dao.orm.hibernate.StringType" column="TEN" />
+		<property name="trangThai" type="com.liferay.portal.dao.orm.hibernate.BooleanType" column="TRANGTHAI" />
+		<property name="ngayTao" type="org.hibernate.type.TimestampType" column="NGAYTAO" />
+		<property name="ngaySua" type="org.hibernate.type.TimestampType" column="NGAYSUA" />
+		<property name="nguoiTao" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NGUOITAO" />
+		<property name="nguoiSua" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NGUOISUA" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="GROUPID" />
+		<property name="order_" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="ORDER_" />
+		<property name="nhomVanBanId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.revotech.portal.vbpq.model.impl.LinhVucVanBanImpl" table="portal_linhvucvanban">
+		<cache usage="read-write" />
+		<id name="id" column="ID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="ten" type="com.liferay.portal.dao.orm.hibernate.StringType" column="TEN" />
+		<property name="trangThai" type="com.liferay.portal.dao.orm.hibernate.BooleanType" column="TRANGTHAI" />
+		<property name="ngayTao" type="org.hibernate.type.TimestampType" column="NGAYTAO" />
+		<property name="ngaySua" type="org.hibernate.type.TimestampType" column="NGAYSUA" />
+		<property name="nguoiTao" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NGUOITAO" />
+		<property name="nguoiSua" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NGUOISUA" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="GROUPID" />
+		<property name="order_" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="ORDER_" />
+		<property name="nhomVanBanId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.revotech.portal.vbpq.model.impl.LoaiVanBanImpl" table="portal_loaivanban">
+		<cache usage="read-write" />
+		<id name="id" column="ID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="ten" type="com.liferay.portal.dao.orm.hibernate.StringType" column="TEN" />
+		<property name="trangThai" type="com.liferay.portal.dao.orm.hibernate.BooleanType" column="TRANGTHAI" />
+		<property name="ngayTao" type="org.hibernate.type.TimestampType" column="NGAYTAO" />
+		<property name="ngaySua" type="org.hibernate.type.TimestampType" column="NGAYSUA" />
+		<property name="nguoiTao" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NGUOITAO" />
+		<property name="nguoiSua" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NGUOISUA" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="GROUPID" />
+		<property name="order_" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="ORDER_" />
+		<property name="nhomVanBanId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.revotech.portal.vbpq.model.impl.NhomVanBanImpl" table="portal_vbpq_nhom_van_ban">
+		<cache usage="read-write" />
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="tenNhom" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="nguoiTao" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="nguoiTaoId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="ngayTao" type="org.hibernate.type.TimestampType" />
+		<property name="ngaySua" type="org.hibernate.type.TimestampType" />
+		<property name="nguoiSua" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="nguoiSuaId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="trangThai" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.revotech.portal.vbpq.model.impl.VanBanPhapQuyImpl" table="portal_vanban">
+		<cache usage="read-write" />
+		<id name="id" column="ID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="maVanBan" type="com.liferay.portal.dao.orm.hibernate.StringType" column="MAVANBAN" />
+		<property name="ngayTao" type="org.hibernate.type.TimestampType" column="NGAYTAO" />
+		<property name="ngaySua" type="org.hibernate.type.TimestampType" column="NGAYSUA" />
+		<property name="nguoiTao" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NGUOITAO" />
+		<property name="nguoiSua" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NGUOISUA" />
+		<property name="trichYeu" type="com.liferay.portal.dao.orm.hibernate.StringType" column="TRICHYEU" />
+		<property name="coQuanBanHanh" type="com.liferay.portal.dao.orm.hibernate.LongType" column="COQUANBANHANH" />
+		<property name="loaiVanBan" type="com.liferay.portal.dao.orm.hibernate.LongType" column="LOAIVANBAN" />
+		<property name="linhVucVanBan" type="com.liferay.portal.dao.orm.hibernate.LongType" column="LINHVUCVANBAN" />
+		<property name="ngayBanHanh" type="org.hibernate.type.TimestampType" column="NGAYBANHANH" />
+		<property name="ngayCoHieuLuc" type="org.hibernate.type.TimestampType" column="NGAYCOHIEULUC" />
+		<property name="ngayHetHieuLuc" type="org.hibernate.type.TimestampType" column="NGAYHETHIEULUC" />
+		<property name="nguoiKy" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NGUOIKY" />
+		<property name="vanBanThayThe" type="com.liferay.portal.dao.orm.hibernate.LongType" column="VANBANTHAYTHE" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="GROUPID" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="STATUS" />
+		<property name="statusByDate" type="org.hibernate.type.TimestampType" column="STATUSBYDATE" />
+		<property name="statusByUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="STATUSBYUSERID" />
+		<property name="statusByUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="STATUSBYUSERNAME" />
+		<property name="nhomVanBanId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>

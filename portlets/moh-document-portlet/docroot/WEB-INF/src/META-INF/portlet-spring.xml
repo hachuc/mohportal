@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.revotech.portal.vbpq.service.AttachFileLocalService" class="com.revotech.portal.vbpq.service.impl.AttachFileLocalServiceImpl" />
+	<bean id="com.revotech.portal.vbpq.service.persistence.AttachFilePersistence" class="com.revotech.portal.vbpq.service.persistence.AttachFilePersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.vbpq.service.CoQuanBanHanhVanBanLocalService" class="com.revotech.portal.vbpq.service.impl.CoQuanBanHanhVanBanLocalServiceImpl" />
+	<bean id="com.revotech.portal.vbpq.service.persistence.CoQuanBanHanhVanBanPersistence" class="com.revotech.portal.vbpq.service.persistence.CoQuanBanHanhVanBanPersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.vbpq.service.persistence.CoQuanBanHanhVanBanFinder" class="com.revotech.portal.vbpq.service.persistence.CoQuanBanHanhVanBanFinderImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.vbpq.service.LinhVucVanBanLocalService" class="com.revotech.portal.vbpq.service.impl.LinhVucVanBanLocalServiceImpl" />
+	<bean id="com.revotech.portal.vbpq.service.persistence.LinhVucVanBanPersistence" class="com.revotech.portal.vbpq.service.persistence.LinhVucVanBanPersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.vbpq.service.persistence.LinhVucVanBanFinder" class="com.revotech.portal.vbpq.service.persistence.LinhVucVanBanFinderImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.vbpq.service.LoaiVanBanLocalService" class="com.revotech.portal.vbpq.service.impl.LoaiVanBanLocalServiceImpl" />
+	<bean id="com.revotech.portal.vbpq.service.persistence.LoaiVanBanPersistence" class="com.revotech.portal.vbpq.service.persistence.LoaiVanBanPersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.vbpq.service.persistence.LoaiVanBanFinder" class="com.revotech.portal.vbpq.service.persistence.LoaiVanBanFinderImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.vbpq.service.NhomVanBanLocalService" class="com.revotech.portal.vbpq.service.impl.NhomVanBanLocalServiceImpl" />
+	<bean id="com.revotech.portal.vbpq.service.persistence.NhomVanBanPersistence" class="com.revotech.portal.vbpq.service.persistence.NhomVanBanPersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.vbpq.service.VanBanPhapQuyLocalService" class="com.revotech.portal.vbpq.service.impl.VanBanPhapQuyLocalServiceImpl" />
+	<bean id="com.revotech.portal.vbpq.service.persistence.VanBanPhapQuyPersistence" class="com.revotech.portal.vbpq.service.persistence.VanBanPhapQuyPersistenceImpl" parent="basePersistence" />
+	<bean id="com.revotech.portal.vbpq.service.persistence.VanBanPhapQuyFinder" class="com.revotech.portal.vbpq.service.persistence.VanBanPhapQuyFinderImpl" parent="basePersistence" />
+</beans>

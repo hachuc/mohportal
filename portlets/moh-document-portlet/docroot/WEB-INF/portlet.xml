@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
+	<portlet>
+		<portlet-name>1</portlet-name>
+		<display-name>eGov - Van Ban Phap Quy</display-name>
+		<portlet-class>com.revotech.portal.vbpq.admin.portlet.AdminPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/admin/view_vanban.jsp</value>
+		</init-param>
+		<init-param>
+			<name>template-path</name>
+			<value>/html/admin/</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>eGov - Van Ban Phap Quy</title>
+			<short-title>eGov - Van Ban Phap Quy</short-title>
+			<keywords>Van ban phap quy</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+
+	<portlet>
+		<portlet-name>2</portlet-name>
+		<display-name>Home - Van Ban Phap Quy</display-name>
+		<portlet-class>com.revotech.portal.vbpq.portlet.HomePortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/home/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>template-path</name>
+			<value>/html/portlet/home/</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language_2</resource-bundle>
+		<portlet-info>
+			<title>Home - Van Ban Phap Quy</title>
+			<short-title>Home - Van Ban Phap Quy</short-title>
+			<keywords>Home - Van Ban Phap Quy</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	
+	<portlet>
+		<portlet-name>3</portlet-name>
+		<display-name>Danh Muc - Van Ban Phap Quy</display-name>
+		<portlet-class>com.revotech.portal.vbpq.portlet.DanhMucPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/danhmuc/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>template-path</name>
+			<value>/html/portlet/danhmuc/</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language_3</resource-bundle>
+		<portlet-info>
+			<title>Danh Muc - Van Ban Phap Quy</title>
+			<short-title>Danh Muc - Van Ban Phap Quy</short-title>
+			<keywords>Danh Muc - Van Ban Phap Quy</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+        <supported-public-render-parameter>entryId</supported-public-render-parameter>
+		<supported-public-render-parameter>typeContent</supported-public-render-parameter>
+	</portlet>
+	
+	<portlet>
+		<portlet-name>4</portlet-name>
+		<display-name>Van Ban Phap Quy</display-name>
+		<portlet-class>com.revotech.portal.vbpq.portlet.VanBanPhapQuyPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/list/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>template-path</name>
+			<value>/html/portlet/list/</value>
+		</init-param>
+		<init-param>
+			<name>config-template</name>
+			<value>/html/config/configurationList.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Van Ban Phap Quy</title>
+			<short-title>Van Ban Phap Quy</short-title>
+			<keywords>Van Ban Phap Quy</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+        <supported-public-render-parameter>entryId</supported-public-render-parameter>
+		<supported-public-render-parameter>typeContent</supported-public-render-parameter>
+	</portlet>
+	<portlet>
+		<portlet-name>vanban</portlet-name>
+		<display-name>Vanban</display-name>
+		<portlet-class>com.revotech.portal.vb.Vanban</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/portlet/vanban/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>template-path</name>
+			<value>/html/portlet/vanban/</value>
+		</init-param>
+		<init-param>
+			<name>config-template</name>
+			<value>/html/config/configurationList.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Vanban</title>
+			<short-title>Vanban</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<public-render-parameter>
+       <identifier>entryId</identifier>
+       <qname xmlns:x="http://revotech.com.vn/public-render-parameters">x:entryId</qname>
+    </public-render-parameter>
+    <public-render-parameter>
+       <identifier>typeContent</identifier>
+       <qname xmlns:x="http://revotech.com.vn/public-render-parameters">x:typeContent</qname>
+    </public-render-parameter>
+</portlet-app>

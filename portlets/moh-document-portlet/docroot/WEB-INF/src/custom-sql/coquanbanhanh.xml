@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="com.revotech.portal.vbpq.service.persistence.CoQuanBanHanhVanBanFinder.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				portal_coquanbanhanh  a1
+			WHERE
+				(a1.groupid = ?)
+				AND (lower(a1.ten) LIKE ? [$AND_OR_NULL_CHECK$])
+			ORDER BY
+				a1.order_ ASC
+		]]>
+	</sql>
+	
+	<sql id="com.revotech.portal.vbpq.service.persistence.CoQuanBanHanhVanBanFinder.count">
+		<![CDATA[
+			SELECT
+				count(*) AS COUNT_VALUE
+			FROM
+				portal_coquanbanhanh  a1
+			WHERE
+				(a1.groupid = ?)
+				AND (lower(a1.ten) LIKE ? [$AND_OR_NULL_CHECK$])
+		]]>
+	</sql>
+</custom-sql>

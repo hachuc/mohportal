@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="com.revotech.portal.vbpq.service.persistence.VanBanPhapQuyFinder.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				portal_vanban
+			WHERE
+				(groupId = ?)
+				AND (
+					(lower(trichyeu) LIKE ? [$AND_OR_NULL_CHECK$]) OR 
+					(lower(nguoiky) LIKE ? [$AND_OR_NULL_CHECK$]) OR
+					(lower(mavanban) LIKE ? [$AND_OR_NULL_CHECK$])
+				)
+				AND (coquanbanhanh IN ([$WHERE_CQBH$]))
+				AND (loaivanban IN ([$WHERE_LVB$]))
+				AND (linhvucvanban IN ([$WHERE_LVVB$]))
+				AND (status = ?)
+				AND (ngaybanhanh >= ?)
+				AND (ngaybanhanh <= ?)
+				
+			ORDER BY
+				ngaybanhanh DESC, ngaysua DESC
+		]]>
+	</sql>
+	
+	<sql id="com.revotech.portal.vbpq.service.persistence.VanBanPhapQuyFinder.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				portal_vanban
+			WHERE
+				(groupId = ?)
+				AND (
+					(lower(trichyeu) LIKE ? [$AND_OR_NULL_CHECK$]) OR 
+					(lower(nguoiky) LIKE ? [$AND_OR_NULL_CHECK$]) OR
+					(lower(mavanban) LIKE ? [$AND_OR_NULL_CHECK$])
+				)
+				AND (coquanbanhanh IN ([$WHERE_CQBH$]))
+				AND (loaivanban IN ([$WHERE_LVB$]))
+				AND (linhvucvanban IN ([$WHERE_LVVB$]))
+				AND (status = ?)
+				AND (ngaybanhanh >= ?)
+				AND (ngaybanhanh <= ?)
+		]]>
+	</sql>
+	
+	<sql id="com.revotech.portal.vbpq.service.persistence.VanBanPhapQuyFinder.timKiemVanBanSQL">
+		<![CDATA[
+			SELECT
+				* 
+			FROM
+				portal_vanban
+			WHERE
+				(groupId = ?)
+				AND (
+					(lower(trichyeu) LIKE ? [$AND_OR_NULL_CHECK$]) OR 
+					(lower(nguoiky) LIKE ? [$AND_OR_NULL_CHECK$]) OR
+					(lower(mavanban) LIKE ? [$AND_OR_NULL_CHECK$])
+				)
+				AND (coquanbanhanh IN ([$WHERE_CQBH$]))
+				AND (loaivanban IN ([$WHERE_LVB$]))
+				AND (linhvucvanban IN ([$WHERE_LVVB$]))
+				AND (nhomVanBanId IN ([$WHERE_NHOMVANBAN$]))
+				AND (status = ?)
+				AND (ngaybanhanh >= ?)
+				AND (ngaybanhanh <= ?)
+				
+			ORDER BY
+				ngaybanhanh DESC, ngaysua DESC
+		]]>
+	</sql>
+	
+	<sql id="com.revotech.portal.vbpq.service.persistence.VanBanPhapQuyFinder.countVanBanSQL">
+		<![CDATA[
+			SELECT
+				* as TOTAL
+			FROM
+				portal_vanban
+			WHERE
+				(groupId = ?)
+				AND (
+					(lower(trichyeu) LIKE ? [$AND_OR_NULL_CHECK$]) OR 
+					(lower(nguoiky) LIKE ? [$AND_OR_NULL_CHECK$]) OR
+					(lower(mavanban) LIKE ? [$AND_OR_NULL_CHECK$])
+				)
+				AND (coquanbanhanh IN ([$WHERE_CQBH$]))
+				AND (loaivanban IN ([$WHERE_LVB$]))
+				AND (linhvucvanban IN ([$WHERE_LVVB$]))
+				AND (nhomVanBanId IN ([$WHERE_NHOMVANBAN$]))
+				AND (status = ?)
+				AND (ngaybanhanh >= ?)
+				AND (ngaybanhanh <= ?)
+				
+			ORDER BY
+				ngaybanhanh DESC, ngaysua DESC
+		]]>
+	</sql>
+	
+	
+	<sql id="com.revotech.portal.vbpq.service.persistence.VanBanPhapQuyFinder.timKiemVanBanTheoNgayTaoSQL">
+		<![CDATA[
+			SELECT
+				* 
+			FROM
+				portal_vanban
+			WHERE
+				(groupId = ?)
+				AND (
+					(lower(trichyeu) LIKE ? ) OR 
+					(lower(nguoiky) LIKE ?) OR
+					(lower(mavanban) LIKE ?)
+				)
+				AND (coquanbanhanh IN ([$WHERE_CQBH$]))
+				AND (loaivanban IN ([$WHERE_LVB$]))
+				AND (linhvucvanban IN ([$WHERE_LVVB$]))
+				AND (nhomVanBanId IN ([$WHERE_NHOMVANBAN$]))
+				AND (status = ?)
+				AND (ngaytao >= ?)
+				AND (ngaytao <= ?)
+				
+			ORDER BY
+				ngaytao DESC, ngaysua DESC
+		]]>
+	</sql>
+	
+	<sql id="com.revotech.portal.vbpq.service.persistence.VanBanPhapQuyFinder.countVanBanTheoNgayTaoSQL">
+		<![CDATA[
+			SELECT
+				* as TOTAL
+			FROM
+				portal_vanban
+			WHERE
+				(groupId = ?)
+				AND (
+					(lower(trichyeu) LIKE ? [$AND_OR_NULL_CHECK$]) OR 
+					(lower(nguoiky) LIKE ? [$AND_OR_NULL_CHECK$]) OR
+					(lower(mavanban) LIKE ? [$AND_OR_NULL_CHECK$])
+				)
+				AND (coquanbanhanh IN ([$WHERE_CQBH$]))
+				AND (loaivanban IN ([$WHERE_LVB$]))
+				AND (linhvucvanban IN ([$WHERE_LVVB$]))
+				AND (nhomVanBanId IN ([$WHERE_NHOMVANBAN$]))
+				AND (status = ?)
+				AND (ngaytao >= ?)
+				AND (ngaytao <= ?)
+				
+			ORDER BY
+				ngaytao DESC, ngaysua DESC
+		]]>
+	</sql>
+</custom-sql>

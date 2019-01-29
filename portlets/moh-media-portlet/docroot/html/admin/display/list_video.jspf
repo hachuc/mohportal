@@ -1,0 +1,81 @@
+<%@page import="com.revotech.portal.videolibrary.permission.VideoPermission"%>
+<%@page import="com.revotech.portal.videolibrary.util.VideoFileUtil"%>
+<%@page import="com.liferay.portlet.documentlibrary.service.DLAppServiceUtil"%>
+<%@page import="com.liferay.portal.kernel.repository.model.FileEntry"%>
+<%@page import="com.revotech.portal.videolibrary.model.VLVideo"%>
+<%@page import="com.liferay.portal.kernel.util.HtmlUtil"%>
+<div class="list-vl-video">
+	<ul>
+	   <c:choose>
+	   <c:when test="<%=videos != null && !videos.isEmpty()%>">
+            <%
+            for(VLVideo video:videos){
+            	String videoThumbnailURL = request.getContextPath()
+            		    + "/images/default-video-thumbnail.jpg";
+            	if(video.getImage() && video.getImageId() > 0){
+                    FileEntry thumbnailImage = null;
+                    try{
+                        thumbnailImage = DLAppServiceUtil.getFileEntry(video.getImageId());
+                    }catch(Exception e){}
+                    
+                    if(thumbnailImage != null){
+                        
+                        videoThumbnailURL = VideoFileUtil.getVideoThumbnailURL(themeDisplay, thumbnailImage);
+                    }
+                }
+            	%>
+            	   <li>
+            	       <table style = "width:100%">
+            	           <tr>
+            	                <td width = "130px" style="position: relative;">
+                                    <img src = "<%=videoThumbnailURL %>" width = "130px" height = "130px"/>
+                                    <span class="play-icon"></span>
+                                </td>
+                                <td onclick = "<portlet:namespace/>showVideoUpdateForm(<%=video.getVideoId()%>)">
+                                    <div style="padding-left: 10px">
+	                                    <span class = "video-title"><%=HtmlUtil.escape(video.getVideoName()) %></span>
+	                                    <span class = "video-desc">
+	                                        <%=HtmlUtil.escape( video.getDescription()) %>
+	                                    </span>
+	                                    <span class = "video-type"><b><liferay-ui:message  key = "video-type"/></b>: 
+	                                        <liferay-ui:message key="<%= HtmlUtil.escape(video.getVideoType())%>"/>
+	                                    </span>
+	                                    <span class = "video-date"><b><liferay-ui:message  key = "video-user"/></b>: <%=video.getUserName() %> / <b><liferay-ui:message  key = "video-date"/></b>: <%=dateTimeFormat.format(video.getModifiedDate()) %></span>
+                                    </div>
+                                </td>
+                                <td width = "20px;">
+	                                <c:if test="<%=VideoPermission.contains(permissionChecker, scopeGroupId, ActionKeys.UPDATE) %>">
+		                                <portlet:renderURL var="editVideoURL" windowState="<%=LiferayWindowState.POP_UP.toString() %>">
+		                                    <portlet:param name="jspPage" value="/html/admin/edit_video.jsp" />
+		                                    <portlet:param name="videoId" value="<%=String.valueOf(video.getVideoId()) %>" />
+		                                </portlet:renderURL>
+		                                
+		                                <a href="javascript:;" onclick='updateVLVideoForm("<%=editVideoURL.toString() %>");'>                                           
+		                                    <liferay-ui:icon image="edit"/>
+		                                </a>    
+	                                </c:if>
+                                </td>
+                                <td width = "20px;">
+                                    <c:if test="<%=VideoPermission.contains(permissionChecker, scopeGroupId, ActionKeys.DELETE) %>">
+		                                <portlet:actionURL  name="deleteVideo" var="deleteVideoActionURL">
+		                                    <portlet:param name="videoId" value="<%=String.valueOf(video.getVideoId())%>"/>
+		                                    <portlet:param name="groupId" value="<%=String.valueOf(scopeGroupId)%>"/>       
+		                                    <portlet:param name="categoryId" value="<%=String.valueOf(categoryId)%>"/>  
+		                                    <portlet:param name="redirectURL" value='<%=adminHomePageURL + StringPool.AMPERSAND + themeDisplay.getPortletDisplay().getNamespace() + "categoryId=" + categoryId%>'/>
+		                                </portlet:actionURL>            
+		                                <liferay-ui:icon-delete url="<%= deleteVideoActionURL %>" />
+                                    </c:if>
+                               </td>
+            	           </tr>
+            	       </table>
+            	   </li>
+            	<%
+            }
+            %> 
+        </c:when>
+        <c:otherwise>
+            <liferay-ui:message key="no-found-video"/>
+        </c:otherwise>
+        </c:choose>
+	</ul>
+</div>

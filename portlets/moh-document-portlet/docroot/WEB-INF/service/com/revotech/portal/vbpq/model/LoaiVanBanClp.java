@@ -1,0 +1,628 @@
+/**
+ * OpenCPS is the open source Core Public Services software
+ * Copyright (C) 2016-present OpenCPS community
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>
+ */
+
+package com.revotech.portal.vbpq.model;
+
+import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.ProxyUtil;
+import com.liferay.portal.kernel.util.StringBundler;
+import com.liferay.portal.model.BaseModel;
+import com.liferay.portal.model.impl.BaseModelImpl;
+
+import com.revotech.portal.vbpq.service.ClpSerializer;
+import com.revotech.portal.vbpq.service.LoaiVanBanLocalServiceUtil;
+
+import java.io.Serializable;
+
+import java.lang.reflect.Method;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @author ChucHV
+ */
+public class LoaiVanBanClp extends BaseModelImpl<LoaiVanBan>
+	implements LoaiVanBan {
+	public LoaiVanBanClp() {
+	}
+
+	@Override
+	public Class<?> getModelClass() {
+		return LoaiVanBan.class;
+	}
+
+	@Override
+	public String getModelClassName() {
+		return LoaiVanBan.class.getName();
+	}
+
+	@Override
+	public long getPrimaryKey() {
+		return _id;
+	}
+
+	@Override
+	public void setPrimaryKey(long primaryKey) {
+		setId(primaryKey);
+	}
+
+	@Override
+	public Serializable getPrimaryKeyObj() {
+		return _id;
+	}
+
+	@Override
+	public void setPrimaryKeyObj(Serializable primaryKeyObj) {
+		setPrimaryKey(((Long)primaryKeyObj).longValue());
+	}
+
+	@Override
+	public Map<String, Object> getModelAttributes() {
+		Map<String, Object> attributes = new HashMap<String, Object>();
+
+		attributes.put("id", getId());
+		attributes.put("ten", getTen());
+		attributes.put("trangThai", getTrangThai());
+		attributes.put("ngayTao", getNgayTao());
+		attributes.put("ngaySua", getNgaySua());
+		attributes.put("nguoiTao", getNguoiTao());
+		attributes.put("nguoiSua", getNguoiSua());
+		attributes.put("groupId", getGroupId());
+		attributes.put("order_", getOrder_());
+		attributes.put("nhomVanBanId", getNhomVanBanId());
+
+		return attributes;
+	}
+
+	@Override
+	public void setModelAttributes(Map<String, Object> attributes) {
+		Long id = (Long)attributes.get("id");
+
+		if (id != null) {
+			setId(id);
+		}
+
+		String ten = (String)attributes.get("ten");
+
+		if (ten != null) {
+			setTen(ten);
+		}
+
+		Boolean trangThai = (Boolean)attributes.get("trangThai");
+
+		if (trangThai != null) {
+			setTrangThai(trangThai);
+		}
+
+		Date ngayTao = (Date)attributes.get("ngayTao");
+
+		if (ngayTao != null) {
+			setNgayTao(ngayTao);
+		}
+
+		Date ngaySua = (Date)attributes.get("ngaySua");
+
+		if (ngaySua != null) {
+			setNgaySua(ngaySua);
+		}
+
+		String nguoiTao = (String)attributes.get("nguoiTao");
+
+		if (nguoiTao != null) {
+			setNguoiTao(nguoiTao);
+		}
+
+		String nguoiSua = (String)attributes.get("nguoiSua");
+
+		if (nguoiSua != null) {
+			setNguoiSua(nguoiSua);
+		}
+
+		Long groupId = (Long)attributes.get("groupId");
+
+		if (groupId != null) {
+			setGroupId(groupId);
+		}
+
+		Integer order_ = (Integer)attributes.get("order_");
+
+		if (order_ != null) {
+			setOrder_(order_);
+		}
+
+		Long nhomVanBanId = (Long)attributes.get("nhomVanBanId");
+
+		if (nhomVanBanId != null) {
+			setNhomVanBanId(nhomVanBanId);
+		}
+	}
+
+	@Override
+	public long getId() {
+		return _id;
+	}
+
+	@Override
+	public void setId(long id) {
+		_id = id;
+
+		if (_loaiVanBanRemoteModel != null) {
+			try {
+				Class<?> clazz = _loaiVanBanRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setId", long.class);
+
+				method.invoke(_loaiVanBanRemoteModel, id);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public String getTen() {
+		return _ten;
+	}
+
+	@Override
+	public void setTen(String ten) {
+		_ten = ten;
+
+		if (_loaiVanBanRemoteModel != null) {
+			try {
+				Class<?> clazz = _loaiVanBanRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setTen", String.class);
+
+				method.invoke(_loaiVanBanRemoteModel, ten);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public boolean getTrangThai() {
+		return _trangThai;
+	}
+
+	@Override
+	public boolean isTrangThai() {
+		return _trangThai;
+	}
+
+	@Override
+	public void setTrangThai(boolean trangThai) {
+		_trangThai = trangThai;
+
+		if (_loaiVanBanRemoteModel != null) {
+			try {
+				Class<?> clazz = _loaiVanBanRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setTrangThai", boolean.class);
+
+				method.invoke(_loaiVanBanRemoteModel, trangThai);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public Date getNgayTao() {
+		return _ngayTao;
+	}
+
+	@Override
+	public void setNgayTao(Date ngayTao) {
+		_ngayTao = ngayTao;
+
+		if (_loaiVanBanRemoteModel != null) {
+			try {
+				Class<?> clazz = _loaiVanBanRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setNgayTao", Date.class);
+
+				method.invoke(_loaiVanBanRemoteModel, ngayTao);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public Date getNgaySua() {
+		return _ngaySua;
+	}
+
+	@Override
+	public void setNgaySua(Date ngaySua) {
+		_ngaySua = ngaySua;
+
+		if (_loaiVanBanRemoteModel != null) {
+			try {
+				Class<?> clazz = _loaiVanBanRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setNgaySua", Date.class);
+
+				method.invoke(_loaiVanBanRemoteModel, ngaySua);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public String getNguoiTao() {
+		return _nguoiTao;
+	}
+
+	@Override
+	public void setNguoiTao(String nguoiTao) {
+		_nguoiTao = nguoiTao;
+
+		if (_loaiVanBanRemoteModel != null) {
+			try {
+				Class<?> clazz = _loaiVanBanRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setNguoiTao", String.class);
+
+				method.invoke(_loaiVanBanRemoteModel, nguoiTao);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public String getNguoiSua() {
+		return _nguoiSua;
+	}
+
+	@Override
+	public void setNguoiSua(String nguoiSua) {
+		_nguoiSua = nguoiSua;
+
+		if (_loaiVanBanRemoteModel != null) {
+			try {
+				Class<?> clazz = _loaiVanBanRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setNguoiSua", String.class);
+
+				method.invoke(_loaiVanBanRemoteModel, nguoiSua);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public long getGroupId() {
+		return _groupId;
+	}
+
+	@Override
+	public void setGroupId(long groupId) {
+		_groupId = groupId;
+
+		if (_loaiVanBanRemoteModel != null) {
+			try {
+				Class<?> clazz = _loaiVanBanRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setGroupId", long.class);
+
+				method.invoke(_loaiVanBanRemoteModel, groupId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public int getOrder_() {
+		return _order_;
+	}
+
+	@Override
+	public void setOrder_(int order_) {
+		_order_ = order_;
+
+		if (_loaiVanBanRemoteModel != null) {
+			try {
+				Class<?> clazz = _loaiVanBanRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setOrder_", int.class);
+
+				method.invoke(_loaiVanBanRemoteModel, order_);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public long getNhomVanBanId() {
+		return _nhomVanBanId;
+	}
+
+	@Override
+	public void setNhomVanBanId(long nhomVanBanId) {
+		_nhomVanBanId = nhomVanBanId;
+
+		if (_loaiVanBanRemoteModel != null) {
+			try {
+				Class<?> clazz = _loaiVanBanRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setNhomVanBanId", long.class);
+
+				method.invoke(_loaiVanBanRemoteModel, nhomVanBanId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	public BaseModel<?> getLoaiVanBanRemoteModel() {
+		return _loaiVanBanRemoteModel;
+	}
+
+	public void setLoaiVanBanRemoteModel(BaseModel<?> loaiVanBanRemoteModel) {
+		_loaiVanBanRemoteModel = loaiVanBanRemoteModel;
+	}
+
+	public Object invokeOnRemoteModel(String methodName,
+		Class<?>[] parameterTypes, Object[] parameterValues)
+		throws Exception {
+		Object[] remoteParameterValues = new Object[parameterValues.length];
+
+		for (int i = 0; i < parameterValues.length; i++) {
+			if (parameterValues[i] != null) {
+				remoteParameterValues[i] = ClpSerializer.translateInput(parameterValues[i]);
+			}
+		}
+
+		Class<?> remoteModelClass = _loaiVanBanRemoteModel.getClass();
+
+		ClassLoader remoteModelClassLoader = remoteModelClass.getClassLoader();
+
+		Class<?>[] remoteParameterTypes = new Class[parameterTypes.length];
+
+		for (int i = 0; i < parameterTypes.length; i++) {
+			if (parameterTypes[i].isPrimitive()) {
+				remoteParameterTypes[i] = parameterTypes[i];
+			}
+			else {
+				String parameterTypeName = parameterTypes[i].getName();
+
+				remoteParameterTypes[i] = remoteModelClassLoader.loadClass(parameterTypeName);
+			}
+		}
+
+		Method method = remoteModelClass.getMethod(methodName,
+				remoteParameterTypes);
+
+		Object returnValue = method.invoke(_loaiVanBanRemoteModel,
+				remoteParameterValues);
+
+		if (returnValue != null) {
+			returnValue = ClpSerializer.translateOutput(returnValue);
+		}
+
+		return returnValue;
+	}
+
+	@Override
+	public void persist() throws SystemException {
+		if (this.isNew()) {
+			LoaiVanBanLocalServiceUtil.addLoaiVanBan(this);
+		}
+		else {
+			LoaiVanBanLocalServiceUtil.updateLoaiVanBan(this);
+		}
+	}
+
+	@Override
+	public LoaiVanBan toEscapedModel() {
+		return (LoaiVanBan)ProxyUtil.newProxyInstance(LoaiVanBan.class.getClassLoader(),
+			new Class[] { LoaiVanBan.class }, new AutoEscapeBeanHandler(this));
+	}
+
+	@Override
+	public Object clone() {
+		LoaiVanBanClp clone = new LoaiVanBanClp();
+
+		clone.setId(getId());
+		clone.setTen(getTen());
+		clone.setTrangThai(getTrangThai());
+		clone.setNgayTao(getNgayTao());
+		clone.setNgaySua(getNgaySua());
+		clone.setNguoiTao(getNguoiTao());
+		clone.setNguoiSua(getNguoiSua());
+		clone.setGroupId(getGroupId());
+		clone.setOrder_(getOrder_());
+		clone.setNhomVanBanId(getNhomVanBanId());
+
+		return clone;
+	}
+
+	@Override
+	public int compareTo(LoaiVanBan loaiVanBan) {
+		int value = 0;
+
+		if (getOrder_() < loaiVanBan.getOrder_()) {
+			value = -1;
+		}
+		else if (getOrder_() > loaiVanBan.getOrder_()) {
+			value = 1;
+		}
+		else {
+			value = 0;
+		}
+
+		if (value != 0) {
+			return value;
+		}
+
+		value = getTen().compareTo(loaiVanBan.getTen());
+
+		if (value != 0) {
+			return value;
+		}
+
+		return 0;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+
+		if (!(obj instanceof LoaiVanBanClp)) {
+			return false;
+		}
+
+		LoaiVanBanClp loaiVanBan = (LoaiVanBanClp)obj;
+
+		long primaryKey = loaiVanBan.getPrimaryKey();
+
+		if (getPrimaryKey() == primaryKey) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
+	@Override
+	public int hashCode() {
+		return (int)getPrimaryKey();
+	}
+
+	@Override
+	public String toString() {
+		StringBundler sb = new StringBundler(21);
+
+		sb.append("{id=");
+		sb.append(getId());
+		sb.append(", ten=");
+		sb.append(getTen());
+		sb.append(", trangThai=");
+		sb.append(getTrangThai());
+		sb.append(", ngayTao=");
+		sb.append(getNgayTao());
+		sb.append(", ngaySua=");
+		sb.append(getNgaySua());
+		sb.append(", nguoiTao=");
+		sb.append(getNguoiTao());
+		sb.append(", nguoiSua=");
+		sb.append(getNguoiSua());
+		sb.append(", groupId=");
+		sb.append(getGroupId());
+		sb.append(", order_=");
+		sb.append(getOrder_());
+		sb.append(", nhomVanBanId=");
+		sb.append(getNhomVanBanId());
+		sb.append("}");
+
+		return sb.toString();
+	}
+
+	@Override
+	public String toXmlString() {
+		StringBundler sb = new StringBundler(34);
+
+		sb.append("<model><model-name>");
+		sb.append("com.revotech.portal.vbpq.model.LoaiVanBan");
+		sb.append("</model-name>");
+
+		sb.append(
+			"<column><column-name>id</column-name><column-value><![CDATA[");
+		sb.append(getId());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>ten</column-name><column-value><![CDATA[");
+		sb.append(getTen());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>trangThai</column-name><column-value><![CDATA[");
+		sb.append(getTrangThai());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>ngayTao</column-name><column-value><![CDATA[");
+		sb.append(getNgayTao());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>ngaySua</column-name><column-value><![CDATA[");
+		sb.append(getNgaySua());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>nguoiTao</column-name><column-value><![CDATA[");
+		sb.append(getNguoiTao());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>nguoiSua</column-name><column-value><![CDATA[");
+		sb.append(getNguoiSua());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>groupId</column-name><column-value><![CDATA[");
+		sb.append(getGroupId());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>order_</column-name><column-value><![CDATA[");
+		sb.append(getOrder_());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>nhomVanBanId</column-name><column-value><![CDATA[");
+		sb.append(getNhomVanBanId());
+		sb.append("]]></column-value></column>");
+
+		sb.append("</model>");
+
+		return sb.toString();
+	}
+
+	private long _id;
+	private String _ten;
+	private boolean _trangThai;
+	private Date _ngayTao;
+	private Date _ngaySua;
+	private String _nguoiTao;
+	private String _nguoiSua;
+	private long _groupId;
+	private int _order_;
+	private long _nhomVanBanId;
+	private BaseModel<?> _loaiVanBanRemoteModel;
+	private Class<?> _clpSerializerClass = com.revotech.portal.vbpq.service.ClpSerializer.class;
+}

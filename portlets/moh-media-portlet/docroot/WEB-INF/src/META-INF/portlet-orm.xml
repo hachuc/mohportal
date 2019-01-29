@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.revotech.portal.videolibrary.model.impl.VideoCategoryModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="Name" />
+			<basic name="Url" />
+			<basic name="SortOrder" />
+			<basic name="ItemCount" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.revotech.portal.videolibrary.model.impl.VideoClipModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="Name" />
+			<basic name="CategoryID" />
+			<basic name="Description" />
+			<basic name="ImageUrl" />
+			<basic name="VideoUrl" />
+			<basic name="Duration" />
+			<basic name="ViewCount" />
+			<basic name="Status" />
+			<basic name="CreationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.revotech.portal.videolibrary.model.impl.VLCategoryModelImpl">
+		<attributes>
+			<id name="categoryId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="categoryName" />
+			<basic name="invisible" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.revotech.portal.videolibrary.model.impl.VLRelateVideoModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="videoId" />
+			<basic name="relateId" />
+			<basic name="groupId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.revotech.portal.videolibrary.model.impl.VLVideoModelImpl">
+		<attributes>
+			<id name="videoId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="videoName" />
+			<basic name="description" />
+			<basic name="videoType" />
+			<basic name="videoUrl" />
+			<basic name="viewCount" />
+			<basic name="fileId" />
+			<basic name="image" />
+			<basic name="imageId" />
+			<basic name="smallImageUrl" />
+			<basic name="relateId" />
+			<basic name="invisible" />
+			<basic name="categoryId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.revotech.portal.videolibrary.model.impl.VLVideoCategoryModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="categoryId" />
+			<basic name="videoId" />
+			<basic name="groupId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.revotech.portal.videolibrary.model.impl.VLVideoTagModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="videoId" />
+			<basic name="tagId" />
+			<basic name="groupId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.revotech.portal.videolibrary.model.impl.VideoCategoryImpl" name="VideoCategory">
+		<table name="VideoCategory" />
+		<attributes />
+	</entity>
+	<entity class="com.revotech.portal.videolibrary.model.impl.VideoClipImpl" name="VideoClip">
+		<table name="VideoClip" />
+		<attributes />
+	</entity>
+	<entity class="com.revotech.portal.videolibrary.model.impl.VLCategoryImpl" name="VLCategory">
+		<table name="portal_videocategory" />
+		<attributes />
+	</entity>
+	<entity class="com.revotech.portal.videolibrary.model.impl.VLRelateVideoImpl" name="VLRelateVideo">
+		<table name="portal_relatevideo" />
+		<attributes />
+	</entity>
+	<entity class="com.revotech.portal.videolibrary.model.impl.VLVideoImpl" name="VLVideo">
+		<table name="portal_video" />
+		<attributes />
+	</entity>
+	<entity class="com.revotech.portal.videolibrary.model.impl.VLVideoCategoryImpl" name="VLVideoCategory">
+		<table name="portal_videocategorymap" />
+		<attributes />
+	</entity>
+	<entity class="com.revotech.portal.videolibrary.model.impl.VLVideoTagImpl" name="VLVideoTag">
+		<table name="portal_videotag" />
+		<attributes />
+	</entity>
+</entity-mappings>
